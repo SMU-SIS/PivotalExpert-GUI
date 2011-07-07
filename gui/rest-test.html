@@ -1,0 +1,70 @@
+<!doctype html>
+<html xmlns:ng="http://angularjs.org">
+<head>
+<title>Rest Test</title>
+<script src="_js/jquery-1.4.2.min.js" type="text/javascript"></script>
+<script src="lib/angular/angular.min.js" type="text/javascript" ng:autobind></script>
+<script type="text/javascript">
+AppController.$inject = ['$resource', '$updateView'];
+function AppController($resource, $updateView){
+    this.Country = $resource('../rest/Country/:key', {key: '@key'});
+    this.Obj = $resource('../rest/:obj/:key', {key: '@key'});
+    this.model = 'App';
+    this.list();
+}
+AppController.prototype = {
+    list: function() {
+        var that = this;
+        this.Obj.query({obj: this.model+'.json'}, function(l){
+            that.countries = l;
+        })
+    },
+    edit: function(c) {
+        this.selectedItem = c;
+    },
+    save: function(c) {
+        var that = this;
+        this.selectedItem.$save({obj: this.model}, function(){
+            that.selectedItem = undefined;
+            that.list();
+        });
+    },
+    load: function(c) {
+        this.Obj.get({obj: this.model, key: c.key}, function(cc){
+            console.log(cc)
+            cc.$save()
+        });
+    },
+    getKeys: function(val){
+        return val;
+    }
+}
+</script>
+</head>
+<body ng:controller="AppController">
+    Model: <input name="model"/><button ng:click="list()">Reload</button>
+    <table border="1" ng:hide="selectedItem != undefined">
+        <tr>
+            <td ng:repeat="(key, attr) in countries[0]">{{key}}</td>
+        </tr>
+        <tr ng:repeat="c in countries">
+            <td ng:repeat="(key, attr) in c">{{c[key]}}</td>
+            <td><button ng:click="edit(c)">Edit</button></td>
+        </tr>
+    </table>
+    <table border="1" ng:show="selectedItem != undefined">
+        <tr>
+            <td>Edit item</td>
+        </tr>
+        <tr ng:repeat="(key, attr) in selectedItem">
+            <td>{{key}}</td>
+            <td><input name="selectedItem[key]" size="80"></td>
+        </tr>
+        <tr>
+            <td><button ng:click="save()">Save</button></td>
+        </tr>
+    </table>
+
+    <pre>{{countries}}</pre>
+</body>
+</html>
