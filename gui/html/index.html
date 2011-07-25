@@ -1,0 +1,64 @@
+<!doctype html>
+<html xmlns:ng="http://angularjs.org">
+	<head>
+		<title>Pivotal Expert</title>
+		<style>
+			body {
+				margin: 0;
+				font-family: arial;
+			}
+			#container {
+				margin: 0 auto;
+				width: 1000px;
+				border: 1px solid black;
+			}
+			#header {
+				background: gray;
+				padding-top: 60px;
+			}
+			#header_nav{
+				height: 20px;
+				list-style-type:none;
+				margin: 0;
+				padding: 0;
+				border-top: 1px solid black;
+				border-bottom: 1px solid black;
+			}
+			#header_nav li {
+				height: 20px;
+				float: left;
+				padding: 0 15px;
+				border-right: solid 1px black;
+			}
+			#header_nav li:hover{
+				background: #eee;
+			}
+			#content {
+				padding: 15px;
+			}
+			#footer {
+				border-top: 1px solid black;
+				text-align: center;
+				min-height: 60px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="header">
+				<ul id="header_nav">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Find Developers</a></li>
+					<li><a href="#">Find Projects</a></li>
+				</ul>
+			</div>
+			<div id="content">
+				<ng:view></ng:view>
+			</div>
+			<div id="footer">
+				Some copyright information
+			</div>
+		</div>
+		<script src="lib/angular/angular.js" ng:autobind></script>
+	</body>
+</html>
