@@ -153,7 +153,7 @@ body  {
 	margin: 0;
 	float: left;
 	position: relative;
-	width:  auto;
+	width: auto;
 	border-right: solid 2px #0097FE;
 }
 #top nav ul li:last-child, #top nav ul li:last-child a  {
@@ -193,18 +193,70 @@ body  {
 
 /***** Content *****/
 #content {
-	padding: 15px;
+	padding: 15px 0 15px 0;
 }
+
+
 
 /***** Footer *****/
 #bottom {
-	border-top: 1px solid black;
-	text-align: center;
-	min-height: 60px;
+	margin-top: 8px;
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 890px;
+	min-height: 40px;
 }
 #copyright {
-
+	padding-top: 12px;
+	font-size: 9px;
+	font-weight: bold;
+	color: #C7C7C7;
+	border-top: 1px dotted #C7C7C7;
+	width: 350px;
 }
+#copyright a, #copyright a:active, #copyright a:link, #copyright a:visited {
+	color: #C7C7C7;
+	text-decoration: none;
+}
+#copyright a:hover {
+	text-decoration: underline;
+}
+#bottom_links {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0 0 0 350px;
+	padding: 12px 20px 0 20px;
+	font-size: 10px;
+	color: #FFFFFF;
+	background: #C7C7C7;
+	text-align: right;
+	width: 500px;
+	height: 28px;
+	
+	-moz-border-radius-topleft: 15px;
+	-moz-border-radius-topright: 15px;
+	-webkit-border-radius: 15px 15px 0 0;
+	border-radius: 15px 15px 0 0;  
+}
+#bottom_links nav ul li {
+	padding: 0 4px 0 4px;
+	margin: 0;
+	float: right;
+	position: relative;
+	width: auto;
+}
+#bottom_links a, #bottom_links a:active, #bottom_links a:link, #bottom_links a:visited {
+	color: #FFFFFF;
+	text-decoration: none;
+	display: block;
+}
+#bottom_links nav li:hover, #bottom_links nav li a:hover {
+	color: #0097FE;
+	text-decoration: underline;
+}
+
 
 
 /* ==|== non-semantic helper classes ======================================== */
