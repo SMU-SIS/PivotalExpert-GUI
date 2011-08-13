@@ -1,0 +1,35 @@
+/* the humans responsible & colophon */
+/* humanstxt.org */
+               
+
+/* TEAM */
+    Your title: 	Pivotal Expert (v2) | moving you forward
+    Website: 		http://www.pivotalexpert.com
+    Site: 				dev@pivotalexpert.com
+    Twitter: 		-
+    Location: 		Singapore
+
+	<Team Name>: 		Aperture | visualizing potential
+	<Wiki Page>: 			https://wiki.smu.edu.sg/is480/IS480_Team_wiki:_2011T1_Aperture
+	<Project Manager>:	Mark Chen 		: mark@pivotalexpert.com
+	<Lead Designer>: 	Robert Chai 		: robert@pivotalexpert.com
+	<Lead Developer>: 	Daniel Tsou 		: daniel@pivotalexpert.com
+	<Biz Analyst>: 			Raymond Chua : raymond@pivotalexpert.com
+    <Usability Analyst>:	Kenneth Kok		: kenneth@pivotalexpert.com
+                                 
+						
+						
+/* THANKS */
+    Name: 			name or url
+
+                              
+
+/* SITE */
+    Last update: 			YYYY/MM/DD
+    Standards: 			HTML5, CSS3,..
+    Components: 		jQuery, etc.
+    Software: 				Software used for the development
+
+
+
+                    

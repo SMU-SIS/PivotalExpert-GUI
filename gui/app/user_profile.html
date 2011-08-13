@@ -1,0 +1,64 @@
+<style>
+	.form_element input{
+	    display:block;
+		width:200px;
+	}
+	.form_element textarea{
+	    display:block;
+		width:200px;
+	}
+	.form_element label{
+	    display:block;
+		width:110px;
+		float:left;
+	}
+	.form_element desc{
+		display:block;
+		width:50px;
+		float:left;
+	}
+	.form_element {
+		min-height: 35px;
+                margin: 5px 0;
+	}
+	.form_element_footer {
+		margin-left:160px;
+	}
+	#user_profilebox {
+		min-height: 180px;
+	}
+	#user_profilebox img {
+		float: left;
+		margin-right: 10px;
+		margin-bottom: 20px;
+	}
+</style>
+<h1>Welcome, XXX</h1>
+<div id="user_profilebox">
+	<img src="../images/user.jpg" alt="userTest" width="110" height="150" border="3"/>
+	<div class="form_element"><label>Joined Date</label>dd/MM/yy</div>
+	<div class="form_element"><label>Developer?</label>Yes / No</div>
+	<div class="form_element"><label>School</label>Singapore Management University</div>
+	<a href="#">Edit Profile</a>
+</div>
+<div id="user_projectslist">
+	<h2>My Projects <a href="#/projects/create">[Create a Project]</a></h2>
+	<a href="#">Ongoing Projects</a> <a href="#">Completed Projects</a>
+	<div id="user_projectslist_tbl"> <!-- to be binded -->
+		<table border="1px">
+			<thead>
+				<tr>
+					<th>Project Name</th><th>Owner</th><th>Iterations</th><th>Status</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>[D] Name 1</td><td>User 1</td><td>2 of 2</td><td>In Progress</td>
+				</tr>
+				<tr>
+					<td>[H] Name 2</td><td>User 1</td><td>0 of 2</td><td>Open for Bids</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

@@ -1,0 +1,115 @@
+<style>
+	#prj_view_left {
+		width: 465px;
+		margin-right:5px;
+		min-height: 400px;
+	}
+	#prj_view_right {
+		float:right;
+		width: 465px;
+		margin-top: -20px;
+	}
+	.prj_view_tbl_header {
+		border: #eee solid 1px;
+		height: 20px;
+	}
+	.prj_view_tbl_header ul{
+		margin:0;
+		padding:0;
+		list-style-type:none;
+	}
+	.prj_view_tbl_header ul li{
+		float:left;
+		padding: 0 10px;
+		border-right: #eee solid 1px;
+	} 
+</style>
+<h1>Project: XXX</h1>
+<div id="prj_view_right">
+	<h2>Project Description</h2>
+	<p>Title</p>
+	<p>Description</p>
+	<p>Deliverable</p>
+	<p>Budget</p>
+	<p>Requisite</p>
+	<p>Iteration</p>
+	<p>Tags</p>
+	<p>Current Bids</p>
+	<p>Status</p>
+</div>
+<div id="prj_view_left">
+	<h2>Bids</h2>
+	<table border="1">
+		<thead>
+			<th>Name</th><th>Iterations</th><th>Budget per Iteration</th><th>Total Budget</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td><a href="javascript:void(0);" onclick="$('#bid_1').toggle()">[+]</a> User 1</td><td>4</td><td>$50</td><td>$200</td>
+			</tr>
+			<tr id="bid_1" style="display:none">
+				<td colspan="4">
+					<table>
+						<tr>
+							<td><strong>Iteration 1</strong></td>
+						</tr>
+						<tr>
+							<td>Do this and that</td>
+						</tr>
+						<tr>
+							<td><strong>Iteration 2</strong></td>
+						</tr>
+						<tr>
+							<td>Do this and that</td>
+						</tr>
+						<tr>
+							<td><strong>Iteration 3</strong></td>
+						</tr>
+						<tr>
+							<td>Do this and that</td>
+						</tr>
+						<tr>
+							<td><strong>Iteration 4</strong></td>
+						</tr>
+						<tr>
+							<td>Do this and that</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td><a href="javascript:void(0);" onclick="$('#bid_2').show()">[+]</a> User 1</td><td>4</td><td>$50</td><td>$200</td>
+			</tr>
+			<tr id="bid_2" style="display:none">
+				<td colspan="4">
+					<table>
+						<tr>
+							<td><strong>Iteration 1</strong></td>
+						</tr>
+						<tr>
+							<td>Do this and that</td>
+						</tr>
+						<tr>
+							<td><strong>Iteration 2</strong></td>
+						</tr>
+						<tr>
+							<td>Do this and that</td>
+						</tr>
+						<tr>
+							<td><strong>Iteration 3</strong></td>
+						</tr>
+						<tr>
+							<td>Do this and that</td>
+						</tr>
+						<tr>
+							<td><strong>Iteration 4</strong></td>
+						</tr>
+						<tr>
+							<td>Do this and that</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

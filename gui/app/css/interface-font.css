@@ -1,0 +1,58 @@
+
+/* ==|== customed font styles ======================================================= */
+@font-face {
+    font-family: 'AlgreSansNCRegular';
+    src: 	url('../fonts/AlgreSansNCRegular/algre_sans_regular_nc-webfont.eot');
+    src: 	local('☺'),
+    		url('../fonts/AlgreSansNCRegular/algre_sans_regular_nc-webfont.eot?#iefix') format('embedded-opentype'),
+         	url('../fonts/AlgreSansNCRegular/algre_sans_regular_nc-webfont.woff') format('woff'),
+         	url('../fonts/AlgreSansNCRegular/algre_sans_regular_nc-webfont.ttf') format('truetype'),
+         	url('../fonts/AlgreSansNCRegular/algre_sans_regular_nc-webfont.svg#AlgreSansNCRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GeosansLightRegular';
+    src: 	url('../fonts/GeosansLightRegular/geosanslight-webfont.eot');
+    src: 	local('☺'),
+    		url('../fonts/GeosansLightRegular/geosanslight-webfont.eot?#iefix') format('embedded-opentype'),
+         	url('../fonts/GeosansLightRegular/geosanslight-webfont.woff') format('woff'),
+         	url('../fonts/GeosansLightRegular/geosanslight-webfont.ttf') format('truetype'),
+         	url('../fonts/GeosansLightRegular/geosanslight-webfont.svg#GeosansLightRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'AubreyRegular';
+    src: 	url('../fonts/AubreyRegular/aubrey1__-webfont.eot');
+    src: 	local('☺'),
+    		url('../fonts/AubreyRegular/aubrey1__-webfont.eot?#iefix') format('embedded-opentype'),
+         	url('../fonts/AubreyRegular/aubrey1__-webfont.woff') format('woff'),
+         	url('../fonts/AubreyRegular/aubrey1__-webfont.ttf') format('truetype'),
+         	url('../fonts/AubreyRegular/aubrey1__-webfont.svg#AubreyRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'CaviarDreamsRegular';
+    src: 	url('../fonts/CaviarDreamsRegular/caviardreams-webfont.eot');
+    src: 	local('☺'),
+    		url('../fonts/CaviarDreamsRegular/caviardreams-webfont.eot?#iefix') format('embedded-opentype'),
+         	url('../fonts/CaviarDreamsRegular/caviardreams-webfont.woff') format('woff'),
+         	url('../fonts/CaviarDreamsRegular/caviardreams-webfont.ttf') format('truetype'),
+         	url('../fonts/CaviarDreamsRegular/caviardreams-webfont.svg#CaviarDreamsRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'OldStyle1HPLHS';
+    src: 	url('../fonts/OldStyle1HPLHS/oldsh___-webfont.eot');
+    src: 	local('☺'),
+    		url('../fonts/OldStyle1HPLHS/oldsh___-webfont.eot?#iefix') format('embedded-opentype'),
+         	url('../fonts/OldStyle1HPLHS/oldsh___-webfont.woff') format('woff'),
+        	url('../fonts/OldStyle1HPLHS/oldsh___-webfont.ttf') format('truetype'),
+         	url('../fonts/OldStyle1HPLHS/oldsh___-webfont.svg#OldStyle1HPLHS') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
