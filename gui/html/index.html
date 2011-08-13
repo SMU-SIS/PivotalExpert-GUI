@@ -1,66 +1,63 @@
-<!--page 0: index_frame-->
-<!--this is the template for all our view files to be displayed in-->
 <!doctype html>
-<html xmlns:ng="http://angularjs.org">
+<!--[if lt IE 7]> <html xmlns:ng="http://angularjs.org" class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html xmlns:ng="http://angularjs.org" class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html xmlns:ng="http://angularjs.org" class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--><html xmlns:ng="http://angularjs.org" class="no-js" lang="en"><!--<![endif]-->
 	<head>
-		<title>Pivotal Expert</title>
-		<style>
-			body {
-				margin: 0;
-				font-family: arial;
-			}
-			#container {
-				margin: 0 auto;
-				width: 1000px;
-				border: 1px solid black;
-			}
-			#header {
-				background: gray;
-				padding-top: 60px;
-			}
-			#header_nav{
-				height: 20px;
-				list-style-type:none;
-				margin: 0;
-				padding: 0;
-				border-top: 1px solid black;
-				border-bottom: 1px solid black;
-			}
-			#header_nav li {
-				height: 20px;
-				float: left;
-				padding: 0 15px;
-				border-right: solid 1px black;
-			}
-			#header_nav li:hover{
-				background: #eee;
-			}
-			#content {
-				padding: 15px;
-			}
-			#footer {
-				border-top: 1px solid black;
-				text-align: center;
-				min-height: 60px;
-			}
-		</style>
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<title>Pivotal Expert | moving you forward</title>
+		<script src="../lib/jquery/jquery-1.6.2.min.js"></script>
+		<script src="../lib/modernizr/modernizr.custom.03789.js"></script>
+		<link rel="author" href="../ref/humans.txt" type="text/plain" />
+		<link rel="shortcut icon"  href="../favicon.ico" />
+    	<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" />
 	</head>
 	<body>
 		<div id="container">
-			<div id="header">
-				<ul id="header_nav">
-					<li><a href="#">Home</a></li>
-					<li><a href="developer_list.html">Find Developers</a></li>
-					<li><a href="project_list.html">Find Projects</a></li>
-				</ul>
-			</div>
-			<div id="content">
-				<ng:view></ng:view>
-			</div>
-			<div id="footer">
-				Some copyright information
+			<div id="box">
+				<header id="top">
+					<div id="top_above">
+						<div id="logo">
+							<img src="../images/aper_curve.png" alt="" /><img src="../images/pe_logo.png" alt="Pivotal Expert" />
+						</div>
+						<div id="top_links">
+						</div>
+						<div id="top_separator"></div>
+					</div>
+					<div id="top_below">
+						<div id="country"><img src="../images/countries/sg.png" alt="Singapore" /> Singapore</div>
+						<nav>
+							<ul>
+								<li><a href="#/">dashboard</a>
+									<ul>
+										<li class="navheader">My Projects</li>
+										<li><a href="#/projects/1">Project 1 [D]</a></li>
+										<li><a href="#/projects/2">Project 2 [D]</a></li>
+										<li><a href="#/projects/3">Project 3 [H]</a></li>
+									</ul>
+								</li>
+								<li><a href="#/institutions">institutions</a></li>
+								<li><a href="#/projects">projects</a></li>
+								<li><a href="#/developers">developers</a></li>
+							</ul>
+						</nav>
+					</div>
+				</header>
+				
+				<div id="content" role="content" ng:controller="PageRouter_Master">
+					<ng:view></ng:view>
+				</div>
+				
+				<footer id="bottom">
+					<div id="copyright">
+						Pivotal Expert &copy; <time datetime="2011-04-28">2011</time> <sup>.</sup> Fused by aperture productions
+					</div>
+				</footer>
 			</div>
 		</div>
-		<script src="lib/angular/angular.js" ng:autobind></script>
+		<script src="../lib/angular/angular.js" ng:autobind></script>
+		<script src="../js/plugins.js"></script>
+		<script src="../js/urlmapping.js"></script>
 	</body>
 </html>
