@@ -1,2 +1,62 @@
 <!--page 3: user_edit-->
 <!--this is where the user is able to edit profile, required upon first login-->
+<h2>Edit Profile</h2>
+<hr/>
+
+<h4><u>Personal</u></h4>
+<form action="" method="POST">
+<img src="" height="80" width="80">
+<input type="button" name="Upload Picture" value="Upload Picture"/>
+<table>
+<tr>
+	<td>Name</td>
+	<td><input type="text" name="username" value="">
+</tr>
+<tr>
+	<td>Birthdate</td>
+	<td><input type="text" name="birthdate" value="">
+</tr>
+<tr>
+	<td>Country</td>
+	<td><input type="text" name="country" value="">
+</tr>
+<tr>
+	<td>School</td>
+	<td><input type="text" name="school" value="">
+</tr>
+<tr>
+	<td>Developer</td>
+	<td>Yes <input type="radio" name="username" value="Yes">
+	<td>No <input type="radio" name="username" value="No">
+</tr>
+<tr>
+	<td>About Me</td>
+	<td><input type="text" name="about_me" value="">
+</tr>
+
+<table><br/>
+<input type="submit" value="submit" name="submit"/>
+</form>
+
+<h4><u>Contact Details</u></h4>
+<form>
+<table>
+	<tr>
+		<td>Preferred Email Address</td>
+		<td><input type="text" name="email" value=""></td>
+	<tr>
+		<td>Allow</td>
+		<td>Everyone<input type="radio" name="allow" value="everyone"></td>
+		<td>Friends Only<input type="radio" name="allow" value="friends_only"></td>
+	</tr>
+</table><br/>
+<input type="submit" value="submit" name="submit"/>
+</form>
+
+<h4><u>Payment Details</u></h4>
+
+<form action="" method="POST">
+PayPal Email
+<input type="text" name="email" value=""><br/>
+<input type="submit" value="submit" name="submit"/>
+</form>

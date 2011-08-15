@@ -5,11 +5,11 @@ function PageRouter_Master($route) { //router for the website itself
 	$route.otherwise({redirectTo: '/'});
 	
 	//should check based on whether user is logged on or not
-	$route.when('/',{template:'user_profile.html'});
+	$route.when('/',{template:'user_home.html'});
 	
 	//header re-directs
 	//institutions module
-	$route.when('/institutions',{template:'institutions.html'});
+	$route.when('/institutions',{template:'institution_index.html'});
 	
 	//projects module
 	$route.when('/projects',{template:'project_index.html'});
@@ -27,7 +27,7 @@ function PageRouter_Master($route) { //router for the website itself
 	$route.when('/faq',{template:'faq.html'});
 	
 	//termsofservice page
-	$route.when('/termsofservice',{template:'termsofservice.html'});
+	$route.when('/termsofservice',{template:'terms.html'});
 	
 	//contactus page
 	$route.when('/contactus',{template:'contactus.html'});

@@ -24,28 +24,25 @@
 		border-right: #eee solid 1px;
 	} 
 </style>
-<h1>Project: XXX</h1>
+<h2>Project: XXX</h2>
+<hr/>
 <div id="prj_view_right">
 	<h2>Project Description</h2>
 	<p>Title</p>
+	<p>Owner</p><a href="send_message.html">Send Message</a>
 	<p>Description</p>
-	<p>Deliverable</p>
-	<p>Budget</p>
-	<p>Requisite</p>
-	<p>Iteration</p>
 	<p>Tags</p>
-	<p>Current Bids</p>
 	<p>Status</p>
 </div>
 <div id="prj_view_left">
-	<h2>Bids</h2>
+	<h4><u>Current Bids</u></h4>
 	<table border="1">
 		<thead>
-			<th>Name</th><th>Iterations</th><th>Budget per Iteration</th><th>Total Budget</th>
+			<th>Name</th><th>Iterations</th><th>Price per Iteration</th><th>Total Budget</th><th>Accept</th>
 		</thead>
 		<tbody>
 			<tr>
-				<td><a href="javascript:void(0);" onclick="$('#bid_1').toggle()">[+]</a> User 1</td><td>4</td><td>$50</td><td>$200</td>
+				<td><a href="javascript:void(0);" onclick="$('#bid_1').toggle()">[+]</a> User 1</td><td>4</td><td>$50</td><td>$200</td><td><a href="payment.html">Accept</a></td>
 			</tr>
 			<tr id="bid_1" style="display:none">
 				<td colspan="4">
@@ -78,7 +75,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td><a href="javascript:void(0);" onclick="$('#bid_2').show()">[+]</a> User 1</td><td>4</td><td>$50</td><td>$200</td>
+				<td><a href="javascript:void(0);" onclick="$('#bid_2').show()">[+]</a> User 1</td><td>4</td><td>$50</td><td>$200</td><td><a href="payment.html">Accept</a></td>
 			</tr>
 			<tr id="bid_2" style="display:none">
 				<td colspan="4">
