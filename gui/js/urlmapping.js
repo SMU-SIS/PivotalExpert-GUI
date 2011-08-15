@@ -1,8 +1,15 @@
 function PageRouter_Master($route) { //router for the website itself
 	var self = this;
 	
-	//institutes module
-	$route.when('/institutes',{template:'institutes_index.html'});
+	//user management module
+	$route.otherwise({redirectTo: '/'});
+	
+	//should check based on whether user is logged on or not
+	$route.when('/',{template:'user_profile.html'});
+	
+	//header re-directs
+	//institutions module
+	$route.when('/institutions',{template:'institutions.html'});
 	
 	//projects module
 	$route.when('/projects',{template:'project_index.html'});
@@ -12,10 +19,18 @@ function PageRouter_Master($route) { //router for the website itself
 	//developers module
 	$route.when('/developers',{template:'developer_index.html'});
 	
-	//should check based on whether user is logged on or not
-	//user management module
-	$route.when('/',{template:'user_profile.html'});
-	$route.otherwise({redirectTo: '/'});
+	//footer re-directs
+	//sitemap page
+	$route.when('/sitemap',{template:'sitemap.html'});
+	
+	//faq page
+	$route.when('/faq',{template:'faq.html'});
+	
+	//termsofservice page
+	$route.when('/termsofservice',{template:'termsofservice.html'});
+	
+	//contactus page
+	$route.when('/contactus',{template:'contactus.html'});
 	
 	$route.onChange(function() {
 		self.params = $route.current.params;
