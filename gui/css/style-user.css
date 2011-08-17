@@ -1,0 +1,46 @@
+
+
+.body_main {
+	position: relative;
+}
+#left_panel {
+	position: absolute;
+	left: 0;
+	top: 0;
+	margin: 0;
+	padding: 10px 0 0 0;
+	width: 150px;
+}
+#user_details_panel {
+	width: 150px;
+}
+#user_profile_details {
+
+}
+#user_profile_edit {
+
+}
+#user_profile_controls {
+
+}
+#user_profile_badges {
+
+}
+
+
+#right_panel {
+	position: relative;
+	left: 0;
+	top: 0;
+	margin: 0 0 0 150px;
+	padding: 10px 20px 0 20px;
+}
+#user_info_panel {
+
+}
+#user_newsfeed {
+
+}
+#user_projects {
+
+}
