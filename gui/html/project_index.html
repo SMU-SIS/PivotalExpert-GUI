@@ -1,16 +1,24 @@
 <h1>Projects</h1>
-<table border="1">
-    <thead>
-    
-    <tr><h3>XX Projects Available</h3>  <a href="project_create.html">Create New</a></tr>
-    <tr>
-        <th>Title</th><th>Owner</th><th>Budget</th><th>Tags</th><th>Status</th><th>Created</th>	
-    </tr>
-	</thead>
-	<tbody>
-    <tr> <!--repeating code-->
-        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>View / Bid</td>
-    </tr> <!--repeating code end-->
-	</tbody>
-</table>
+<!--body ng:controller="ProjectListCtrl"-->
+	<table border="1" >
+		<thead class="projects">
+		
+		<tr><h3>XX Projects Available</h3>  <a href="project_create.html">Create New</a></tr>
+		<tr>
+			<th>Title</th><th>Owner</th><th>Status</th><th>Budget</th><th>Tags</th><th>Created</th>	
+		</tr>
+		</thead>
+		<tbody>
+		<tr ng:repeat="project in projects"> 
+			<td>{{project.title}}</td>
+			<td>{{project.owner}}</td>
+			<td>{{project.status}}</td>
+			<td>{{project.budget}}</td>
+			<td>{{project.tags}}</td>
+			<td>{{project.created}}</td>
+			<td>View / Bid</td>
+		</tr> 
+		</tbody>
+	</table>
+<!--/body-->
 Page 1
