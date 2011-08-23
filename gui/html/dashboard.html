@@ -1,0 +1,42 @@
+
+<link rel="stylesheet" href="../css/style-user.css" type="text/css" media="screen" />
+<section class="body_main">
+	<!--left panel-->
+	<section id="left_panel">
+		<ng:include src="'dashboard_panel.html'"></ng:include>
+	</section>
+	<!--right panel-->
+	<section id="right_panel">
+		<div id="user_info_panel"> 
+			<div id="user_newsfeed">
+				<h2>News Feed</h2>
+				<hr />
+				Currently no news available.
+				<br />
+				<a href="#">Show more</a>
+				<br />
+			</div>
+			<div id="user_projects">
+				<h2>My Projects</h2>
+				<hr/>
+				<table border="1">
+					<tr>
+						<th>Title</th><th>Owner</th><th>Developer</th><th>Iteration</th><th>Status</th><th>Budget</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr> <!--repeating code-->
+						<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>View / Bid</td>
+					</tr> <!--repeating code end-->
+				</table>
+				Page 1
+				<br/>
+			</div>
+			<div id="user_returnontime">
+				<h2>Return-on-Time</h2>
+				<hr/>
+				<!--the graph generated will be displayed here-->
+			</div>
+		</div>
+	</section>
+</section>

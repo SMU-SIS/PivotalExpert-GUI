@@ -21,21 +21,43 @@
 	.form_element_footer {
 		margin-left:200px;
 	}
-	</style>
-<h2>Bid for Project</h2>
-<h4><u>Add Bid</u></h4>
-<form method="post">
-	<div class="form_element"><label>Price per Iteration</label><input type="text" name="price"/></div>
-	<div class="form_element"><label>Iterations</label><input type="text" name="iterations"/></div>
-	<div class="form_element"><label>Iteration 1 Plan</label><input type="text" name="plan_1"/></div>
-	<div class="form_element"><label>Iteration 2 Plan</label><input type="text" name="plan_2"/></div>
-	<div class="form_element"><label>I agree</label><input type="checkbox" name="agree"/></div>
-	<div class="form_element_footer"><label>&nbsp;</label><input type="submit" value="Bid"/></div>
-</form>
 
-<h4><u>Project Details</u></h4>
-	<div class="form_element"><label>Title</label>{{project.title}}</div>
-	<div class="form_element"><label>Owner</label>{{project.owner}}<a href="send_message.html">Send Message</a></div>
-	<div class="form_element"><label>Project Description</label>{{project.description}}</textarea></div>
-	<div class="form_element"><label>Total Budget Iteration</label>{{project.budget}}</div>
-	<div class="form_element"><label>Tag(s)</label>{{project.tags}}</div>
+
+#project_bid_page {
+
+
+}
+#project_bid_add_bid {
+
+}
+#project_bid_add_bid_details {
+
+}
+
+
+</style>
+	
+
+<div id="project_bid_page">
+
+	<h2>Bid for "AWESOME" Project</h2>
+	<div id="project_bid_add_bid">
+		<h4><u>Add Bid</u></h4>
+		<form method="post">
+			<div class="form_element"><label>Price per Iteration</label><input type="text" name="price"/></div>
+			<div class="form_element"><label>Iterations</label><input type="text" name="iterations"/></div>
+			<div class="form_element"><label>Iteration 1 Plan</label><input type="text" name="plan_1"/></div>
+			<div class="form_element"><label>Iteration 2 Plan</label><input type="text" name="plan_2"/></div>
+			<div class="form_element"><label>I agree</label><input type="checkbox" name="agree"/></div>
+			<div class="form_element_footer"><label>&nbsp;</label><input type="submit" value="Bid"/></div>
+		</form>
+	</div>
+	<div id="project_bid_add_bid_details">
+		<h4><u>Project Details</u></h4>
+		<div class="form_element"><label>Title</label>{{project.title}}</div>
+		<div class="form_element"><label>Owner</label>{{project.owner}}<a href="send_message.html">Send Message</a></div>
+		<div class="form_element"><label>Project Description</label>{{project.description}}</textarea></div>
+		<div class="form_element"><label>Total Budget Iteration</label>{{project.budget}}</div>
+		<div class="form_element"><label>Tag(s)</label>{{project.tags}}</div>
+	</div>
+</div>

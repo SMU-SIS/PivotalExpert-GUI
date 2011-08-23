@@ -6,16 +6,21 @@
 #user_details_edit_panel {
 
 }
+#user_profile_edit_personal {
+
+}
+#user_profile_edit_contactdetails {
+
+}
+
 
 </style>
 
 
 <div id="user_details_edit_panel"> 
 	<div id="user_profile_edit_personal">
-	
 		<h2>Edit Profile</h2>
 		<hr/>
-		
 		<h4><u>Personal</u></h4>
 		<form action="" method="POST">
 		<img src="" height="80" width="80">
@@ -50,34 +55,32 @@
 		<table><br/>
 		<input type="submit" value="submit" name="submit"/>
 		</form>
-	
-	
 	</div>
-
+	
+	
+	<div id="user_profile_edit_contactdetails">
+		<h4><u>Contact Details</u></h4>
+		<form>
+		<table>
+			<tr>
+				<td>Preferred Email Address</td>
+				<td><input type="text" name="email" value=""></td>
+			<tr>
+				<td>Allow</td>
+				<td>Everyone<input type="radio" name="allow" value="everyone"></td>
+				<td>Friends Only<input type="radio" name="allow" value="friends_only"></td>
+			</tr>
+		</table><br/>
+		<input type="submit" value="submit" name="submit"/>
+		</form>
+	</div>
+	<div id="user_profile_edit_paymentdetails">
+		<h4><u>Payment Details</u></h4>
+		<form action="" method="POST">
+		PayPal Email
+		<input type="text" name="email" value=""><br/>
+		<input type="submit" value="submit" name="submit"/>
+		</form>
+	</div>
 </div>
 
-
-
-
-<h4><u>Contact Details</u></h4>
-<form>
-<table>
-	<tr>
-		<td>Preferred Email Address</td>
-		<td><input type="text" name="email" value=""></td>
-	<tr>
-		<td>Allow</td>
-		<td>Everyone<input type="radio" name="allow" value="everyone"></td>
-		<td>Friends Only<input type="radio" name="allow" value="friends_only"></td>
-	</tr>
-</table><br/>
-<input type="submit" value="submit" name="submit"/>
-</form>
-
-<h4><u>Payment Details</u></h4>
-
-<form action="" method="POST">
-PayPal Email
-<input type="text" name="email" value=""><br/>
-<input type="submit" value="submit" name="submit"/>
-</form>
