@@ -1,0 +1,42 @@
+[
+	{
+		"id":"1",
+		"sender":"0",
+		"subject":"Hello!",
+		"receiver":"1",
+		"msgType":"mail",
+		"insertDate":"19/08/11",
+		"replyTo": "",
+		"projectID": "",
+		"msgBody": "hello there!",
+		"timeSent": ""
+	},
+
+	{
+		"id":"2",
+		"sender":"1",
+		"subject":"Hello back!",
+		"receiver":"0",
+		"msgType":"mail",
+		"insertDate":"20/08/11",
+		"replyTo": "",
+		"projectID": "",
+		"msgBody": "hello back there!",
+		"timeSent": ""
+	},
+	
+	{
+		"id":"3",
+		"sender":"0",
+		"subject":"Hello back back!",
+		"receiver":"1",
+		"msgType":"mail",
+		"insertDate":"21/08/11",
+		"replyTo": "",
+		"projectID": "",
+		"msgBody": "hello there back!",
+		"timeSent": ""
+	}	
+]  
+  
+  
