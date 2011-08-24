@@ -5,8 +5,7 @@
   		"sender":"1",
   		"receiver":"0",
   		"amount":"25.0",
-  		"status":"pending",
-  		"type": "paypal"
+  		"status":"pending"
 	},
 	
   	{
@@ -15,8 +14,7 @@
   		"sender":"0",
   		"receiver":"0",
   		"amount":"25.0",
-  		"status":"pending",
-  		"type": "paypal"
+  		"status":"pending"
   	}
   	
 ]

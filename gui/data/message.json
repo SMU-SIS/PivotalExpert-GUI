@@ -8,7 +8,8 @@
 		"insertDate":"19/08/11",
 		"replyTo": "",
 		"projectID": "",
-		"msgBody": "hello there!"
+		"msgBody": "hello there!",
+		"timeSent": ""
 	},
 
 	{
@@ -20,7 +21,8 @@
 		"insertDate":"20/08/11",
 		"replyTo": "",
 		"projectID": "",
-		"msgBody": "hello back there!"
+		"msgBody": "hello back there!",
+		"timeSent": ""
 	},
 	
 	{
@@ -32,7 +34,8 @@
 		"insertDate":"21/08/11",
 		"replyTo": "",
 		"projectID": "",
-		"msgBody": "hello there back!"
+		"msgBody": "hello there back!",
+		"timeSent": ""
 	}	
 ]  
   
