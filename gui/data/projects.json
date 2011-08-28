@@ -1,4 +1,4 @@
-[
+{ "myList" : [ 
 	{
 		"title": "test", 
 		"owner": "mark",
@@ -10,3 +10,4 @@
 		"created": "25/01/2011"
 	}
 ]
+}
