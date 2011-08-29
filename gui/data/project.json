@@ -1,6 +1,6 @@
 [
 	{
-		"id":"1"
+		"id":"1",
 		"title":"Our first project",
 		"description":"complicated project description",
 		"hirerID":"0",
@@ -11,7 +11,7 @@
 	},
 
 	{
-		"id":"2"
+		"id":"2",
 		"title":"Our second project",
 		"description":"complicated project description",
 		"hirerID":"1",
@@ -22,7 +22,7 @@
 	},
 
 	{
-		"id":"3"
+		"id":"3",
 		"title":"Our third project",
 		"description":"complicated project description",
 		"hirerID":"1",
@@ -34,7 +34,7 @@
 	
 
 	{
-		"id":"4"
+		"id":"4",
 		"title":"The project that never was.",
 		"description":"testing a completed project in view",
 		"hirerID":"1",

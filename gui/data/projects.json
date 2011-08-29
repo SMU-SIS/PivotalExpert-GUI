@@ -1,4 +1,4 @@
-{ "myList" : [ 
+[ 
 	{
 		"title": "test", 
 		"owner": "mark",
@@ -8,6 +8,15 @@
 		"budget": "$25",
 		"tags": "java",
 		"created": "25/01/2011"
+	},
+	{
+		"title": "test1", 
+		"owner": "Ken",
+		"developer": "raymond",
+		"iteration": "1",
+		"status": "in progress",
+		"budget": "$30",
+		"tags": "java",
+		"created": "28/01/2011"
 	}
 ]
-}

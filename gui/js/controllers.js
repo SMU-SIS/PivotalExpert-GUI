@@ -36,8 +36,6 @@ function PageRouter_Master($route) { //router for the website itself
 	
 	$route.when('/developers/<country_id>',{template:''}); //TESTING
 	
-	
-	
 	/* FOOTER Re-Directs */
 	$route.when('/sitemap',{template:'sitemap.html'});					// sitemap page
 	$route.when('/faq',{template:'faq.html'});									// faq page
@@ -69,22 +67,15 @@ function PageRouter_UserProjects($route) {
 function PageRouter_ProjectsView($route) {
 	var self = this;
 }
-
-
-/*function ProjectListCtrl($xhr) {
-  var self = this;
-
-  $xhr('GET', '../data/projects.json', function(code, response) {
-    self.projects = response;
-  });
-
-}*/
+/*
+function ProjectListCtrl(Project){
+	this.projectList = Project.query();
+}
+*/
+//ProjectListCtrl.$inject = ['Project'];
 
 function ProjectListCtrl($resource){
 	var self = this;
-	alert("inside");
-	self.Project = $resource( '../data/projects.json'); 
-	self.projectList = self.Project.get();
+	self.Project = $resource( '../data/project.json'); 
+	self.projectList = self.Project.query();
 }
-//ProjectListCtrl.$inject = ['resource'];
-
