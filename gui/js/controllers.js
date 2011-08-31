@@ -67,15 +67,7 @@ function PageRouter_UserProjects($route) {
 function PageRouter_ProjectsView($route) {
 	var self = this;
 }
-/*
+
 function ProjectListCtrl(Project){
 	this.projectList = Project.query();
-}
-*/
-//ProjectListCtrl.$inject = ['Project'];
-
-function ProjectListCtrl($resource){
-	var self = this;
-	self.Project = $resource( '../data/project.json'); 
-	self.projectList = self.Project.query();
 }
