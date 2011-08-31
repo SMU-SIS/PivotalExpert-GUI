@@ -5,7 +5,7 @@ function PageRouter_Master($route) { //router for the website itself
 	$route.otherwise({redirectTo: '/'});
 	
 	//should check based on whether user is logged on or not
-	$route.when('/',{template:'dashboard.html'});
+	$route.when('/',{template:'dashboard.html', controller: ProjectListCtrl});
 	
 	
 	/* HEADER Re-Directs */
@@ -17,7 +17,7 @@ function PageRouter_Master($route) { //router for the website itself
 	$route.when('/institutions/add',{template:'institution_add.html'});
 	
 	//projects module
-	$route.when('/projects',{template:'project_index.html'});
+	$route.when('/projects',{template:'project_index.html', controller: ProjectListCtrl});
 	$route.when('/projects/create',{template:'project_create.html'});
 	
 	
@@ -72,16 +72,3 @@ function PageRouter_UserProjects($route) {
 function PageRouter_ProjectsView($route) {
 	var self = this;
 }
-
-function ProjectListCtrl(Project){
-	this.projectList = Project.query();
-}
-<<<<<<< HEAD
-<<<<<<< HEAD
-*/
-//ProjectListCtrl.$inject = ['Project'];
-
-=======
->>>>>>> 0d2ed0707cdbd2075f57bc2e1be8c77b6d5df576
-=======
->>>>>>> 0d2ed0707cdbd2075f57bc2e1be8c77b6d5df576
