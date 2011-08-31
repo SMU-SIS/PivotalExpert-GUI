@@ -77,8 +77,11 @@ function ProjectListCtrl(Project){
 	this.projectList = Project.query();
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 */
 //ProjectListCtrl.$inject = ['Project'];
 
+=======
+>>>>>>> 0d2ed0707cdbd2075f57bc2e1be8c77b6d5df576
 =======
 >>>>>>> 0d2ed0707cdbd2075f57bc2e1be8c77b6d5df576
