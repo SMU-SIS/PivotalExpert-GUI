@@ -25,8 +25,14 @@
 					</tr>
 					</thead>
 					<tbody>
-					<tr> <!--repeating code-->
-						<td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>View / Bid</td>
+					<tr ng:repeat="project in projectLists"> <!--repeating code-->
+						<td>{{project.title}}</td>
+						<td>{{project.hirerID}}</td>
+						<td>{{project.developerID}}</td>
+						<td></td>
+						<td>{{project.status}}</td>
+						<td>{{project.budget}}</td>
+						<td>View / Bid</td>
 					</tr> <!--repeating code end-->
 				</table>
 				Page 1

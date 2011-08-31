@@ -10,14 +10,14 @@ function PageRouter_Master($route) { //router for the website itself
 	
 	/* HEADER Re-Directs */
 	$route.when('/welcome',{template:'welcome.html'});
-	$route.when('/dashboard',{template:'dashboard.html'});
+	$route.when('/dashboard',{template:'dashboard.html', controller: ProjectListCtrl});
 	
 	//institutions module
 	$route.when('/institutions',{template:'institution_index.html'});
 	$route.when('/institutions/add',{template:'institution_add.html'});
 	
 	//projects module
-	$route.when('/projects',{template:'project_index.html', controller: ProjectListCtrl});
+	$route.when('/projects',{template:'project_index.html'});
 	$route.when('/projects/create',{template:'project_create.html'});
 	
 	
@@ -60,6 +60,11 @@ function PageRouter_Master($route) { //router for the website itself
 	$route.parent(this);
 }
 
+/*use this to display any project list from now on*/
+function ProjectListCtrl(Project_) {
+  this.projectLists = Project_.query();
+}
+
 function PageRouter_UserProjects($route) {
 	var self = this;
 }
@@ -74,8 +79,3 @@ function ProjectListCtrl(Project){
 */
 //ProjectListCtrl.$inject = ['Project'];
 
-function ProjectListCtrl($resource){
-	var self = this;
-	self.Project = $resource( '../data/project.json'); 
-	self.projectList = self.Project.query();
-}
