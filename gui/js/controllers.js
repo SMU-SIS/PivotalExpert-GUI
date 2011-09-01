@@ -5,12 +5,12 @@ function PageRouter_Master($route) { //router for the website itself
 	$route.otherwise({redirectTo: '/'});
 	
 	//should check based on whether user is logged on or not
-	$route.when('/',{template:'dashboard.html'});
+	$route.when('/',{template:'dashboard.html', controller: DashboardCtrl});
 	
 	
 	/* HEADER Re-Directs */
 	$route.when('/welcome',{template:'welcome.html'});
-	$route.when('/dashboard',{template:'dashboard.html'});
+	$route.when('/dashboard',{template:'dashboard.html', controller: IterationListCtrl});
 	
 	//institutions module
 	$route.when('/institutions',{template:'institution_index.html'});
@@ -70,4 +70,17 @@ function PageRouter_ProjectsView($route) {
 
 function ProjectListCtrl(Project){
 	this.projectList = Project.query();
+}
+
+function DashboardCtrl(Iteration, Message){
+	this.iterationList = Iteration.query();
+	this.messageList = Message.query();
+}
+
+function IterationListCtrl(Iteration){
+	this.iterationList = Iteration.query();
+}
+
+function MessageListCtrl(Message){
+	this.messageList = Message.query();
 }

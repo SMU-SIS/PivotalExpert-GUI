@@ -2,31 +2,33 @@
 	{
 		"id":"1",
 		"projectID":"1",
-		"developerID":"1",
+	 	"hirerID":"0",
+	 	"developerID":"1",
 		"iterationNo":"1",
 		"amount":"25",
 		"taskDescription":"we love FYP",
 		"status": "not started"
-	}
+	},
 
 	{ 
 		"id":"2", 
-		"projectID":"2", 
-		"developerID":"1", 
-	 	"iterationNo":"1",
-	 	"amount":"25",
-	 	"taskDescription":"we love FYP a lot",
-	 	"status": "not started"
+	 	"projectID":"2",
+	 	"hirerID":"0",
+	 	"developerID":"1", 
+	  	"iterationNo":"1",
+	  	"amount":"25",
+	  	"taskDescription":"we love FYP a lot",
+	  	"status": "not started"
 	},
 
 	{
 		"id":"3",
 		"projectID":"3",
-		"developerID":"1",
+	 	"hirerID":"0",
+	 	"developerID":"0",
 		"iterationNo":"1",
 		"amount":"25",
 		"taskDescription":"we absolutely love FYP",
 		"status": "not started"
 	}
-
 ]

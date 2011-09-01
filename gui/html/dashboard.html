@@ -11,7 +11,22 @@
 			<section id="user_newsfeed">
 				<section class="section_header">News Feed</section>
 				<hr />
-				Currently no news available.
+				<table border="0">
+				
+					<tr>
+						<td width="80">From</td>
+						<td width="500">Message</td>
+						<td>Sent</td>
+					</tr>
+				
+					<tr ng:repeat="message in messageList">
+						<td>{{message.sender}}</td>
+						<td>{{message.msgBody}}</td>
+						<td><font size="1">{{message.timeSent}}</font></td>
+					</tr>
+				
+				</table>
+				
 				<br />
 				<a href="#">Show more</a>
 				<br />
@@ -19,118 +34,25 @@
 			<section id="user_projects">
 				<section class="section_header">My Projects</section>
 				<hr/>
-				
-				
-<style>
-				
-				
-				
-#projectListHeader {
-	position: relative;
-	margin: 0;
-	padding: 0;
-}
-#projectList_count {
-	font-size: 22px;
-	border-left: 8px solid #FFFF00;
-	padding-left: 10px;
-}
-#projectList_create_new {
-	position: absolute;
-	top: 45px;
-	right: 0;
-	-moz-right: 0;
-	-webkit-right: 0;
-}
-#projectList_create_new a, #projectList_create_new a:active, #projectList_create_new a:link, #projectList_create_new a:visited {
-	background: #0054A6;
-	margin: 0 12px 0 0;
-	padding: 8px 16px 8px 16px;
-	font-size: 11px;
-	font-weight: bold;
-	text-transform: uppercase;
-	text-decoration: none;
-	color: #FFFFFF;
-}
-#projectList_create_new a:hover {
-	background: #00BFF3;
-}
-#projectListTable {
-	position: relative;
-	font-family: Helvetica, Arial;
-	font-size: 12px;
-	display: block-inline;
-}
-#projectListTable ul {
-	margin: 0 0 1px 0;
-	padding: 0;
-}
-#projectListTable ul li {
-	display: inline-block;
-	list-style: none;
-	padding: 5px 10px;
-}
-.table_header {
-	font-weight: bold;
-	background: #00BFF3;
-}
-.table_row {
-	background: #E1E1E1	;
-}
-.projectListTableEntry {
-	margin: 1px;
-	padding: 1px;
-	width: 880px;
-}
-.projectList_project_title {
-	width: 128px;
-}
-.projectList_project_owner {
-	width: 80px;
-}
-.projectList_project_developer {
-	width: 80px;
-}
-.projectList_project_iteration {
-	width: 50px;
-}
-.projectList_project_status {
-	width: 60px;
-}
-.projectList_project_budget {
-	width: 80px;
-}
-.projectList_project_action {
-	width: 60px;
-}
-
-</style>
-				
-				
-				<section id="projectListTable">
-					<ul class="projectListTableHeader">
-						<li class="table_header projectList_project_title">Title</li>
-						<li class="table_header projectList_project_owner">Owner</li>
-						<li class="table_header projectList_project_developer">Developer</li>
-						<li class="table_header projectList_project_iteration">Iteration</li>
-						<li class="table_header projectList_project_status">Status</li>
-						<li class="table_header projectList_project_budget">Budget</li>
-						<li class="table_header projectList_project_action">Action</li>
-					</ul>
-					<ul class="projectListTableEntry" ng:repeat="project in projectList">
-						<li class="table_row projectList_project_title">{{project.title}}</li>
-						<li class="table_row projectList_project_owner">{{project.owner}}</li>
-						<li class="table_row projectList_project_developer">{{project.developer}}</li>
-						<li class="table_row projectList_project_iteration">{{project.iteration}}</li>
-						<li class="table_row projectList_project_status">{{project.status}}</li>
-						<li class="table_row projectList_project_budget">SGD${{project.budget}}</li>
-						<li class="table_row projectList_project_action">View / Bid</li>
-					</ul>
-				</section>
-				
+				<table border="1">
+					<tr>
+						<th>Title</th><th>Owner</th><th>Developer</th><th>Iteration</th><th>Status</th><th>Price</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr ng:repeat="iteration in iterationList"> <!--repeating code-->
+						<td>{{iteration.id}}</td>
+						<td>{{iteration.hirerID}}</td>
+						<td>{{iteration.developerID}}</td>
+						<td>{{iteration.iterationNo}}</td>
+						<td>{{iteration.status}}</td>
+						<td>{{iteration.amount}}</td>
+						<td>View / Bid</td>
+					</tr> <!--repeating code end-->
+				</table>
 				Page 1
 				<br/>
-			</section>
+			</div>
 			<section id="user_returnontime">
 				<section class="section_header">Return-on-Time</section>
 				<hr/>

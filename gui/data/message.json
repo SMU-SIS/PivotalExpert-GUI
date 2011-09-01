@@ -9,7 +9,7 @@
 		"replyTo": "",
 		"projectID": "",
 		"msgBody": "hello there!",
-		"timeSent": ""
+		"timeSent": "11:01pm"
 	},
 
 	{
@@ -22,7 +22,7 @@
 		"replyTo": "",
 		"projectID": "",
 		"msgBody": "hello back there!",
-		"timeSent": ""
+		"timeSent": "11:47pm"
 	},
 	
 	{
@@ -35,7 +35,7 @@
 		"replyTo": "",
 		"projectID": "",
 		"msgBody": "hello there back!",
-		"timeSent": ""
+		"timeSent": "12:00am"
 	}	
 ]  
   
