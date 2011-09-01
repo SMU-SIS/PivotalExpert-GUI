@@ -1,26 +1,30 @@
-<h2>Projects</h2>
 
-<table border="1" >
-	<thead class="projectList">
-	
-	<tr><h3>XX Projects Available</h3><a href="#/projects/create">Create New</a></tr>
-	<tr>
-		<th>Title</th><th>Owner</th><th>Status</th><th>Budget</th><th>Tags</th><th>Created</th>	
-	</tr>
-	</thead>
-	<tbody>
-	
-	<tr ng:repeat="project in projectList"> 
-		<td>{{project.title}}</td>
-		<td>{{project.owner}}</td>
-		<td>{{project.status}}</td>
-		<td>{{project.budget}}</td>
-		<td>{{project.tags}}</td>
-		<td>{{project.created}}</td>
-		<td>View / Bid</td>
-	</tr> 
-	</tbody>
-</table>
+
+<link rel="stylesheet" href="../css/style-project.css" type="text/css" media="screen" />
+<section>
+	<section id="projectListHeader">
+		<section class="section_header">Projects</section>
+		<section class="section_subheader"><span id="projectList_count">{{projectList.$count}}</span> Projects Available</section><span id="projectList_create_new"><a href="#/projects/create">Create New</a></span>
+	</section>
+	<section id="projectListTable">
+		<ul class="projectListTableHeader">
+			<li class="table_header projectList_project_title">Title</li>
+			<li class="table_header projectList_project_owner">Owner</li>
+			<li class="table_header projectList_project_status">Status</li>
+			<li class="table_header projectList_project_budget">Budget</li>
+			<li class="table_header projectList_project_tags">Tags</li>
+			<li class="table_header projectList_project_created">Created</li>
+			<li class="table_header projectList_project_action">Action</li>
+		</ul>
+		<ul class="projectListTableEntry" ng:repeat="project in projectList">
+			<li class="table_row projectList_project_title">{{project.title}}</li>
+			<li class="table_row projectList_project_owner">{{project.owner}}</li>
+			<li class="table_row projectList_project_status">{{project.status}}</li>
+			<li class="table_row projectList_project_budget">SGD${{project.budget}}</li>
+			<li class="table_row projectList_project_tags">{{project.tags}}</li>
+			<li class="table_row projectList_project_created">{{project.created}}</li>
+			<li class="table_row projectList_project_action">View / Bid</li>
+		</ul>
+	</section>
+</section>
 Page 1
-	
-
