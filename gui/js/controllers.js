@@ -21,6 +21,8 @@ function PageRouter_Master($route) { //router for the website itself
 	$route.when('/projects/create',{template:'project_create.html'});
 	
 	
+	$route.when('/projects/bid',{template:'project_bid.html'}); //TESTING
+	
 	$route.when('/projects/<project_id>',{template:'project_view.html'}); //TESTING
 	$route.when('/projects/<project_id>/view/owner',{template:''}); //TESTING
 	$route.when('/projects/<project_id>/view/dev',{template:''}); //TESTING

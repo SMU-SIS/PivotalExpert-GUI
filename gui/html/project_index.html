@@ -1,12 +1,12 @@
 
 
 <link rel="stylesheet" href="../css/style-project.css" type="text/css" media="screen" />
-<section>
-	<section id="projectListHeader">
+<section id="project_index_page">
+	<section id="project_index_Header">
 		<section class="section_header">Projects</section>
 		<section class="section_subheader"><span id="projectList_count">{{projectList.$count}}</span> Projects Available</section><span id="projectList_create_new"><a href="#/projects/create">Create New</a></span>
 	</section>
-	<section id="projectListTable">
+	<section id="project_index_Table">
 		<ul class="projectListTableHeader">
 			<li class="table_header projectList_project_title">Title</li>
 			<li class="table_header projectList_project_owner">Owner</li>
@@ -23,7 +23,7 @@
 			<li class="table_row projectList_project_budget">SGD${{project.budget}}</li>
 			<li class="table_row projectList_project_tags">{{project.tags}}</li>
 			<li class="table_row projectList_project_created">{{project.created}}</li>
-			<li class="table_row projectList_project_action">View / Bid</li>
+			<li class="table_row projectList_project_action">View / <a href="#/projects/bid">Bid</a></li>
 		</ul>
 	</section>
 </section>

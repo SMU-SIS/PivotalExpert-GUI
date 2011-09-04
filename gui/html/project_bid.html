@@ -1,63 +1,173 @@
 <!--page 9: project_bid-->
 <!--for an non-owner to bid for a project-->
 <style>
-	.form_element input{
-	    display:block;
-		width:100px;
-	}
-	.form_element textarea{
-	    display:block;
-		width:200px;
-	}
-	.form_element label{
-	    display:block;
-		width:160px;
-		float:left;
-	}
-	.form_element {
-		min-height: 35px;
-                margin: 5px 0;
-	}
-	.form_element_footer {
-		margin-left:200px;
-	}
 
 
 #project_bid_page {
-
+	position: relative;
+}
+#project_bid_Header {
 
 }
-#project_bid_add_bid {
+#project_bid_addBid {
+	position: absolute;
+}
+#project_bid_projectDetails {
+	position: relative;
+	left: 0;
+	top: 0;
+	margin: 16px 0 0 450px;
+}
+form#projectAddBidForm, form#projectDetailsForm {
+	width: 440px;
+}
+form#projectAddBidForm fieldset, form#projectDetailsForm fieldset {
+	border: none;
+	margin-bottom: 10px;
+}
+form#projectAddBidForm fieldset:last-of-type {
+	margin-bottom: 0;
+}
+
+form#projectAddBidForm legend, form#projectDetailsForm legend {
+    
+    color: #000000;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 0 10px 20px;
+    text-shadow: 0 1px 1px #E2E2E2;
+    
+    
+}
+form#projectAddBidForm ol, form#projectDetailsForm ol {	
+	padding: 0;
+    margin: 0;
+}
+form#projectAddBidForm ol li, form#projectDetailsForm ol li {
+    margin: 2px 0 2px 20px;
+    line-height: 30px;
+    list-style: none;
+}
+
+
+
+form#projectAddBidForm label,form#projectDetailsForm label {
+    float: left;
+    font-size: 12px;
+    width: 180px;
+}
+
+
+
+
+form#projectAddBidForm input:not([type=radio]), form#projectAddBidForm textarea, form#projectDetailsForm input:not([type=radio]), form#projectDetailsForm textarea {
+    background: #FFFFFF;
+    border: 2px solid #E7E7E7;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+    font: italic 13px Georgia, "Times New Roman", Times, serif;
+    outline: none;
+    padding: 5px;
+    width: 200px;
+}
+form#projectAddBidForm input:not([type=submit]):focus, form#projectAddBidForm textarea:focus {
+    background: #FFFF00;
+}
+
+
+form#projectAddBidForm input[type=checkbox] {
+    float: left;
+    margin-right: 5px;
+}
+form#projectAddBidForm input[type=checkbox]:hover {
+    cursor: pointer;
+}
+
+
+form#projectAddBidForm button {
+    background: #384313;
+    border: none;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+    color: #ffffff;
+    display: block;
+    font: 18px Georgia, "Times New Roman", Times, serif;
+    letter-spacing: 1px;
+    margin: auto;
+    padding: 7px 25px;
+    text-shadow: 0 1px 1px #000000;
+    text-transform: uppercase;
+}
+form#projectAddBidForm button:hover {
+    background: #1e2506;
+    cursor: pointer;
+}
+
+
+
+
+#projectAddBid_price {
 
 }
-#project_bid_add_bid_details {
+.projectAddBid_iterationPlan {
 
 }
+
 
 
 </style>
 	
 
-<div id="project_bid_page">
 
-	<h2>Bid for "AWESOME" Project</h2>
-	<div id="project_bid_add_bid">
-		<h4><u>Add Bid</u></h4>
-		<form method="post">
-			<div class="form_element"><label>Price per Iteration</label><input type="text" name="price"/></div>
-			<div class="form_element"><label>Iterations</label><input type="text" name="iterations"/></div>
-			<div class="form_element"><label>Iteration 1 Plan</label><input type="text" name="plan_1"/></div>
-			<div class="form_element"><label>Iteration 2 Plan</label><input type="text" name="plan_2"/></div>
-			<div class="form_element"><label>I agree</label><input type="checkbox" name="agree"/></div>
-			<div class="form_element_footer"><label>&nbsp;</label><input type="submit" value="Bid"/></div>
+<section id="project_bid_page">
+	<section id="project_bid_Header">
+		<section class="section_header">Add Bid for "AWESOME" Project</section>
+	</section>
+	<section id="project_bid_addBid">
+		<form id="projectAddBidForm" action="" method="POST">
+			<fieldset>
+				<legend>Bid Details</legend>
+				<ol>
+					<li><label for="projectAddBid_price">Price per Iteration (SGD$)</label><input id="projectAddBid_price" name="projectAddBid_price" type="text" placeholder="Eg. 25.00" required autofocus></li>
+					<li><label for="projectAddBid_iterations">Iteration(s)</label><input id="projectAddBid_iterations" name="projectAddBid_iterations" type="number" min="1" required></li>
+				</ol>
+				<ol>
+					<!-- have to change following to a loop with Angular based on above Number of ITERATIONS-->
+					<li><label for="projectAddBid_iterationPlan">Iteration 1 Plan</label><textarea class="projectAddBid_iterationPlan" rows="" placeholder="Eg. Design paper prototype" required></textarea></li>
+					<li><label for="projectAddBid_iterationPlan">Iteration 2 Plan</label><textarea class="projectAddBid_iterationPlan" rows="" placeholder="Eg. Code login page with sign-in form" required></textarea></li>
+					<!-- end loop -->
+				</ol>
+			</fieldset>
+			<fieldset>
+				<ol>
+					<li><input id="projectAddBid_agreeToTerms" name="projectAddBid_agreeToTerms" type="checkbox"><label for="projectAddBid_agreeToTerms">I agree to the terms</label></li>
+				</ol>
+			</fieldset>
+			<fieldset>
+				<button id="projectAddBid_bidBtn" type="submit">Bid</button>
+			</fieldset>
 		</form>
-	</div>
-	<div id="project_bid_add_bid_details">
-		<h4><u>Project Details</u></h4>
-		<div class="form_element"><label>Title</label>{{project.title}}</div>
-		<div class="form_element"><label>Owner</label>{{project.owner}}<a href="send_message.html">Send Message</a></div>
-		<div class="form_element"><label>Project Description</label>{{project.description}}</textarea></div>
-		<div class="form_element"><label>Total Budget Iteration</label>{{project.budget}}</div>
-		<div class="form_element"><label>Tag(s)</label>{{project.tags}}</div>
-	</div>
-</div>
+	</section>
+	<section id="project_bid_projectDetails">
+		<form id="projectDetailsForm" action="" method="POST">
+			<fieldset>
+				<legend>Project Details</legend>
+				<ol>
+					<li><label for="projectDetails_title">Title</label><input id="projectDetails_title" name="projectDetails_title" type="text" placeholder="{{projectDetailsHERE}}" disabled></li>
+					<li><label for="projectDetails_owner">Owner</label><input id="projectDetails_owner" name="projectDetails_owner" type="text" placeholder="{{projectDetailsHERE}}" disabled><button type="submit">Send Message</button></li>
+					<li><label for="projectDetails_description">Project Description</label><textarea id="projectDetails_description" name="projectDetails_description" rows="" placeholder="{{projectDetailsHERE}}" disabled></textarea></li>
+					<li><label for="projectDetails_budget">Total Budget</label><input id="projectDetails_budget" name="projectDetails_budget" type="text" placeholder="SGD${{projectDetailsHERE}}" disabled></li>
+					<li><label for="projectDetails_iteration">Iteration</label><input id="projectDetails_iteration" name="projectDetails_iteration" type="text" placeholder="{{projectDetailsHERE}}" disabled></li>
+					<li><label for="projectDetails_tags">Tag(s)</label><textarea id="projectDetails_tags" name="projectDetails_tags" rows="6" placeholder="{{projectDetailsHERE}}" disabled></textarea></li>
+				</ol>
+			</fieldset>
+		</form>
+	</section>
+</section>
+
+
+

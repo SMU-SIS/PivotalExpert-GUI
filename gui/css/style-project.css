@@ -1,6 +1,7 @@
 
-
-#projectListHeader {
+#project_index_page {
+}
+#project_index_Header {
 	position: relative;
 	margin: 0;
 	padding: 0;
@@ -30,17 +31,17 @@
 #projectList_create_new a:hover {
 	background: #00BFF3;
 }
-#projectListTable {
+#project_index_Table {
 	position: relative;
 	font-family: Helvetica, Arial;
 	font-size: 12px;
 	display: block-inline;
 }
-#projectListTable ul {
+#project_index_Table ul {
 	margin: 0 0 1px 0;
 	padding: 0;
 }
-#projectListTable ul li {
+#project_index_Table ul li {
 	display: inline-block;
 	list-style: none;
 	padding: 5px 10px;
