@@ -1,0 +1,101 @@
+[
+	 	{
+	 		"title": "First project ever",
+	 		"owner": "Kim Walker",
+	 		"owner_url": "/user/3412344",
+	 		"project_url": "/project/1",
+	 		"budget": "$200",
+	 		"tags": ["java", "SQL"],
+			"status": "closed"
+		},
+		
+		{
+			"title": "Second project ever",
+			"owner": "Kim Walker",
+			"owner_url": "/user/3412344",
+			"project_url": "/project/2",
+			"budget": "$300", 
+			"tags": [""],
+			"status": "closed"
+		},	
+
+		{
+			"title": "Third project ever",
+			"owner": "Kim Walker",
+			"owner_url": "/user/3412344",
+			"project_url": "/project/3",
+			"budget": "$150",
+			"tags": [""],	
+			"status": "in progress"
+		},	
+
+		{
+			"title": "Fourth project ever",
+			"owner": "Kim Walker",
+			"owner_url": "/user/3412344",
+			"project_url": "/project/4",
+			"budget": "$200",
+			"tags": [""],	
+			"status": "in progress"
+		},	
+	
+		{
+			"title": "Fifth project ever",
+			"owner": "Kim Walker",
+			"owner_url": "/user/3412344",
+			"project_url": "/project/5",
+			"budget": "$200",
+			"tags": ["C++"],	
+			"status": "open"
+		},	
+	
+		{
+			"title": "Sixth project ever",
+			"owner": "Kim Walker",
+			"owner_url": "/user/3412344",
+			"project_url": "/project/6",
+			"budget": "$200",
+			"tags": ["Perl"],	
+			"status": "open"
+		},
+	
+		{
+			"title": "Seventh project ever",
+			"owner": "Kim Walker",
+			"owner_url": "/user/3412344",
+			"project_url": "/project/7",
+			"budget": "$200",
+			"tags": [""],	
+			"status": "open"
+		},
+	
+		{
+			"title": "Eighth project ever",
+			"owner": "Kim Walker",
+			"owner_url": "/user/3412344",
+			"project_url": "/project/8",
+			"budget": "$200",
+			"tags": ["Graphic design"],	
+			"status": "open"
+		},
+
+		{
+			"title": "Ninth project ever",
+			"owner": "Kim Walker",
+			"owner_url": "/user/3412344",
+			"project_url": "/project/9",
+			"budget": "$200",
+			"tags": ["Graphic design"],
+			"status": "open"
+		},
+	
+		{
+			"title": "Last project ever",
+			"owner": "Kim Walker",
+			"owner_url": "/user/3412344",
+			"project_url": "/project/10",
+			"budget": "$200",
+			"tags": ["Social Networking"],
+			"status": "open"
+		}		
+]

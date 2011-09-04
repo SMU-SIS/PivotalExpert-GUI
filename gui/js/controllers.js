@@ -10,7 +10,7 @@ function PageRouter_Master($route) { //router for the website itself
 	
 	/* HEADER Re-Directs */
 	$route.when('/welcome',{template:'welcome.html'});
-	$route.when('/dashboard',{template:'dashboard.html', controller: IterationListCtrl});
+	$route.when('/dashboard',{template:'dashboard.html', controller: DashboardCtrl});
 	
 	//institutions module
 	$route.when('/institutions',{template:'institution_index.html'});
@@ -70,9 +70,33 @@ function PageRouter_ProjectsView($route) {
 	var self = this;
 }
 
+function ProjectListCtrl(RestCall) {
+  this.projects = RestCall.query({pageName:'project_index'});
+
+}
+//ProjectListCtrl.$inject = ['RestCall'];
+
+function DashboardCtrl(RestCall) {
+	this.iterations = RestCall.query({pageName:'iteration'});
+	this.messages = RestCall.query({pageName:'message'});
+}
+//DashboardCtrl.$inject = ['RestCall'];
+
+function MessageListCtrl(RestCall) {
+	this.messageList = RestCall.query({pageName:'message'});
+}
+//MessageListCtrl.$inject = ['RestCall'];
+
+function IterationListCtrl(RestCall) {
+	this.iterationList = RestCall.query({pageName:'message'});
+}
+//MessageListCtrl.$inject = ['RestCall'];
+
+/*
 function ProjectListCtrl(Project){
 	this.projectList = Project.query();
 }
+ProjectListCtrl.$inject = ['Project'];
 
 function DashboardCtrl(Iteration, Message){
 	this.iterationList = Iteration.query();
@@ -86,3 +110,4 @@ function IterationListCtrl(Iteration){
 function MessageListCtrl(Message){
 	this.messageList = Message.query();
 }
+*/

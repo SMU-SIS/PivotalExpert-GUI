@@ -1,4 +1,4 @@
-
+{{messages}}
 <link rel="stylesheet" href="../css/style-user.css" type="text/css" media="screen" />
 <section class="body_main">
 	<!--left panel-->
@@ -19,7 +19,7 @@
 						<td>Sent</td>
 					</tr>
 				
-					<tr ng:repeat="message in messageList">
+					<tr ng:repeat="message in messages">
 						<td>{{message.sender}}</td>
 						<td>{{message.msgBody}}</td>
 						<td><font size="1">{{message.timeSent}}</font></td>
@@ -40,7 +40,7 @@
 					</tr>
 					</thead>
 					<tbody>
-					<tr ng:repeat="iteration in iterationList"> <!--repeating code-->
+					<tr ng:repeat="iteration in iterations"> <!--repeating code-->
 						<td>{{iteration.id}}</td>
 						<td>{{iteration.hirerID}}</td>
 						<td>{{iteration.developerID}}</td>
