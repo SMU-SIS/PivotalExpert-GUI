@@ -21,7 +21,7 @@ function PageRouter_Master($route) { //router for the website itself
 	$route.when('/projects/create',{template:'project_create.html'});
 	
 	
-	$route.when('/projects/bid',{template:'project_bid.html'}); //TESTING
+	$route.when('/projects/bid/:project',{template:'project_bid.html', controller: ProjectDetailsCtrl}); 
 	
 	$route.when('/projects/<project_id>',{template:'project_view.html'}); //TESTING
 	$route.when('/projects/<project_id>/view/owner',{template:''}); //TESTING
@@ -91,6 +91,23 @@ function IterationListCtrl(RestCall) {
 	this.iterationList = RestCall.query({pageName:'message'});
 }
 //MessageListCtrl.$inject = ['RestCall'];
+
+function ProjectDetailsCtrl(RestCall) {
+	this.projectDetails = RestCall.query({pageName:'project'});
+}
+
+/*
+function ProjectDetailsCtrl(Project_) {
+  var self = this;
+
+  self.phone = Phone_.get({phoneId: self.params.phoneId}, function(phone) {
+    self.mainImageUrl = phone.images[0];
+  });
+
+  self.setImage = function(imageUrl) {
+    self.mainImageUrl = imageUrl;
+  }
+}*/
 
 /*
 function ProjectListCtrl(Project){

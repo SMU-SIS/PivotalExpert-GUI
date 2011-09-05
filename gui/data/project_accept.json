@@ -1,0 +1,35 @@
+{
+	{
+		"response_type": "project_accept",
+		"title": "Last project ever",
+		"description": "Launch of a special interest game site for female users who are offered a weekly subscription and discounted game downloads",
+		"budget": "$200",
+		"tags": "Social Networking"		
+	},
+	
+	{
+		"response_type": "bid",
+		"bids": [
+		{
+			"developer": "Daniel",
+			"iterations": "I will complete the project from interuser messaging to databasing and finally the deployment on GAE in a week",
+			"price": "$300"
+		},
+
+		{
+			"developer": "Kenneth",
+			"iterations": ["This iteration deals with building a simple login function that will route the user to the appropriate professional/trial user page.", 
+							"develop a function for users to send messages to one another and store them in a database",
+							"Implement a social room for more than one user to enter and talk to one another.",
+							"Deploy the application on google app engine and do a conclusive UAT"],
+			"price": "40"
+		},
+
+		{
+			"developer": "Jethrow",
+			"iterations": ["Implement interuser messaging and social networking", "implement database and bring the application to life"],
+			"price": "$100"
+		}
+		]
+	}
+}

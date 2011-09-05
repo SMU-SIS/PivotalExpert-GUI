@@ -6,6 +6,7 @@ angular.service('RestCall', function($resource){
   });
 });
 
+
 /*
 angular.service('Project', function($resource){
   return $resource('../data/project_index.json', {}, {
