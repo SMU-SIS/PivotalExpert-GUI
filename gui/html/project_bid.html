@@ -1,128 +1,7 @@
 <!--page 9: project_bid-->
 <!--for an non-owner to bid for a project-->
-<style>
 
-
-#project_bid_page {
-	position: relative;
-}
-#project_bid_Header {
-
-}
-#project_bid_addBid {
-	position: absolute;
-}
-#project_bid_projectDetails {
-	position: relative;
-	left: 0;
-	top: 0;
-	margin: 16px 0 0 450px;
-}
-form#projectAddBidForm, form#projectDetailsForm {
-	width: 440px;
-}
-form#projectAddBidForm fieldset, form#projectDetailsForm fieldset {
-	border: none;
-	margin-bottom: 10px;
-}
-form#projectAddBidForm fieldset:last-of-type {
-	margin-bottom: 0;
-}
-
-form#projectAddBidForm legend, form#projectDetailsForm legend {
-    
-    color: #000000;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 12px 0 10px 20px;
-    text-shadow: 0 1px 1px #E2E2E2;
-    
-    
-}
-form#projectAddBidForm ol, form#projectDetailsForm ol {	
-	padding: 0;
-    margin: 0;
-}
-form#projectAddBidForm ol li, form#projectDetailsForm ol li {
-    margin: 2px 0 2px 20px;
-    line-height: 30px;
-    list-style: none;
-}
-
-
-
-form#projectAddBidForm label,form#projectDetailsForm label {
-    float: left;
-    font-size: 12px;
-    width: 180px;
-}
-
-
-
-
-form#projectAddBidForm input:not([type=radio]), form#projectAddBidForm textarea, form#projectDetailsForm input:not([type=radio]), form#projectDetailsForm textarea {
-    background: #FFFFFF;
-    border: 2px solid #E7E7E7;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    -khtml-border-radius: 3px;
-    border-radius: 3px;
-    font: italic 13px Georgia, "Times New Roman", Times, serif;
-    outline: none;
-    padding: 5px;
-    width: 200px;
-}
-form#projectAddBidForm input:not([type=submit]):focus, form#projectAddBidForm textarea:focus {
-    background: #FFFF00;
-}
-
-
-form#projectAddBidForm input[type=checkbox] {
-    float: left;
-    margin-right: 5px;
-}
-form#projectAddBidForm input[type=checkbox]:hover {
-    cursor: pointer;
-}
-
-
-form#projectAddBidForm button {
-    background: #384313;
-    border: none;
-    -moz-border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -khtml-border-radius: 20px;
-    border-radius: 20px;
-    color: #ffffff;
-    display: block;
-    font: 18px Georgia, "Times New Roman", Times, serif;
-    letter-spacing: 1px;
-    margin: auto;
-    padding: 7px 25px;
-    text-shadow: 0 1px 1px #000000;
-    text-transform: uppercase;
-}
-form#projectAddBidForm button:hover {
-    background: #1e2506;
-    cursor: pointer;
-}
-
-
-
-
-#projectAddBid_price {
-
-}
-.projectAddBid_iterationPlan {
-
-}
-
-
-
-</style>
-	
-
-
+<link rel="stylesheet" href="../css/style-project.css" type="text/css" media="screen" />
 <section id="project_bid_page">
 	<section id="project_bid_Header">
 		<section class="section_header">Add Bid for "AWESOME" Project</section>
@@ -143,12 +22,14 @@ form#projectAddBidForm button:hover {
 				</ol>
 			</fieldset>
 			<fieldset>
-				<ol>
-					<li><input id="projectAddBid_agreeToTerms" name="projectAddBid_agreeToTerms" type="checkbox"><label for="projectAddBid_agreeToTerms">I agree to the terms</label></li>
-				</ol>
-			</fieldset>
-			<fieldset>
-				<button id="projectAddBid_bidBtn" type="submit">Bid</button>
+				<fieldset>
+					<ol>
+						<li><input id="projectAddBid_agreeToTerms" name="projectAddBid_agreeToTerms" type="checkbox"><label for="projectAddBid_agreeToTerms">I agree to the terms</label></li>
+					</ol>
+				</fieldset>
+				<fieldset>
+					<button id="projectAddBid_bidBtn" type="submit">Bid</button>
+				</fieldset>
 			</fieldset>
 		</form>
 	</section>
@@ -168,6 +49,4 @@ form#projectAddBidForm button:hover {
 		</form>
 	</section>
 </section>
-
-
 
