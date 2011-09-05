@@ -1,45 +1,33 @@
-<style>
-	.form_element input{
-	    display:block;
-		width:200px;
-	}
-	.form_element textarea{
-	    display:block;
-		width:200px;
-	}
-	.form_element label{
-	    display:block;
-		width:160px;
-		float:left;
-	}
-	.form_element {
-		min-height: 35px;
-                margin: 5px 0;
-	}
-	.form_element_footer {
-		margin-left:160px;
-	}
-	
-	
-#create_new_project_page {
-
-}	
-	
-	
-</style>
 
 
+<link rel="stylesheet" href="../css/style-project.css" type="text/css" media="screen" />
+<section id="create_new_project_page">
+	<section id="create_new_project_Header">
+		<section class="section_header">Add a New Project</section>
+	</section>
+	<section id="create_new_project_section">
+		<form id="createNewProjectForm" action="" method="POST">
+			<fieldset>
+				<legend>New Project Details</legend>
+				<ol>
+					<li><label for="createNewProject_title">Title</label><input id="createNewProject_title" name="createNewProject_title" type="text" placeholder="Eg. My Awesome Project" required autofocus></li>
+					<li><label for="createNewProject_budget">Budget per Iteration (SGD$)</label><input id="createNewProject_budget" name="createNewProject_budget" type="text" placeholder="Eg. 25.00" required></li>
+					<li><label for="createNewProject_description">Project Description</label><textarea class="createNewProject_description" rows="" placeholder="Eg. This is a web-portal for entrepreneurs and students." required></textarea></li>
+					<li><label for="createNewProject_tags">Tag(s)</label><textarea class="createNewProject_tags" rows="" placeholder="Eg. jQuery, HTML5, CSS" required></textarea></li>
+				</ol>
+			</fieldset>
+			<fieldset>
+				<fieldset>
+					<ol>
+						<li><input id="projectAddBid_agreeToTerms" name="projectAddBid_agreeToTerms" type="checkbox"><label for="projectAddBid_agreeToTerms">I agree to the terms</label></li>
+					</ol>
+				</fieldset>
+				<fieldset>
+					<button id="projectAddBid_bidBtn" type="submit">Post Project</button>
+				</fieldset>
+			</fieldset>
+		</form>
+	</section>
+</section>
 
-<div id="create_new_project_page">
-	<h2>Add a New Project</h2>
-	<form method="post">
-		<div class="form_element"><label>Title</label><input type="text" name="prj_title"/></div>
-		<div class="form_element"><label>Budget per Iteration</label><input type="text" name="prj_budget"/></div>
-		<div class="form_element"><label>Project Description</label><textarea name="prj_desc"></textarea></div>
-		<div class="form_element"><label>Tag(s)</label><input type="text" name="prj_tags"/></div>
-		<div class="form_element_footer"><label>&nbsp;</label><input type="checkbox" name="prj_agree"/>Agree</div>
-		<div class="form_element_footer"><label>&nbsp;</label><input type="submit" value="Post Project"/></div>
-	</form>
-
-</div>
 
