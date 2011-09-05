@@ -120,7 +120,7 @@ form#projectAddBidForm button:hover {
 
 
 </style>
-	
+<link rel="stylesheet" href="../css/style-project.css" type="text/css" media="screen" />
 <section id="project_bid_page">
 	<section id="project_bid_Header">
 		<section class="section_header">Add Bid for <font size=15>{{projectDetails[0].title}}</font> Project</section>
@@ -141,12 +141,14 @@ form#projectAddBidForm button:hover {
 				</ol>
 			</fieldset>
 			<fieldset>
-				<ol>
-					<li><input id="projectAddBid_agreeToTerms" name="projectAddBid_agreeToTerms" type="checkbox"><label for="projectAddBid_agreeToTerms">I agree to the terms</label></li>
-				</ol>
-			</fieldset>
-			<fieldset>
-				<button id="projectAddBid_bidBtn" type="submit">Bid</button>
+				<fieldset>
+					<ol>
+						<li><input id="projectAddBid_agreeToTerms" name="projectAddBid_agreeToTerms" type="checkbox"><label for="projectAddBid_agreeToTerms">I agree to the terms</label></li>
+					</ol>
+				</fieldset>
+				<fieldset>
+					<button id="projectAddBid_bidBtn" type="submit">Bid</button>
+				</fieldset>
 			</fieldset>
 		</form>
 	</section>
@@ -166,6 +168,4 @@ form#projectAddBidForm button:hover {
 		</form>
 	</section>
 </section>
-
-
 
