@@ -1,59 +1,3 @@
-<style>
-
-
-#project_accept_page {
-
-}
-#project_accept_Header {
-
-}
-#project_accept_acceptBid {
-
-}
-#projectAcceptCurrentBidsTable {
-
-}
-.projectAcceptCurrentBidsHeader {
-
-}
-.table_header {
-
-}
-.table_row {
-
-}
-.projectAcceptList_currentBids_name {
-
-}
-.projectAcceptList_currentBids_iteration {
-
-}
-.projectAcceptList_currentBids_price {
-
-}
-.projectAcceptList_currentBids_budget {
-
-}
-.projectAcceptList_currentBids_action {
-
-}
-.projectAcceptList_currentBids_actionSendMsg {
-
-}
-.projectAcceptList_currentBids_actionAccept {
-
-}
-.projectAcceptList_currentBids_iterationPlans {
-
-}
-
-
-</style>
-
-
-
-
-
 
 
 <link rel="stylesheet" href="css/style-project.css" type="text/css" media="screen" />
@@ -62,23 +6,23 @@
 		<section class="section_header">Project: XXX</section>
 	</section>
 	<section id="project_accept_acceptBid">
-		<section class="section_subHeader">Current Bids</section>
+		<section class="section_subheader">Current Bids</section>
 		<section id="projectAcceptCurrentBidsTable">
 			<ul class="projectAcceptCurrentBidsHeader">
-				<li class="table_header projectAcceptList_currentBids_name">Name</li>
-				<li class="table_header projectAcceptList_currentBids_iteration">Iteration(s)</li>
-				<li class="table_header projectAcceptList_currentBids_price">Price per Iteration</li>
-				<li class="table_header projectAcceptList_currentBids_budget">Total Budget</li>
-				<li class="table_header projectAcceptList_currentBids_action">Accept</li>
+				<li class="table_header projectAcceptList_currentBids_name">Developer's<br />Name</li>
+				<li class="table_header projectAcceptList_currentBids_iteration">No. of<br />Iteration(s)</li>
+				<li class="table_header projectAcceptList_currentBids_price">Price per<br />Iteration</li>
+				<li class="table_header projectAcceptList_currentBids_budget">Total<br />Budget</li>
+				<li class="table_header projectAcceptList_currentBids_action">Accept<br />Bid</li>
 			</ul>
 			<ul class="projectAcceptCurrentBidsEntry" ng:repeat="bid in bids">
-				<li class="table_row projectAcceptList_currentBids_name">{{bid.name}}</li>
+				<li class="table_row projectAcceptList_currentBids_name"><a href="javascript:void(0);" onclick="$('#projectAcceptList_currentBids_iterationPlans{{bid.id}}').show()">[+]</a> {{bid.name}}</li>
 				<li class="table_row projectAcceptList_currentBids_iteration">{{bid.iteration}}</li>
 				<li class="table_row projectAcceptList_currentBids_price">{{bid.price}}</li>
 				<li class="table_row projectAcceptList_currentBids_budget">SGD${{bid.budget}}</li>
 				<li class="table_row projectAcceptList_currentBids_actionSendMsg">Send Message</li>
 				<li class="table_row projectAcceptList_currentBids_actionAccept">Accept</li>
-				<li class="table_row projectAcceptList_currentBids_iterationPlans">{{bid.iterationPlans}}</li>
+				<li class="table_row projectAcceptList_currentBids_iterationPlans" id="projectAcceptList_currentBids_iterationPlans{{bid.id}}">{{bid.iterationPlans}}</li>
 		</section>
 	</section>
 	<section id="project_bid_projectDetails">
@@ -96,98 +40,5 @@
 		</form>
 	</section>
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-<div id="project_accept_page">
-	
-	<div id="prj_view_left">
-		<h4><u>Current Bids</u></h4>
-		<table border="1">
-			<thead>
-				<th>Name</th><th>Iterations</th><th>Price per Iteration</th><th>Total Budget</th><th>Accept</th>
-			</thead>
-			<tbody>
-				<tr>
-					<td><a href="javascript:void(0);" onclick="$('#bid_1').toggle()">[+]</a> User 1</td><td>4</td><td>$50</td><td>$200</td><td><a href="payment.html">Accept</a></td>
-				</tr>
-				<tr id="bid_1" style="display:none">
-					<td colspan="4">
-						<table>
-							<tr>
-								<td><strong>Iteration 1</strong></td>
-							</tr>
-							<tr>
-								<td>Do this and that</td>
-							</tr>
-							<tr>
-								<td><strong>Iteration 2</strong></td>
-							</tr>
-							<tr>
-								<td>Do this and that</td>
-							</tr>
-							<tr>
-								<td><strong>Iteration 3</strong></td>
-							</tr>
-							<tr>
-								<td>Do this and that</td>
-							</tr>
-							<tr>
-								<td><strong>Iteration 4</strong></td>
-							</tr>
-							<tr>
-								<td>Do this and that</td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-				<tr>
-					<td><a href="javascript:void(0);" onclick="$('#bid_2').show()">[+]</a> User 1</td><td>4</td><td>$50</td><td>$200</td><td><a href="payment.html">Accept</a></td>
-				</tr>
-				<tr id="bid_2" style="display:none">
-					<td colspan="4">
-						<table>
-							<tr>
-								<td><strong>Iteration 1</strong></td>
-							</tr>
-							<tr>
-								<td>Do this and that</td>
-							</tr>
-							<tr>
-								<td><strong>Iteration 2</strong></td>
-							</tr>
-							<tr>
-								<td>Do this and that</td>
-							</tr>
-							<tr>
-								<td><strong>Iteration 3</strong></td>
-							</tr>
-							<tr>
-								<td>Do this and that</td>
-							</tr>
-							<tr>
-								<td><strong>Iteration 4</strong></td>
-							</tr>
-							<tr>
-								<td>Do this and that</td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-
-</div>
-
 
 

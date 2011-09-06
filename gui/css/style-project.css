@@ -1,11 +1,15 @@
 
-/** Project_Index **/
+/** Project_Index & Project_Create **/
 #project_index_page {
+}
+#project_accept_page {
 }
 #project_index_Header {
 	position: relative;
 	margin: 0;
 	padding: 0;
+}
+#project_accept_Header {
 }
 #projectList_count {
 	font-size: 22px;
@@ -32,22 +36,29 @@
 #projectList_create_new a:hover {
 	background: #00BFF3;
 }
-#project_index_Table {
+#project_accept_acceptBid {
+	position: absolute;
+	margin-top: 20px;
+}
+#project_index_Table, #projectAcceptCurrentBidsTable {
 	position: relative;
 	font-family: Helvetica, Arial;
 	font-size: 12px;
 	display: block-inline;
 }
-#project_index_Table ul {
+#project_index_Table ul, #projectAcceptCurrentBidsTable ul {
 	margin: 0 0 1px 0;
 	padding: 0;
 }
-#project_index_Table ul li {
+#project_index_Table ul li, #projectAcceptCurrentBidsTable ul li {
 	display: inline-block;
 	list-style: none;
 	padding: 5px 10px;
 }
-.projectListTableHeader {
+#projectAcceptCurrentBidsTable ul li {
+	font-size: 11px;
+}
+.projectListTableHeader, .projectAcceptCurrentBidsHeader {
 }
 .table_header {
 	font-weight: bold;
@@ -81,6 +92,36 @@
 }
 .projectList_project_action {
 	width: 60px;
+}
+
+.projectAcceptCurrentBidsEntry {
+	margin: 1px;
+	padding: 1px;
+}
+.projectAcceptList_currentBids_name {
+}
+.projectAcceptList_currentBids_iteration {
+	text-align: center;
+}
+.projectAcceptList_currentBids_price {
+	width: 75px;
+	text-align: center;
+}
+.projectAcceptList_currentBids_budget {
+	width: 75px;
+	text-align: center;
+}
+.projectAcceptList_currentBids_action {
+	text-align: center;
+}
+.projectAcceptList_currentBids_actionSendMsg {
+
+}
+.projectAcceptList_currentBids_actionAccept {
+
+}
+.projectAcceptList_currentBids_iterationPlans {
+	display: none;
 }
 
 
@@ -117,7 +158,7 @@ form#projectAddBidForm fieldset fieldset, form#createNewProjectForm fieldset fie
 	margin-left: 180px;
 }
 
-form#projectAddBidForm legend, form#projectDetailsForm legend, form#createNewProjectForm legend {
+form#projectAddBidForm legend, form#projectDetailsForm legend, form#createNewProjectForm legend, #project_accept_acceptBid {
     color: #000000;
     font-size: 16px;
     font-weight: bold;
