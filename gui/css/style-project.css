@@ -65,19 +65,19 @@
 	width: 180px;
 }
 .projectList_project_owner {
-	width: 140px;
+	width: 110px;
 }
 .projectList_project_status {
-	width: 60px;
+	width: 75px;
 }
 .projectList_project_budget {
-	width: 80px;
+	width: 85px;
 }
 .projectList_project_tags {
-	width: 140px;
+	width: 135px;
 }
 .projectList_project_created {
-	width: 60px;
+	width: 75px;
 }
 .projectList_project_action {
 	width: 60px;

@@ -3,7 +3,7 @@
 		"response_type": "project_accept",
 		"title": "Last project ever",
 		"description": "Launch of a special interest game site for female users who are offered a weekly subscription and discounted game downloads",
-		"budget": "$200",
+		"budget": "200",
 		"tags": "Social Networking"		
 	},
 	
@@ -13,7 +13,7 @@
 		{
 			"developer": "Daniel",
 			"iterations": "I will complete the project from interuser messaging to databasing and finally the deployment on GAE in a week",
-			"price": "$300"
+			"price": "300"
 		},
 
 		{
@@ -28,7 +28,7 @@
 		{
 			"developer": "Jethrow",
 			"iterations": ["Implement interuser messaging and social networking", "implement database and bring the application to life"],
-			"price": "$100"
+			"price": "100"
 		}
 		]
 	}
