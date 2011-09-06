@@ -45,7 +45,7 @@ function PageRouter_Master($route) { //router for the website itself
 	$route.when('/sitemap',{template:'html/sitemap.html'});					// sitemap page
 	$route.when('/faq',{template:'html/faq.html'});									// faq page
 	$route.when('/terms_of_service',{template:'html/terms.html'});				// terms of service page
-	$route.when('/contact_us',{template:'html/contactus.html'});				// contact us page
+	$route.when('/contact_us',{template:'html/contact_us.html'});				// contact us page
 	
 	
 	/* SUB-PAGES Re-Directs */
