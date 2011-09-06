@@ -1,51 +1,115 @@
 <style>
-	#prj_view_left {
-		width: 465px;
-		margin-right:5px;
-		min-height: 400px;
-	}
-	#prj_view_right {
-		float:right;
-		width: 465px;
-		margin-top: -20px;
-	}
-	.prj_view_tbl_header {
-		border: #eee solid 1px;
-		height: 20px;
-	}
-	.prj_view_tbl_header ul{
-		margin:0;
-		padding:0;
-		list-style-type:none;
-	}
-	.prj_view_tbl_header ul li{
-		float:left;
-		padding: 0 10px;
-		border-right: #eee solid 1px;
-	} 
-	
 
 
 #project_accept_page {
 
 }
+#project_accept_Header {
 
+}
+#project_accept_acceptBid {
+
+}
+#projectAcceptCurrentBidsTable {
+
+}
+.projectAcceptCurrentBidsHeader {
+
+}
+.table_header {
+
+}
+.table_row {
+
+}
+.projectAcceptList_currentBids_name {
+
+}
+.projectAcceptList_currentBids_iteration {
+
+}
+.projectAcceptList_currentBids_price {
+
+}
+.projectAcceptList_currentBids_budget {
+
+}
+.projectAcceptList_currentBids_action {
+
+}
+.projectAcceptList_currentBids_actionSendMsg {
+
+}
+.projectAcceptList_currentBids_actionAccept {
+
+}
+.projectAcceptList_currentBids_iterationPlans {
+
+}
 
 
 </style>
 
 
+
+
+
+
+
+<link rel="stylesheet" href="css/style-project.css" type="text/css" media="screen" />
+<section id="project_accept_page">
+	<section id="project_accept_Header">
+		<section class="section_header">Project: XXX</section>
+	</section>
+	<section id="project_accept_acceptBid">
+		<section class="section_subHeader">Current Bids</section>
+		<section id="projectAcceptCurrentBidsTable">
+			<ul class="projectAcceptCurrentBidsHeader">
+				<li class="table_header projectAcceptList_currentBids_name">Name</li>
+				<li class="table_header projectAcceptList_currentBids_iteration">Iteration(s)</li>
+				<li class="table_header projectAcceptList_currentBids_price">Price per Iteration</li>
+				<li class="table_header projectAcceptList_currentBids_budget">Total Budget</li>
+				<li class="table_header projectAcceptList_currentBids_action">Accept</li>
+			</ul>
+			<ul class="projectAcceptCurrentBidsEntry" ng:repeat="bid in bids">
+				<li class="table_row projectAcceptList_currentBids_name">{{bid.name}}</li>
+				<li class="table_row projectAcceptList_currentBids_iteration">{{bid.iteration}}</li>
+				<li class="table_row projectAcceptList_currentBids_price">{{bid.price}}</li>
+				<li class="table_row projectAcceptList_currentBids_budget">SGD${{bid.budget}}</li>
+				<li class="table_row projectAcceptList_currentBids_actionSendMsg">Send Message</li>
+				<li class="table_row projectAcceptList_currentBids_actionAccept">Accept</li>
+				<li class="table_row projectAcceptList_currentBids_iterationPlans">{{bid.iterationPlans}}</li>
+		</section>
+	</section>
+	<section id="project_bid_projectDetails">
+		<form id="projectDetailsForm" action="" method="POST">
+			<fieldset>
+				<legend>Project Details</legend>
+				<ol>
+					<li><label for="projectDetails_title">Title</label><input id="projectDetails_title" name="projectDetails_title" type="text" placeholder="{{projectDetails[0].title}}" disabled></li>
+					<li><label for="projectDetails_owner">Owner</label><input id="projectDetails_owner" name="projectDetails_owner" type="text" placeholder="{{projectDetails[0].owner}}" disabled><button type="submit">Send Message</button></li>
+					<li><label for="projectDetails_description">Project Description</label><textarea id="projectDetails_description" name="projectDetails_description" rows="" placeholder="{{projectDetails[0].description}}" disabled></textarea></li>
+					<li><label for="projectDetails_tags">Tag(s)</label><textarea id="projectDetails_tags" name="projectDetails_tags" rows="6" placeholder="{{projectDetails[0].tags}}" disabled></textarea></li>
+					<li><label for="projectDetails_status">Status</label><input id="projectDetails_status" name="projectDetails_status" type="text" placeholder="{{projectDetails[0].status}}" disabled></li>
+				</ol>
+			</fieldset>
+		</form>
+	</section>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
 <div id="project_accept_page">
-	<h2>Project: XXX</h2>
-	<hr/>
-	<div id="prj_view_right">
-		<h2>Project Description</h2>
-		<p>Title</p>
-		<p>Owner</p><a href="send_message.html">Send Message</a>
-		<p>Description</p>
-		<p>Tags</p>
-		<p>Status</p>
-	</div>
+	
 	<div id="prj_view_left">
 		<h4><u>Current Bids</u></h4>
 		<table border="1">
