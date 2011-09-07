@@ -7,6 +7,13 @@
 #project_manage_page {
 
 }
+#project_manage_Header {
+
+}
+#projectOwner {
+
+}
+
 
 
 
@@ -20,13 +27,35 @@
 <section id="project_manage_page">
 	<section id="project_manage_Header">
 		<section class="section_header">Project "AWESOME"</section>
-		<section id="projectOwner"></section>
-		<section id="projectDeveloper"></section>
+		<section id="projectOwner">
+			<span id="ownerNameText">Mark<span>
+			<article id="ownerImg"><img src="../images/" /></article>
+			<span id="ownerNameHeader">Owner<span>
+		</section>
+		<section id="projectDeveloper">
+			<span id="developerNameText">Raymond<span>
+			<article id="developerImg"><img src="../images/" /></article>
+			<span id="developerNameHeader">Developer<span>
+		</section>
 		<section id="projectDetails">
-			
+			<section class="section_subheader">Project Details</section>
+			<ol>
+				<li><label for="projectDetails_title">Title</label><span id="projectDetails_title" name="projectDetails_title">{{projectDetails[0].title}}</span></li>
+				<li><label for="projectDetails_description">Description</label><span id="projectDetails_description" name="projectDetails_description">{{projectDetails[0].description}}</span></li>
+			</ol>
 		</section>
 	</section>
 	<section id="project_manage_projectWall">
+		<section class="section_subheader">Project Wall</section>
+		<ul>
+			<li class="table_header projectList_project_title">Title</li>
+		</ul>
+		<ul>
+			<li class="table_row projectList_project_title">{{project.title}}</li>
+		</ul>
+	</section>
+	<section id="project_manage_projectWorkplan">
+		<section class="section_subheader">Project Workplan</section>
 		<ul>
 			<li class="table_header projectList_project_title">Title</li>
 		</ul>
@@ -35,35 +64,4 @@
 		</ul>
 	</section>
 </section> 
-
-
-
-
-
-
-
-<div id="project_manage_page">
-	<h2></h2>
-	<hr/>
-	
-	Owner: Mark
-	<img src="" height="80" width="80"/>
-	<br/>
-	Developer: Raymond
-	<img src="" height="80" width="80"/>
-	<br/>
-	
-	<h4><u>Details</u></h4>
-	Project Title:<br/>
-	Project Description:
-	
-	<h4><u>Project Wall</u></h4>
-	<!--how to create this in HTML? seems like CSS-->
-	
-	<h4><u>Work Plan</u></h4>
-	<!--how to create this in HTML? seems like CSS-->
-
-</div>
-
-
 

@@ -1,75 +1,74 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset='utf-8'>
-
-  <title>SMU-SIS/PivotalExpert-GUI @ GitHub</title>
-
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #4277c5;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #ffffff;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #bd883a; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #bd883a; }
-    h3 { text-align: center; color: #bd883a; }
-    a { color: #bd883a; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
-</head>
-
-<body>
-  <a href="http://github.com/SMU-SIS/PivotalExpert-GUI"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
-
-  <div id="container">
-
-    <div class="download">
-      <a href="http://github.com/SMU-SIS/PivotalExpert-GUI/zipball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
-      <a href="http://github.com/SMU-SIS/PivotalExpert-GUI/tarball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
-    </div>
-
-    <h1><a href="http://github.com/SMU-SIS/PivotalExpert-GUI">PivotalExpert-GUI</a>
-      <span class="small">by <a href="http://github.com/SMU-SIS">SMU-SIS</a></span></h1>
-
-    <div class="description">
-      The Angularjs-based GUI for PivotalExpert
-    </div>
-
-    <h2>Contact</h2>
-<p>SMU School of Information Systems (cboesch@smu.edu.sg)<br/>      </p>
-
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="http://github.com/SMU-SIS/PivotalExpert-GUI/zipball/master">zip</a> or
-      <a href="http://github.com/SMU-SIS/PivotalExpert-GUI/tarball/master">tar</a> formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/SMU-SIS/PivotalExpert-GUI</pre>
-    </p>
-
-    <div class="footer">
-      get the source code on GitHub : <a href="http://github.com/SMU-SIS/PivotalExpert-GUI">SMU-SIS/PivotalExpert-GUI</a>
-    </div>
-
-  </div>
-
-  
-</body>
+<!doctype html>
+<!--[if lt IE 7]> <html xmlns:ng="http://angularjs.org" class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html xmlns:ng="http://angularjs.org" class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html xmlns:ng="http://angularjs.org" class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--><html xmlns:ng="http://angularjs.org" class="no-js" lang="en"><!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta name="robots" content="noindex, nofollow">
+		<title>Pivotal Expert | moving you forward</title>
+		<script src="gui/lib/jquery/jquery-1.6.2.min.js"></script>
+		<script src="gui/lib/modernizr/modernizr.custom.03789.js"></script>
+		<link rel="author" href="gui/ref/humans.txt" type="text/plain" />
+		<link rel="shortcut icon"  href="gui/icons/favicon.ico" />
+    	<link rel="stylesheet" href="gui/css/style.css" media="screen" />
+	</head>
+	<body ng:controller="PageRouter_Master">
+		<div id="container">
+			<div id="box">
+				<header id="top">
+					<div id="top_above">
+						<div id="logo">
+							<img src="gui/images/aper_curve.png" alt="" /><img src="gui/images/pe_logo.png" alt="Pivotal Expert" />
+						</div>
+						<div id="top_links">
+						</div>
+						<div id="top_separator"></div>
+					</div>
+					<div id="top_below">
+						<div id="country"><img src="gui/images/countries/sg.png" alt="Singapore" /> Singapore</div>
+						<nav>
+							<ul>
+								<li><a href="#/">dashboard</a>
+									<ul>
+										<li class="navheader">My Projects</li>
+										<li><a href="#/projects/1">Project 1 [D]</a></li>
+										<li><a href="#/projects/2">Project 2 [D]</a></li>
+										<li><a href="#/projects/3">Project 3 [H]</a></li>
+									</ul>
+								</li>
+								<li><a href="#/institutions">institutions</a></li>
+								<li><a href="#/projects">projects</a></li>
+								<li><a href="#/developers">developers</a></li>
+							</ul>
+						</nav>
+					</div>
+				</header>
+				
+				<div id="content" role="content">
+					<ng:view></ng:view>
+				</div>
+				
+				<footer id="bottom">
+					<div id="copyright">Pivotal Expert &copy; <time datetime="2011-04-28">2011</time> <sup>.</sup> Fused by <a href="http://aperturefyp.wordpress.com/" target="_blank">aperture productions <img src="gui/images/logoonly-grey-10px.jpg" alt="Fused by aperture productions" /></a></div>
+					<div id="bottom_links">
+						<nav>
+							<ul>
+								<li><a href="#/contact_us">Contact Us</a></li><li><sup>.</sup></li>
+								<li><a href="#/terms_of_service">Terms of Service</a></li><li><sup>.</sup></li>
+								<li><a href="#/faq">FAQ</a></li><li><sup>.</sup></li>
+								<li><a href="#/sitemap">Sitemap</a></li><li><sup>.</sup></li>
+								<li><a href="https://wiki.smu.edu.sg/is480/IS480_Team_wiki:_2011T1_Aperture" target="_blank">Wiki</a></li>
+							</ul>
+						</nav>
+					</div>
+				</footer>
+			</div>
+		</div>
+		<script src="gui/lib/angular/angular.js" ng:autobind></script>
+		<script src="gui/js/plugins.js"></script>
+		<script src="gui/js/controllers.js"></script>
+		<script src="gui/js/filters.js"></script>
+		<script src="gui/js/services.js"></script>
+	</body>
 </html>
