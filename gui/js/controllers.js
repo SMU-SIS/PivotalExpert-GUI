@@ -5,25 +5,25 @@ function PageRouter_Master($route) { //router for the website itself
 	$route.otherwise({redirectTo: '/'});
 	
 	//should check based on whether user is logged on or not
-	$route.when('/',{template:'html/dashboard.html', controller: DashboardCtrl});
+	$route.when('/',{template:'gui/html/dashboard.html', controller: DashboardCtrl});
 	
 	
 	/* HEADER Re-Directs */
-	$route.when('/welcome',{template:'html/welcome.html'});
-	$route.when('/dashboard',{template:'html/dashboard.html', controller: DashboardCtrl});
+	$route.when('/welcome',{template:'gui/html/welcome.html'});
+	$route.when('/dashboard',{template:'gui/html/dashboard.html', controller: DashboardCtrl});
 	
 	//institutions module
-	$route.when('/institutions',{template:'html/institution_index.html'});
-	$route.when('/institutions/add',{template:'html/institution_add.html'});
+	$route.when('/institutions',{template:'gui/html/institution_index.html'});
+	$route.when('/institutions/add',{template:'gui/html/institution_add.html'});
 	
 	//projects module
-	$route.when('/projects',{template:'html/project_index.html', controller: ProjectListCtrl});
-	$route.when('/projects/create',{template:'html/project_create.html'});
+	$route.when('/projects',{template:'gui/html/project_index.html', controller: ProjectListCtrl});
+	$route.when('/projects/create',{template:'gui/html/project_create.html'});
 	
 	
-	$route.when('/projects/bid/:project',{template:'html/project_bid.html', controller: ProjectDetailsCtrl}); 
+	$route.when('/projects/bid/:project',{template:'gui/html/project_bid.html', controller: ProjectDetailsCtrl}); 
 	
-	$route.when('/projects/<project_id>',{template:'html/project_view.html'}); //TESTING
+	$route.when('/projects/<project_id>',{template:'gui/html/project_view.html'}); //TESTING
 	$route.when('/projects/<project_id>/view/owner',{template:''}); //TESTING
 	$route.when('/projects/<project_id>/view/dev',{template:''}); //TESTING
 	$route.when('/projects/<project_id>/bid',{template:''}); //TESTING
@@ -31,27 +31,29 @@ function PageRouter_Master($route) { //router for the website itself
 	$route.when('/projects/<project_id>/payment',{template:''}); //TESTING	
 	
 	
-	$route.when('/projects/accept',{template:'html/project_accept.html'}); //TESTING	
+	$route.when('/projects/accept',{template:'gui/html/project_accept.html'}); //TESTING	
+	$route.when('/projects/manage',{template:'gui/html/project_manage.html'}); //TESTING	
+	
 	
 	
 	//developers module
-	$route.when('/developers',{template:'html/developer_index.html'});
-	$route.when('/developers/world/',{template:'html/worldmap.html'}); 
+	$route.when('/developers',{template:'gui/html/developer_index.html'});
+	$route.when('/developers/world/',{template:'gui/html/worldmap.html'}); 
 	
 	
 	$route.when('/developers/<country_id>',{template:''}); //TESTING
 	
 	/* FOOTER Re-Directs */
-	$route.when('/sitemap',{template:'html/sitemap.html'});					// sitemap page
-	$route.when('/faq',{template:'html/faq.html'});									// faq page
-	$route.when('/terms_of_service',{template:'html/terms.html'});				// terms of service page
-	$route.when('/contact_us',{template:'html/contact_us.html'});				// contact us page
+	$route.when('/sitemap',{template:'gui/html/sitemap.html'});					// sitemap page
+	$route.when('/faq',{template:'gui/html/faq.html'});									// faq page
+	$route.when('/terms_of_service',{template:'gui/html/terms.html'});				// terms of service page
+	$route.when('/contact_us',{template:'gui/html/contact_us.html'});				// contact us page
 	
 	
 	/* SUB-PAGES Re-Directs */
-	$route.when('/edit_profile',{template:'html/user_edit.html'});
-	$route.when('/badges/suggest',{template:'html/suggest_badge.html'});
-	$route.when('/inbox',{template:'html/inbox.html'});
+	$route.when('/edit_profile',{template:'gui/html/user_edit.html'});
+	$route.when('/badges/suggest',{template:'gui/html/suggest_badge.html'});
+	$route.when('/inbox',{template:'gui/html/inbox.html'});
 	
 	
 	
