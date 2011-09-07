@@ -8,12 +8,62 @@
 
 }
 #project_manage_Header {
+	
+}
+#project_manage_headerBody {
+	position: relative;
+	
+	background:	red;
+}
+#project_manage_projectOwner {
+	
+}
+#ownerNameText {
 
 }
-#projectOwner {
+#ownerImg {
+
+}
+#ownerNameHeader {
+
+}
+#project_manage_projectDeveloper {
+
+}
+#developerNameText {
+
+}
+#developerImg {
+
+}
+#developerNameHeader {
 
 }
 
+#project_manage_projectDetails {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-left: 300px;
+	min-height: 100px;
+	
+	background: green;
+}
+#projectDetails_title {
+	
+}
+#projectDetails_description {
+	
+}
+
+#project_manage_projectWall {
+
+}
+
+
+#project_manage_projectWorkplan {
+
+}
 
 
 
@@ -21,28 +71,28 @@
 
 
 
-
-
 <link rel="stylesheet" href="gui/css/style-project.css" type="text/css" media="screen" />
 <section id="project_manage_page">
 	<section id="project_manage_Header">
 		<section class="section_header">Project "AWESOME"</section>
-		<section id="projectOwner">
-			<span id="ownerNameText">Mark<span>
-			<article id="ownerImg"><img src="../images/" /></article>
-			<span id="ownerNameHeader">Owner<span>
-		</section>
-		<section id="projectDeveloper">
-			<span id="developerNameText">Raymond<span>
-			<article id="developerImg"><img src="../images/" /></article>
-			<span id="developerNameHeader">Developer<span>
-		</section>
-		<section id="projectDetails">
-			<section class="section_subheader">Project Details</section>
-			<ol>
-				<li><label for="projectDetails_title">Title</label><span id="projectDetails_title" name="projectDetails_title">{{projectDetails[0].title}}</span></li>
-				<li><label for="projectDetails_description">Description</label><span id="projectDetails_description" name="projectDetails_description">{{projectDetails[0].description}}</span></li>
-			</ol>
+		<section id="project_manage_headerBody">
+			<section id="project_manage_projectOwner">
+				<span id="ownerNameText">Mark<span>
+				<article id="ownerImg"><img src="../images/" /></article>
+				<span id="ownerNameHeader">Owner<span>
+			</section>
+			<section id="project_manage_projectDeveloper">
+				<span id="developerNameText">Raymond<span>
+				<article id="developerImg"><img src="../images/" /></article>
+				<span id="developerNameHeader">Developer<span>
+			</section>
+			<section id="project_manage_projectDetails">
+				<section class="section_subheader">Project Details</section>
+				<ol>
+					<li><label for="projectDetails_title">Title</label><span id="projectDetails_title" name="projectDetails_title">{{projectDetails[0].title}}</span></li>
+					<li><label for="projectDetails_description">Description</label><span id="projectDetails_description" name="projectDetails_description">{{projectDetails[0].description}}</span></li>
+				</ol>
+			</section>
 		</section>
 	</section>
 	<section id="project_manage_projectWall">

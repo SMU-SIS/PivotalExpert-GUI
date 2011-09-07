@@ -32,7 +32,7 @@ function PageRouter_Master($route) { //router for the website itself
 	
 	
 
-	$route.when('/projects/accept/:project',{template:'html/project_accept.html', controller: ProjectAcceptCtrl}); //TESTING	
+	$route.when('/projects/accept/:project',{template:'gui/html/project_accept.html', controller: ProjectAcceptCtrl}); //TESTING	
 	$route.when('/projects/manage',{template:'gui/html/project_manage.html'}); //TESTING	
 	
 	
