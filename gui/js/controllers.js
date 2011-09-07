@@ -31,7 +31,7 @@ function PageRouter_Master($route) { //router for the website itself
 	$route.when('/projects/<project_id>/payment',{template:''}); //TESTING	
 	
 	
-	$route.when('/projects/accept',{template:'html/project_accept.html'}); //TESTING	
+	$route.when('/projects/accept/:project',{template:'html/project_accept.html', controller: ProjectAcceptCtrl}); //TESTING	
 	
 	
 	//developers module
@@ -75,13 +75,20 @@ function PageRouter_ProjectsView($route) {
 
 function ProjectListCtrl(RestCall) {
   this.projects = RestCall.query({pageName:'project_index'});
-
 }
 //ProjectListCtrl.$inject = ['RestCall'];
 
+function ProjectDetailsCtrl(RestCall) {
+	this.projectDetails = RestCall.query({pageName:'project'});
+}
+
+function ProjectAcceptCtrl(RestCall) {
+	this.projectAccept = RestCall.query({pageName:'project_accept'});
+}
+
 function DashboardCtrl(RestCall) {
 	this.iterations = RestCall.query({pageName:'iteration'});
-	this.messages = RestCall.query({pageName:'message'});
+	this.messageList = RestCall.query({pageName:'message'});
 }
 //DashboardCtrl.$inject = ['RestCall'];
 
@@ -95,39 +102,3 @@ function IterationListCtrl(RestCall) {
 }
 //MessageListCtrl.$inject = ['RestCall'];
 
-function ProjectDetailsCtrl(RestCall) {
-	this.projectDetails = RestCall.query({pageName:'project'});
-}
-
-/*
-function ProjectDetailsCtrl(Project_) {
-  var self = this;
-
-  self.phone = Phone_.get({phoneId: self.params.phoneId}, function(phone) {
-    self.mainImageUrl = phone.images[0];
-  });
-
-  self.setImage = function(imageUrl) {
-    self.mainImageUrl = imageUrl;
-  }
-}*/
-
-/*
-function ProjectListCtrl(Project){
-	this.projectList = Project.query();
-}
-ProjectListCtrl.$inject = ['Project'];
-
-function DashboardCtrl(Iteration, Message){
-	this.iterationList = Iteration.query();
-	this.messageList = Message.query();
-}
-
-function IterationListCtrl(Iteration){
-	this.iterationList = Iteration.query();
-}
-
-function MessageListCtrl(Message){
-	this.messageList = Message.query();
-}
-*/

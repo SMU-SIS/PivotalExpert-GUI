@@ -1,4 +1,4 @@
-
+[
 	{ 
 		"response_type": "project_bid", 
 		"title": "Last project ever", 
@@ -8,3 +8,4 @@
 		"tags": "Graphic Design", 
 		"closing_date": "31/12/2011" 
 	}
+]

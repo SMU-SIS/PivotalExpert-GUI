@@ -1,74 +1,77 @@
 [ 
 	{
 		"response_type": "user_panel",
-		"user_id": "Alex",
+		"user_name": "Kim Walker",
 		"user_image": "/images/uid33212/profile.jpg",
 		"user_type": "developer",
 		"user_country": "Singapore",
 		"user_school": "Singapore Management University",
-		"badges": ["Java", "GAE"]
+		"badges": [{"badge": "Java"}, {"badge": "GAE"}]
 	},
 	
 	{
 		"response_type": "newsfeed_entry",
-		"from_user": "Kenneth",
-		"user_image": "/images/uid33211/profile.jpg",
-		"message": "Kenneth has placed a bid for your project.",
-		"time_sent": "12:38 Saturday 1/9/11 (SGT)"
-	},
+		"entries": [
+		{
+			"from_user": "Kenneth",
+			"user_image": "/images/uid33211/profile.jpg",
+			"message": "Kenneth has placed a bid for your project.",
+			"time_sent": "12:38 Saturday 1/9/11 (SGT)"
+		},
 
-	{
-		"response_type": "newsfeed_entry",
-		"from_user": "Mark",
-		"user_image": "/images/uid33212/profile.jpg",
-		"message": "Mark has accepted your deliverable.",
-		"time_sent": "14:38 Saturday 1/9/11 (SGT)"
-	},
+		{
+			"from_user": "Mark",
+			"user_image": "/images/uid33212/profile.jpg",
+			"message": "Mark has accepted your deliverable.",
+			"time_sent": "14:38 Saturday 1/9/11 (SGT)"
+		},
 	
-	{
-		"response_type": "newsfeed_entry",
-		"from_user": "Robert",
-		"user_image": "/images/uid33213/profile.jpg",
-		"message": "Robert has invited you to his project.",
-		"time_sent": "18:38 Saturday 1/9/11 (SGT)"
-	},
+		{
+			"from_user": "Robert",
+			"user_image": "/images/uid33213/profile.jpg",
+			"message": "Robert has invited you to his project.",
+			"time_sent": "18:38 Saturday 1/9/11 (SGT)"
+		},
 	
-	{
-		"response_type": "newsfeed_entry",
-		"from_user": "Mark",
-		"user_image": "/images/uid33211/profile.jpg",
-		"message": "Your application has been completed and delivered.",
-		"time_sent": "20:38 Saturday 1/9/11 (SGT)"
+		{
+			"from_user": "Mark",
+			"user_image": "/images/uid33211/profile.jpg",
+			"message": "Your application has been completed and delivered.",
+			"time_sent": "20:38 Saturday 1/9/11 (SGT)"
+		}
+		]
 	},
 
 	{
 		"response_type": "iteration_item",
-		"title": "First project",
-		"Owner": "Jack Russel",
-		"Developer": "Alex",
-		"Iteration": "2",
-		"Status": "in progress",
-		"Budget": "$25"
-	},
+		"iterations": [
+		{
+			"title": "First project",
+			"Owner": "Jack Russel",
+			"Developer": "Alex",
+			"Iteration": "2",
+			"Status": "in progress",
+			"Budget": "25"
+		},
 
-	{
-		"response_type": "iteration_item",
-		"title": "Second project",
-		"Owner": "Jack Russel",
-		"Developer": "Alex",
-		"Iteration": "1",
-		"Status": "not started",
-		"Budget": "$30"
-	},
+		{
+			"title": "Second project",
+			"Owner": "Jack Russel",
+			"Developer": "Alex",
+			"Iteration": "1",
+			"Status": "not started",
+			"Budget": "30"
+		},
 
-	{
-		"response_type": "iteration_item",
-		"title": "Third project",
-		"Owner": "Jack Russel",
-		"Developer": "Alex",
-		"Iteration": "1"
-		"Status": "not started",
-		"Budget": "$30"
+		{
+			"title": "Third project",
+			"Owner": "Jack Russel",
+			"Developer": "Alex",
+			"Iteration": "1"
+			"Status": "not started",
+			"Budget": "30"
+		}
+		]
 	},
 	
 	{
