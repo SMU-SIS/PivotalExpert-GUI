@@ -20,12 +20,12 @@
 			<li class="table_row projectList_project_owner">{{project.owner}}</li>
 			<li class="table_row projectList_project_status">{{project.status}}</li>
 			<li class="table_row projectList_project_budget">SGD${{project.budget}}</li>
-			<li class="table_row projectList_project_tags">{{project.tags}}</li>
+			<li class="table_row projectList_project_tags"><span ng:repeat="item in project.tags"><span ng:hide="$position == 'first'">, </span>{{item}}</span></li>
 			<li class="table_row projectList_project_created">{{project.created}}</li>
 
 			<li class="table_row projectList_project_action"><a href="#/projects/accept/{{project.id}}">View</a> / <a href="#/projects/bid/{{project.id}}">Bid</a></li>
 
-			<li class="table_row projectList_project_action"><a href="#/projects/manage">ManageTest</a> / <a href="#/projects/accept">Bid</a></li>
+			<li class="table_row projectList_project_action"><a href="#/projects/manage/{{project.id}}">ManageTest</a> / <a href="#/projects/accept/{{project.id}}">Bid</a></li>
 	</ul>
 	</section>
 </section>

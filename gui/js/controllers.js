@@ -76,7 +76,7 @@ function PageRouter_ProjectsView($route) {
 }
 
 function ProjectListCtrl(RestCall) {
-  this.projects = RestCall.query({pageName:'project_index'});
+  this.projects = RestCall.query({action:'project', file:'project_index'});
 }
 //ProjectListCtrl.$inject = ['RestCall'];
 
