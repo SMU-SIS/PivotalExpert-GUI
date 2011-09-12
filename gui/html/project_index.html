@@ -28,7 +28,7 @@
 			<li class="table_header projectList_project_budget">Budget</li>
 			<li class="table_header projectList_project_tags">Tags</li>
 			<li class="table_header projectList_project_created">Created</li>
-			<!--<li class="table_header projectList_project_action">Action</li>-->
+			<li class="table_header projectList_project_action">Action</li>
 		</ul>
 		<ul class="projectListTableEntry" ng:repeat="project in projects">
 			<li class="table_row projectList_project_title">
@@ -51,10 +51,10 @@
 			</li>
 			<li class="table_row projectList_project_created">{{project.created}}</li>
 
-			<!--<li class="table_row projectList_project_action"><a href="#/projects/accept/{{project.id}}">View</a> / <a href="#/projects/bid/{{project.id}}">Bid</a></li>
+			<!--<li class="table_row projectList_project_action"><a href="#/projects/accept/{{project.id}}">View</a> / <a href="#/projects/bid/{{project.id}}">Bid</a></li>-->
 
-			<li class="table_row projectList_project_action"><a href="#/projects/manage/{{project.id}}">ManageTest</a> / <a href="#/projects/accept/{{project.id}}">Bid</a></li>
-	-->
+			<li class="table_row projectList_project_action"><a href="#/projects/manage">ManageTest</a></li>
+	
 	</ul>
 	</section>
 </section>
