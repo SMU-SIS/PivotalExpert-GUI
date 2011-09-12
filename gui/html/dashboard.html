@@ -1,3 +1,28 @@
+<style>
+
+
+.tab {
+	font-family: verdana,sans-serif; 
+	font-size: 14px;
+	width: 120px;
+	white-space: nowrap;
+	text-align: center;
+	border: 1px #000000 solid;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	cursor: pointer;
+	
+	
+	background:green;
+}
+
+
+
+
+</style>
+
+
+
 <link rel="stylesheet" href="gui/css/style-user.css" type="text/css" media="screen" />
 <section class="body_main">
 	<!--left panel-->
@@ -5,58 +30,166 @@
 		<ng:include src="'gui/html/dashboard_panel.html'"></ng:include>
 	</section>
 	<!--right panel-->
+	
+	
+<script type="text/javascript" language="JavaScript">
+function changeTab() {
+
+var idlist = new Array('newsfeed_tab','projects_tab','returnontime_tab','newsfeed_tabname','projects_tabname','returnontime_tabname','newsfeed_content','projects_content','returnontime_content');
+
+if(arguments.length < 1) { return; }
+for(var i = 0; i < idlist.length; i++) {
+   var block = false;
+	for(var j = 0; j < arguments.length; j++) {
+		if(idlist[i] == arguments[j]) {
+			block = true; break;
+		}
+	}
+	if(block) { document.getElementById(idlist[i]).style.display="block"; }
+	else { document.getElementById(idlist[i]).style.display="none"; }
+   }
+}
+</script>
+
+
+<style>
+
+#user_newsfeed, #user_projects, #user_returnontime {
+	position: relative;
+}
+#newsfeed_tab, #newsfeed_tabname {
+	
+}
+#projects_tab, #projects_tabname {
+	
+	
+}
+
+.tab {
+	
+}
+
+
+</style>
+	
 	<section id="right_panel">
 		<section id="user_info_panel"> 
 			<section id="user_newsfeed">
-				<section class="section_header">News Feed</section>
-				<hr />
-				<table border="0">
 				
-					<tr>
-						<td width="80">From</td>
-						<td width="500">Message</td>
-						<td>Sent</td>
-					</tr>
-				
-					<tr ng:repeat="message in messages">
-						<td>{{message.sender}}</td>
-						<td>{{message.msgBody}}</td>
-						<td><font size="1">{{message.timeSent}}</font></td>
-					</tr>
-				
-				</table>
-				
-				<br />
-				<a href="#">Show more</a>
-				<br />
+				<section id="newsfeed_tab" class="tab tabfocus">News Feed</section>
+				<section id="newsfeed_tabname" class="tab tabhold">
+					<span onclick="changeTab('newsfeed_tab','projects_tabname','returnontime_tabname','newsfeed_content')">News Feed</span>
+				</section>
+				<section id="newsfeed_content" class="tabcontent" style="display:block;">	
+					<hr />
+					<table border="0">
+					
+						<tr>
+							<td width="80">From</td>
+							<td width="500">Message</td>
+							<td>Sent</td>
+						</tr>
+					
+						<tr ng:repeat="message in messages">
+							<td>{{message.sender}}</td>
+							<td>{{message.msgBody}}</td>
+							<td><font size="1">{{message.timeSent}}</font></td>
+						</tr>
+					
+					</table>
+					
+					<br />
+					<a href="#">Show more</a>
+					<br />
+				</section>
 			</section>
+			
+			
 			<section id="user_projects">
-				<section class="section_header">My Projects</section>
-				<hr/>
-				<table border="1">
-					<tr>
-						<th>Title</th><th>Owner</th><th>Developer</th><th>Iteration</th><th>Status</th><th>Price</th>
-					</tr>
-					</thead>
-					<tbody>
-					<tr ng:repeat="iteration in iterations"> <!--repeating code-->
-						<td>{{iteration.id}}</td>
-						<td>{{iteration.hirerID}}</td>
-						<td>{{iteration.developerID}}</td>
-						<td>{{iteration.iterationNo}}</td>
-						<td>{{iteration.status}}</td>
-						<td>{{iteration.amount}}</td>
-						<td>View / Bid</td>
-					</tr> <!--repeating code end-->
-				</table>
-				Page 1
-				<br/>
-			</div>
+				<section id="projects_tab" class="tab tabfocus">My Projects</section>
+				<section id="projects_tabname" class="tab tabhold">
+					<span onclick="changeTab('newsfeed_tabname','projects_tab','returnontime_tabname','projects_content')">My Projects</span>
+				</section>
+				<section id="projects_content" class="tabcontent" style="display:none;">	
+					<hr/>
+					<table border="1">
+						<tr>
+							<th>Title</th><th>Owner</th><th>Developer</th><th>Iteration</th><th>Status</th><th>Price</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr ng:repeat="iteration in iterations"> <!--repeating code-->
+							<td>{{iteration.id}}</td>
+							<td>{{iteration.hirerID}}</td>
+							<td>{{iteration.developerID}}</td>
+							<td>{{iteration.iterationNo}}</td>
+							<td>{{iteration.status}}</td>
+							<td>{{iteration.amount}}</td>
+							<td>View / Bid</td>
+						</tr> <!--repeating code end-->
+					</table>
+					Page 1
+					<br/>
+				</section>
+			</section>
+			
 			<section id="user_returnontime">
-				<section class="section_header">Return-on-Time</section>
-				<hr/>
-				<!--the graph generated will be displayed here-->
+				<section id="returnontime_tab" class="tab tabfocus">Return-on-Time</section>
+				<section id="returnontime_tabname" class="tab tabhold">
+					<span onclick="changeTab('newsfeed_tabname','projects_tabname','returnontime_tab','returnontime_content')">Return-on-Time</span>
+				</section>
+				<section id="returnontime_content" class="tabcontent" style="display:none;">	
+					<hr/>
+					<!--the graph generated will be displayed here-->
+				</section>	
 			</section>
 		</section>
 	</section>
 </section>
+
+
+
+<style>
+
+
+#newsfeed_content {
+
+}
+#projects_content {
+
+}
+#returnontime_content {
+
+}
+
+</style>
+
+
+
+
+<style type="text/css">
+
+.tabhold { 
+	background-color: white;
+	color: black;
+	}
+.tabfocus { 
+	background-color: black;
+	color: white;
+	}
+.tabcontent { 
+	font-family: sans-serif; 
+	font-size: 14px;
+	width: 600px;
+	height: 400px;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	padding-top: 15px;
+	padding-left: 10px;
+	padding-right: 10px;
+	}
+</style>
+
+
+
