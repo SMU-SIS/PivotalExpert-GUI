@@ -85,7 +85,7 @@ function ProjectDetailsCtrl(RestCall) {
 }
 
 function ProjectAcceptCtrl(RestCall) {
-	this.projectAccept = RestCall.query({pageName:'project_accept'});
+	this.projectAccept = RestCall.query({action:'project', file:'project_accept'});
 }
 
 function DashboardCtrl(RestCall) {
