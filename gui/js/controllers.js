@@ -23,7 +23,7 @@ function PageRouter_Master($route) { //router for the website itself
 	
 	$route.when('/projects/bid/:project',{template:'gui/html/project_bid.html', controller: ProjectDetailsCtrl}); 
 	
-	$route.when('/projects/<project_id>',{template:'gui/html/project_view.html'}); //TESTING
+	$route.when('/projects/:project',{template:'gui/html/project_view.html'}); //TESTING
 	$route.when('/projects/<project_id>/view/owner',{template:''}); //TESTING
 	$route.when('/projects/<project_id>/view/dev',{template:''}); //TESTING
 	$route.when('/projects/<project_id>/bid',{template:''}); //TESTING
@@ -31,7 +31,6 @@ function PageRouter_Master($route) { //router for the website itself
 	$route.when('/projects/<project_id>/payment',{template:''}); //TESTING	
 	
 	
-
 	$route.when('/projects/accept/:project',{template:'gui/html/project_accept.html', controller: ProjectAcceptCtrl}); //TESTING	
 	$route.when('/projects/manage',{template:'gui/html/project_manage.html'}); //TESTING	
 	
