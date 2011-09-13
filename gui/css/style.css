@@ -148,6 +148,7 @@ body  {
 }
 #top nav ul ul {
 	left: -9999px;
+	z-index: 10;
 }
 #top nav ul li {
 	margin: 0;
