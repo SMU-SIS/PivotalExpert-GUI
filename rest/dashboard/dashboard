@@ -13,31 +13,63 @@
 		"response_type": "newsfeed_entry",
 		"entries": [
 		{
-			"user": "Kenneth",
-			"user_image": "/images/uid33211/profile.jpg",
+			"from_user": "Kenneth",
+			"user_image": "gui/images/user.jpg",
 			"message": "Kenneth has placed a bid for your project.",
-			"timeSent": "12:38 Saturday 1/9/11 (SGT)"
+			"time_sent": "12:38 1/9/11 (+8 GMT)"
 		},
 
 		{
-			"user": "Mark",
-			"user_image": "/images/uid33212/profile.jpg",
+			"from_user": "Mark",
+			"user_image": "gui/images/user.jpg",
 			"message": "Mark has accepted your deliverable.",
-			"timeSent": "14:38 Saturday 1/9/11 (SGT)"
+			"time_sent": "14:38 1/9/11 (+8 GMT)"
 		},
 	
 		{
-			"user": "Robert",
-			"user_image": "/images/uid33213/profile.jpg",
+			"from_user": "Robert",
+			"user_image": "gui/images/user.jpg",
 			"message": "Robert has invited you to his project.",
-			"timeSent": "18:38 Saturday 1/9/11 (SGT)"
+			"time_sent": "18:38 1/9/11 (+8 GMT)"
 		},
 	
 		{
-			"user": "Mark",
+			"from_user": "Mark",
 			"user_image": "/images/uid33211/profile.jpg",
 			"message": "Your application has been completed and delivered.",
-			"timeSent": "20:38 Saturday 1/9/11 (SGT)"
+			"time_sent": "20:38 Saturday 1/9/11 (SGT)"
+		}
+		]
+	},
+	
+	{
+		"response_type": "workroom",
+		"workrooms": [
+		{
+			"title": "First project",
+			"owner": "Jack Russel",
+			"developer": "Alex",
+			"iteration": "2",
+			"status": "in progress",
+			"budget": "25"
+		},
+
+		{
+			"title": "Second project",
+			"owner": "Jack Russel",
+			"developer": "Alex",
+			"iteration": "1",
+			"status": "not started",
+			"budget": "30"
+		},
+
+		{
+			"title": "Third project",
+			"owner": "Jack Russel",
+			"developer": "Alex",
+			"iteration": "1",
+			"status": "not started",
+			"budget": "30"
 		}
 		]
 	},
@@ -60,35 +92,26 @@
 		}
 		]
 	},
-
+	
 	{
-		"response_type": "workroom",
-		"workrooms": [
+		"response_type": "bid",
+		"bids":[
 		{
-			"title": "First project",
-			"owner": "Jack Russel",
-			"developer": "Alex",
-			"iteration": "2",
+			"title": "Project A",
+			"owner": "Mark",
+			"tags": ["Java", "SQL"],
 			"status": "in progress",
-			"price": "25"
+			"date": "12/11/11",
+			"messageUrl": "keep up the good work"
 		},
-
+		
 		{
-			"title": "Second project",
-			"owner": "Jack Russel",
-			"developer": "Alex",
-			"iteration": "1",
-			"status": "not started",
-			"price": "30"
-		},
-
-		{
-			"title": "Third project",
-			"owner": "Jack Russel",
-			"developer": "Alex",
-			"iteration": "1",
-			"status": "not started",
-			"price": "30"
+			"title": "Project B",
+			"owner": "Ken",
+			"tags": ["Java"],
+			"status": "completed",
+			"date": "12/11/11",
+			"messageUrl": "good job"
 		}
 		]
 	},

@@ -42,10 +42,10 @@
 							<td>Sent</td>
 						</tr>
 					
-						<tr ng:repeat="message in messages">
-							<td>{{message.user}}</td>
-							<td>{{message.userImage}}</td>
-							<td>{{message.message}}</td>
+						<tr ng:repeat="news_feed in dashboard[1].entries">
+							<td>{{news_feed.from_user}}</td>
+							<td>{{news_feed.message}}</td>
+							<td>{{news_feed.time_sent}}</td>
 							<td><font size="1">{{message.timeSent}}</font></td>
 						</tr>
 					
@@ -86,7 +86,7 @@
 								<tbody>
 								
 								<!-- populating the table with the JSON response-->
-								<tr ng:repeat = "workroom in dashboard[3].workrooms">
+								<tr ng:repeat = "workroom in dashboard[2].workrooms">
 									<td>{{workroom.title}}</td>
 									<td>{{workroom.owner}}</td>
 									<td>{{workroom.developer}}</td>
@@ -108,7 +108,7 @@
 								</tr>
 								</thead>
 								<tbody>
-								<tr ng:repeat="project in dashboard[2].projects"> <!--repeating code-->
+								<tr ng:repeat="project in dashboard[3].projects"> <!--repeating code-->
 									<td>{{project.title}}</td>
 									<td>{{project.status}}</td>
 									<td>{{project.amount}}</td>
@@ -134,13 +134,17 @@
 								
 								</thead>
 								<tbody>
-								<tr ng:repeat = "bid in dashboard[3].bids">
-									<td>{{bid.title}</td>
-									<td>{{bid.owner}</td>
-									<td>{{bid.tags}</td>
-									<td>{{bid.status}</td>
+								<tr ng:repeat = "bid in dashboard[4].bids">
+									<td>{{bid.title}}</td>
+									<td>{{bid.owner}}</td>
+									<td>
+										<span ng:repeat="tag in bid.tags">
+											<span ng:hide="$position == 'first'">, </span>{{tag}}
+										</span>
+									</td>
+									<td>{{bid.status}}</td>
 									<td>{{bid.date}}</td>
-									<td>{{bid.messageUrl}</td>
+									<td>{{bid.messageUrl}}</td>
 								</tr>
 							</table>
 						</section>
