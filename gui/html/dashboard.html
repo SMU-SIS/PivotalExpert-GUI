@@ -1,58 +1,13 @@
+
+
+
+
 <style>
 
 
-.tab {
-	font-family: verdana,sans-serif; 
-	font-size: 14px;
-	width: 120px;
-	white-space: nowrap;
-	text-align: center;
-	border: 1px #000000 solid;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	cursor: pointer;
-	
-	
-	background:green;
-}
 
 
 
-
-</style>
-
-
-
-<link rel="stylesheet" href="gui/css/style-user.css" type="text/css" media="screen" />
-<section class="body_main">
-	<!--left panel-->
-	<section id="left_panel">
-		<ng:include src="'gui/html/dashboard_panel.html'"></ng:include>
-	</section>
-	<!--right panel-->
-	
-	
-<script type="text/javascript" language="JavaScript">
-function changeTab() {
-
-var idlist = new Array('newsfeed_tab','projects_tab','returnontime_tab','newsfeed_tabname','projects_tabname','returnontime_tabname','newsfeed_content','projects_content','returnontime_content');
-
-if(arguments.length < 1) { return; }
-for(var i = 0; i < idlist.length; i++) {
-   var block = false;
-	for(var j = 0; j < arguments.length; j++) {
-		if(idlist[i] == arguments[j]) {
-			block = true; break;
-		}
-	}
-	if(block) { document.getElementById(idlist[i]).style.display="block"; }
-	else { document.getElementById(idlist[i]).style.display="none"; }
-   }
-}
-</script>
-
-
-<style>
 
 #user_newsfeed, #user_projects, #user_returnontime {
 	position: relative;
@@ -65,23 +20,31 @@ for(var i = 0; i < idlist.length; i++) {
 	
 }
 
-.tab {
-	
-}
 
 
 </style>
-	
+
+
+<script src="gui/js/scripts.js"></script>
+<link rel="stylesheet" href="gui/css/style-user.css" type="text/css" media="screen" />
+<section class="body_main">
+	<!--left panel-->
+	<section id="left_panel">
+		<ng:include src="'gui/html/dashboard_panel.html'"></ng:include>
+	</section>
+	<!--right panel-->
 	<section id="right_panel">
 		<section id="user_info_panel"> 
+			<section class="tabs">
+				<ul class="tabs">
+					<li><a href="javascript:tabSwitch('newsfeed_tab', 'newsfeed_content');" id="newsfeed_tab" class="active">News Feed</a></li>
+					<li><a href="javascript:tabSwitch('projects_tab', 'projects_content');" id="projects_tab">Project Management</a></li>
+					<li><a href="javascript:tabSwitch('returnontime_tab', 'returnontime_content');" id="returnontime_tab">Return-on-Time</a></li>
+				</ul>
+			</section>
+			
 			<section id="user_newsfeed">
-				
-				<section id="newsfeed_tab" class="tab tabfocus">News Feed</section>
-				<section id="newsfeed_tabname" class="tab tabhold">
-					<span onclick="changeTab('newsfeed_tab','projects_tabname','returnontime_tabname','newsfeed_content')">News Feed</span>
-				</section>
-				<section id="newsfeed_content" class="tabcontent" style="display:block;">	
-					<hr />
+				<section id="newsfeed_content" class="tabcontent">	
 					<table border="0">
 					
 						<tr>
@@ -103,15 +66,9 @@ for(var i = 0; i < idlist.length; i++) {
 					<br />
 				</section>
 			</section>
-			
-			
+
 			<section id="user_projects">
-				<section id="projects_tab" class="tab tabfocus">My Projects</section>
-				<section id="projects_tabname" class="tab tabhold">
-					<span onclick="changeTab('newsfeed_tabname','projects_tab','returnontime_tabname','projects_content')">My Projects</span>
-				</section>
-				<section id="projects_content" class="tabcontent" style="display:none;">	
-					<hr/>
+				<section id="projects_content" class="tabcontent">	
 					<table border="1">
 						<tr>
 							<th>Title</th><th>Status</th><th>Budget</th><th>Expiry Date</th><th>&nbsp;</th>
@@ -132,12 +89,7 @@ for(var i = 0; i < idlist.length; i++) {
 			</section>
 			
 			<section id="user_returnontime">
-				<section id="returnontime_tab" class="tab tabfocus">Return-on-Time</section>
-				<section id="returnontime_tabname" class="tab tabhold">
-					<span onclick="changeTab('newsfeed_tabname','projects_tabname','returnontime_tab','returnontime_content')">Return-on-Time</span>
-				</section>
-				<section id="returnontime_content" class="tabcontent" style="display:none;">	
-					<hr/>
+				<section id="returnontime_content" class="tabcontent">	
 					<!--the graph generated will be displayed here-->
 				</section>	
 			</section>
@@ -160,33 +112,6 @@ for(var i = 0; i < idlist.length; i++) {
 
 }
 
-</style>
-
-
-
-
-<style type="text/css">
-
-.tabhold { 
-	background-color: white;
-	color: black;
-	}
-.tabfocus { 
-	background-color: black;
-	color: white;
-	}
-.tabcontent { 
-	font-family: sans-serif; 
-	font-size: 14px;
-	width: 600px;
-	height: 400px;
-	border-style: solid;
-	border-color: black;
-	border-width: 1px;
-	padding-top: 15px;
-	padding-left: 10px;
-	padding-right: 10px;
-	}
 </style>
 
 
