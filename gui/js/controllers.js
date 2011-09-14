@@ -90,8 +90,9 @@ function ProjectAcceptCtrl(RestCall) {
 }
 
 function DashboardCtrl(RestCall) {
-	this.iterations = RestCall.query({pageName:'iteration'});
-	this.messageList = RestCall.query({pageName:'message'});
+	/*this.iterations = RestCall.query({pageName:'iteration'});
+	this.messageList = RestCall.query({pageName:'message'});*/
+	this.dashboard = RestCall.query({action:'dashboard', file:'dashboard'});
 }
 //DashboardCtrl.$inject = ['RestCall'];
 

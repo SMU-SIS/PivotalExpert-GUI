@@ -6,7 +6,7 @@
 		"user_type": "developer",
 		"user_country": "Singapore",
 		"user_school": "Singapore Management University",
-		"badges": [{"badge": "Java"}, {"badge": "GAE"}]
+		"badges": ["Java", "GAE"]
 	},
 	
 	{
@@ -41,10 +41,29 @@
 		}
 		]
 	},
+	
+	{
+		"response_type": "project",
+		"projects":[
+		{
+			"title": "Project A",
+			"status": "2 bids",
+			"amount": 200,
+			"expire": "N/A"
+		},
+		
+		{
+			"title": "Project AAA",
+			"status": "no bids yet",
+			"amount": 100,
+			"expire": "12/11/11"
+		}
+		]
+	},
 
 	{
-		"response_type": "iteration_item",
-		"iterations": [
+		"response_type": "workroom",
+		"workrooms": [
 		{
 			"title": "First project",
 			"Owner": "Jack Russel",
@@ -67,7 +86,7 @@
 			"title": "Third project",
 			"Owner": "Jack Russel",
 			"Developer": "Alex",
-			"Iteration": "1"
+			"Iteration": "1",
 			"Status": "not started",
 			"Budget": "30"
 		}

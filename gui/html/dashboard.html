@@ -114,18 +114,16 @@ for(var i = 0; i < idlist.length; i++) {
 					<hr/>
 					<table border="1">
 						<tr>
-							<th>Title</th><th>Owner</th><th>Developer</th><th>Iteration</th><th>Status</th><th>Price</th>
+							<th>Title</th><th>Status</th><th>Budget</th><th>Expiry Date</th><th>&nbsp;</th>
 						</tr>
 						</thead>
 						<tbody>
-						<tr ng:repeat="iteration in iterations"> <!--repeating code-->
-							<td>{{iteration.id}}</td>
-							<td>{{iteration.hirerID}}</td>
-							<td>{{iteration.developerID}}</td>
-							<td>{{iteration.iterationNo}}</td>
-							<td>{{iteration.status}}</td>
-							<td>{{iteration.amount}}</td>
-							<td>View / Bid</td>
+						<tr ng:repeat="project in dashboard[2].projects"> <!--repeating code-->
+							<td>{{project.title}}</td>
+							<td>{{project.status}}</td>
+							<td>{{project.amount}}</td>
+							<td>{{project.expire}}</td>
+							<td>View</td>
 						</tr> <!--repeating code end-->
 					</table>
 					Page 1
