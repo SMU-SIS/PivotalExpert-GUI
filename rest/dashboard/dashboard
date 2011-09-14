@@ -13,31 +13,31 @@
 		"response_type": "newsfeed_entry",
 		"entries": [
 		{
-			"from_user": "Kenneth",
+			"user": "Kenneth",
 			"user_image": "/images/uid33211/profile.jpg",
 			"message": "Kenneth has placed a bid for your project.",
-			"time_sent": "12:38 Saturday 1/9/11 (SGT)"
+			"timeSent": "12:38 Saturday 1/9/11 (SGT)"
 		},
 
 		{
-			"from_user": "Mark",
+			"user": "Mark",
 			"user_image": "/images/uid33212/profile.jpg",
 			"message": "Mark has accepted your deliverable.",
-			"time_sent": "14:38 Saturday 1/9/11 (SGT)"
+			"timeSent": "14:38 Saturday 1/9/11 (SGT)"
 		},
 	
 		{
-			"from_user": "Robert",
+			"user": "Robert",
 			"user_image": "/images/uid33213/profile.jpg",
 			"message": "Robert has invited you to his project.",
-			"time_sent": "18:38 Saturday 1/9/11 (SGT)"
+			"timeSent": "18:38 Saturday 1/9/11 (SGT)"
 		},
 	
 		{
-			"from_user": "Mark",
+			"user": "Mark",
 			"user_image": "/images/uid33211/profile.jpg",
 			"message": "Your application has been completed and delivered.",
-			"time_sent": "20:38 Saturday 1/9/11 (SGT)"
+			"timeSent": "20:38 Saturday 1/9/11 (SGT)"
 		}
 		]
 	},
@@ -66,29 +66,29 @@
 		"workrooms": [
 		{
 			"title": "First project",
-			"Owner": "Jack Russel",
-			"Developer": "Alex",
-			"Iteration": "2",
-			"Status": "in progress",
-			"Budget": "25"
+			"owner": "Jack Russel",
+			"developer": "Alex",
+			"iteration": "2",
+			"status": "in progress",
+			"price": "25"
 		},
 
 		{
 			"title": "Second project",
-			"Owner": "Jack Russel",
-			"Developer": "Alex",
-			"Iteration": "1",
-			"Status": "not started",
-			"Budget": "30"
+			"owner": "Jack Russel",
+			"developer": "Alex",
+			"iteration": "1",
+			"status": "not started",
+			"price": "30"
 		},
 
 		{
 			"title": "Third project",
-			"Owner": "Jack Russel",
-			"Developer": "Alex",
-			"Iteration": "1",
-			"Status": "not started",
-			"Budget": "30"
+			"owner": "Jack Russel",
+			"developer": "Alex",
+			"iteration": "1",
+			"status": "not started",
+			"price": "30"
 		}
 		]
 	},

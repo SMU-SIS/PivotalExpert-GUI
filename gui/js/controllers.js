@@ -4,8 +4,11 @@ function PageRouter_Master($route) { //router for the website itself
 	/* DEFAULT Re-Directs */
 	$route.otherwise({redirectTo: '/'});
 	
-	//should check based on whether user is logged on or not
+	//should check based on whether user is logged in
 	$route.when('/',{template:'gui/html/dashboard.html', controller: DashboardCtrl});
+	
+	//when not signed in
+	//	$route.when('/',{template:'gui/html/welcome.html', controller: WelcomeCtrl});
 	
 	
 	/* HEADER Re-Directs */
@@ -84,25 +87,16 @@ function ProjectListCtrl(RestCall) {
 function ProjectDetailsCtrl(RestCall) {
 	this.projectDetails = RestCall.query({pageName:'project'});
 }
+//ProjectDetailsCtrl.$inject = ['RestCall'];
 
 function ProjectAcceptCtrl(RestCall) {
 	this.projectAccept = RestCall.query({action:'project', file:'project_accept'});
 }
+//ProjectAcceptCtrl.$inject = ['RestCall'];
 
 function DashboardCtrl(RestCall) {
-	/*this.iterations = RestCall.query({pageName:'iteration'});
-	this.messageList = RestCall.query({pageName:'message'});*/
 	this.dashboard = RestCall.query({action:'dashboard', file:'dashboard'});
 }
 //DashboardCtrl.$inject = ['RestCall'];
 
-function MessageListCtrl(RestCall) {
-	this.messageList = RestCall.query({pageName:'message'});
-}
-//MessageListCtrl.$inject = ['RestCall'];
-
-function IterationListCtrl(RestCall) {
-	this.iterationList = RestCall.query({pageName:'message'});
-}
-//MessageListCtrl.$inject = ['RestCall'];
 

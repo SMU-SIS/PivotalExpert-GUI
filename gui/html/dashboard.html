@@ -1,13 +1,4 @@
-
-
-
-
 <style>
-
-
-
-
-
 
 #user_newsfeed, #user_projects, #user_returnontime {
 	position: relative;
@@ -19,8 +10,6 @@
 	
 	
 }
-
-
 
 </style>
 
@@ -54,8 +43,9 @@
 						</tr>
 					
 						<tr ng:repeat="message in messages">
-							<td>{{message.sender}}</td>
-							<td>{{message.msgBody}}</td>
+							<td>{{message.user}}</td>
+							<td>{{message.userImage}}</td>
+							<td>{{message.message}}</td>
 							<td><font size="1">{{message.timeSent}}</font></td>
 						</tr>
 					
@@ -79,15 +69,37 @@
 						</ul>
 					</section>
 					
+					
+					<!-- this is the Workrooms tab belonging to the Project Management group-->
 					<section id="user_projectsmgt_workroom">
 						<section id="workroom_content" class="subtabcontent">	
-							
-							
-							
-							
+							<table border="1">
+								<tr>
+									<th>Title</th>
+									<th>Owner</th>
+									<th>Developer</th>
+									<th>Status</th>
+									<th>Price</th>
+									<th>Action</th>
+								</tr>
+								</thead>
+								<tbody>
+								
+								<!-- populating the table with the JSON response-->
+								<tr ng:repeat = "workroom in dashboard[3].workrooms">
+									<td>{{workroom.title}}</td>
+									<td>{{workroom.owner}}</td>
+									<td>{{workroom.developer}}</td>
+									<td>{{workroom.iteration}}</td>
+									<td>{{workroom.budget}}</td>
+									<td>Manage{{workroom.url}}</td>
+								</tr>
+							</table>
 						</section>
 					</section>
 					
+					
+					<!-- this is the Projects tab belonging to the Project Management group-->
 					<section id="user_projectsmgt_projects">
 						<section id="projects_content" class="subtabcontent">	
 							<table border="1">
@@ -107,12 +119,30 @@
 						</section>
 					</section>
 					
+					<!-- this is the Bids tab belonging to the Project Management group-->
 					<section id="user_projectsmgt_bids">
 						<section id="bids_content" class="subtabcontent">	
-							
-							
-							
-							
+							<table border="1">
+								<tr>
+									<td>Title</td>
+									<td>Owner</td>
+									<td>Tags</td>
+									<td>Status</td>
+									<td>Date</td>
+									<td>Message</td>
+								</tr>
+								
+								</thead>
+								<tbody>
+								<tr ng:repeat = "bid in dashboard[3].bids">
+									<td>{{bid.title}</td>
+									<td>{{bid.owner}</td>
+									<td>{{bid.tags}</td>
+									<td>{{bid.status}</td>
+									<td>{{bid.date}}</td>
+									<td>{{bid.messageUrl}</td>
+								</tr>
+							</table>
 						</section>
 					</section>
 					
