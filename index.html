@@ -40,6 +40,10 @@
 								<li><a href="#/institutions">institutions</a></li>
 								<li><a href="#/projects">projects</a></li>
 								<li><a href="#/developers">developers</a></li>
+								<li ng:init="$location = $service('$location')" ng:controller="CurrentUserController"><span ng:show="!currentUser.nickname">
+	   <a href="https://pivotalexpert.rpxnow.com/openid/v2/signin?token_url={{$location.protocol}}://{{$location.host}}:{{$location.port}}/rpx.php">login</a>
+	 </span>
+	 <span ng:show="currentUser.nickname" ><a href="/logout?target=/">logout</a></span></li>
 							</ul>
 						</nav>
 					</div>
