@@ -37,9 +37,9 @@
 		<section id="user_info_panel"> 
 			<section class="tabs">
 				<ul class="tabs">
-					<li><a href="javascript:tabSwitch('newsfeed_tab', 'newsfeed_content');" id="newsfeed_tab" class="active">News Feed</a></li>
-					<li><a href="javascript:tabSwitch('projects_tab', 'projects_content');" id="projects_tab">Project Management</a></li>
-					<li><a href="javascript:tabSwitch('returnontime_tab', 'returnontime_content');" id="returnontime_tab">Return-on-Time</a></li>
+					<li><a href="javascript:tabSwitch_dashboard('newsfeed_tab', 'newsfeed_content');" id="newsfeed_tab" class="active">News Feed</a></li>
+					<li><a href="javascript:tabSwitch_dashboard('projectsmgt_tab', 'projectsmgt_content');" id="projectsmgt_tab">Project Management</a></li>
+					<li><a href="javascript:tabSwitch_dashboard('returnontime_tab', 'returnontime_content');" id="returnontime_tab">Return-on-Time</a></li>
 				</ul>
 			</section>
 			
@@ -67,22 +67,56 @@
 				</section>
 			</section>
 
-			<section id="user_projects">
-				<section id="projects_content" class="tabcontent">	
-					<table border="1">
-						<tr>
-							<th>Title</th><th>Status</th><th>Budget</th><th>Expiry Date</th><th>&nbsp;</th>
-						</tr>
-						</thead>
-						<tbody>
-						<tr ng:repeat="project in dashboard[2].projects"> <!--repeating code-->
-							<td>{{project.title}}</td>
-							<td>{{project.status}}</td>
-							<td>{{project.amount}}</td>
-							<td>{{project.expire}}</td>
-							<td>View</td>
-						</tr> <!--repeating code end-->
-					</table>
+			<section id="user_projectsmgt">
+				<section id="projectsmgt_content" class="tabcontent">	
+					
+					
+					<section class="subtabs">
+						<ul class="subtabs">
+							<li><a href="javascript:tabSwitch_projectmgt('workroom_tab', 'workroom_content');" id="workroom_tab" class="active">Workroom</a></li>
+							<li><a href="javascript:tabSwitch_projectmgt('projects_tab', 'projects_content');" id="projects_tab">Projects</a></li>
+							<li><a href="javascript:tabSwitch_projectmgt('bids_tab', 'bids_content');" id="bids_tab">Bids</a></li>
+						</ul>
+					</section>
+					
+					<section id="user_projectsmgt_workroom">
+						<section id="workroom_content" class="subtabcontent">	
+							
+							
+							
+							
+						</section>
+					</section>
+					
+					<section id="user_projectsmgt_projects">
+						<section id="projects_content" class="subtabcontent">	
+							<table border="1">
+								<tr>
+									<th>Title</th><th>Status</th><th>Budget</th><th>Expiry Date</th><th>&nbsp;</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr ng:repeat="project in dashboard[2].projects"> <!--repeating code-->
+									<td>{{project.title}}</td>
+									<td>{{project.status}}</td>
+									<td>{{project.amount}}</td>
+									<td>{{project.expire}}</td>
+									<td>View</td>
+								</tr> <!--repeating code end-->
+							</table>
+						</section>
+					</section>
+					
+					<section id="user_projectsmgt_bids">
+						<section id="bids_content" class="subtabcontent">	
+							
+							
+							
+							
+						</section>
+					</section>
+					
+					
 					Page 1
 					<br/>
 				</section>
