@@ -6,47 +6,49 @@
 	<section id="project_bid_Header">
 		<section class="section_header">Add Bid for <font size=15>{{projectDetails[0].title}}</font> Project</section>
 	</section>
-	<section id="project_bid_addBid">
-		<form id="projectAddBidForm" action="" method="POST">
-			<fieldset>
-				<legend>Bid Details</legend>
-				<ol>
-					<li><label for="projectAddBid_price">Price per Iteration (SGD$)</label><input id="projectAddBid_price" name="projectAddBid_price" type="text" placeholder="Eg. 25.00" required autofocus></li>
-					<li><label for="projectAddBid_iterations">Iteration(s)</label><input id="projectAddBid_iterations" name="projectAddBid_iterations" type="number" min="1" required></li>
-				</ol>
-				<ol>
-					<!-- have to change following to a loop with Angular based on above Number of ITERATIONS-->
-					<li><label for="projectAddBid_iterationPlan">Iteration 1 Plan</label><textarea class="projectAddBid_iterationPlan" rows="" placeholder="Eg. Design paper prototype" required></textarea></li>
-					<li><label for="projectAddBid_iterationPlan">Iteration 2 Plan</label><textarea class="projectAddBid_iterationPlan" rows="" placeholder="Eg. Code login page with sign-in form" required></textarea></li>
-					<!-- end loop -->
-				</ol>
-			</fieldset>
-			<fieldset>
+	<section id="project_bid_Body">
+		<section id="project_bid_projectDetails">
+			<form id="projectDetailsForm" action="" method="POST">
 				<fieldset>
+					<legend>Project Details</legend>
 					<ol>
-						<li><input id="projectAddBid_agreeToTerms" name="projectAddBid_agreeToTerms" type="checkbox"><label for="projectAddBid_agreeToTerms">I agree to the terms</label></li>
+						<li><label for="projectDetails_title">Title</label><input id="projectDetails_title" name="projectDetails_title" type="text" placeholder="{{projectDetails[0].title}}" disabled></li>
+						<li><label for="projectDetails_owner">Owner</label><input id="projectDetails_owner" name="projectDetails_owner" type="text" placeholder="{{projectDetails[0].owner}}" disabled><button type="submit">Send Message</button></li>
+						<li><label for="projectDetails_description">Project Description</label><textarea id="projectDetails_description" name="projectDetails_description" rows="" placeholder="{{projectDetails[0].description}}" disabled></textarea></li>
+						<li><label for="projectDetails_budget">Total Budget</label><input id="projectDetails_budget" name="projectDetails_budget" type="text" placeholder="SGD${{projectDetails[0].budget}}" disabled></li>
+						<li><label for="projectDetails_iteration">Iteration</label><input id="projectDetails_iteration" name="projectDetails_iteration" type="text" placeholder="{{projectDetails[0].iteration}}" disabled></li>
+						<li><label for="projectDetails_tags">Tag(s)</label><textarea id="projectDetails_tags" name="projectDetails_tags" rows="6" placeholder="{{projectDetails[0].tags}}" disabled></textarea></li>
+					</ol>
+				</fieldset>
+			</form>
+		</section>
+		<section id="project_bid_addBid">
+			<form id="projectAddBidForm" action="" method="POST">
+				<fieldset>
+					<legend>Bid Details</legend>
+					<ol>
+						<li><label for="projectAddBid_price">Price per Iteration (SGD$)</label><input id="projectAddBid_price" name="projectAddBid_price" type="text" placeholder="Eg. 25.00" required autofocus></li>
+						<li><label for="projectAddBid_iterations">Iteration(s)</label><input id="projectAddBid_iterations" name="projectAddBid_iterations" type="number" min="1" required></li>
+					</ol>
+					<ol>
+						<!-- have to change following to a loop with Angular based on above Number of ITERATIONS-->
+						<li><label for="projectAddBid_iterationPlan">Iteration 1 Plan</label><textarea class="projectAddBid_iterationPlan" rows="" placeholder="Eg. Design paper prototype" required></textarea></li>
+						<li><label for="projectAddBid_iterationPlan">Iteration 2 Plan</label><textarea class="projectAddBid_iterationPlan" rows="" placeholder="Eg. Code login page with sign-in form" required></textarea></li>
+						<!-- end loop -->
 					</ol>
 				</fieldset>
 				<fieldset>
-					<button id="projectAddBid_bidBtn" type="submit">Bid</button>
+					<fieldset>
+						<ol>
+							<li><input id="projectAddBid_agreeToTerms" name="projectAddBid_agreeToTerms" type="checkbox"><label for="projectAddBid_agreeToTerms">I agree to the terms</label></li>
+						</ol>
+					</fieldset>
+					<fieldset>
+						<button id="projectAddBid_bidBtn" type="submit">Bid</button>
+					</fieldset>
 				</fieldset>
-			</fieldset>
-		</form>
-	</section>
-	<section id="project_bid_projectDetails">
-		<form id="projectDetailsForm" action="" method="POST">
-			<fieldset>
-				<legend>Project Details</legend>
-				<ol>
-					<li><label for="projectDetails_title">Title</label><input id="projectDetails_title" name="projectDetails_title" type="text" placeholder="{{projectDetails[0].title}}" disabled></li>
-					<li><label for="projectDetails_owner">Owner</label><input id="projectDetails_owner" name="projectDetails_owner" type="text" placeholder="{{projectDetails[0].owner}}" disabled><button type="submit">Send Message</button></li>
-					<li><label for="projectDetails_description">Project Description</label><textarea id="projectDetails_description" name="projectDetails_description" rows="" placeholder="{{projectDetails[0].description}}" disabled></textarea></li>
-					<li><label for="projectDetails_budget">Total Budget</label><input id="projectDetails_budget" name="projectDetails_budget" type="text" placeholder="SGD${{projectDetails[0].budget}}" disabled></li>
-					<li><label for="projectDetails_iteration">Iteration</label><input id="projectDetails_iteration" name="projectDetails_iteration" type="text" placeholder="{{projectDetails[0].iteration}}" disabled></li>
-					<li><label for="projectDetails_tags">Tag(s)</label><textarea id="projectDetails_tags" name="projectDetails_tags" rows="6" placeholder="{{projectDetails[0].tags}}" disabled></textarea></li>
-				</ol>
-			</fieldset>
-		</form>
+			</form>
+		</section>
 	</section>
 </section>
 
