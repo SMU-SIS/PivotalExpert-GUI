@@ -11,6 +11,9 @@
    }
 
 </script>-->
+
+
+<script src="gui/js/scripts.js"></script>
 <link rel="stylesheet" href="gui/css/style-project.css" type="text/css" media="screen" />
 <section id="project_index_page">
 	<section id="project_index_Header">
@@ -20,42 +23,39 @@
 		</section>
 		<span id="projectList_create_new"><a href="#/projects/create">Create New</a></span>
 	</section>
-	<section id="project_index_Table">
-		<ul class="projectListTableHeader">
-			<li class="table_header projectList_project_title">Title</li>
-			<li class="table_header projectList_project_owner">Owner</li>
-			<li class="table_header projectList_project_status">Status</li>
-			<li class="table_header projectList_project_budget">Budget</li>
-			<li class="table_header projectList_project_tags">Tags</li>
-			<li class="table_header projectList_project_created">Created</li>
-			<li class="table_header projectList_project_action">Action</li>
-		</ul>
-		<ul class="projectListTableEntry" ng:repeat="project in projects">
-			<li class="table_row projectList_project_title">
-				   <a href="#/projects/{{page}}/{{project.id}}">{{project.title}}</a>
-			</li>
-		<!-- <li class="table_row projectList_project_title">
+	<table id="project_index_Table" border="0" cellpadding="0" cellspacing="0">
+		<tr class="projectListTableHeader">
+			<td class="table_header projectList_project_title">Title</td>
+			<td class="table_header projectList_project_owner">Owner</td>
+			<td class="table_header projectList_project_status">Status</td>
+			<td class="table_header projectList_project_budget">Budget</td>
+			<td class="table_header projectList_project_tags">Tags</td>
+			<td class="table_header projectList_project_created">Created</td>
+		</tr>
+		<tr class="projectListTableEntry" ng:repeat="project in projects" 
+			  onmouseover="HighlightRow(this, true);" 
+              onmouseout="HighlightRow(this, false);" 
+              onclick="GoToURL('#/projects/{{page}}/{{project.id}}');">
+			<td class="table_row projectList_project_title">{{project.title}}</td>
+		<!-- <td class="table_row projectList_project_title">
 				<div ng:show="currentUser.userType == 'developer'">
 				   <a href="#/projects/bid/{{project.id}}">{{project.title}}</a>
 				</div>
 				<div ng:show="currentUser.userType == 'hirer'">
 				   <a href="#/projects/bid/{{project.id}}">{{project.title}}</a>
 				</div>
-			</li>
+			</td>
 			-->
-			<li class="table_row projectList_project_owner">{{project.owner}}</li>
-			<li class="table_row projectList_project_status">{{project.status}}</li>
-			<li class="table_row projectList_project_budget">SGD${{project.budget}}</li>
-			<li class="table_row projectList_project_tags"><span ng:repeat="item in project.tags">
+			<td class="table_row projectList_project_owner">{{project.owner}}</td>
+			<td class="table_row projectList_project_status">{{project.status}}</td>
+			<td class="table_row projectList_project_budget">SGD${{project.budget}}</td>
+			<td class="table_row projectList_project_tags"><span ng:repeat="item in project.tags">
 				<span ng:hide="$position == 'first'">, </span>{{item}}</span>
-			</li>
-			<li class="table_row projectList_project_created">{{project.created}}</li>
+			</td>
+			<td class="table_row projectList_project_created">{{project.created}}</td>
 
 			<!--<li class="table_row projectList_project_action"><a href="#/projects/accept/{{project.id}}">View</a> / <a href="#/projects/bid/{{project.id}}">Bid</a></li>-->
-
-			<li class="table_row projectList_project_action"><a href="#/projects/manage">ManageTest</a></li>
-	
-	</ul>
-	</section>
+	</tr>
+	</table>
 </section>
 Page 1
