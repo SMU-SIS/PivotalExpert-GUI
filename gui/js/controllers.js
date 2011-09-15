@@ -26,15 +26,15 @@ function PageRouter_Master($route) { //router for the website itself
 	
 	$route.when('/projects/bid/:project',{template:'gui/html/project_bid.html', controller: ProjectDetailsCtrl}); 
 	
-	$route.when('/projects/:project',{template:'gui/html/project_view.html'}); //TESTING
+	$route.when('/projects/:projectId',{template:'gui/html/project_view.html'}); //TESTING
 	$route.when('/projects/:project/owner',{template:''}); //TESTING
 	$route.when('/projects/:project/bidder',{template:''}); //TESTING
 	$route.when('/projects/:project/payment',{template:''}); //TESTING	
 	
 	$route.when('/workroom/:workroom',{template:'gui/html/workroom_index.html'});
 	
-	//$route.when('/projects/accept/:project',{template:'gui/html/project_accept.html', controller: ProjectAcceptCtrl}); //TESTING	
-	//$route.when('/projects/manage',{template:'gui/html/project_manage.html'}); //TESTING	
+	$route.when('/projects/:projectId/accept',{template:'gui/html/project_accept.html', controller: ProjectAcceptCtrl}); //TESTING	
+	$route.when('/projects/manage',{template:'gui/html/project_manage.html'}); //TESTING	
 	
 	
 	//developers module

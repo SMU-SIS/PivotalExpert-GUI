@@ -18,7 +18,7 @@
 			"owner_url": "/user/3412344",
 			"project_url": "/project/2",
 			"budget": "300", 
-			"tags": [],
+			"tags": ["-"],
 			"status": "closed",
 			"created": "10/9/11"
 		},	
@@ -30,7 +30,7 @@
 			"owner_url": "/user/3412344",
 			"project_url": "/project/3",
 			"budget": "150",
-			"tags": [],	
+			"tags": ["-"],	
 			"status": "in progress",
 			"created": "10/9/11"
 		},	
@@ -42,7 +42,7 @@
 			"owner_url": "/user/3412344",
 			"project_url": "/project/4",
 			"budget": "200",
-			"tags": [],	
+			"tags": ["-"],	
 			"status": "in progress",
 			"created": "10/9/11"
 		},	
@@ -78,7 +78,7 @@
 			"owner_url": "/user/3412344",
 			"project_url": "/project/7",
 			"budget": "200",
-			"tags": [],	
+			"tags": ["-"],	
 			"status": "open",
 			"created": "10/9/11"
 		},
