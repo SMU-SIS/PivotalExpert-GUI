@@ -1,4 +1,5 @@
-function PageRouter_Master($route) { //router for the website itself
+PageRouter_Master.$inject = ["$route","$location"];
+function PageRouter_Master($route, $location) { //router for the website itself
 	var self = this;
 	
 	/* DEFAULT Re-Directs */
@@ -107,7 +108,7 @@ function CurrentUserController($resource){
 CurrentUserController.prototype = {
 	fetch: function(){
 		this.currentUser = this.Activity.get();
-		this.$parent.currentUser = this.currentUser;
+		this.$parent.currentUser = this.currentUser; //passes current user object to parent controller
 	}
 }
 
