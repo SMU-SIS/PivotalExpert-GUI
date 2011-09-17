@@ -45,40 +45,45 @@
 	font-family: Helvetica, Arial;
 	font-size: 12px;
 	display: block-inline;
+	width: 878px;
 }
 #project_index_Table tr, #projectAcceptCurrentBidsTable tr {
-	margin: 0 0 1px 0;
+	margin: 0;
 	padding: 0;
 }
 #project_index_Table tr td, #projectAcceptCurrentBidsTable tr td {
 	display: inline-block;
 	list-style: none;
 	padding: 5px 10px;
-	border-bottom: 2px #FFFFFF solid;
 	border-right: 2px #FFFFFF solid;
+}
+#project_index_Table tr td:last-child, #projectAcceptCurrentBidsTable tr td:last-child {
+	border-right: 0;
 }
 #projectAcceptCurrentBidsTable tr td {
 	font-size: 11px;
 }
 .projectListTableHeader, .projectAcceptCurrentBidsHeader {
+	background: #00BFF3;
+	border-bottom: 2px #FFFFFF solid;
 }
 .table_header {
 	font-weight: bold;
-	background: #00BFF3;
 }
 .table_row {
 }
 .projectListTableEntry {
-	margin: 1px;
+	margin-bottom: 1px;
 	padding: 1px;
-	width: 880px;
+	width: 850px;
 	background: #E1E1E1;
+	border-bottom: 2px #FFFFFF solid;
 }
 .projectListTableEntry:hover {
 	cursor: pointer;
 }
 .projectList_project_title {
-	width: 207px;
+	width: 200px;
 	font-weight: bold;
 }
 .projectList_project_owner {
@@ -94,7 +99,7 @@
 	width: 145px;
 }
 .projectList_project_created {
-	width: 90px;
+	width: 80px;
 }
 
 

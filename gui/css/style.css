@@ -187,7 +187,7 @@ body  {
 	width: auto;
 	border-right: solid 2px #0097FE;
 }
-#top_below nav ul li:last-child, #top nav ul li:last-child a  {
+#top_below nav ul li:last-child, #top_below nav ul li:last-child a  {
 	border: 0;
 }
 #top_below nav ul li li {
