@@ -2,6 +2,8 @@ PageRouter_Master.$inject = ["$route","$location"];
 function PageRouter_Master($route, $location) { //router for the website itself
 	var self = this;
 	
+	self.$location = $location;
+	
 	/* DEFAULT Re-Directs */
 	$route.otherwise({redirectTo: '/'});
 	
