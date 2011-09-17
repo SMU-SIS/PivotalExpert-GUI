@@ -35,7 +35,7 @@
 		<tr class="projectListTableEntry" ng:repeat="project in projects" 
 			  onmouseover="HighlightProjectRow(this, true);" 
               onmouseout="HighlightProjectRow(this, false);" 
-              onclick="GoToURL('#/projects/{{page}}/{{project.id}}');">
+              onclick="GoToURL('#/projects/{{project.id}}');">
 			<td class="table_row projectList_project_title">{{project.title}}</td>
 		<!-- <td class="table_row projectList_project_title">
 				<div ng:show="currentUser.userType == 'developer'">
