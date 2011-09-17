@@ -10,5 +10,9 @@ angular.service('RestCall', function($resource){
   });
 });
 
-
+angular.service('RestCall_GetModel', function($resource){
+return $resource(host+'rest/model/:model/:key', {}, {
+    query: {method:'GET', isArray:true}
+  });
+});
 
