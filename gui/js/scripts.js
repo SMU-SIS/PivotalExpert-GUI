@@ -27,11 +27,14 @@ function tabSwitch_projectmgt(new_tab, new_content) {
 	document.getElementById(new_content).style.display = 'block';     
 }  
 
-function HighlightRow(tableRow, highLight) {
+function HighlightProjectRow(tableRow, highLight) {
 	if (highLight) { tableRow.style.backgroundColor = '#FFFF00';	}
 	else { tableRow.style.backgroundColor = '#E1E1E1'; }
 }
-
+function HighlightWorkroomRow(tableRow, highLight) {
+	if (highLight) { tableRow.style.backgroundColor = '#0097FE'; }
+	else { tableRow.style.backgroundColor = '#FFFFFF'; }
+}
 function GoToURL(theUrl) {
 	document.location.href = theUrl;
 }

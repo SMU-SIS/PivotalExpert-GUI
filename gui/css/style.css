@@ -104,12 +104,42 @@ body  {
 }
 #top_links {
 	position: absolute;
-	margin: 0 0 0 210px;
+	margin: 0 0 0 225px;
 	top: 0;
 	left: 0;
-	width: 680px;
+	width: 664px;
 	height: 94px;
 }
+#top_links nav {
+	position: absolute;
+	margin: 68px 50px 0 0;
+	top: 0;
+	right: 0;
+	-moz-right: 0;
+	-webkit-right: 0;
+}
+#top_links nav ul {
+	list-style: none;
+	margin: 0 auto;
+	position: absolute;
+}
+#top_links nav ul li {
+	margin: 0;
+	float: left;
+	position: relative;
+	width: auto;
+}
+#top_links a, #top_links a:active, #top_links a:visited {
+	text-decoration: none;
+	color: #888888;
+	font-weight: bold;
+	font-size: 12px;
+	padding-left: 5px;
+}
+#top_links a:hover {
+	color: #000000;
+}
+
 #top_separator {
 	position: absolute;
 	margin: 94px 0 0 210px;
@@ -129,7 +159,7 @@ body  {
 	text-transform: uppercase;
 	width: 210px;
 }
-#top nav {
+#top_below nav {
 	position: absolute;
 	margin: 0;
 	top: 0;
@@ -141,49 +171,49 @@ body  {
 	margin: 0 0 0 227px;
 	width: 663px;
 }
-#top nav ul {
+#top_below nav ul {
 	list-style: none;
 	margin: 0 auto;
 	position: absolute;
 }
-#top nav ul ul {
+#top_below nav ul ul {
 	left: -9999px;
 	z-index: 10;
 }
-#top nav ul li {
+#top_below nav ul li {
 	margin: 0;
 	float: left;
 	position: relative;
 	width: auto;
 	border-right: solid 2px #0097FE;
 }
-#top nav ul li:last-child, #top nav ul li:last-child a  {
+#top_below nav ul li:last-child, #top nav ul li:last-child a  {
 	border: 0;
 }
-#top nav ul li li {
+#top_below nav ul li li {
 	float: none;
 	margin: 0;
 	border: none;
 	white-space: nowrap;
 }
-#top nav ul li ul li {
+#top_below nav ul li ul li {
 	font: 22px "CaviarDreamsRegular", Helvetica, sans-serif;
 	font-size: 15px;
 	padding-top: 5px;
 	background: #000000;
 }
-#top nav a, #top_nav a:active, #top_nav a:link, #top_nav a:visited {
+#top_below nav a, #top_nav a:active, #top_nav a:link, #top_nav a:visited {
 	padding: 0 24px 0 24px;
 	color: #C7C7C7;
 	text-decoration: none;
 	display: block;
 	height: 24px;
 }
-#top nav li:hover, #top nav li a:hover {
+#top_below nav li:hover, #top_below nav li a:hover {
 	background: #0097FE;
 	color: #FFFFFF;
 }
-#top nav ul li:hover ul { /* Display the dropdown on hover */
+#top_below nav ul li:hover ul { /* Display the dropdown on hover */
 	left: 0; /* Bring back on-screen when needed */
 }
 .navheader {

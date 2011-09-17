@@ -14,16 +14,70 @@
 #user_details_panel {
 	width: 150px;
 }
+
 #user_profile_details {
 
 }
-#user_profile_edit {
+.profile_details_nick {
+	font-size: 22px;
+	font-weight: bold;
+	margin: 0 0 20px 0;
+	padding: 0 0 0 0;
+}
+.profile_details_pic {
 
 }
+.profile_details_school {
+	padding: 8px 0 8px 5px;
+	background: #000000;
+}
+.profile_details_school_logo {
+	padding: 1px 0 1px 8px;
+	border-left: 6px solid #FFFF00;
+	height: 40px;
+}
+.profile_details_school_initials {
+	position: absolute;
+	right: 0;
+	-moz-right: 0;
+	-webkit-right: 0;
+	margin-right: 20px;
+	font: 26px "GeosansLightRegular", Verdana, sans-serif;
+	font-weight: bold;
+	line-height: 52px;
+	color: #FFFFFF;
+}
+
 #user_profile_controls {
-
+	border: 1px solid #000000;
+	padding: 3px;
+	text-align: center;
 }
+#user_profile_controls ul {
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+}
+#user_profile_controls ul li {
+	display: inline;
+}
+.profile_details_editProfile {
+}
+.profile_details_inbox {
+}
+.profile_details_contactList {
+}
+
 #user_profile_badges {
+	margin-top: 20px;
+}
+.profile_badges_Header {
+	font-size: 12px;
+	font-weight: bold;
+	padding-bottom: 3px;
+	border-bottom: 1px solid #E2E2E2;
+}
+.profile_badges_Body {
 
 }
 
@@ -82,11 +136,163 @@
 	display: none; 
 }
 
-#projectsmgt_content {
-	
+
+#newsfeed_Table, #projectsmgt_workroom_Table, #projectsmgt_projects_Table, #projectsmgt_bids_Table {
+	position: relative;
+	font-family: Helvetica, Arial;
+	font-size: 12px;
+	display: block-inline;
+	width: 685px;
+}
+#newsfeed_Table tr, #projectsmgt_workroom_Table tr, #projectsmgt_projects_Table tr, #projectsmgt_bids_Table tr {
+	margin: 0 0 1px 0;
+	padding: 0;
+}
+#newsfeed_Table tr td, #projectsmgt_workroom_Table tr td, #projectsmgt_projects_Table tr td, #projectsmgt_bids_Table tr td {
+	display: inline-block;
+	list-style: none;
+	padding: 5px 10px;
+}
+.newsfeedTableHeader, .projectsmgtWorkroomTableHeader, .projectsmgtProjectsTableHeader, projectsmgtBidsTableHeader {
+}
+.table_header {
+	font-weight: bold;
+	background: #FFFF00;
+}
+.table_row {
+	margin-top: 8px;
+	min-height: 65px;
+}
+.table_row_projects {
+	margin: 8px 0 5px 0;
+}
+.newsfeedTableEntry {
+	margin: 1px;
+	padding: 1px;
+	border-bottom: 1px solid #E2E2E2;
+}
+.newsfeed_message_from {
+	padding: 0;
+	width: 55px;
+}
+.newsfeed_message_text {
+	width: 50%;
+}
+.newsfeed_message_text_user {
+	font-weight: bold;
+}
+.newsfeed_message_text_msg {
+	position: relative;
+	padding-top: 5px;
+	display: block;
+}
+.newsfeed_message_sent {
+	width: 220px;
 }
 
 
+#projectsmgt_workroom_Table, #projectsmgt_projects_Table, #projectsmgt_bids_Table {
+	width: 660px;
+}
+.projectsmgtWorkroomTableEntry, .projectsmgtProjectsTableEntry, .projectsmgtBidsTableEntry {
+	margin: 1px;
+	padding: 1px;
+	border-bottom: 1px solid #E2E2E2;
+}
+.projectsmgtWorkroomTableEntry:hover {
+	cursor: pointer;
+}
+.workroom_height, .bids_height {
+	line-height: 50px;
+}
+
+.projectsmgt_workroom_title {
+	width: 135px;
+}
+.workroom_title {
+	font-weight: bold;
+	border-bottom: 4px solid #000000;
+}
+.projectsmgt_workroom_owner, .projectsmgt_workroom_developer, .projectsmgt_bids_owner {
+	position: relative;
+	width: 122px;
+}
+.projectsmgt_workroom_owner_pic, .projectsmgt_workroom_developer_pic, .projectsmgt_bids_owner_pic {
+}
+.projectsmgt_workroom_owner_name, .projectsmgt_workroom_developer_name, .projectsmgt_bids_owner_name {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 6px 0 0 64px;
+	padding-left: 2px;
+	display: block;
+}
+.projectsmgt_workroom_iteration {
+	width: 40px;
+}
+.projectsmgt_workroom_price {
+	width: 65px;
+}
+.projectsmgt_workroom_action {
+	width: 55px;
+}
+.projectsmgt_workroom_action a, .projectsmgt_workroom_action a:active, .projectsmgt_workroom_action a:visited,
+.projectsmgt_projects_action a, .projectsmgt_projects_action a:active, .projectsmgt_projects_action a:visited {
+	font-size: 10px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 1px 3px;
+	color: #000000;
+	background: #FFD101;
+}
+.projectsmgt_workroom_action a:hover, .projectsmgt_projects_action a:hover {
+	color: #FFFFFF;
+	background: #000000;
+}
+
+.projectsmgt_projects_title {
+	width: 180px;
+}
+.projectsmgt_projects_status {
+	width: 120px;
+}
+.projectsmgt_projects_budget {
+	width: 85px;
+}
+.projectsmgt_projects_expiryDate {
+	width: 120px;
+}
+.projectsmgt_projects_action {
+	width: 55px;
+}
+
+.projectsmgt_bids_title {
+	padding-left: 5px;
+	border-left: 4px solid #000000;
+	font-weight: bold;
+	width: 115px;
+}
+.projectsmgt_bids_owner {
+	width: 100px;
+}
+.projectsmgt_bids_tags {
+	width: 90px;
+}
+.projectsmgt_bids_status {
+	width: 70px;
+}
+.projectsmgt_bids_date {
+	width: 70px;
+}
+.projectsmgt_bids_message {
+	width: 90px;
+	line-height: 12px;
+}
+
+
+#projectsmgt_content {
+}
 #projectsmgt_content ul.subtabs {
 	margin: 0; 
 	padding: 0;

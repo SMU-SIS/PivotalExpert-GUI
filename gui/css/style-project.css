@@ -46,7 +46,7 @@
 	font-size: 12px;
 	display: block-inline;
 }
-#project_index_Table ul, #projectAcceptCurrentBidsTable tr {
+#project_index_Table tr, #projectAcceptCurrentBidsTable tr {
 	margin: 0 0 1px 0;
 	padding: 0;
 }

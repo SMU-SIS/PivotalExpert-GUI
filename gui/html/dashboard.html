@@ -1,43 +1,30 @@
-<style>
-
-#user_newsfeed, #user_projects, #user_returnontime {
-	position: relative;
-}
-#newsfeed_tab, #newsfeed_tabname {
-	
-}
-#projects_tab, #projects_tabname {
-	
-	
-}
-
-</style>
-
 
 <script src="gui/js/scripts.js"></script>
 <link rel="stylesheet" href="gui/css/style-user.css" type="text/css" media="screen" />
 <section class="body_main">
 	<!--left panel-->
 	<section id="left_panel">
-		<div id="user_details_panel"> 
-			<div id="user_profile_details">
-				<section class="section_header">{{currentUser.nickname}}</section>
-				<img src="http://www.gravatar.com/avatar/{{currentUser.gravatar}}?s=150&d=mm" alt="{{currentUser.nickname}}" border="3"/> 
-				<div id="user_profile_edit"><a href="#/edit_profile">Edit Profile</a></div>
-				<div class="form_element"><label>Country</label>Singapore</div>
-				<div class="form_element"><label>School</label>SMU</div>
-			</div>
-			<div id="user_profile_controls">
-				<a href="#">Contact List</a>
-				<br/>
-				<a href="index.html#/inbox">Inbox</a>
-			</div>
-			<div id="user_profile_badges">
-				<h5>Badges</h5>
-				<hr />
-				<a href="">Badge Details</a>
-			</div>
-		</div>
+		<section id="user_details_panel"> 
+			<section id="user_profile_details">
+				<div class="profile_details_nick">{{currentUser.nickname}}</div>
+				<div class="profile_details_pic"><img src="http://www.gravatar.com/avatar/{{currentUser.gravatar}}?s=150&d=mm" alt="{{currentUser.nickname}}" border="3"/> </div>
+				<div class="profile_details_school">
+					<span class="profile_details_school_logo"><img src="gui/images/schools/smu-40px.png" alt="SMU"></span>
+					<span class="profile_details_school_initials">SMU</span>
+				</div>
+			</section>
+			<section id="user_profile_controls">
+				<ul>
+					<li class="profile_details_editProfile"><a href="#/edit_profile" alt="Edit Profile"><img src="gui/icons/edit.png" alt="Edit Profile"></a></li>
+					<li class="profile_details_inbox"><a href="index.html#/inbox" alt="Inbox"><img src="gui/icons/inbox.png" alt="Inbox"></a></li>
+					<li class="profile_details_contactList"><a href="#/contact_list" alt="Contact List"><img src="gui/icons/contactlist.png" alt="Contact List"></a></li>
+				</ul>
+			</section>
+			<section id="user_profile_badges">
+				<div class="profile_badges_Header">My Badges</div>
+				<div class="profile_badges_Body"><a href="">Badge Details</a></div>
+			</section>
+		</section>
 	</section>
 	<!--right panel-->
 	<section id="right_panel">
@@ -52,24 +39,22 @@
 			
 			<section id="user_newsfeed">
 				<section id="newsfeed_content" class="tabcontent">	
-					<table border="0">
-					
-						<tr>
-							<td width="80">From</td>
-							<td width="500">Message</td>
-							<td>Sent</td>
+					<table id="newsfeed_Table" border="0" cellpadding="0" cellspacing="0">
+						<tr class="newsfeedTableHeader">
+							<td class="table_header newsfeed_message_from">From</td>
+							<td class="table_header newsfeed_message_text">Message</td>
+							<td class="table_header newsfeed_message_sent">Sent</td>
 						</tr>
-					
-						<tr ng:repeat="news_feed in dashboard[1].entries">
-							<td>{{news_feed.from_user}}</td>
-							<td>{{news_feed.message}}</td>
-							<td>{{news_feed.time_sent}}</td>
-							<td><font size="1">{{message.timeSent}}</font></td>
+						<tr class="newsfeedTableEntry" ng:repeat="news_feed in dashboard[1].entries">
+							<td class="table_row newsfeed_message_from"><img src="http://www.gravatar.com/avatar/a4126f00847dc4f62786982a7be02972?s=80" width="50px" height="50px"></td>
+							<td class="table_row newsfeed_message_text">
+								<span class="newsfeed_message_text_user">{{news_feed.from_user}}</span><br />
+								<span class="newsfeed_message_text_msg">{{news_feed.message}}</span>
+							</td>
+							<td class="table_row newsfeed_message_sent ">{{news_feed.time_sent}}</td>
 						</tr>
-					
 					</table>
-					
-					<br />
+
 					Page 1
 					<br />
 				</section>
@@ -77,8 +62,6 @@
 
 			<section id="user_projectsmgt">
 				<section id="projectsmgt_content" class="tabcontent">	
-					
-					
 					<section class="subtabs">
 						<ul class="subtabs">
 							<li><a href="javascript:tabSwitch_projectmgt('workroom_tab', 'workroom_content');" id="workroom_tab" class="active">Workroom</a></li>
@@ -87,52 +70,57 @@
 						</ul>
 					</section>
 					
-					
 					<!-- this is the Workrooms tab belonging to the Project Management group-->
 					<section id="user_projectsmgt_workroom">
 						<section id="workroom_content" class="subtabcontent">	
-							<table border="1">
-								<tr>
-									<th>Title</th>
-									<th>Owner</th>
-									<th>Developer</th>
-									<th>Status</th>
-									<th>Price</th>
-									<th>Action</th>
+							<table id="projectsmgt_workroom_Table" border="0" cellpadding="0" cellspacing="0">
+								<tr class="projectsmgtWorkroomTableHeader">
+									<td class="table_header projectsmgt_workroom_title">Title</td>
+									<td class="table_header projectsmgt_workroom_owner">Owner</td>
+									<td class="table_header projectsmgt_workroom_developer">Developer</td>
+									<td class="table_header projectsmgt_workroom_iteration">Iteration</td>
+									<td class="table_header projectsmgt_workroom_price">Price</td>
+									<td class="table_header projectsmgt_workroom_action">Action</td>
 								</tr>
-								</thead>
-								<tbody>
-								
-								<!-- populating the table with the JSON response-->
-								<tr ng:repeat = "workroom in dashboard[2].workrooms">
-									<td>{{workroom.title}}</td>
-									<td>{{workroom.owner}}</td>
-									<td>{{workroom.developer}}</td>
-									<td>{{workroom.iteration}}</td>
-									<td>{{workroom.budget}}</td>
-									<td>Manage{{workroom.url}}</td>
+								<tr class="projectsmgtWorkroomTableEntry" ng:repeat="workroom in dashboard[2].workrooms"
+									  onmouseover="HighlightWorkroomRow(this, true);" 
+									  onmouseout="HighlightWorkroomRow(this, false);" 
+									  onclick="GoToURL('#/projects/{{page}}/{{project.id}}');">
+									<td class="table_row projectsmgt_workroom_title"><span class="workroom_title">{{workroom.title}}</span></td>
+									<td class="table_row projectsmgt_workroom_owner workroom_height">
+										<span class="projectsmgt_workroom_owner_pic"><img src="http://www.gravatar.com/avatar/{{currentUser.gravatar}}?s=150&d=mm" width="50px" height="50px"></span>
+										<span class="projectsmgt_workroom_owner_name">{{workroom.owner}}</span>
+									</td>
+									<td class="table_row projectsmgt_workroom_developer workroom_height">
+										<span class="projectsmgt_workroom_developer_pic"><img src="http://www.gravatar.com/avatar/a4126f00847dc4f62786982a7be02972?s=80" width="50px" height="50px"></span>
+										<span class="projectsmgt_workroom_developer_name">{{workroom.developer}}</span>
+									</td>
+									<td class="table_row projectsmgt_workroom_iteration workroom_height">{{workroom.iteration}}</td>
+									<td class="table_row projectsmgt_workroom_price workroom_height">SGD${{workroom.budget}}</td>
+									<td class="table_row projectsmgt_workroom_action workroom_height"><a href="#/projects/manage/{{workroom.url}}">Manage {{workroom.url}}</a></td>
 								</tr>
 							</table>
 						</section>
 					</section>
 					
-					
 					<!-- this is the Projects tab belonging to the Project Management group-->
 					<section id="user_projectsmgt_projects">
 						<section id="projects_content" class="subtabcontent">	
-							<table border="1">
-								<tr>
-									<th>Title</th><th>Status</th><th>Budget</th><th>Expiry Date</th><th>&nbsp;</th>
+							<table id="projectsmgt_projects_Table" border="0" cellpadding="0" cellspacing="0">
+								<tr class="projectsmgtProjectsTableHeader">
+									<td class="table_header projectsmgt_projects_title">Title</td>
+									<td class="table_header projectsmgt_projects_status">Status</td>
+									<td class="table_header projectsmgt_projects_budget">Budget</td>
+									<td class="table_header projectsmgt_projects_expiryDate">Expiry Date</td>
+									<td class="table_header projectsmgt_projects_action">Action</td>
 								</tr>
-								</thead>
-								<tbody>
-								<tr ng:repeat="project in dashboard[3].projects"> <!--repeating code-->
-									<td>{{project.title}}</td>
-									<td>{{project.status}}</td>
-									<td>{{project.amount}}</td>
-									<td>{{project.expire}}</td>
-									<td>View</td>
-								</tr> <!--repeating code end-->
+								<tr class="projectsmgtProjectsTableEntry" ng:repeat="project in dashboard[3].projects">
+									<td class="table_row_projects projectsmgt_projects_title">{{project.title}}</td>
+									<td class="table_row_projects projectsmgt_projects_status">{{project.status}}</td>
+									<td class="table_row_projects projectsmgt_projects_budget">SGD${{project.amount}}</td>
+									<td class="table_row_projects projectsmgt_projects_expiryDate">{{project.expire}}</td>
+									<td class="table_row_projects projectsmgt_projects_action"><a href="#/projects/{{page}}/{{project.id}}">View</a></td>
+								</tr>
 							</table>
 						</section>
 					</section>
@@ -140,34 +128,33 @@
 					<!-- this is the Bids tab belonging to the Project Management group-->
 					<section id="user_projectsmgt_bids">
 						<section id="bids_content" class="subtabcontent">	
-							<table border="1">
-								<tr>
-									<td>Title</td>
-									<td>Owner</td>
-									<td>Tags</td>
-									<td>Status</td>
-									<td>Date</td>
-									<td>Message</td>
+							<table id="projectsmgt_bids_Table" border="0" cellpadding="0" cellspacing="0">
+								<tr class="projectsmgtBidsTableHeader">
+									<td class="table_header projectsmgt_bids_title">Title</td>
+									<td class="table_header projectsmgt_bids_owner">Owner</td>
+									<td class="table_header projectsmgt_bids_tags">Tags</td>
+									<td class="table_header projectsmgt_bids_status">Status</td>
+									<td class="table_header projectsmgt_bids_date">Date</td>
+									<td class="table_header projectsmgt_bids_message">Message</td>
 								</tr>
-								
-								</thead>
-								<tbody>
-								<tr ng:repeat = "bid in dashboard[4].bids">
-									<td>{{bid.title}}</td>
-									<td>{{bid.owner}}</td>
-									<td>
+								<tr class="projectsmgtBidsTableEntry" ng:repeat="bid in dashboard[4].bids">
+									<td class="table_row projectsmgt_bids_title">{{bid.title}}</td>
+									<td class="table_row projectsmgt_bids_owner bids_height">
+										<span class="projectsmgt_bids_owner_pic"><img src="http://www.gravatar.com/avatar/{{currentUser.gravatar}}?s=150&d=mm" width="50px" height="50px"></span>
+										<span class="projectsmgt_bids_owner_name">{{bid.owner}}</span>
+									</td>
+									<td class="table_row projectsmgt_bids_tags bids_height">
 										<span ng:repeat="tag in bid.tags">
 											<span ng:hide="$position == 'first'">, </span>{{tag}}
 										</span>
 									</td>
-									<td>{{bid.status}}</td>
-									<td>{{bid.date}}</td>
-									<td>{{bid.messageUrl}}</td>
+									<td class="table_row projectsmgt_bids_status bids_height">{{bid.status}}</td>
+									<td class="table_row projectsmgt_bids_date bids_height">{{bid.date}}</td>
+									<td class="table_row projectsmgt_bids_message bids_height">{{bid.messageUrl}}</td>
 								</tr>
 							</table>
 						</section>
 					</section>
-					
 					
 					Page 1
 					<br/>
@@ -182,23 +169,4 @@
 		</section>
 	</section>
 </section>
-
-
-
-<style>
-
-
-#newsfeed_content {
-
-}
-#projects_content {
-
-}
-#returnontime_content {
-
-}
-
-</style>
-
-
 
