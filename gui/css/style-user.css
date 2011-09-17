@@ -142,7 +142,7 @@
 	font-family: Helvetica, Arial;
 	font-size: 12px;
 	display: block-inline;
-	width: 685px;
+	width: 670px;
 }
 #newsfeed_Table tr, #projectsmgt_workroom_Table tr, #projectsmgt_projects_Table tr, #projectsmgt_bids_Table tr {
 	margin: 0 0 1px 0;
@@ -192,7 +192,7 @@
 
 
 #projectsmgt_workroom_Table, #projectsmgt_projects_Table, #projectsmgt_bids_Table {
-	width: 660px;
+	width: 650px;
 }
 .projectsmgtWorkroomTableEntry, .projectsmgtProjectsTableEntry, .projectsmgtBidsTableEntry {
 	margin: 1px;
@@ -207,7 +207,7 @@
 }
 
 .projectsmgt_workroom_title {
-	width: 135px;
+	width: 125px;
 }
 .workroom_title {
 	font-weight: bold;
@@ -252,7 +252,7 @@
 }
 
 .projectsmgt_projects_title {
-	width: 180px;
+	width: 170px;
 }
 .projectsmgt_projects_status {
 	width: 120px;
@@ -271,7 +271,7 @@
 	padding-left: 5px;
 	border-left: 4px solid #000000;
 	font-weight: bold;
-	width: 115px;
+	width: 105px;
 }
 .projectsmgt_bids_owner {
 	width: 100px;
