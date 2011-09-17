@@ -1,12 +1,6 @@
 <script>
 //following controller controls which view to show depending on the project number
-function ProjectViewCtrl(){
-	var self = this;
-	self.number = self.params.project; //gets parameter passed from router
-	number = self.number; //passes parameter to a variable JS can read within the included page
-	self.url = 'gui/html/sandbox.html';
-}
+
 </script>
-<div ng:controller="ProjectViewCtrl">
-	<ng:include src="url"></ng:include>
-</div>
+{{projectKey}}
+<ng:include src="url"></ng:include>
