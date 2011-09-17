@@ -29,7 +29,7 @@ function PageRouter_Master($route, $location) { //router for the website itself
 	
 	$route.when('/projects/bid/:project',{template:'gui/html/project_bid.html', controller: ProjectDetailsCtrl}); 
 	
-	$route.when('/projects/:projectId',{template:'gui/html/project_view.html'}); //TESTING
+	$route.when('/projects/:projectID',{template:'gui/html/project_view.html', controller: ProjectViewCtrl});
 	$route.when('/projects/:project/owner',{template:''}); //TESTING
 	$route.when('/projects/:project/bidder',{template:''}); //TESTING
 	$route.when('/projects/:project/payment',{template:''}); //TESTING	
@@ -77,6 +77,16 @@ function PageRouter_UserProjects($route) {
 
 function PageRouter_ProjectsView($route) {
 	var self = this;
+}
+
+function ProjectViewCtrl($resource){
+	this.projectID = this.params.projectID; //gets parameter passed from router
+	projectID = this.projectID; //passes parameter to a variable that JS can read within the included page
+	
+	this.projectKey = projectKey = $.parseJSON($.ajax({url:'rest/action/get_key_from_id/Project/'+projectID,dataType: 'json',async:false}).responseText).key;
+	
+	this.url = 'gui/html/sandbox.html';
+
 }
 
 function ProjectListCtrl(RestCall) {
