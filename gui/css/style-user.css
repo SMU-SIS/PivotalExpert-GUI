@@ -142,10 +142,13 @@
 	font-family: Helvetica, Arial;
 	font-size: 12px;
 	display: block-inline;
-	width: 670px;
+	width: 660px;
+}
+#newsfeed_Table {
+	width: 680px;
 }
 #newsfeed_Table tr, #projectsmgt_workroom_Table tr, #projectsmgt_projects_Table tr, #projectsmgt_bids_Table tr {
-	margin: 0 0 1px 0;
+	margin: 0;
 	padding: 0;
 }
 #newsfeed_Table tr td, #projectsmgt_workroom_Table tr td, #projectsmgt_projects_Table tr td, #projectsmgt_bids_Table tr td {
@@ -153,11 +156,11 @@
 	list-style: none;
 	padding: 5px 10px;
 }
-.newsfeedTableHeader, .projectsmgtWorkroomTableHeader, .projectsmgtProjectsTableHeader, projectsmgtBidsTableHeader {
+.newsfeedTableHeader, .projectsmgtWorkroomTableHeader, .projectsmgtProjectsTableHeader, .projectsmgtBidsTableHeader {
+	background: #FFFF00;
 }
 .table_header {
 	font-weight: bold;
-	background: #FFFF00;
 }
 .table_row {
 	margin-top: 8px;
@@ -176,7 +179,7 @@
 	width: 55px;
 }
 .newsfeed_message_text {
-	width: 50%;
+	width: 330px;
 }
 .newsfeed_message_text_user {
 	font-weight: bold;
@@ -187,12 +190,11 @@
 	display: block;
 }
 .newsfeed_message_sent {
-	width: 220px;
+	width: 210px;
 }
 
 
 #projectsmgt_workroom_Table, #projectsmgt_projects_Table, #projectsmgt_bids_Table {
-	width: 650px;
 }
 .projectsmgtWorkroomTableEntry, .projectsmgtProjectsTableEntry, .projectsmgtBidsTableEntry {
 	margin: 1px;
@@ -203,11 +205,10 @@
 	cursor: pointer;
 }
 .workroom_height, .bids_height {
-	line-height: 50px;
 }
 
 .projectsmgt_workroom_title {
-	width: 125px;
+	width: 115px;
 }
 .workroom_title {
 	font-weight: bold;
@@ -215,7 +216,7 @@
 }
 .projectsmgt_workroom_owner, .projectsmgt_workroom_developer, .projectsmgt_bids_owner {
 	position: relative;
-	width: 122px;
+	width: 110px;
 }
 .projectsmgt_workroom_owner_pic, .projectsmgt_workroom_developer_pic, .projectsmgt_bids_owner_pic {
 }
@@ -252,7 +253,7 @@
 }
 
 .projectsmgt_projects_title {
-	width: 170px;
+	width: 160px;
 }
 .projectsmgt_projects_status {
 	width: 120px;
@@ -264,14 +265,14 @@
 	width: 120px;
 }
 .projectsmgt_projects_action {
-	width: 55px;
+	width: 45px;
 }
 
 .projectsmgt_bids_title {
 	padding-left: 5px;
 	border-left: 4px solid #000000;
 	font-weight: bold;
-	width: 105px;
+	width: 95px;
 }
 .projectsmgt_bids_owner {
 	width: 100px;
