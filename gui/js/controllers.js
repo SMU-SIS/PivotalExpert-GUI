@@ -2,7 +2,8 @@ PageRouter_Master.$inject = ["$route","$location"];
 function PageRouter_Master($route, $location) { //router for the website itself
 	var self = this;
 	self.alertMsg = $location.hashSearch.alertMsg;
-	self.formServer = "http://localhost:8080/";
+	self.formServer = "";
+	//self.formServer = "http://localhost:8080/";
 	self.$location = $location;
 	
 	/* DEFAULT Re-Directs */
