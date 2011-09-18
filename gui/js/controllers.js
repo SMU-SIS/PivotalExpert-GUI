@@ -27,12 +27,12 @@ function PageRouter_Master($route, $location) { //router for the website itself
 	$route.when('/projects/create',{template:'gui/html/project_create.html'});
 	
 	
-	$route.when('/projects/bid/:project',{template:'gui/html/project_bid.html', controller: ProjectDetailsCtrl}); 
+	//$route.when('/projects/bid/:project',{template:'gui/html/project_bid.html', controller: ProjectDetailsCtrl}); 
 	
 	$route.when('/projects/:projectID',{template:'gui/html/project_view.html', controller: ProjectViewCtrl});
-	$route.when('/projects/:project/owner',{template:''}); //TESTING
-	$route.when('/projects/:project/bidder',{template:''}); //TESTING
-	$route.when('/projects/:project/payment',{template:''}); //TESTING	
+	//$route.when('/projects/:project/owner',{template:''}); //TESTING
+	//$route.when('/projects/:project/bidder',{template:''}); //TESTING
+	//$route.when('/projects/:project/payment',{template:''}); //TESTING	
 	
 	$route.when('/workroom/:workroom',{template:'gui/html/workroom_index.html'});
 	
@@ -83,10 +83,17 @@ function ProjectViewCtrl($resource){
 	this.projectID = this.params.projectID; //gets parameter passed from router
 	projectID = this.projectID; //passes parameter to a variable that JS can read within the included page
 	
-	this.projectKey = projectKey = $.parseJSON($.ajax({url:'rest/action/get_key_from_id/Project/'+projectID,dataType: 'json',async:false}).responseText).key;
+	this.projectRoute = projectRoute = $.parseJSON($.ajax({url:'rest/project/project_view/'+projectID,dataType: 'json',async:false}).responseText);
 	
-	this.url = 'gui/html/sandbox.html';
-
+	this.project = project = $.parseJSON($.ajax({url:'rest/models/Project/'+this.projectRoute.key,dataType: 'json',async:false}).responseText);
+	
+	switch(projectRoute.role){
+		case "owner":
+			this.url = 'gui/html/project_manage.html';
+			break;
+		default:
+			this.url = 'gui/html/project_bid.html';
+	}
 }
 
 function ProjectListCtrl(RestCall) {
@@ -114,7 +121,7 @@ function DashboardCtrl(RestCall) {
 //Method that checks for current user
 CurrentUserController.$inject = ['$resource'];
 function CurrentUserController($resource){
-	this.Activity = $resource( 'rest/action/get_current_user');
+	this.Activity = $resource( 'rest/action/get_current_user-dan');
 	this.fetch();
 }
 CurrentUserController.prototype = {
