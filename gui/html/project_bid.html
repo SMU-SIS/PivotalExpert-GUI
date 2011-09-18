@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="gui/css/style-project.css" type="text/css" media="screen" />
 <section id="project_bid_page">
 	<section id="project_bid_Header">
-		<section class="section_header">Add Bid for <font size=15>{{projectDetails[0].title}}</font> Project</section>
+		<section class="section_header">Add Bid for <font size=15>{{project.title}}</font> Project</section>
 	</section>
 	<section id="project_bid_Body">
 		<section id="project_bid_projectDetails">
@@ -12,12 +12,12 @@
 				<fieldset>
 					<legend>Project Details</legend>
 					<ol>
-						<li><label for="projectDetails_title">Title</label><input id="projectDetails_title" name="projectDetails_title" type="text" placeholder="{{projectDetails[0].title}}" disabled></li>
-						<li><label for="projectDetails_owner">Owner</label><input id="projectDetails_owner" name="projectDetails_owner" type="text" placeholder="{{projectDetails[0].owner}}" disabled><button type="submit">Send Message</button></li>
-						<li><label for="projectDetails_description">Project Description</label><textarea id="projectDetails_description" name="projectDetails_description" rows="" placeholder="{{projectDetails[0].description}}" disabled></textarea></li>
-						<li><label for="projectDetails_budget">Total Budget</label><input id="projectDetails_budget" name="projectDetails_budget" type="text" placeholder="SGD${{projectDetails[0].budget}}" disabled></li>
-						<li><label for="projectDetails_iteration">Iteration</label><input id="projectDetails_iteration" name="projectDetails_iteration" type="text" placeholder="{{projectDetails[0].iteration}}" disabled></li>
-						<li><label for="projectDetails_tags">Tag(s)</label><textarea id="projectDetails_tags" name="projectDetails_tags" rows="6" placeholder="{{projectDetails[0].tags}}" disabled></textarea></li>
+						<li><label for="projectDetails_title">Title</label><input id="projectDetails_title" name="projectDetails_title" type="text" placeholder="{{project.title}}" disabled></li>
+						<li><label for="projectDetails_owner">Owner</label><input id="projectDetails_owner" name="projectDetails_owner" type="text" placeholder="{{project.owner}}" disabled><button type="submit">Send Message</button></li>
+						<li><label for="projectDetails_description">Project Description</label><textarea id="projectDetails_description" name="projectDetails_description" rows="" placeholder="{{project.description}}" disabled></textarea></li>
+						<li><label for="projectDetails_budget">Total Budget</label><input id="projectDetails_budget" name="projectDetails_budget" type="text" placeholder="SGD${{project.budget}}" disabled></li>
+						<li><label for="projectDetails_iteration">Iteration</label><input id="projectDetails_iteration" name="projectDetails_iteration" type="text" placeholder="{{project.iteration}}" disabled></li>
+						<li><label for="projectDetails_tags">Tag(s)</label><textarea id="projectDetails_tags" name="projectDetails_tags" rows="6" placeholder="{{project.tags}}" disabled></textarea></li>
 					</ol>
 				</fieldset>
 			</form>
