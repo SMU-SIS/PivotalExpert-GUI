@@ -6,15 +6,15 @@
 		<section class="section_header">Create New Project</section>
 	</section>
 	<section id="create_new_project_section">
-		<form id="createNewProjectForm" action="" method="POST">
+		<form id="createNewProjectForm" action="{{formServer}}form/project/create" method="POST">
 		
 			<fieldset>
 				<legend>Project Details</legend>
 				<ol>
 					<li><label for="createNewProject_title">Title</label><input id="createNewProject_title" name="createNewProject_title" type="text" placeholder="Eg. My Awesome Project"  autofocus ng:required></li>
 					<li><label for="createNewProject_budget">Budget per Iteration (SGD$)</label><input id="createNewProject_budget" name="createNewProject_budget" type="text" placeholder="Eg. 25.00" ng:validate="integer:0" ng:required></li>
-					<li><label for="createNewProject_description">Project Description</label><textarea class="createNewProject_description" rows="" placeholder="Eg. This is a web-portal for entrepreneurs and students." required></textarea></li>
-					<li><label for="createNewProject_tags">Tag(s)</label><textarea class="createNewProject_tags" rows="" placeholder="Eg. jQuery, HTML5, CSS"></textarea></li>
+					<li><label for="createNewProject_description">Project Description</label><textarea class="createNewProject_description" name="createNewProject_description" rows="" placeholder="Eg. This is a web-portal for entrepreneurs and students." ng:required></textarea></li>
+					<li><label for="createNewProject_tags">Tag(s)</label><textarea class="createNewProject_tags" name="createNewProject_tags" rows="" placeholder="Eg. jQuery, HTML5, CSS"></textarea></li>
 				</ol>
 			</fieldset>
 			<fieldset>
