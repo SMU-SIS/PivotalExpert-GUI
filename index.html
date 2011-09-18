@@ -26,7 +26,7 @@
 								<ul>
 									<li ng:controller="CurrentUserController">
 										<span ng:show="!currentUser.nickname"><a href="https://pivotalexpert.rpxnow.com/openid/v2/signin?token_url={{$location.protocol}}://{{$location.host}}:{{$location.port}}/rpx.php">login</a></span>
-	 									<span ng:show="currentUser.nickname" ><a href="logout?target=/{{$location.protocol}}://{{$location.host}}:{{$location.port}}/#{{$location.hashPath}}">logout</a></span>
+	 									<span ng:show="currentUser.nickname" ><a href="logout?target=/#{{$location.hashPath}}">logout</a></span>
 	 								</li>
 								</ul>
 							</nav>
@@ -52,7 +52,7 @@
 						</nav>
 					</div>
 				</header>
-				
+				<div ng:show="alertMsg" id="alertBox">{{alertMsg}} <button ng:click="alertMsg = false">Close</button></div>
 				<div id="content" role="content">
 					<ng:view></ng:view>
 				</div>

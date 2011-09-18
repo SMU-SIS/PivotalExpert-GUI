@@ -1,7 +1,8 @@
 PageRouter_Master.$inject = ["$route","$location"];
 function PageRouter_Master($route, $location) { //router for the website itself
 	var self = this;
-	
+	self.alertMsg = $location.hashSearch.alertMsg;
+	self.formServer = "http://localhost:8080/";
 	self.$location = $location;
 	
 	/* DEFAULT Re-Directs */
@@ -36,8 +37,8 @@ function PageRouter_Master($route, $location) { //router for the website itself
 	
 	$route.when('/workroom/:workroom',{template:'gui/html/workroom_index.html'});
 	
-	$route.when('/projects/:projectId/accept',{template:'gui/html/project_accept.html', controller: ProjectAcceptCtrl}); //TESTING	
-	$route.when('/projects/manage',{template:'gui/html/project_manage.html'}); //TESTING	
+	//$route.when('/projects/:projectId/accept',{template:'gui/html/project_accept.html', controller: ProjectAcceptCtrl}); //TESTING	
+	//$route.when('/projects/manage',{template:'gui/html/project_manage.html'}); //TESTING	
 	
 	
 	//developers module
