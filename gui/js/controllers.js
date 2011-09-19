@@ -57,7 +57,7 @@ function PageRouter_Master($route, $location) { //router for the website itself
 	
 	
 	/* SUB-PAGES Re-Directs */
-	$route.when('/edit_profile',{template:'gui/html/user_edit.html'});
+	$route.when('/edit_profile',{template:'gui/html/user_edit.html', controller: UserEditCtrl});
 	$route.when('/badges/suggest',{template:'gui/html/suggest_badge.html'});
 	$route.when('/inbox',{template:'gui/html/inbox.html'});
 	
@@ -119,6 +119,10 @@ function DashboardCtrl(RestCall) {
 	this.dashboard = RestCall.query({action:'dashboard', file:'dashboard'});
 }
 //DashboardCtrl.$inject = ['RestCall'];
+
+function UserEditCtrl($resource) {
+	this.user = $resource('rest/dashboard/user_edit').get();
+}
 
 //Method that checks for current user
 CurrentUserController.$inject = ['$resource'];
