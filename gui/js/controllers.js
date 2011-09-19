@@ -10,7 +10,7 @@ function PageRouter_Master($route, $location) { //router for the website itself
 	$route.otherwise({redirectTo: '/'});
 	
 	//should check based on whether user is logged in
-	$route.when('/',{template:'gui/html/dashboard.html', controller: DashboardCtrl});
+	$route.when('/',{template:'gui/html/main_index.html'});
 	
 	//when not signed in
 	//	$route.when('/',{template:'gui/html/welcome.html', controller: WelcomeCtrl});
@@ -18,7 +18,7 @@ function PageRouter_Master($route, $location) { //router for the website itself
 	
 	/* HEADER Re-Directs */
 	$route.when('/welcome',{template:'gui/html/welcome.html'});
-	$route.when('/dashboard',{template:'gui/html/dashboard.html', controller: DashboardCtrl});
+	$route.when('/dashboard',{template:'gui/html/dashboard.html'});
 	
 	//institutions module
 	$route.when('/institutions',{template:'gui/html/institution_index.html'});

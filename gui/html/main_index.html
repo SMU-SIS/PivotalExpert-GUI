@@ -1,0 +1,6 @@
+<div ng:show="currentUser.nickname">
+<ng:include src="'gui/html/dashboard.html'"></ng:include>
+</div>
+<div ng:show="!currentUser.nickname">
+<ng:include src="'gui/html/welcome.html'"></ng:include>
+</div>
