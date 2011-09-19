@@ -6,7 +6,7 @@ var host = ''; //static test rest
 
 angular.service('RestCall', function($resource){
   return $resource(host+'rest/:action/:file', {}, {
-    query: {method:'GET', params:{action:'project', file:'project_index'}, isArray:true}
+    query: {method:'GET', isArray:true}
   });
 });
 
