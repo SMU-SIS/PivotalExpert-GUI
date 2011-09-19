@@ -123,7 +123,7 @@ function DashboardCtrl(RestCall) {
 //Method that checks for current user
 CurrentUserController.$inject = ['$resource'];
 function CurrentUserController($resource){
-	this.Activity = $resource( 'rest/action/get_current_user-dan');
+	this.Activity = $resource( 'rest/action/get_current_user');
 	this.fetch();
 }
 CurrentUserController.prototype = {
