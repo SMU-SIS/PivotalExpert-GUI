@@ -1,6 +1,6 @@
 <!--page 3: user_edit-->
 <!--this is where the user is able to edit profile, required upon first login-->
-
+<script src="gui/js/mustlogin.js"></script>
 <style>
 
 #user_details_edit_panel {
@@ -16,40 +16,34 @@
 
 </style>
 
-
 <div id="user_details_edit_panel"> 
 	<div id="user_profile_edit_personal">
 		<h2>Edit Profile</h2>
 		<hr/>
 		<h4><u>Personal</u></h4>
-		<form action="" method="POST">
-		<img src="" height="80" width="80">
-		<input type="button" name="Upload Picture" value="Upload Picture"/>
+		<form action="form/dashboard/user_edit" method="POST">
+		<img src="http://www.gravatar.com/avatar/{{user.gravatar}}?s=80&d=mm">
 		<table>
 		<tr>
-			<td>Name</td>
-			<td><input type="text" name="username" value="">
-		</tr>
-		<tr>
-			<td>Birthdate</td>
-			<td><input type="text" name="birthdate" value="">
+			<td>Nickname</td>
+			<td><input type="text" name="nickname" value="{{user.nickname}}">
 		</tr>
 		<tr>
 			<td>Country</td>
-			<td><input type="text" name="country" value="">
+			<td><input type="text" name="country" value="coming soon" disabled>
 		</tr>
 		<tr>
 			<td>School</td>
-			<td><input type="text" name="school" value="">
+			<td><input type="text" name="school" value="coming soon" disabled>
 		</tr>
 		<tr>
 			<td>Developer</td>
-			<td>Yes <input type="radio" name="username" value="Yes">
-			<td>No <input type="radio" name="username" value="No">
+			<td>Yes <input type="radio" name="developer" value="Yes" disabled checked="checked">
+			<td>No <input type="radio" name="developer" value="No" disabled>
 		</tr>
 		<tr>
 			<td>About Me</td>
-			<td><input type="text" name="about_me" value="">
+			<td><textarea name="about_me" value="{{user.aboutMe}}"></textarea>
 		</tr>
 		
 		<table><br/>
