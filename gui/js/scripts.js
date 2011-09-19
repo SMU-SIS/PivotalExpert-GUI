@@ -1,7 +1,4 @@
-$(document).ready(function() {
-	
-	
-});
+//$(document).ready(function() {});
 
 
 function tabSwitch_dashboard(new_tab, new_content) {  
