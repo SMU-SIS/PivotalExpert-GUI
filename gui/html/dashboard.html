@@ -45,7 +45,7 @@
 							<td class="table_header newsfeed_message_text">Message</td>
 							<td class="table_header newsfeed_message_sent">Sent</td>
 						</tr>
-						<tr class="newsfeedTableEntry" ng:repeat="news_feed in dashboard[1].entries">
+						<tr class="newsfeedTableEntry" ng:repeat="news_feed in dashboard[0].entries">
 							<td class="table_row newsfeed_message_from"><img src="http://www.gravatar.com/avatar/a4126f00847dc4f62786982a7be02972?s=80" width="50px" height="50px"></td>
 							<td class="table_row newsfeed_message_text">
 								<span class="newsfeed_message_text_user">{{news_feed.from_user}}</span><br />
@@ -82,7 +82,7 @@
 									<td class="table_header projectsmgt_workroom_price">Price</td>
 									<td class="table_header projectsmgt_workroom_action">Action</td>
 								</tr>
-								<tr class="projectsmgtWorkroomTableEntry" ng:repeat="workroom in dashboard[2].workrooms"
+								<tr class="projectsmgtWorkroomTableEntry" ng:repeat="workroom in dashboard[0].workrooms"
 									  onmouseover="HighlightWorkroomRow(this, true);" 
 									  onmouseout="HighlightWorkroomRow(this, false);" 
 									  onclick="GoToURL('#/projects/{{page}}/{{project.id}}');">
@@ -114,12 +114,12 @@
 									<td class="table_header projectsmgt_projects_expiryDate">Expiry Date</td>
 									<td class="table_header projectsmgt_projects_action">Action</td>
 								</tr>
-								<tr class="projectsmgtProjectsTableEntry" ng:repeat="project in dashboard[3].projects">
+								<tr class="projectsmgtProjectsTableEntry" ng:repeat="project in dashboard[0].projects">
 									<td class="table_row_projects projectsmgt_projects_title">{{project.title}}</td>
 									<td class="table_row_projects projectsmgt_projects_status">{{project.status}}</td>
 									<td class="table_row_projects projectsmgt_projects_budget">SGD${{project.amount}}</td>
 									<td class="table_row_projects projectsmgt_projects_expiryDate">{{project.expire}}</td>
-									<td class="table_row_projects projectsmgt_projects_action"><a href="#/projects/{{page}}/{{project.id}}">View</a></td>
+									<td class="table_row_projects projectsmgt_projects_action"><a href="#/projects/{{project.id}}">View</a></td>
 								</tr>
 							</table>
 						</section>
@@ -137,7 +137,7 @@
 									<td class="table_header projectsmgt_bids_date">Date</td>
 									<td class="table_header projectsmgt_bids_message">Message</td>
 								</tr>
-								<tr class="projectsmgtBidsTableEntry" ng:repeat="bid in dashboard[4].bids">
+								<tr class="projectsmgtBidsTableEntry" ng:repeat="bid in dashboard[0].bids">
 									<td class="table_row projectsmgt_bids_title">{{bid.title}}</td>
 									<td class="table_row projectsmgt_bids_owner bids_height">
 										<span class="projectsmgt_bids_owner_pic"><img src="http://www.gravatar.com/avatar/{{currentUser.gravatar}}?s=150&d=mm" width="50px" height="50px"></span>

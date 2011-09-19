@@ -1,123 +1,94 @@
-[ 
+[{
+	"entries": [
 	{
-		"response_type": "user_panel",
-		"user_name": "Kim Walker",
-		"user_image": "/images/uid33212/profile.jpg",
-		"user_type": "developer",
-		"user_country": "Singapore",
-		"user_school": "Singapore Management University",
-		"badges": ["Java", "GAE"]
+		"from_user": "Kenneth",
+		"user_image": "gui/images/user.jpg",
+		"message": "Kenneth has placed a bid for your project.",
+		"time_sent": "12:38 1/9/11 (+8 GMT)"
 	},
-	
-	{
-		"response_type": "newsfeed_entry",
-		"entries": [
-		{
-			"from_user": "Kenneth",
-			"user_image": "gui/images/user.jpg",
-			"message": "Kenneth has placed a bid for your project.",
-			"time_sent": "12:38 1/9/11 (+8 GMT)"
-		},
 
-		{
-			"from_user": "Mark",
-			"user_image": "gui/images/user.jpg",
-			"message": "Mark has accepted your deliverable.",
-			"time_sent": "14:38(+8 GMT) 1/9/11 "
-		},
-	
-		{
-			"from_user": "Robert",
-			"user_image": "gui/images/user.jpg",
-			"message": "Robert has invited you to his project.",
-			"time_sent": "18:38(+8 GMT) 1/9/11"
-		},
-	
-		{
-			"from_user": "Mark",
-			"user_image": "/images/uid33211/profile.jpg",
-			"message": "Your application has been completed and delivered.",
-			"time_sent": "20:38(+8 GMT) 1/9/11"
-		}
-		]
-	},
-	
 	{
-		"response_type": "workroom",
-		"workrooms": [
-		{
-			"title": "First project",
-			"owner": "Jack Russel",
-			"developer": "Alex",
-			"iteration": "2",
-			"status": "in progress",
-			"budget": "25"
-		},
+		"from_user": "Mark",
+		"user_image": "gui/images/user.jpg",
+		"message": "Mark has accepted your deliverable.",
+		"time_sent": "14:38(+8 GMT) 1/9/11 "
+	},
 
-		{
-			"title": "Second project",
-			"owner": "Jack Russel",
-			"developer": "Alex",
-			"iteration": "1",
-			"status": "not started",
-			"budget": "30"
-		},
+	{
+		"from_user": "Robert",
+		"user_image": "gui/images/user.jpg",
+		"message": "Robert has invited you to his project.",
+		"time_sent": "18:38(+8 GMT) 1/9/11"
+	},
 
-		{
-			"title": "Third project",
-			"owner": "Jack Russel",
-			"developer": "Alex",
-			"iteration": "1",
-			"status": "not started",
-			"budget": "30"
-		}
-		]
-	},
-	
 	{
-		"response_type": "project",
-		"projects":[
-		{
-			"title": "Project A",
-			"status": "2 bids",
-			"amount": 200,
-			"expire": "N/A"
-		},
-		
-		{
-			"title": "Project AAA",
-			"status": "no bids yet",
-			"amount": 100,
-			"expire": "12/11/11"
-		}
-		]
-	},
-	
-	{
-		"response_type": "bid",
-		"bids":[
-		{
-			"title": "Project A",
-			"owner": "Mark",
-			"tags": ["Java", "SQL"],
-			"status": "in progress",
-			"date": "12/11/11",
-			"messageUrl": "keep up the good work"
-		},
-		
-		{
-			"title": "Project B",
-			"owner": "Ken",
-			"tags": ["Java"],
-			"status": "completed",
-			"date": "12/11/11",
-			"messageUrl": "good job"
-		}
-		]
-	},
-	
-	{
-		"response_type": "ROT",
-		"graph": "/images/uid33212/ROT.jpg"
+		"from_user": "Mark",
+		"user_image": "/images/uid33211/profile.jpg",
+		"message": "Your application has been completed and delivered.",
+		"time_sent": "20:38(+8 GMT) 1/9/11"
 	}
-]
+	],
+	"workrooms": [
+	{
+		"title": "First project",
+		"owner": "Jack Russel",
+		"developer": "Alex",
+		"iteration": "2",
+		"status": "in progress",
+		"budget": "25"
+	},
+
+	{
+		"title": "Second project",
+		"owner": "Jack Russel",
+		"developer": "Alex",
+		"iteration": "1",
+		"status": "not started",
+		"budget": "30"
+	},
+
+	{
+		"title": "Third project",
+		"owner": "Jack Russel",
+		"developer": "Alex",
+		"iteration": "1",
+		"status": "not started",
+		"budget": "30"
+	}
+	],
+	"projects":[
+	{
+		"title": "Project A",
+		"status": "2 bids",
+		"amount": 200,
+		"expire": "N/A"
+	},
+	
+	{
+		"title": "Project AAA",
+		"status": "no bids yet",
+		"amount": 100,
+		"expire": "12/11/11"
+	}
+	],
+	"bids":[
+	{
+		"title": "Project A",
+		"owner": "Mark",
+		"tags": ["Java", "SQL"],
+		"status": "in progress",
+		"date": "12/11/11",
+		"messageUrl": "keep up the good work"
+	},
+	
+	{
+		"title": "Project B",
+		"owner": "Ken",
+		"tags": ["Java"],
+		"status": "completed",
+		"date": "12/11/11",
+		"messageUrl": "good job"
+	}
+	],
+	"graph": "/images/uid33212/ROT.jpg"
+}]
