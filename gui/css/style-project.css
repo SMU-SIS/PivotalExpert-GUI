@@ -149,14 +149,15 @@
 	position: absolute;
 	left: 0;
 	top: 0;
-	margin: 0 0 0 450px;
+	margin: 0 0 0 480px;
 }
 #project_bid_projectDetails {
 	position: relative;
-	
 }
 form#projectAddBidForm, form#projectDetailsForm {
 	width: 440px;
+	min-height: 300px;
+	height: auto;
 }
 form#createNewProjectForm {
 }
@@ -175,7 +176,7 @@ form#projectAddBidForm legend, form#projectDetailsForm legend, form#createNewPro
     color: #000000;
     font-size: 16px;
     font-weight: bold;
-    padding: 12px 0 10px 20px;
+    padding: 12px 0 10px 0px;
     text-shadow: 0 1px 1px #E2E2E2;
 }
 form#projectAddBidForm ol, form#projectDetailsForm ol, form#createNewProjectForm ol {	
@@ -183,7 +184,8 @@ form#projectAddBidForm ol, form#projectDetailsForm ol, form#createNewProjectForm
     margin: 0;
 }
 form#projectAddBidForm ol li, form#projectDetailsForm ol li, form#createNewProjectForm ol li {
-    margin: 2px 0 2px 20px;
+    position: relative;
+    margin: 2px 0 2px 0px;
     line-height: 30px;
     list-style: none;
     float: left;
@@ -195,6 +197,51 @@ form#projectAddBidForm label, form#projectDetailsForm label, form#createNewProje
     cursor: default;
 }
 
+.detailslabel {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.detailslabeltext {
+	position: relative;
+	top: 0;
+	left: 0;
+	margin: 2px 0 0 150px;
+	font: italic 13px Georgia, "Times New Roman", Times, serif;
+	padding: 5px;
+	padding-left: 8px;
+    width: 260px;
+    min-height: 15px;
+    height: auto;
+    display: block;
+    border-left: 2px dotted #00AEFF;
+    background: #F0F0F0;
+}
+.ownertext {
+	width: 135px;
+}
+.detailsowner_sendmsg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 2px 0 0 305px;
+	width: 120px;
+	background: #797979;
+    border: none;
+    color: #ffffff;
+    display: inline;
+    font: 10px Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+    padding: 6px 8px;
+    border: 1px solid #797979;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.detailsowner_sendmsg:hover {
+	background: #F0F0F0;
+	color: #00AEFF;
+	border-color: #00AEFF;
+}
 form#projectAddBidForm input:not([type=radio]), form#projectAddBidForm textarea, 
 form#projectDetailsForm input:not([type=radio]), form#projectDetailsForm textarea,
 form#createNewProjectForm input:not([type=radio]), form#createNewProjectForm textarea {
@@ -226,8 +273,10 @@ form#projectAddBidForm input[type=checkbox]:hover, form#createNewProjectForm inp
     cursor: pointer;
 }
 
-
-form#projectAddBidForm button, form#createNewProjectForm button {
+.updatebutton {
+	margin-left: 180px;
+}
+form#projectAddBidForm button, form#createNewProjectForm button, .updatebutton {
     background: #00AEFF;
     border: none;
     -moz-border-radius: 8px;
@@ -236,10 +285,9 @@ form#projectAddBidForm button, form#createNewProjectForm button {
     border-radius: 8px;
     color: #ffffff;
     display: inline;
-    font: 14px "OldStyle1HPLHS", Helvetica, sans-serif;
+    font: 12px Arial, Helvetica, sans-serif;
     letter-spacing: 1px;
-    margin-left: 20px;
-    padding: 7px 28px;
+    padding: 8px 35px;
     text-transform: uppercase;
 }
 form#projectAddBidForm button:hover, form#createNewProjectForm button:hover {

@@ -1,0 +1,26 @@
+
+<form id="projectAddBidForm" action="" method="POST">
+	<fieldset>
+		<legend>Bid Details</legend>
+		<ol>
+			<li><label for="projectAddBid_price">Price per Iteration (SGD$)</label><input id="projectAddBid_price" name="projectAddBid_price" type="text" placeholder="Eg. 25.00" required autofocus></li>
+			<li><label for="projectAddBid_iterations">Iteration(s)</label><input id="projectAddBid_iterations" name="projectAddBid_iterations" type="number" min="1" required></li>
+		</ol>
+		<ol>
+			<!-- have to change following to a loop with Angular based on above Number of ITERATIONS-->
+			<li><label for="projectAddBid_iterationPlan">Iteration 1 Plan</label><textarea class="projectAddBid_iterationPlan" rows="" placeholder="Eg. Design paper prototype" required></textarea></li>
+			<li><label for="projectAddBid_iterationPlan">Iteration 2 Plan</label><textarea class="projectAddBid_iterationPlan" rows="" placeholder="Eg. Code login page with sign-in form" required></textarea></li>
+			<!-- end loop -->
+		</ol>
+	</fieldset>
+	<fieldset>
+		<fieldset>
+			<ol>
+				<li><input id="projectAddBid_agreeToTerms" name="projectAddBid_agreeToTerms" type="checkbox"><label for="projectAddBid_agreeToTerms">I agree to the terms</label></li>
+			</ol>
+		</fieldset>
+		<fieldset>
+			<button id="projectAddBid_bidBtn" type="submit">Bid</button>
+		</fieldset>
+	</fieldset>
+</form>

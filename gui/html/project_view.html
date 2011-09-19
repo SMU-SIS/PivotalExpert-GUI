@@ -1,6 +1,18 @@
-<script>
-//following controller controls which view to show depending on the project number
+<!--page 9: project_bid-->
+<!--for an non-owner to bid for a project-->
 
-</script>
-{{projectKey}}
-<ng:include src="url"></ng:include>
+<link rel="stylesheet" href="gui/css/style-project.css" type="text/css" media="screen" />
+<section id="project_bid_page">
+	<section id="project_bid_Header">
+		<section class="section_header">Project View for {{project.title}}</section>
+	</section>
+	<section id="project_bid_Body">
+		<section id="project_bid_projectDetails">
+			<ng:include src="'gui/html/project_view_detailsView.html'"></ng:include>
+		</section>
+		<section id="project_bid_addBid">
+			<ng:include src="'gui/html/project_view_bidAdd.html'"></ng:include>
+		</section>
+	</section>
+</section>
+
