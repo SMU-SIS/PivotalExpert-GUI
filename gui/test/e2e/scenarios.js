@@ -1,30 +1,4 @@
 /* jasmine-like end2end tests go here */
-
-describe('Alex', function() {
-
-
-  it('should redirect index.html to index.html', function() {
-    browser().navigateTo('../../app/index.html');
-    expect(browser().location().hash()).toBe('');
-  });
-
-
-  describe('Phone list view', function() {
-
-    beforeEach(function() {
-      browser().navigateTo('../../app/index.html');
-    });
-
-
-    it('should filter the phone list as user types into the search box', function() {
-      //expect(repeater('.phones li').count()).toBe(20);
-
-    });
-
-  });
-
-});  
-/*
 describe('PhoneCat App', function() {
 
   it('should redirect index.html to index.html#/phones', function() {
@@ -100,4 +74,3 @@ describe('PhoneCat App', function() {
     });
   });
 });
-*/
