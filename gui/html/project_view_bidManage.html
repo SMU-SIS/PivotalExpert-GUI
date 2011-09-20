@@ -1,26 +1,100 @@
 
-<form id="projectAddBidForm" action="" method="POST">
-	<fieldset>
-		<legend>Bid Details</legend>
-		<ol>
-			<li><label for="projectAddBid_price">Price per Iteration (SGD$)</label><input id="projectAddBid_price" name="projectAddBid_price" type="text" placeholder="Eg. 25.00" required autofocus></li>
-			<li><label for="projectAddBid_iterations">Iteration(s)</label><input id="projectAddBid_iterations" name="projectAddBid_iterations" type="number" min="1" required></li>
-		</ol>
-		<ol>
-			<!-- have to change following to a loop with Angular based on above Number of ITERATIONS-->
-			<li><label for="projectAddBid_iterationPlan">Iteration 1 Plan</label><textarea class="projectAddBid_iterationPlan" rows="" placeholder="Eg. Design paper prototype" required></textarea></li>
-			<li><label for="projectAddBid_iterationPlan">Iteration 2 Plan</label><textarea class="projectAddBid_iterationPlan" rows="" placeholder="Eg. Code login page with sign-in form" required></textarea></li>
-			<!-- end loop -->
-		</ol>
-	</fieldset>
-	<fieldset>
-		<fieldset>
-			<ol>
-				<li><input id="projectAddBid_agreeToTerms" name="projectAddBid_agreeToTerms" type="checkbox"><label for="projectAddBid_agreeToTerms">I agree to the terms</label></li>
-			</ol>
-		</fieldset>
-		<fieldset>
-			<button id="projectAddBid_bidBtn" type="submit">Bid</button>
-		</fieldset>
-	</fieldset>
-</form>
+
+<style>
+
+
+#project_manage_projectWorkplan {
+	top: 0;
+	left: 0;
+	padding-top: 10px;
+}
+#project_manage_projectWorkplan ul {
+	list-style: none;
+	margin: 0;
+	padding-top: 6px;
+	min-height: 350px;
+	height: auto;
+}
+.projectWorkplan_iterationList {
+}
+#project_manage_projectWorkplan ul li {
+	margin-bottom: 15px;
+}
+.projectWorkplan_iteration_entry {
+}
+.projectWorkplan_iteration_img {
+	position: absolute;
+}
+.projectWorkplan_iteration_img a, .projectWorkplan_iteration_img a:active, .projectWorkplan_iteration_img a:visited {
+	text-decoration: none;
+	color: #0097FE;
+}
+.projectWorkplan_iteration_body {
+	position: relative;
+	margin: 0 25px 0 35px;
+}
+.projectWorkplan_iteration_displaybar {
+	background: #E7E7E7;
+	padding-bottom: 4px;
+}
+.projectWorkplan_iteration_header {
+	font-weight: bold;
+	font-size: 13px;
+	padding-left: 25px;
+	border-bottom: 4px solid #000000;
+}
+.projectWorkplan_iteration_status {
+	position: absolute;
+	top: 0;
+	right: 0;
+	-moz-right: 0;
+	-webkit-right: 0;
+}
+.iteration_status_completed {
+	background: #000000;
+	color: #FFFFFF;
+	padding: 5px 15px;
+	font: 11px Arial, Vardana, Helvetica;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.projectWorkplan_iteration_slidedownbox {
+	padding: 10px 25px 20px 25px;
+	background: #BAE9FF;
+	border: 1px dashed #000000;
+	border-top: 0;
+}
+.projectWorkplan_iteration_description {
+	font-size: 12px;
+	padding: 10px 10px 15px 0;
+}
+
+
+
+
+</style>
+
+
+<section id="project_manage_projectWorkplan">
+	<section class="section_subheader">Manage Bid(s)</section>
+	<section class="section_subheader_line"></section>
+	<ul class="projectWorkplan_iterationList">
+		<li class="projectWorkplan_iteration_entry">
+			<div class="projectWorkplan_iteration_img"><a href="">[+]</a></div>
+			<div class="projectWorkplan_iteration_body">
+				<div class="projectWorkplan_iteration_displaybar">
+					<span class="projectWorkplan_iteration_header">Iteration 1</span>
+					<div class="projectWorkplan_iteration_status"><span class="iteration_status_completed">Completed</span></div>
+				</div>
+				<div class="projectWorkplan_iteration_slidedownbox">
+					<div class="projectWorkplan_iteration_description">message body message body message body message body message body message body</div>
+					<div class="projectWorkplan_iteration_actions">
+						<a class="projectWorkplan_iteration_actions_comment" href="">Comment</a>
+						<a class="projectWorkplan_iteration_actions_shift" href="">Shift</a>
+						<a class="projectWorkplan_iteration_actions_edit" href="">Edit</a>
+					</div>
+				</div>
+			</div>
+		</li>
+	</ul>
+</section>

@@ -236,6 +236,10 @@ body  {
 	font-size: 16px;
 	margin: 0 0 10px 0;
 }
+.section_subheader_line {
+	border-top: 1px #E7E7E7 solid;
+	margin-bottom: 20px;
+}
 
 
 /***** Footer *****/

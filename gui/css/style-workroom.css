@@ -1,6 +1,5 @@
 
 
-
 #project_manage_page {
 }
 #project_manage_Header {
@@ -18,11 +17,11 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	margin-left: 145px;
+	margin-left: 155px;
 }
 .ownerNameHeader, .developerNameHeader { 
 	display: block;
-	width: 122px;
+	width: 137px;
 	text-align: center;	
 	background: #000000;
 	color: #FFFFFF;
@@ -32,8 +31,8 @@
 	padding: 5px 0 5px 0;
 }
 .ownerImg, .developerImg {
-	width: 120px;
-	height: 120px;
+	width: 135px;
+	height: 135px;
 	border: 1px #E7E7E7 solid;
 }
 .ownerNameText, .developerNameText {
@@ -45,14 +44,12 @@
 	font-size: 12px;
 }
 
-
-
 #project_manage_projectDetails {
 	position: relative;
 	top: 0;
 	left: 0;
 	margin-left: 360px;
-	min-height: 175px;
+	min-height: 205px;
 }
 #project_manage_projectDetails ol {	
 	padding: 0;
@@ -93,10 +90,87 @@
     background: #F0F0F0;
 	border-right: 4px dotted #00AEFF;
 }
-.ownertext {
-	width: 135px;
+
+#project_manage_Body {
+	position: relative;
+	margin-top: 20px;
 }
-.projectwall_sendmsg {
+#project_manage_projectWall, #project_manage_projectWorkplan {
+	min-height: 350px;
+}
+#project_manage_projectWall {
+	position: absolute;
+	width: 310px;
+}
+#project_manage_projectWall ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.projectWall_messageList {
+	margin: 0 auto;
+	min-height: 280px;
+	height: 280px;
+	overflow-y: scroll;
+}
+.clearfix:after {
+   content: ".";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+#project_manage_projectWall ul li {
+	margin-bottom: 8px;
+}
+.projectWall_message_entry {
+	position: relative;
+	display: block;
+	border-left: 8px solid #FFFF00;
+	padding-right: 10px;
+}
+.projectWall_message_img {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.projectWall_message_header {
+	font-weight: bold;
+	font-size: 11px;
+	margin-left: 40px;
+}
+.projectWall_message_timestamp {
+	position: absolute;
+	top: 0;
+	right: 0;
+	-moz-right: 0;
+	-webkit-right: 0;
+	font-weight: bold;
+	font-size: 11px;
+	width: 80px;
+	margin-right: 10px;
+	padding: 2px 0px 2px 10px;
+	background: #FFFF00;
+}
+.projectWall_message_body {
+	font-size: 10px;
+	margin-left: 40px;
+	padding: 0 5px 10px 0;
+	border-bottom: 1px dotted #E7E7E7;
+}
+.projectWall_messagePost {
+}
+#messagePostForm {
+	background: #FFFFFF;
+	padding: 15px 8px 25px 10px;
+}
+#messagePost_theMsg {
+	width: 205px;
+}
+#messagePost_sendBtn {
+}
+.projectwall_sendmsg, .projectWorkplan_iteration_actions_comment, 
+.projectWorkplan_iteration_actions_shift, .projectWorkplan_iteration_actions_edit {
 	width: 85px;
 	background: #797979;
     border: none;
@@ -109,11 +183,24 @@
     font-weight: bold;
     text-transform: uppercase;
 }
-.projectwall_sendmsg:hover {
+.projectwall_sendmsg:hover, .projectWorkplan_iteration_actions a:hover {
 	background: #F0F0F0;
 	color: #00AEFF;
 	border-color: #00AEFF;
 }
+.projectWorkplan_iteration_actions_comment, .projectWorkplan_iteration_actions_shift, .projectWorkplan_iteration_actions_edit {
+	padding: 5px 18px;
+}
+.projectWorkplan_iteration_actions {
+	border-top: 1px dotted #797979;
+	padding-top: 5px;
+	width: 410px;
+}
+.projectWorkplan_iteration_actions a, .projectWorkplan_iteration_actions a:active, .projectWorkplan_iteration_actions a:visited {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
 form#messagePostForm input:not([type=radio]), form#messagePostForm textarea {
     background: #FFFFFF;
     border: 2px solid #E7E7E7;
@@ -127,15 +214,75 @@ form#messagePostForm input:not([type=radio]), form#messagePostForm textarea {
     width: 180px;
 }
 
+#project_manage_projectWorkplan {
+	position: relative;
+	top: 0;
+	left: 0;
+	margin-left: 360px;
+}
+#project_manage_projectWorkplan ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	min-height: 350px;
+	height: auto;
+}
+.projectWorkplan_iterationList {
+}
+#project_manage_projectWorkplan ul li {
+	margin-bottom: 15px;
+}
+.projectWorkplan_iteration_entry {
+}
+.projectWorkplan_iteration_img {
+	position: absolute;
+}
+.projectWorkplan_iteration_img a, .projectWorkplan_iteration_img a:active, .projectWorkplan_iteration_img a:visited {
+	text-decoration: none;
+	color: #0097FE;
+}
+.projectWorkplan_iteration_body {
+	position: relative;
+	margin: 0 25px 0 35px;
+}
+.projectWorkplan_iteration_displaybar {
+	background: #E7E7E7;
+	padding-bottom: 4px;
+}
+.projectWorkplan_iteration_header {
+	font-weight: bold;
+	font-size: 13px;
+	padding-left: 25px;
+	border-bottom: 4px solid #000000;
+}
+.projectWorkplan_iteration_status {
+	position: absolute;
+	top: 0;
+	right: 0;
+	-moz-right: 0;
+	-webkit-right: 0;
+}
+.iteration_status_completed {
+	background: #000000;
+	color: #FFFFFF;
+	padding: 5px 15px;
+	font: 11px Arial, Vardana, Helvetica;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.projectWorkplan_iteration_slidedownbox {
+	padding: 10px 25px 20px 25px;
+	background: #BAE9FF;
+	border: 1px dashed #000000;
+	border-top: 0;
+}
+.projectWorkplan_iteration_description {
+	font-size: 12px;
+	padding: 10px 10px 15px 0;
+}
 
-form#projectAddBidForm input[type=checkbox], form#createNewProjectForm input[type=checkbox] {
-    float: left;
-    margin: 10px 5px 0 0;
-    width: 15px;
-}
-form#projectAddBidForm input[type=checkbox]:hover, form#createNewProjectForm input[type=checkbox]:hover {
-    cursor: pointer;
-}
+
+
 
 
 
