@@ -183,7 +183,7 @@
     font-weight: bold;
     text-transform: uppercase;
 }
-.projectwall_sendmsg:hover {
+.projectwall_sendmsg:hover, .projectWorkplan_iteration_actions a:hover {
 	background: #F0F0F0;
 	color: #00AEFF;
 	border-color: #00AEFF;
@@ -200,6 +200,7 @@
 	color: #FFFFFF;
 	text-decoration: none;
 }
+
 
 form#messagePostForm input:not([type=radio]), form#messagePostForm textarea {
     background: #FFFFFF;
