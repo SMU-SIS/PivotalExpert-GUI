@@ -201,7 +201,6 @@
 	text-decoration: none;
 }
 
-
 form#messagePostForm input:not([type=radio]), form#messagePostForm textarea {
     background: #FFFFFF;
     border: 2px solid #E7E7E7;
