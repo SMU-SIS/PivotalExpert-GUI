@@ -1,160 +1,6 @@
 <!--page 11: project_manage-->
 <!--this the screen for users to manage a current project-->
 
-
-<style>
-
-
-
-
-
-
-
-
-#project_manage_Body {
-	position: relative;
-	margin-top: 20px;
-}
-#project_manage_projectWall, #project_manage_projectWorkplan {
-	min-height: 200px;
-}
-#project_manage_projectWall {
-	position: absolute;
-	width: 310px;
-	
-	
-}
-#project_manage_projectWall ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-.projectWall_messageList {
-	margin: 0 auto;
-	min-height: 280px;
-	height: 280px;
-	overflow: scroll;
-	background: pink;
-}
-.clearfix:after {
-   content: ".";
-   visibility: hidden;
-   display: block;
-   height: 0;
-   clear: both;
-}
-#project_manage_projectWall ul li {
-	
-	background: purple;
-}
-.projectWall_message_entry {
-	position: relative;
-	display: block;
-	border-left: 8px solid #FFFF00;
-	padding-right: 10px;
-}
-.projectWall_message_img {
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-.projectWall_message_header {
-	font-weight: bold;
-	font-size: 11px;
-	margin-left: 40px;
-}
-.projectWall_message_timestamp {
-	position: absolute;
-	top: 0;
-	right: 0;
-	-moz-right: 0;
-	-webkit-right: 0;
-	font-weight: bold;
-	font-size: 11px;
-	width: 80px;
-	margin-right: 10px;
-	
-	background:yellow;
-}
-.projectWall_message_body {
-	font-size: 10px;
-	margin-left: 40px;
-	padding: 0 5px 10px 0;
-	border-bottom: 1px dotted #E7E7E7;
-}
-
-.projectWall_messagePost {
-	
-}
-#messagePostForm {
-	background: #FFFFFF;
-	padding: 5px 8px 5px 10px;
-}
-#messagePost_theMsg {
-	width: 205px;
-}
-#messagePost_sendBtn {
-}
-
-
-#project_manage_projectWorkplan {
-	position: relative;
-	top: 0;
-	left: 0;
-	margin-left: 360px;
-	min-height: 380px;
-	height: auto;
-}
-#project_manage_projectWorkplan ul {
-	list-style: none;
-	margin: 0 0 1px 0;
-	padding: 0;
-}
-.projectWorkplan_iterationList {
-
-}
-#project_manage_projectWorkplan ul li {
-
-}
-.projectWorkplan_iteration_entry {
-	
-}
-.projectWorkplan_iteration_img {
-	position: absolute;
-}
-.projectWorkplan_iteration_body {
-	position: relative;
-	margin-right: 30px;
-	padding-left: 35px;
-}
-.projectWorkplan_iteration_header {
-	font-weight: bold;
-	font-size: 13px;
-}
-.projectWorkplan_iteration_status {
-	position: absolute;
-	top: 0;
-	right: 0;
-	-moz-right: 0;
-	-webkit-right: 0;
-	
-}
-.projectWorkplan_iteration_description {
-	font-size: 12px;
-}
-.projectWorkplan_iteration_actions {
-
-}
-.projectWorkplan_iteration_actions_comment, .projectWorkplan_iteration_actions_shift, .projectWorkplan_iteration_actions_edit {
-
-}
-
-
-
-</style>
-
-
-
 <link rel="stylesheet" href="gui/css/style-workroom.css" type="text/css" media="screen" />
 <section id="project_manage_page">
 	<section id="project_manage_Header">
@@ -162,16 +8,17 @@
 		<section id="project_manage_headerBody">
 			<section id="project_manage_projectOwner">
 				<span class="ownerNameHeader">Owner</span>
-				<article class="ownerImg"><img src="http://www.gravatar.com/avatar/{{currentUser.gravatar}}?s=150&d=mm"  width="120px" height="120px" /></article>
+				<article class="ownerImg"><img src="http://www.gravatar.com/avatar/{{currentUser.gravatar}}?s=150&d=mm"  width="135px" height="135px" /></article>
 				<span class="ownerNameText">Mark</span>
 			</section>
 			<section id="project_manage_projectDeveloper">
 				<span class="developerNameHeader">Developer</span>
-				<article class="developerImg"><img src="http://www.gravatar.com/avatar/a4126f00847dc4f62786982a7be02972?s=80"  width="120px" height="120px" /></article>
+				<article class="developerImg"><img src="http://www.gravatar.com/avatar/a4126f00847dc4f62786982a7be02972?s=80"  width="135px" height="135px" /></article>
 				<span class="developerNameText">Raymond</span>
 			</section>
 			<section id="project_manage_projectDetails">
 				<section class="section_subheader">Project Details</section>
+				<section class="section_subheader_line"></section>
 				<ol>
 					<li><label class="detailslabel" for="projectDetails_title">Title</label><span class="detailslabeltext" id="projectDetails_title" name="projectDetails_title">{{projectDetails[0].title}}</span></li>
 					<li><label class="detailslabel" for="projectDetails_description">Description</label><span class="detailslabeltext" id="projectDetails_description" name="projectDetails_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu odio sit amet nunc aliquam scelerisque vitae sit amet sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></li>
@@ -182,6 +29,7 @@
 	<section id="project_manage_Body">
 		<section id="project_manage_projectWall">
 			<section class="section_subheader">Project Wall</section>
+			<section class="section_subheader_line"></section>
 			<ul class="projectWall_messageList">
 				<li class="projectWall_message_entry clearfix">
 					<div class="projectWall_message_img"><img src="gui/images/user.jpg"  width="30px" height="35px" /></div>
@@ -233,22 +81,27 @@
 		</section>
 		<section id="project_manage_projectWorkplan">
 			<section class="section_subheader">Project Workplan</section>
+			<section class="section_subheader_line"></section>
 			<ul class="projectWorkplan_iterationList">
 				<li class="projectWorkplan_iteration_entry">
-					<div class="projectWorkplan_iteration_img">[+]</div>
+					<div class="projectWorkplan_iteration_img"><a href="">[+]</a></div>
 					<div class="projectWorkplan_iteration_body">
-						<p class="projectWorkplan_iteration_header">Iteration 1</p>
-						<div class="projectWorkplan_iteration_status">Completed</div>
-						<div class="projectWorkplan_iteration_description">message body message body message body message body message body message body</div>
-						<div class="projectWorkplan_iteration_actions">
-							<a class="projectWorkplan_iteration_actions_comment" href="">Comment</a>
-							<a class="projectWorkplan_iteration_actions_shift" href="">Shift</a>
-							<a class="projectWorkplan_iteration_actions_edit" href="">Edit</a>
+						<div class="projectWorkplan_iteration_displaybar">
+							<span class="projectWorkplan_iteration_header">Iteration 1</span>
+							<div class="projectWorkplan_iteration_status"><span class="iteration_status_completed">Completed</span></div>
+						</div>
+						<div class="projectWorkplan_iteration_slidedownbox">
+							<div class="projectWorkplan_iteration_description">message body message body message body message body message body message body</div>
+							<div class="projectWorkplan_iteration_actions">
+								<a class="projectWorkplan_iteration_actions_comment" href="">Comment</a>
+								<a class="projectWorkplan_iteration_actions_shift" href="">Shift</a>
+								<a class="projectWorkplan_iteration_actions_edit" href="">Edit</a>
+							</div>
 						</div>
 					</div>
 				</li>
 				<li class="projectWorkplan_iteration_entry">
-					<div class="projectWorkplan_iteration_img">[+]</div>
+					<div class="projectWorkplan_iteration_img"><a href="">[+]</a></div>
 					<div class="projectWorkplan_iteration_body">
 						<p class="projectWorkplan_iteration_header">Iteration 2</p>
 						<div class="projectWorkplan_iteration_status">Completed</div>
