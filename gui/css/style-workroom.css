@@ -97,14 +97,14 @@
 	width: 135px;
 }
 .projectwall_sendmsg {
-	width: 100px;
+	width: 85px;
 	background: #797979;
     border: none;
     color: #ffffff;
     display: inline;
     font: 10px Arial, Helvetica, sans-serif;
     letter-spacing: 1px;
-    padding: 6px 8px;
+    padding: 15px 8px;
     border: 1px solid #797979;
     font-weight: bold;
     text-transform: uppercase;
@@ -114,9 +114,7 @@
 	color: #00AEFF;
 	border-color: #00AEFF;
 }
-form#projectAddBidForm input:not([type=radio]), form#projectAddBidForm textarea, 
-form#projectDetailsForm input:not([type=radio]), form#projectDetailsForm textarea,
-form#createNewProjectForm input:not([type=radio]), form#createNewProjectForm textarea {
+form#messagePostForm input:not([type=radio]), form#messagePostForm textarea {
     background: #FFFFFF;
     border: 2px solid #E7E7E7;
     -moz-border-radius: 3px;
@@ -126,7 +124,7 @@ form#createNewProjectForm input:not([type=radio]), form#createNewProjectForm tex
     font: italic 13px Georgia, "Times New Roman", Times, serif;
     outline: none;
     padding: 5px;
-    width: 200px;
+    width: 180px;
 }
 
 
@@ -139,28 +137,5 @@ form#projectAddBidForm input[type=checkbox]:hover, form#createNewProjectForm inp
     cursor: pointer;
 }
 
-.updatebutton {
-	margin-left: 180px;
-}
-form#projectAddBidForm button, form#createNewProjectForm button, .updatebutton {
-    background: #00AEFF;
-    border: none;
-    -moz-border-radius: 8px;
-    -webkit-border-radius: 8px;
-    -khtml-border-radius: 8px;
-    border-radius: 8px;
-    color: #ffffff;
-    display: inline;
-    font: 12px Arial, Helvetica, sans-serif;
-    letter-spacing: 1px;
-    padding: 8px 35px;
-    text-transform: uppercase;
-}
-form#projectAddBidForm button:hover, form#createNewProjectForm button:hover {
-    background: #FFFF00;
-    text-shadow: 0 1px 1px #FFD200;
-    color: #000000;
-    cursor: pointer;
-}
 
 
