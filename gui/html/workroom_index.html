@@ -4,86 +4,10 @@
 
 <style>
 
-#project_manage_page {
-
-}
-#project_manage_Header {
-	
-}
-#project_manage_headerBody {
-	position: relative;
-	
-	background:	red;
-}
-#project_manage_projectOwner {
-	
-}
-#ownerNameText {
-
-}
-#ownerImg, #developerImg {
-	width: 100px;
-	height: 120px;
-	border: 1px #E7E7E7 solid;
-	
-	
-	background:grey;
-}
-#ownerNameHeader {
-	width: 80px;
-	text-align: center;
-	
-	background:pink;
-}
-#project_manage_projectDeveloper {
-	position: absolute;
-	top: 0;
-	left: 0;
-	margin-left: 125px;
-}
-#developerNameText {
-
-}
-#developerNameHeader {
-	width: 80px;
-	text-align: center;
-}
-
-#project_manage_projectDetails {
-	position: absolute;
-	top: 0;
-	left: 0;
-	margin-left: 320px;
-	min-height: 100px;
-}
-
-section#project_manage_projectDetails ol {
-	list-style: none;
-	margin: 0 0 1px 0;
-	padding: 0;
-}
-section#project_manage_projectDetails ol li {
-	float: left;
-	display: inline-block;
-	margin-bottom: 5px;	
-}
-section#project_manage_projectDetails label {
-    float: left;
-    font-size: 13px;
-    width: 150px;
-}
 
 
-#projectDetails_title, #projectDetails_description {
-	display: block;
-	font-size: 13px;
-	margin-left: 150px;
-	padding-right: 10px;
-	width: 380px;
-	border-right: 4px dotted #00AEFF;
-	
-	background: blue;
-}
+
+
 
 
 
@@ -216,26 +140,26 @@ section#project_manage_projectDetails label {
 
 
 
-<link rel="stylesheet" href="gui/css/style-project.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="gui/css/style-workroom.css" type="text/css" media="screen" />
 <section id="project_manage_page">
 	<section id="project_manage_Header">
 		<section class="section_header">Project "AWESOME"</section>
 		<section id="project_manage_headerBody">
 			<section id="project_manage_projectOwner">
-				<span id="ownerNameText">Mark<span>
-				<article id="ownerImg"><img src="gui/images/user.jpg"  width="100px" height="120px" /></article>
 				<span id="ownerNameHeader">Owner<span>
+				<article id="ownerImg"><img src="gui/images/user.jpg"  width="100px" height="120px" /></article>
+				<span id="ownerNameText">Mark<span>
 			</section>
 			<section id="project_manage_projectDeveloper">
-				<span id="developerNameText">Raymond<span>
-				<article id="developerImg"><img src="gui/images/user.jpg"  width="100px" height="120px" /></article>
 				<span id="developerNameHeader">Developer<span>
+				<article id="developerImg"><img src="gui/images/user.jpg"  width="100px" height="120px" /></article>
+				<span id="developerNameText">Raymond<span>
 			</section>
 			<section id="project_manage_projectDetails">
 				<section class="section_subheader">Project Details</section>
 				<ol>
-					<li><label for="projectDetails_title">Title</label><span id="projectDetails_title" name="projectDetails_title">{{projectDetails[0].title}}</span></li>
-					<li><label for="projectDetails_description">Description</label><span id="projectDetails_description" name="projectDetails_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu odio sit amet nunc aliquam scelerisque vitae sit amet sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></li>
+					<li><label class="detailslabel" for="projectDetails_title">Title</label><span class="detailslabeltext" id="projectDetails_title" name="projectDetails_title">{{projectDetails[0].title}}</span></li>
+					<li><label class="detailslabel" for="projectDetails_description">Description</label><span class="detailslabeltext" id="projectDetails_description" name="projectDetails_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu odio sit amet nunc aliquam scelerisque vitae sit amet sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></li>
 				</ol>
 			</section>
 		</section>
@@ -268,7 +192,7 @@ section#project_manage_projectDetails label {
 					<form id="messagePostForm" action="" method="POST">
 						<fieldset>
 							<input id="messagePost_theMsg" name="messagePost_theMsg" type="text" placeholder="Post a comment" required autofocus>
-							<button id="messagePost_sendBtn" type="submit">Send</button>
+							<button class="projectwall_sendmsg" id="messagePost_sendBtn" type="submit">Send</button>
 						</fieldset>
 					</form>
 				</li>
