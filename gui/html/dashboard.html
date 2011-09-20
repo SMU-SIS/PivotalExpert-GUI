@@ -46,9 +46,9 @@
 							<td class="table_header newsfeed_message_sent">Sent</td>
 						</tr>
 						<tr class="newsfeedTableEntry" ng:repeat="news_feed in dashboard[0].entries">
-							<td class="table_row newsfeed_message_from"><img src="http://www.gravatar.com/avatar/{{news_feed.user_image}}?s=50"></td>
+							<td class="table_row newsfeed_message_from"><img src="{{news_feed.user_image}}?s=50&d=mm"></td>
 							<td class="table_row newsfeed_message_text">
-								<span class="newsfeed_message_text_user">{{news_feed.from_user}}</span><br />
+								<span class="newsfeed_message_text_user">{{news_feed.subject}}</span><br />
 								<span class="newsfeed_message_text_msg">{{news_feed.message}}</span>
 							</td>
 							<td class="table_row newsfeed_message_sent ">{{news_feed.time_sent}}</td>
@@ -88,11 +88,11 @@
 									  onclick="GoToURL('#/projects/{{page}}/{{project.id}}');">
 									<td class="table_row projectsmgt_workroom_title"><span class="workroom_title">{{workroom.title}}</span></td>
 									<td class="table_row projectsmgt_workroom_owner workroom_height">
-										<span class="projectsmgt_workroom_owner_pic"><img src="http://www.gravatar.com/avatar/{{currentUser.gravatar}}?s=150&d=mm" width="50px" height="50px"></span>
+										<span class="projectsmgt_workroom_owner_pic"><img src="http://www.gravatar.com/avatar/{{workroom.owner_gravatar}}?s=50&d=mm"></span>
 										<span class="projectsmgt_workroom_owner_name">{{workroom.owner}}</span>
 									</td>
 									<td class="table_row projectsmgt_workroom_developer workroom_height">
-										<span class="projectsmgt_workroom_developer_pic"><img src="http://www.gravatar.com/avatar/a4126f00847dc4f62786982a7be02972?s=80" width="50px" height="50px"></span>
+										<span class="projectsmgt_workroom_developer_pic"><img src="http://www.gravatar.com/avatar/{{workroom.developer_gravatar}}?s=50&d=mm"></span>
 										<span class="projectsmgt_workroom_developer_name">{{workroom.developer}}</span>
 									</td>
 									<td class="table_row projectsmgt_workroom_iteration workroom_height">{{workroom.iteration}}</td>
@@ -140,7 +140,7 @@
 								<tr class="projectsmgtBidsTableEntry" ng:repeat="bid in dashboard[0].bids">
 									<td class="table_row projectsmgt_bids_title">{{bid.title}}</td>
 									<td class="table_row projectsmgt_bids_owner bids_height">
-										<span class="projectsmgt_bids_owner_pic"><img src="http://www.gravatar.com/avatar/{{currentUser.gravatar}}?s=150&d=mm" width="50px" height="50px"></span>
+										<span class="projectsmgt_bids_owner_pic"><img src="http://www.gravatar.com/avatar/{{bid.owner_gravatar}}?s=50&d=mm"></span>
 										<span class="projectsmgt_bids_owner_name">{{bid.owner}}</span>
 									</td>
 									<td class="table_row projectsmgt_bids_tags bids_height">
