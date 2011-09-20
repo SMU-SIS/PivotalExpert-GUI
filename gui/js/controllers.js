@@ -60,7 +60,7 @@ function PageRouter_Master($route, $location) { //router for the website itself
 	$route.when('/edit_profile',{template:'gui/html/user_edit.html', controller: UserEditCtrl});
 	$route.when('/badges/suggest',{template:'gui/html/suggest_badge.html'});
 	$route.when('/inbox',{template:'gui/html/inbox.html'});
-	
+	$route.when('/inbox/compose',{template:'gui/html/message_send.html'});
 	
 	
 	$route.when('/user/<user_id>/view_profile',{template:''});	// TESTING

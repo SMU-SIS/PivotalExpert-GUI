@@ -3,14 +3,14 @@
 
 <h2>Send a New Message!</h2>
 
-<form action="#" method="POST">
-To    <input type="text" name="user" value=""><br/>
-Subject <input type="text" name="subject" value=""><br/>
-Message <input type="text" name="message" value="" width="200" height="500"><br/> 
+<form action="form/message/send" method="POST">
+To    <input type="text" name="msgTo" value="{{$location.hashSearch.msgTo}}"><br/>
+Subject <input type="text" name="msgSubject" value="{{$location.hashSearch.msgSubject}}"><br/>
+Message <input type="text" name="msgMsg" value="{{$location.hashSearch.msgMsg}}" width="200" height="500"><br/> 
 
 <br/>
 
-<input type="button" name="send" value="send">
+<input type="submit" value="send">
 <input type="button" name="back" value="back">
 
 </form>
