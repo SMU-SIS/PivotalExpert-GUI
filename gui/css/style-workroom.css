@@ -169,7 +169,8 @@
 }
 #messagePost_sendBtn {
 }
-.projectwall_sendmsg {
+.projectwall_sendmsg, .projectWorkplan_iteration_actions_comment, 
+.projectWorkplan_iteration_actions_shift, .projectWorkplan_iteration_actions_edit {
 	width: 85px;
 	background: #797979;
     border: none;
@@ -187,6 +188,19 @@
 	color: #00AEFF;
 	border-color: #00AEFF;
 }
+.projectWorkplan_iteration_actions_comment, .projectWorkplan_iteration_actions_shift, .projectWorkplan_iteration_actions_edit {
+	padding: 5px 18px;
+}
+.projectWorkplan_iteration_actions {
+	border-top: 1px dotted #797979;
+	padding-top: 5px;
+	width: 410px;
+}
+.projectWorkplan_iteration_actions a, .projectWorkplan_iteration_actions a:active, .projectWorkplan_iteration_actions a:visited {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
 form#messagePostForm input:not([type=radio]), form#messagePostForm textarea {
     background: #FFFFFF;
     border: 2px solid #E7E7E7;
@@ -214,21 +228,22 @@ form#messagePostForm input:not([type=radio]), form#messagePostForm textarea {
 	height: auto;
 }
 .projectWorkplan_iterationList {
-	
 }
 #project_manage_projectWorkplan ul li {
-	
+	margin-bottom: 15px;
 }
 .projectWorkplan_iteration_entry {
-	
 }
 .projectWorkplan_iteration_img {
 	position: absolute;
 }
+.projectWorkplan_iteration_img a, .projectWorkplan_iteration_img a:active, .projectWorkplan_iteration_img a:visited {
+	text-decoration: none;
+	color: #0097FE;
+}
 .projectWorkplan_iteration_body {
 	position: relative;
 	margin: 0 25px 0 35px;
-	background: #BAE9FF;
 }
 .projectWorkplan_iteration_displaybar {
 	background: #E7E7E7;
@@ -256,18 +271,17 @@ form#messagePostForm input:not([type=radio]), form#messagePostForm textarea {
 	font-weight: bold;
 }
 .projectWorkplan_iteration_slidedownbox {
-	padding: 0 25px;
+	padding: 10px 25px 20px 25px;
+	background: #BAE9FF;
+	border: 1px dashed #000000;
+	border-top: 0;
 }
 .projectWorkplan_iteration_description {
 	font-size: 12px;
-	padding: 10px 10px 10px 0;
+	padding: 10px 10px 15px 0;
 }
-.projectWorkplan_iteration_actions {
-	
-}
-.projectWorkplan_iteration_actions_comment, .projectWorkplan_iteration_actions_shift, .projectWorkplan_iteration_actions_edit {
-	
-}
+
+
 
 
 
