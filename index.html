@@ -14,14 +14,14 @@
     	<link rel="stylesheet" href="gui/css/style.css" media="screen" />
 	</head>
 	<body ng:controller="PageRouter_Master">
-		<div id="container">
-			<div id="box">
+		<section id="container">
+			<section id="box">
 				<header id="top">
-					<div id="top_above">
-						<div id="logo">
+					<section id="top_above">
+						<section id="logo">
 							<img src="gui/images/aper_curve.png" alt="" /><img src="gui/images/pe_logo.png" alt="Pivotal Expert" />
-						</div>
-						<div id="top_links">
+						</section>
+						<section id="top_links">
 							<nav>
 								<ul>
 									<li ng:controller="CurrentUserController">
@@ -30,11 +30,11 @@
 	 								</li>
 								</ul>
 							</nav>
-						</div>
-						<div id="top_separator"></div>
-					</div>
-					<div id="top_below">
-						<div id="country"><img src="gui/images/countries/sg.png" alt="Singapore" /> Singapore</div>
+						</section>
+						<section id="top_separator"></section>
+					</section>
+					<section id="top_below">
+						<section id="country"><img src="gui/images/countries/sg.png" alt="Singapore" /> Singapore</section>
 						<nav>
 							<ul>
 								<li><a href="#/">dashboard</a>
@@ -50,16 +50,16 @@
 								<li><a href="#/developers">developers</a></li>
 							</ul>
 						</nav>
-					</div>
+					</section>
 				</header>
-				<div ng:show="alertMsg" id="alertBox">{{alertMsg}} <button ng:click="alertMsg = false">Close</button></div>
-				<div id="content" role="content">
+				<section ng:show="alertMsg" id="alertBox">{{alertMsg}} <button ng:click="alertMsg = false">Close</button></section>
+				<section id="content" role="content">
 					<ng:view></ng:view>
-				</div>
+				</section>
 				
 				<footer id="bottom">
-					<div id="copyright">Pivotal Expert &copy; <time datetime="2011-04-28">2011</time> <sup>.</sup> Fused by <a href="http://aperturefyp.wordpress.com/" target="_blank">aperture productions <img src="gui/images/logoonly-grey-10px.jpg" alt="Fused by aperture productions" /></a></div>
-					<div id="bottom_links">
+					<section id="copyright">Pivotal Expert &copy; <time datetime="2011-04-28">2011</time> <sup>.</sup> Fused by <a href="http://aperturefyp.wordpress.com/" target="_blank">aperture productions <img src="gui/images/logoonly-grey-10px.jpg" alt="Fused by aperture productions" /></a></section>
+					<section id="bottom_links">
 						<nav>
 							<ul>
 								<li><a href="#/contact_us">Contact Us</a></li><li><sup>.</sup></li>
@@ -69,10 +69,10 @@
 								<li><a href="https://wiki.smu.edu.sg/is480/IS480_Team_wiki:_2011T1_Aperture" target="_blank">Wiki</a></li>
 							</ul>
 						</nav>
-					</div>
+					</section>
 				</footer>
-			</div>
-		</div>
+			</section>
+		</section>
 		<script src="gui/lib/angular/angular.js" ng:autobind></script>
 		<script src="gui/js/plugins.js"></script>
 		<script src="gui/js/controllers.js"></script>
