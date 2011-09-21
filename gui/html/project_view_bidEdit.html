@@ -1,5 +1,6 @@
 
-<form id="projectAddBidForm" action="" method="POST">
+<form id="projectAddBidForm" action="form/project/addbid" method="POST">
+	<input type="hidden" name="projectAddBid_projectID" value="{{project.id}}"/>
 	<fieldset>
 		<legend>Bid Details</legend>
 		<section class="section_subheader_line"></section>
@@ -9,7 +10,7 @@
 		</ol>
 		<ol>
 			<!-- have to change following to a loop with Angular based on above Number of ITERATIONS-->
-			<li ng:repeat="task in bid.iterations"><label for="projectAddBid_iterationPlan">Iteration {{$index+1}} Plan</label><textarea class="projectAddBid_iterationPlan" rows="" placeholder="" value="{{task}}" required></textarea></li>
+			<li ng:repeat="task in bid.iterations"><label for="projectAddBid_iterationPlan">Iteration {{$index+1}} Plan</label><textarea name="projectAddBid_task{{$index+1}}" class="projectAddBid_iterationPlan" rows="" placeholder="" value="{{task}}" required></textarea></li>
 			<!-- end loop -->
 		</ol>
 	</fieldset>
