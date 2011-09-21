@@ -102,6 +102,7 @@ function ProjectViewCtrl($resource){
 			this.rightID = 'project_bid_projectFunction';
 			if(projectRoute.role == 'bidder'){
 				this.rightSrc = 'gui/html/project_view_bidEdit.html';
+				this.bid = bid = projectRoute.bid;
 			}
 			else{
 				this.rightSrc = 'gui/html/project_view_bidAdd.html';
