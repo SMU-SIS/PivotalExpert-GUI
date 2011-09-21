@@ -87,7 +87,7 @@ function ProjectViewCtrl($resource){
 	
 	this.projectRoute = projectRoute = $.parseJSON($.ajax({url:'rest/project/project_view/'+projectID,dataType: 'json',async:false}).responseText);
 	
-	this.project = project = $.parseJSON($.ajax({url:'rest/models/Project/'+this.projectRoute.key,dataType: 'json',async:false}).responseText);
+	this.project = project = projectRoute.project;
 	
 	switch(projectRoute.role){
 		case "owner":
