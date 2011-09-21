@@ -145,11 +145,23 @@
 #project_bid_Body {
 	position: relative;
 }
-#project_bid_addBid {
+
+#project_bid_projectFunction_owner {
+	position: relative;
+	left: 0;
+	top: 0;
+	margin: 0 0 0 480px;
+}
+#project_bid_projectFunction {
 	position: absolute;
 	left: 0;
 	top: 0;
 	margin: 0 0 0 480px;
+}
+#project_bid_projectDetails_owner {
+	position: absolute;
+	left: 0;
+	top: 0;
 }
 #project_bid_projectDetails {
 	position: relative;

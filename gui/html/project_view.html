@@ -7,12 +7,15 @@
 		<section class="section_header">Project View for {{project.title}}</section>
 	</section>
 	<section id="project_bid_Body">
-		<section id="project_bid_projectDetails">
-			<ng:include src="'gui/html/project_view_detailsView.html'"></ng:include>
+		<!--IF OWNER : START OF CODE-->
+		<section id="project_bid_projectDetails_owner">
+			<ng:include src="'gui/html/project_view_detailsEdit.html'"></ng:include>
 		</section>
-		<section id="project_bid_addBid">
+		<section id="project_bid_projectFunction_owner">
 			<ng:include src="'gui/html/project_view_bidManage.html'"></ng:include>
 		</section>
+		<!--IF OWNER : END OF CODE-->
+		
 	</section>
 </section>
 

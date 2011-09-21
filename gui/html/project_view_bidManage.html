@@ -3,61 +3,58 @@
 <style>
 
 
-#project_manage_projectWorkplan {
+#project_view_bidManage {
 	top: 0;
 	left: 0;
 	padding-top: 10px;
 }
-#project_manage_projectWorkplan ul {
+#project_view_bidManage ul {
 	list-style: none;
 	margin: 0;
 	padding-top: 6px;
 	min-height: 350px;
 	height: auto;
+	
+	
+	background: green;
 }
-.projectWorkplan_iterationList {
+.project_view_bidManage_bidList_Header {
+
 }
-#project_manage_projectWorkplan ul li {
+
+
+.project_view_bidManage_bidList {
+}
+#project_view_bidManage ul li {
 	margin-bottom: 15px;
 }
-.projectWorkplan_iteration_entry {
+.project_view_bidManage_bid_entry {
 }
-.projectWorkplan_iteration_img {
+.project_view_bidManage_bid_img {
 	position: absolute;
 }
-.projectWorkplan_iteration_img a, .projectWorkplan_iteration_img a:active, .projectWorkplan_iteration_img a:visited {
+.project_view_bidManage_bid_img a, .project_view_bidManage_bid_img a:active, .project_view_bidManage_bid_img a:visited {
 	text-decoration: none;
 	color: #0097FE;
 }
-.projectWorkplan_iteration_body {
+.project_view_bidManage_bid_body {
 	position: relative;
 	margin: 0 25px 0 35px;
 }
-.projectWorkplan_iteration_displaybar {
+.project_view_bidManage_bid_displaybar {
 	background: #E7E7E7;
 	padding-bottom: 4px;
 }
-.projectWorkplan_iteration_header {
+.project_view_bidManage_bid_header {
 	font-weight: bold;
 	font-size: 13px;
 	padding-left: 25px;
 	border-bottom: 4px solid #000000;
 }
-.projectWorkplan_iteration_status {
-	position: absolute;
-	top: 0;
-	right: 0;
-	-moz-right: 0;
-	-webkit-right: 0;
-}
-.iteration_status_completed {
-	background: #000000;
-	color: #FFFFFF;
-	padding: 5px 15px;
-	font: 11px Arial, Vardana, Helvetica;
-	text-transform: uppercase;
-	font-weight: bold;
-}
+
+
+
+
 .projectWorkplan_iteration_slidedownbox {
 	padding: 10px 25px 20px 25px;
 	background: #BAE9FF;
@@ -75,21 +72,29 @@
 </style>
 
 
-<section id="project_manage_projectWorkplan">
+<section id="project_view_bidManage">
 	<section class="section_subheader">Manage Bid(s)</section>
 	<section class="section_subheader_line"></section>
-	<ul class="projectWorkplan_iterationList">
-		<li class="projectWorkplan_iteration_entry">
-			<div class="projectWorkplan_iteration_img"><a href="">[+]</a></div>
-			<div class="projectWorkplan_iteration_body">
-				<div class="projectWorkplan_iteration_displaybar">
-					<span class="projectWorkplan_iteration_header">Iteration 1</span>
-					<div class="projectWorkplan_iteration_status"><span class="iteration_status_completed">Completed</span></div>
+	<ul class="project_view_bidManage_bidList_Header">
+	
+	</ul>
+	<ul class="project_view_bidManage_bidList">
+		<li class="project_view_bidManage_bid_entry">
+			<div class="project_view_bidManage_bid_img"><a href="">[+]</a></div>
+			<div class="project_view_bidManage_bid_body">
+				<div class="project_view_bidManage_bid_displaybar">
+					<ul>
+						<li class="project_view_bidManage_bid_displaybar_bidder">Mark</li>
+						<li class="project_view_bidManage_bid_displaybar_iterations">4</li>
+						<li class="project_view_bidManage_bid_displaybar_amount">20</li>
+						<li class="project_view_bidManage_bid_displaybar_accept"><a href="">Accept</a></li>
+					</ul>
 				</div>
-				<div class="projectWorkplan_iteration_slidedownbox">
+				
+				<div class="project_view_bidManage_bid_slidedownbox">
 					<div class="projectWorkplan_iteration_description">message body message body message body message body message body message body</div>
 					<div class="projectWorkplan_iteration_actions">
-						<a class="projectWorkplan_iteration_actions_comment" href="">Comment</a>
+						
 						<a class="projectWorkplan_iteration_actions_shift" href="">Shift</a>
 						<a class="projectWorkplan_iteration_actions_edit" href="">Edit</a>
 					</div>
