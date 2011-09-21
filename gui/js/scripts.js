@@ -32,6 +32,14 @@ function HighlightWorkroomRow(tableRow, highLight) {
 	if (highLight) { tableRow.style.backgroundColor = '#0097FE'; }
 	else { tableRow.style.backgroundColor = '#FFFFFF'; }
 }
+function HighlightProjectsRow(tableRow, highLight) {
+	if (highLight) { tableRow.style.backgroundColor = '#0097FE'; }
+	else { tableRow.style.backgroundColor = '#FFFFFF'; }
+}
+function HighlightBidsRow(tableRow, highLight) {
+	if (highLight) { tableRow.style.backgroundColor = '#0097FE'; }
+	else { tableRow.style.backgroundColor = '#FFFFFF'; }
+}
 function GoToURL(theUrl) {
 	document.location.href = theUrl;
 }

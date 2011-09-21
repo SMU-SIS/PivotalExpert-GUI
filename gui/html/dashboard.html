@@ -64,9 +64,9 @@
 				<section id="projectsmgt_content" class="tabcontent">	
 					<section class="subtabs">
 						<ul class="subtabs">
-							<li><a href="javascript:tabSwitch_projectmgt('workroom_tab', 'workroom_content');" id="workroom_tab" class="active">Workroom</a></li>
-							<li><a href="javascript:tabSwitch_projectmgt('projects_tab', 'projects_content');" id="projects_tab">Projects</a></li>
-							<li><a href="javascript:tabSwitch_projectmgt('bids_tab', 'bids_content');" id="bids_tab">Bids</a></li>
+							<li><a href="javascript:tabSwitch_projectmgt('workroom_tab', 'workroom_content');" id="workroom_tab" class="active">My Workroom</a></li>
+							<li><a href="javascript:tabSwitch_projectmgt('projects_tab', 'projects_content');" id="projects_tab">My Projects</a></li>
+							<li><a href="javascript:tabSwitch_projectmgt('bids_tab', 'bids_content');" id="bids_tab">My Bids</a></li>
 						</ul>
 					</section>
 					
@@ -114,7 +114,10 @@
 									<td class="table_header projectsmgt_projects_expiryDate">Expiry Date</td>
 									<td class="table_header projectsmgt_projects_action">Action</td>
 								</tr>
-								<tr class="projectsmgtProjectsTableEntry" ng:repeat="project in dashboard[0].projects">
+								<tr class="projectsmgtProjectsTableEntry" ng:repeat="project in dashboard[0].projects"
+									  onmouseover="HighlightProjectsRow(this, true);" 
+									  onmouseout="HighlightProjectsRow(this, false);" 
+									  onclick="GoToURL('#/projects/{{page}}/{{project.id}}');">
 									<td class="table_row_projects projectsmgt_projects_title">{{project.title}}</td>
 									<td class="table_row_projects projectsmgt_projects_status">{{project.status}}</td>
 									<td class="table_row_projects projectsmgt_projects_budget">SGD${{project.amount}}</td>
@@ -137,7 +140,10 @@
 									<td class="table_header projectsmgt_bids_date">Date</td>
 									<td class="table_header projectsmgt_bids_message">Message</td>
 								</tr>
-								<tr class="projectsmgtBidsTableEntry" ng:repeat="bid in dashboard[0].bids">
+								<tr class="projectsmgtBidsTableEntry" ng:repeat="bid in dashboard[0].bids"
+									  onmouseover="HighlightBidsRow(this, true);" 
+									  onmouseout="HighlightBidsRow(this, false);" 
+									  onclick="GoToURL('#/projects/{{page}}/{{project.id}}');">
 									<td class="table_row projectsmgt_bids_title">{{bid.title}}</td>
 									<td class="table_row projectsmgt_bids_owner bids_height">
 										<span class="projectsmgt_bids_owner_pic"><img src="http://www.gravatar.com/avatar/{{bid.owner_gravatar}}?s=50&d=mm"></span>
