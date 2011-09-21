@@ -1,10 +1,13 @@
-PageRouter_Master.$inject = ["$route","$location"];
-function PageRouter_Master($route, $location) { //router for the website itself
+PageRouter_Master.$inject = ["$route","$location","$resource"];
+function PageRouter_Master($route, $location, $resource) { //router for the website itself
 	var self = this;
 	self.alertMsg = $location.hashSearch.alertMsg;
 	self.formServer = "";
 	//self.formServer = "http://localhost:8080/";
 	self.$location = $location;
+	
+	/* Navbar data */
+	this.navbar = $resource('rest/navbar/dashboard').get();
 	
 	/* DEFAULT Re-Directs */
 	$route.otherwise({redirectTo: '/'});

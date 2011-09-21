@@ -51,13 +51,15 @@
 					<section id="top_below">
 						<section id="country"><img src="gui/images/countries/sg.png" alt="Singapore" /> Singapore</section>
 						<nav>
-							<ul>
+							<ul ng:show="currentUser.nickname">
 								<li><a href="#/">dashboard</a>
 									<ul>
+										<li class="navheader">My Workrooms</li>
+										<li ng:repeat="item in navbar.workrooms"><a href="#/workroom/{{item.id}}">{{item.title}}</a></li>
 										<li class="navheader">My Projects</li>
-										<li><a href="#/projects/1">Project 1 [D]</a></li>
-										<li><a href="#/projects/2">Project 2 [D]</a></li>
-										<li><a href="#/projects/3">Project 3 [H]</a></li>
+										<li ng:repeat="item in navbar.projects"><a href="#/projects/{{item.id}}">{{item.title}}</a></li>
+										<li class="navheader">My Bids</li>
+										<li ng:repeat="item in navbar.bids"><a href="#/projects/{{item.id}}">{{item.title}}</a></li>
 									</ul>
 								</li>
 								<li><a href="#/institutions">institutions</a></li>
