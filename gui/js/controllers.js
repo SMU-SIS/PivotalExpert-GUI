@@ -89,6 +89,10 @@ function ProjectViewCtrl($resource){
 	
 	this.project = project = projectRoute.project;
 	
+	this.leftID = 'project_bid_projectDetails';
+	this.leftSrc = 'gui/html/project_view_detailsView.html';
+	this.rightID = 'project_bid_projectFunction';
+	
 	switch(projectRoute.role){
 		case "owner":
 			this.leftID = 'project_bid_projectDetails_owner';
@@ -96,18 +100,25 @@ function ProjectViewCtrl($resource){
 			this.rightID = 'project_bid_projectFunction_owner';
 			this.rightSrc = 'gui/html/project_view_bidManage.html';
 			this.bids = bids = projectRoute.bids;
+			this.title = 'Manage ';
+			break;
+		case "bidder":
+			this.rightSrc = 'gui/html/project_view_bidEdit.html';
+			this.bid = bid = projectRoute.bid;
+			this.title = 'Edit My Bid for ';
+			break;
+		case "everyone":
+			this.rightSrc = 'gui/html/project_view_bidAdd.html';
+			this.title = 'Bid for ';
+			break;
+		case "closed":
+			this.rightSrc = 'gui/html/project_view_bidClosed.html';
+			this.title = 'View ';
 			break;
 		default:
-			this.leftID = 'project_bid_projectDetails';
-			this.leftSrc = 'gui/html/project_view_detailsView.html';
-			this.rightID = 'project_bid_projectFunction';
-			if(projectRoute.role == 'bidder'){
-				this.rightSrc = 'gui/html/project_view_bidEdit.html';
-				this.bid = bid = projectRoute.bid;
-			}
-			else{
-				this.rightSrc = 'gui/html/project_view_bidAdd.html';
-			}
+			this.rightSrc = 'gui/html/project_view_bidClosed.html';
+			this.title = 'View (Signed Out) ';
+			break;
 	}
 }
 
