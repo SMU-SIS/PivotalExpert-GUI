@@ -107,8 +107,9 @@ function ProjectViewCtrl($resource){
 	}
 }
 
-function ProjectListCtrl(RestCall) {
-  this.projects = RestCall.query({action:'project', file:'project_index'});
+//note that the an "_" must be appended to RestCall_ instead of RestCall for unit testing to work
+function ProjectListCtrl(RestCall_) {
+  this.projects = RestCall_.query({action:'project', file:'project_index'});
   this.page="bid";
   //this.page="projects/accept";
 }
