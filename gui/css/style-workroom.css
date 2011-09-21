@@ -231,10 +231,11 @@ form#messagePostForm input:not([type=radio]), form#messagePostForm textarea {
 }
 #project_manage_projectWorkplan ul li {
 	position: relative;
-}
-.projectWorkplan_iteration_entry {
 	display: block;
 	margin-bottom: 15px;
+}
+.projectWorkplan_iteration_entry {
+	
 }
 .projectWorkplan_iteration_img {
 	position: absolute;
@@ -290,7 +291,7 @@ form#messagePostForm input:not([type=radio]), form#messagePostForm textarea {
 	margin: 0 25px 0 35px;
 	background: #BAE9FF;
 	border: 1px dashed #000000;
-	display: none;
+	
 }
 .projectWorkplan_iteration_description {
 	font-size: 12px;

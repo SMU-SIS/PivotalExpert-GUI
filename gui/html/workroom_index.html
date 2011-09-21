@@ -1,7 +1,16 @@
 <!--page 11: project_manage-->
 <!--this the screen for users to manage a current project-->
 
-<script src="gui/js/scripts.js"></script>
+
+<script type="text/javascript" >
+$(document).ready(function(){
+	$(".workroomTrigger").click(function(){
+		$(this).parent().next().slideToggle("fast");
+		$(this).toggleClass("active");
+		return false;
+	});
+});
+</script>
 <link rel="stylesheet" href="gui/css/style-workroom.css" type="text/css" media="screen" />
 <section id="project_manage_page">
 	<section id="project_manage_Header">
