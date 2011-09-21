@@ -4,24 +4,24 @@
 <link rel="stylesheet" href="gui/css/style-workroom.css" type="text/css" media="screen" />
 <section id="project_manage_page">
 	<section id="project_manage_Header">
-		<section class="section_header">Project "AWESOME"</section>
+		<section class="section_header">{{workroom.title}}</section>
 		<section id="project_manage_headerBody">
 			<section id="project_manage_projectOwner">
 				<span class="ownerNameHeader">Owner</span>
-				<article class="ownerImg"><img src="http://www.gravatar.com/avatar/{{currentUser.gravatar}}?s=150&d=mm"  width="135px" height="135px" /></article>
-				<span class="ownerNameText">Mark</span>
+				<article class="ownerImg"><img src="http://www.gravatar.com/avatar/{{workroom.owner_gravatar}}?s=135&d=mm" /></article>
+				<span class="ownerNameText">{{workroom.owner}}</span>
 			</section>
 			<section id="project_manage_projectDeveloper">
 				<span class="developerNameHeader">Developer</span>
-				<article class="developerImg"><img src="http://www.gravatar.com/avatar/a4126f00847dc4f62786982a7be02972?s=80"  width="135px" height="135px" /></article>
-				<span class="developerNameText">Raymond</span>
+				<article class="developerImg"><img src="http://www.gravatar.com/avatar/{{workroom.dev_gravatar}}?s=135&d=mm" /></article>
+				<span class="developerNameText">{{workroom.dev}}</span>
 			</section>
 			<section id="project_manage_projectDetails">
 				<section class="section_subheader">Project Details</section>
 				<section class="section_subheader_line"></section>
 				<ol>
-					<li><label class="detailslabel" for="projectDetails_title">Title</label><span class="detailslabeltext" id="projectDetails_title" name="projectDetails_title">{{projectDetails[0].title}}</span></li>
-					<li><label class="detailslabel" for="projectDetails_description">Description</label><span class="detailslabeltext" id="projectDetails_description" name="projectDetails_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu odio sit amet nunc aliquam scelerisque vitae sit amet sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></li>
+					<li><label class="detailslabel" for="projectDetails_title">Title</label><span class="detailslabeltext" id="projectDetails_title" name="projectDetails_title">{{workroom.title}}</span></li>
+					<li><label class="detailslabel" for="projectDetails_description">Description</label><span class="detailslabeltext" id="projectDetails_description" name="projectDetails_description">{{workroom.description}}</span></li>
 				</ol>
 			</section>
 		</section>
@@ -31,41 +31,11 @@
 			<section class="section_subheader">Project Wall</section>
 			<section class="section_subheader_line"></section>
 			<ul class="projectWall_messageList">
-				<li class="projectWall_message_entry clearfix">
-					<div class="projectWall_message_img"><img src="gui/images/user.jpg"  width="30px" height="35px" /></div>
-					<p class="projectWall_message_header">Mark</p>
-					<div class="projectWall_message_timestamp">2 days ago</div>
-					<div class="projectWall_message_body">message body message body message body message body message body message body</div>
-				</li>
-				<li class="projectWall_message_entry clearfix">
-					<div class="projectWall_message_img"><img src="gui/images/user.jpg"  width="30px" height="35px" /></div>
-					<p class="projectWall_message_header">Raymond</p>
-					<div class="projectWall_message_timestamp">2 days ago</div>
-					<div class="projectWall_message_body">message body</div>
-				</li>
-				<li class="projectWall_message_entry clearfix">
-					<div class="projectWall_message_img"><img src="gui/images/user.jpg"  width="30px" height="35px" /></div>
-					<p class="projectWall_message_header">Mark</p>
-					<div class="projectWall_message_timestamp">2 days ago</div>
-					<div class="projectWall_message_body">message body</div>
-				</li>
-				<li class="projectWall_message_entry clearfix">
-					<div class="projectWall_message_img"><img src="gui/images/user.jpg"  width="30px" height="35px" /></div>
-					<p class="projectWall_message_header">Mark</p>
-					<div class="projectWall_message_timestamp">2 days ago</div>
-					<div class="projectWall_message_body">message body message body message body message body message body message body</div>
-				</li>
-				<li class="projectWall_message_entry clearfix">
-					<div class="projectWall_message_img"><img src="gui/images/user.jpg"  width="30px" height="35px" /></div>
-					<p class="projectWall_message_header">Raymond</p>
-					<div class="projectWall_message_timestamp">2 days ago</div>
-					<div class="projectWall_message_body">message body</div>
-				</li>
-				<li class="projectWall_message_entry clearfix">
-					<div class="projectWall_message_img"><img src="gui/images/user.jpg"  width="30px" height="35px" /></div>
-					<p class="projectWall_message_header">Mark</p>
-					<div class="projectWall_message_timestamp">2 days ago</div>
-					<div class="projectWall_message_body">message body</div>
+				<li class="projectWall_message_entry clearfix" ng:repeat="message in messages.messages">
+					<div class="projectWall_message_img"><img src="http://www.gravatar.com/avatar/{{message.user_gravatar}}?s=35&d=mm"/></div>
+					<p class="projectWall_message_header">{{message.user}}</p>
+					<div class="projectWall_message_timestamp">{{message.timestamp}}</div>
+					<div class="projectWall_message_body">{{message.message}}</div>
 				</li>
 			</ul>
 			<ul class="projectWall_messagePost">
@@ -83,32 +53,15 @@
 			<section class="section_subheader">Project Workplan</section>
 			<section class="section_subheader_line"></section>
 			<ul class="projectWorkplan_iterationList">
-				<li class="projectWorkplan_iteration_entry">
+				<li class="projectWorkplan_iteration_entry" ng:repeat="iteration in workroom.iterations">
 					<div class="projectWorkplan_iteration_img"><a href="">[+]</a></div>
 					<div class="projectWorkplan_iteration_body">
 						<div class="projectWorkplan_iteration_displaybar">
-							<span class="projectWorkplan_iteration_header">Iteration 1</span>
-							<div class="projectWorkplan_iteration_status"><span class="iteration_status_completed">Completed</span></div>
+							<span class="projectWorkplan_iteration_header">Iteration {{$index+1}}</span>
+							<div class="projectWorkplan_iteration_status"><span class="iteration_status_completed">{{iteration.status}}</span><span ng:hide="!iteration.increase" class="iteration_status_completed">{{iteration.increase}}</span><span ng:hide="!iteration.decrease" class="iteration_status_completed">{{iteration.decrease}}</span></div>
 						</div>
 						<div class="projectWorkplan_iteration_slidedownbox">
-							<div class="projectWorkplan_iteration_description">message body message body message body message body message body message body</div>
-							<div class="projectWorkplan_iteration_actions">
-								<a class="projectWorkplan_iteration_actions_comment" href="">Comment</a>
-								<a class="projectWorkplan_iteration_actions_shift" href="">Shift</a>
-								<a class="projectWorkplan_iteration_actions_edit" href="">Edit</a>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li class="projectWorkplan_iteration_entry">
-					<div class="projectWorkplan_iteration_img"><a href="">[+]</a></div>
-					<div class="projectWorkplan_iteration_body">
-						<div class="projectWorkplan_iteration_displaybar">
-							<span class="projectWorkplan_iteration_header">Iteration 2</span>
-							<div class="projectWorkplan_iteration_status"><span class="iteration_status_completed">Completed</span></div>
-						</div>
-						<div class="projectWorkplan_iteration_slidedownbox">
-							<div class="projectWorkplan_iteration_description">message body message body message body message body message body message body message body message body message body message body message body message body message body message body message body message body message body message body message body message body message body message body message body message body</div>
+							<div class="projectWorkplan_iteration_description">{{iteration.task}}</div>
 							<div class="projectWorkplan_iteration_actions">
 								<a class="projectWorkplan_iteration_actions_comment" href="">Comment</a>
 								<a class="projectWorkplan_iteration_actions_shift" href="">Shift</a>

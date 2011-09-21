@@ -15,10 +15,6 @@ function PageRouter_Master($route, $location, $resource) { //router for the webs
 	//should check based on whether user is logged in
 	$route.when('/',{template:'gui/html/main_index.html'});
 	
-	//when not signed in
-	//	$route.when('/',{template:'gui/html/welcome.html', controller: WelcomeCtrl});
-	
-	
 	/* HEADER Re-Directs */
 	$route.when('/welcome',{template:'gui/html/welcome.html'});
 	$route.when('/dashboard',{template:'gui/html/dashboard.html'});
@@ -29,21 +25,10 @@ function PageRouter_Master($route, $location, $resource) { //router for the webs
 	
 	//projects module
 	$route.when('/projects',{template:'gui/html/project_index.html', controller: ProjectListCtrl});
-	$route.when('/projects/create',{template:'gui/html/project_create.html'});
-	
-	
-	//$route.when('/projects/bid/:project',{template:'gui/html/project_bid.html', controller: ProjectDetailsCtrl}); 
-	
+	$route.when('/projects/create',{template:'gui/html/project_create.html'});	
 	$route.when('/projects/:projectID',{template:'gui/html/project_view.html', controller: ProjectViewCtrl});
-	//$route.when('/projects/:project/owner',{template:''}); //TESTING
-	//$route.when('/projects/:project/bidder',{template:''}); //TESTING
-	//$route.when('/projects/:project/payment',{template:''}); //TESTING	
 	
-	$route.when('/workroom/:workroom',{template:'gui/html/workroom_index.html'});
-	
-	//$route.when('/projects/:projectId/accept',{template:'gui/html/project_accept.html', controller: ProjectAcceptCtrl}); //TESTING	
-	//$route.when('/projects/manage',{template:'gui/html/project_manage.html'}); //TESTING	
-	
+	$route.when('/workroom/:workroomID',{template:'gui/html/workroom_index.html', controller: WorkroomCtrl});	
 	
 	//developers module
 	$route.when('/developers',{template:'gui/html/developer_index.html'});
@@ -149,6 +134,11 @@ function DashboardCtrl(RestCall) {
 
 function UserEditCtrl($resource) {
 	this.user = $resource('rest/dashboard/user_edit').get();
+}
+
+function WorkroomCtrl($resource) {
+	this.workroom = $resource('rest/workroom/details/'+this.params.workroomID).get();
+	this.messages = $resource('rest/workroom/messages/'+this.params.workroomID).get();
 }
 
 //Method that checks for current user
