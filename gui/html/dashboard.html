@@ -85,7 +85,7 @@
 								<tr class="projectsmgtWorkroomTableEntry" ng:repeat="workroom in dashboard[0].workrooms"
 									  onmouseover="HighlightWorkroomRow(this, true);" 
 									  onmouseout="HighlightWorkroomRow(this, false);" 
-									  onclick="GoToURL('#/projects/{{page}}/{{project.id}}');">
+									  onclick="GoToURL('#/workroom/{{workroom.id}}');">
 									<td class="table_row projectsmgt_workroom_title"><span class="workroom_title">{{workroom.title}}</span></td>
 									<td class="table_row projectsmgt_workroom_owner workroom_height">
 										<span class="projectsmgt_workroom_owner_pic"><img src="http://www.gravatar.com/avatar/{{workroom.owner_gravatar}}?s=50&d=mm"></span>
@@ -117,7 +117,7 @@
 								<tr class="projectsmgtProjectsTableEntry" ng:repeat="project in dashboard[0].projects"
 									  onmouseover="HighlightProjectsRow(this, true);" 
 									  onmouseout="HighlightProjectsRow(this, false);" 
-									  onclick="GoToURL('#/projects/{{page}}/{{project.id}}');">
+									  onclick="GoToURL('#/projects/{{project.id}}');">
 									<td class="table_row_projects projectsmgt_projects_title">{{project.title}}</td>
 									<td class="table_row_projects projectsmgt_projects_status">{{project.status}}</td>
 									<td class="table_row_projects projectsmgt_projects_budget">SGD${{project.amount}}</td>
@@ -143,7 +143,7 @@
 								<tr class="projectsmgtBidsTableEntry" ng:repeat="bid in dashboard[0].bids"
 									  onmouseover="HighlightBidsRow(this, true);" 
 									  onmouseout="HighlightBidsRow(this, false);" 
-									  onclick="GoToURL('#/projects/{{page}}/{{project.id}}');">
+									  onclick="GoToURL('#/projects/{{bid.project_id}}');">
 									<td class="table_row projectsmgt_bids_title">{{bid.title}}</td>
 									<td class="table_row projectsmgt_bids_owner bids_height">
 										<span class="projectsmgt_bids_owner_pic"><img src="http://www.gravatar.com/avatar/{{bid.owner_gravatar}}?s=50&d=mm"></span>
