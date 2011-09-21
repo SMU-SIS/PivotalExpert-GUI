@@ -144,9 +144,7 @@
 										<span class="projectsmgt_bids_owner_name">{{bid.owner}}</span>
 									</td>
 									<td class="table_row projectsmgt_bids_tags bids_height">
-										<span ng:repeat="tag in bid.tags">
-											<span ng:hide="$position == 'first'">, </span>{{tag}}
-										</span>
+										<span ng:repeat="tag in bid.tags"><span ng:hide="$position == 'first'">, </span>{{tag}}</span>
 									</td>
 									<td class="table_row projectsmgt_bids_status bids_height">{{bid.status}}</td>
 									<td class="table_row projectsmgt_bids_date bids_height">{{bid.date}}</td>
