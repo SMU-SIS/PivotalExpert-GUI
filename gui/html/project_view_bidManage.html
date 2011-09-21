@@ -121,7 +121,6 @@
 }
 .project_view_bidManage_bidContent_TableContent {
 	padding-top: 28px;
-	padding-bottom: 15px;
 	background: #BAE9FF;
 	border: 1px dashed #000000;
 	border-top: 0;
@@ -169,95 +168,27 @@
 		</table>
 			
 		<ul class="project_view_bidManage_bidList">
-			<li class="project_view_bidManage_bid_entry">
-				<div class="project_view_bidManage_bid_img"><a href="">[+]</a></div>
+			<li class="project_view_bidManage_bid_entry" ng:repeat="singlebid in bids">
+				<div class="project_view_bidManage_bid_img"><a href="" onclick="$('#project_view_bidManage_bidContent_{{$index}}').slideToggle()">[+]</a></div>
 				<div class="project_view_bidManage_bid_body">
 					<div class="project_view_bidManage_bid_displaybar">
 						<ul>
-							<li class="project_view_bidManage_bid_displaybar_bidder">Mark</li>
-							<li class="project_view_bidManage_bid_displaybar_iterations">4</li>
-							<li class="project_view_bidManage_bid_displaybar_amount">SGD$20</li>
+							<li class="project_view_bidManage_bid_displaybar_bidder">{{singlebid.dev}}</li>
+							<li class="project_view_bidManage_bid_displaybar_iterations">{{singlebid.no_of_iterations}}</li>
+							<li class="project_view_bidManage_bid_displaybar_amount">SGD${{singlebid.price_per_iter}}</li>
 							<li class="project_view_bidManage_bid_displaybar_accept"><a href="">Accept</a></li>
 						</ul>
 					</div>
 					<div class="project_view_bidManage_bid_slidedownbox">
 						<div class="project_view_bidManage_bidContent_TableContent">
+							<div id="project_view_bidManage_bidContent_{{$index}}" style="display:none;padding-bottom: 15px;">
 							<table class="project_view_bidManage_bidContent_TableContent_Table" border="0" cellpadding="0" cellspacing="0">
-								<tr class="projectViewBidManageBidContentTableContentEntry">
-									<td class="projectViewBidManageBidContentTableContentEntry_iteration"><span class="iterationHeaderText">Iteration 1</span></td>
-									<td class="projectViewBidManageBidContentTableContentEntry_description">message body message body message body message body message body message body</td>
-								</tr>
-								<tr class="projectViewBidManageBidContentTableContentEntry">
-									<td class="projectViewBidManageBidContentTableContentEntry_iteration"><span class="iterationHeaderText">Iteration 2</span></td>
-									<td class="projectViewBidManageBidContentTableContentEntry_description">message body message body message body message body message body message body</td>
-								</tr>
-								<tr class="projectViewBidManageBidContentTableContentEntry">
-									<td class="projectViewBidManageBidContentTableContentEntry_iteration"><span class="iterationHeaderText">Iteration 3</span></td>
-									<td class="projectViewBidManageBidContentTableContentEntry_description">message body message body message body message body message body message body</td>
+								<tr class="projectViewBidManageBidContentTableContentEntry" ng:repeat="task in singlebid.iterations">
+									<td class="projectViewBidManageBidContentTableContentEntry_iteration"><span class="iterationHeaderText">Iteration {{$index+1}}</span></td>
+									<td class="projectViewBidManageBidContentTableContentEntry_description">{{task}}</td>
 								</tr>
 							</table>
-						</div>
-					</div>
-				</div>
-			</li>
-			<li class="project_view_bidManage_bid_entry">
-				<div class="project_view_bidManage_bid_img"><a href="">[+]</a></div>
-				<div class="project_view_bidManage_bid_body">
-					<div class="project_view_bidManage_bid_displaybar">
-						<ul>
-							<li class="project_view_bidManage_bid_displaybar_bidder">Mark</li>
-							<li class="project_view_bidManage_bid_displaybar_iterations">4</li>
-							<li class="project_view_bidManage_bid_displaybar_amount">SGD$20</li>
-							<li class="project_view_bidManage_bid_displaybar_accept"><a href="">Accept</a></li>
-						</ul>
-					</div>
-					<div class="project_view_bidManage_bid_slidedownbox">
-						<div class="project_view_bidManage_bidContent_TableContent">
-							<table class="project_view_bidManage_bidContent_TableContent_Table" border="0" cellpadding="0" cellspacing="0">
-								<tr class="projectViewBidManageBidContentTableContentEntry">
-									<td class="projectViewBidManageBidContentTableContentEntry_iteration"><span class="iterationHeaderText">Iteration 1</span></td>
-									<td class="projectViewBidManageBidContentTableContentEntry_description">message body message body message body message body message body message body</td>
-								</tr>
-								<tr class="projectViewBidManageBidContentTableContentEntry">
-									<td class="projectViewBidManageBidContentTableContentEntry_iteration"><span class="iterationHeaderText">Iteration 2</span></td>
-									<td class="projectViewBidManageBidContentTableContentEntry_description">message body message body message body message body message body message body</td>
-								</tr>
-								<tr class="projectViewBidManageBidContentTableContentEntry">
-									<td class="projectViewBidManageBidContentTableContentEntry_iteration"><span class="iterationHeaderText">Iteration 3</span></td>
-									<td class="projectViewBidManageBidContentTableContentEntry_description">message body message body message body message body message body message body</td>
-								</tr>
-							</table>
-						</div>
-					</div>
-				</div>
-			</li>
-			<li class="project_view_bidManage_bid_entry">
-				<div class="project_view_bidManage_bid_img"><a href="">[+]</a></div>
-				<div class="project_view_bidManage_bid_body">
-					<div class="project_view_bidManage_bid_displaybar">
-						<ul>
-							<li class="project_view_bidManage_bid_displaybar_bidder">Mark</li>
-							<li class="project_view_bidManage_bid_displaybar_iterations">4</li>
-							<li class="project_view_bidManage_bid_displaybar_amount">SGD$20</li>
-							<li class="project_view_bidManage_bid_displaybar_accept"><a href="">Accept</a></li>
-						</ul>
-					</div>
-					<div class="project_view_bidManage_bid_slidedownbox">
-						<div class="project_view_bidManage_bidContent_TableContent">
-							<table class="project_view_bidManage_bidContent_TableContent_Table" border="0" cellpadding="0" cellspacing="0">
-								<tr class="projectViewBidManageBidContentTableContentEntry">
-									<td class="projectViewBidManageBidContentTableContentEntry_iteration"><span class="iterationHeaderText">Iteration 1</span></td>
-									<td class="projectViewBidManageBidContentTableContentEntry_description">message body message body message body message body message body message body</td>
-								</tr>
-								<tr class="projectViewBidManageBidContentTableContentEntry">
-									<td class="projectViewBidManageBidContentTableContentEntry_iteration"><span class="iterationHeaderText">Iteration 2</span></td>
-									<td class="projectViewBidManageBidContentTableContentEntry_description">message body message body message body message body message body message body</td>
-								</tr>
-								<tr class="projectViewBidManageBidContentTableContentEntry">
-									<td class="projectViewBidManageBidContentTableContentEntry_iteration"><span class="iterationHeaderText">Iteration 3</span></td>
-									<td class="projectViewBidManageBidContentTableContentEntry_description">message body message body message body message body message body message body</td>
-								</tr>
-							</table>
+							</div>
 						</div>
 					</div>
 				</div>

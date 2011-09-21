@@ -95,6 +95,7 @@ function ProjectViewCtrl($resource){
 			this.leftSrc = 'gui/html/project_view_detailsEdit.html';
 			this.rightID = 'project_bid_projectFunction_owner';
 			this.rightSrc = 'gui/html/project_view_bidManage.html';
+			this.bids = bids = projectRoute.bids;
 			break;
 		default:
 			this.leftID = 'project_bid_projectDetails';
