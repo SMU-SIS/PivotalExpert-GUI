@@ -230,9 +230,11 @@ form#messagePostForm input:not([type=radio]), form#messagePostForm textarea {
 .projectWorkplan_iterationList {
 }
 #project_manage_projectWorkplan ul li {
-	margin-bottom: 15px;
+	position: relative;
 }
 .projectWorkplan_iteration_entry {
+	display: block;
+	margin-bottom: 15px;
 }
 .projectWorkplan_iteration_img {
 	position: absolute;
@@ -241,11 +243,20 @@ form#messagePostForm input:not([type=radio]), form#messagePostForm textarea {
 	text-decoration: none;
 	color: #0097FE;
 }
+.projectWorkplan_iteration_img a.workroomTrigger {
+	background: url('../images/plus.png') no-repeat;
+	display: block;
+	padding: 12px 12px;
+}
+.projectWorkplan_iteration_img a.active.workroomTrigger {
+	background: url('../images/minus.png') no-repeat;
+}
+
 .projectWorkplan_iteration_body {
-	position: relative;
-	margin: 0 25px 0 35px;
 }
 .projectWorkplan_iteration_displaybar {
+	width: 470px;
+	margin: 0 25px 0 35px;
 	background: #E7E7E7;
 	padding-bottom: 4px;
 }
@@ -261,6 +272,7 @@ form#messagePostForm input:not([type=radio]), form#messagePostForm textarea {
 	right: 0;
 	-moz-right: 0;
 	-webkit-right: 0;
+	margin-right: 25px;
 }
 .iteration_status_completed {
 	background: #000000;
@@ -271,18 +283,17 @@ form#messagePostForm input:not([type=radio]), form#messagePostForm textarea {
 	font-weight: bold;
 }
 .projectWorkplan_iteration_slidedownbox {
-	padding: 10px 25px 20px 25px;
+	position: relative;
+	left: 0;
+	top: 0;
+	padding: 25px 25px 20px 25px;
+	margin: 0 25px 0 35px;
 	background: #BAE9FF;
 	border: 1px dashed #000000;
-	border-top: 0;
+	display: none;
 }
 .projectWorkplan_iteration_description {
 	font-size: 12px;
 	padding: 10px 10px 15px 0;
 }
-
-
-
-
-
 

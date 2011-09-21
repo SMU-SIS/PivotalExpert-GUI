@@ -1,4 +1,10 @@
-//$(document).ready(function() {});
+$(document).ready(function(){
+	$(".workroomTrigger").click(function(){
+		$(this).parent().next().slideToggle("fast");
+		$(this).toggleClass("active");
+		return false;
+	});
+});
 
 
 function tabSwitch_dashboard(new_tab, new_content) {  

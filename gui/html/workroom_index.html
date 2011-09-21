@@ -1,6 +1,7 @@
 <!--page 11: project_manage-->
 <!--this the screen for users to manage a current project-->
 
+<script src="gui/js/scripts.js"></script>
 <link rel="stylesheet" href="gui/css/style-workroom.css" type="text/css" media="screen" />
 <section id="project_manage_page">
 	<section id="project_manage_Header">
@@ -21,7 +22,7 @@
 				<section class="section_subheader_line"></section>
 				<ol>
 					<li><label class="detailslabel" for="projectDetails_title">Title</label><span class="detailslabeltext" id="projectDetails_title" name="projectDetails_title">{{workroom.title}}</span></li>
-					<li><label class="detailslabel" for="projectDetails_description">Description</label><span class="detailslabeltext" id="projectDetails_description" name="projectDetails_description">{{workroom.description}}</span></li>
+                    <li><label class="detailslabel" for="projectDetails_description">Description</label><span class="detailslabeltext" id="projectDetails_description" name="projectDetails_description">{{workroom.description}}</span></li>
 				</ol>
 			</section>
 		</section>
@@ -32,11 +33,11 @@
 			<section class="section_subheader_line"></section>
 			<ul class="projectWall_messageList">
 				<li class="projectWall_message_entry clearfix" ng:repeat="message in messages.messages">
-					<div class="projectWall_message_img"><img src="http://www.gravatar.com/avatar/{{message.user_gravatar}}?s=35&d=mm"/></div>
-					<p class="projectWall_message_header">{{message.user}}</p>
-					<div class="projectWall_message_timestamp">{{message.timestamp}}</div>
-					<div class="projectWall_message_body">{{message.message}}</div>
-				</li>
+                    <div class="projectWall_message_img"><img src="http://www.gravatar.com/avatar/{{message.user_gravatar}}?s=35&d=mm"/></div>
+                    <p class="projectWall_message_header">{{message.user}}</p>
+                    <div class="projectWall_message_timestamp">{{message.timestamp}}</div>
+                    <div class="projectWall_message_body">{{message.message}}</div>
+                </li>
 			</ul>
 			<ul class="projectWall_messagePost">
 				<li>
@@ -54,12 +55,8 @@
 			<section class="section_subheader_line"></section>
 			<ul class="projectWorkplan_iterationList">
 				<li class="projectWorkplan_iteration_entry" ng:repeat="iteration in workroom.iterations">
-					<div class="projectWorkplan_iteration_img"><a href="">[+]</a></div>
 					<div class="projectWorkplan_iteration_body">
-						<div class="projectWorkplan_iteration_displaybar">
-							<span class="projectWorkplan_iteration_header">Iteration {{$index+1}}</span>
-							<div class="projectWorkplan_iteration_status"><span class="iteration_status_completed">{{iteration.status}}</span><span ng:hide="!iteration.increase" class="iteration_status_completed">{{iteration.increase}}</span><span ng:hide="!iteration.decrease" class="iteration_status_completed">{{iteration.decrease}}</span></div>
-						</div>
+						<div class="projectWorkplan_iteration_img"><a href="" class="workroomTrigger"></a></div>
 						<div class="projectWorkplan_iteration_slidedownbox">
 							<div class="projectWorkplan_iteration_description">{{iteration.task}}</div>
 							<div class="projectWorkplan_iteration_actions">
@@ -67,6 +64,10 @@
 								<a class="projectWorkplan_iteration_actions_shift" href="">Shift</a>
 								<a class="projectWorkplan_iteration_actions_edit" href="">Edit</a>
 							</div>
+						</div>
+						<div class="projectWorkplan_iteration_displaybar">
+							<span class="projectWorkplan_iteration_header">Iteration {{$index+1}}</span>
+                            <div class="projectWorkplan_iteration_status"><span class="iteration_status_completed">{{iteration.status}}</span><span ng:hide="!iteration.increase" class="iteration_status_completed">{{iteration.increase}}</span><span ng:hide="!iteration.decrease" class="iteration_status_completed">{{iteration.decrease}}</span></div>
 						</div>
 					</div>
 				</li>
