@@ -7,28 +7,50 @@
 	top: 0;
 	left: 0;
 	padding-top: 10px;
+	
+	background:red;
 }
-#project_view_bidManage ul {
-	list-style: none;
+#project_view_bidManage_bidContent {
 	margin: 0;
-	padding-top: 6px;
-	min-height: 350px;
-	height: auto;
+	
+	
+}
+.project_view_bidManage_bidContent_Table {
+	padding-top: 10px;
+	margin-left: 35px;
+}
+.project_view_bidManage_bidContent_Table tr {
+	position: relative;
+	
+	
 	
 	
 	background: green;
 }
-.project_view_bidManage_bidList_Header {
-
+.projectViewBidManageBidContentTableHeader {
 }
-
+.displaybarHeader {
+	float: left;
+}
 
 .project_view_bidManage_bidList {
+	min-height: 320px;
+	height: auto;
+}
+#project_view_bidManage ul {
+	list-style: none;
+	margin-top: 5px;
+	padding: 0;
+	
+	background:yellow;
 }
 #project_view_bidManage ul li {
-	margin-bottom: 15px;
 }
 .project_view_bidManage_bid_entry {
+	position: relative;
+	margin-bottom: 2px;
+	
+	background:grey;
 }
 .project_view_bidManage_bid_img {
 	position: absolute;
@@ -42,31 +64,58 @@
 	margin: 0 25px 0 35px;
 }
 .project_view_bidManage_bid_displaybar {
+	position: absolute;
 	background: #E7E7E7;
 	padding-bottom: 4px;
 }
-.project_view_bidManage_bid_header {
-	font-weight: bold;
-	font-size: 13px;
-	padding-left: 25px;
-	border-bottom: 4px solid #000000;
+.project_view_bidManage_bid_displaybar ul {
+	float: left;
+}
+.project_view_bidManage_bid_displaybar ul li {
+	float: left;
+}
+.project_view_bidManage_bid_displaybar_bidder {
+
+}
+.project_view_bidManage_bid_displaybar_iterations {
+
+}
+.project_view_bidManage_bid_displaybar_amount {
+
+}
+.project_view_bidManage_bid_displaybar_accept {
+
 }
 
 
-
-
 .projectWorkplan_iteration_slidedownbox {
+	position: relative;
+	top: 0;
+	left: 0;
 	padding: 10px 25px 20px 25px;
 	background: #BAE9FF;
 	border: 1px dashed #000000;
 	border-top: 0;
 }
-.projectWorkplan_iteration_description {
-	font-size: 12px;
-	padding: 10px 10px 15px 0;
+.project_view_bidManage_bidContent_TableContent {
+
+	padding-top: 25px;
 }
+.project_view_bidManage_bidContent_TableContent_Table {
+}
+.project_view_bidManage_bidContent_TableContent_Table tr {
+}
+.project_view_bidManage_bidContent_TableContent_Table tr td {
+}
+.projectViewBidManageBidContentTableContentEntry {
 
+}
+.projectViewBidManageBidContentTableContentEntry_iteration {
 
+}
+.projectViewBidManageBidContentTableContentEntry_description {
+
+}
 
 
 </style>
@@ -75,31 +124,110 @@
 <section id="project_view_bidManage">
 	<section class="section_subheader">Manage Bid(s)</section>
 	<section class="section_subheader_line"></section>
-	<ul class="project_view_bidManage_bidList_Header">
-	
-	</ul>
-	<ul class="project_view_bidManage_bidList">
-		<li class="project_view_bidManage_bid_entry">
-			<div class="project_view_bidManage_bid_img"><a href="">[+]</a></div>
-			<div class="project_view_bidManage_bid_body">
-				<div class="project_view_bidManage_bid_displaybar">
-					<ul>
-						<li class="project_view_bidManage_bid_displaybar_bidder">Mark</li>
-						<li class="project_view_bidManage_bid_displaybar_iterations">4</li>
-						<li class="project_view_bidManage_bid_displaybar_amount">20</li>
-						<li class="project_view_bidManage_bid_displaybar_accept"><a href="">Accept</a></li>
-					</ul>
-				</div>
-				
-				<div class="project_view_bidManage_bid_slidedownbox">
-					<div class="projectWorkplan_iteration_description">message body message body message body message body message body message body</div>
-					<div class="projectWorkplan_iteration_actions">
-						
-						<a class="projectWorkplan_iteration_actions_shift" href="">Shift</a>
-						<a class="projectWorkplan_iteration_actions_edit" href="">Edit</a>
+	<section id="project_view_bidManage_bidContent">
+		<table class="project_view_bidManage_bidContent_Table" border="1" cellpadding="0" cellspacing="0">
+			<tr class="projectViewBidManageBidContentTableHeader">
+				<td class="project_view_bidManage_bid_displaybar_bidder displaybarHeader">Bidder</td>
+				<td class="project_view_bidManage_bid_displaybar_iterations displaybarHeader">Iteration(s)</td>
+				<td class="project_view_bidManage_bid_displaybar_amount displaybarHeader">Amount per Iteration</td>
+				<td class="project_view_bidManage_bid_displaybar_accept displaybarHeader">Accept</td>
+			</tr>
+		</table>
+			
+		<ul class="project_view_bidManage_bidList">
+			<li class="project_view_bidManage_bid_entry">
+				<div class="project_view_bidManage_bid_img"><a href="">[+]</a></div>
+				<div class="project_view_bidManage_bid_body">
+					<div class="project_view_bidManage_bid_displaybar">
+						<ul>
+							<li class="project_view_bidManage_bid_displaybar_bidder">Mark</li>
+							<li class="project_view_bidManage_bid_displaybar_iterations">4</li>
+							<li class="project_view_bidManage_bid_displaybar_amount">20</li>
+							<li class="project_view_bidManage_bid_displaybar_accept"><a href="">Accept</a></li>
+						</ul>
+					</div>
+					<div class="project_view_bidManage_bid_slidedownbox">
+						<div class="project_view_bidManage_bidContent_TableContent">
+							<table class="project_view_bidManage_bidContent_TableContent_Table" border="1" cellpadding="0" cellspacing="0">
+								<tr class="projectViewBidManageBidContentTableContentEntry">
+									<td class="projectViewBidManageBidContentTableContentEntry_iteration">Iteration 1</td>
+									<td class="projectViewBidManageBidContentTableContentEntry_description">message body message body message body message body message body message body</td>
+								</tr>
+								<tr class="projectViewBidManageBidContentTableContentEntry">
+									<td class="projectViewBidManageBidContentTableContentEntry_iteration">Iteration 2</td>
+									<td class="projectViewBidManageBidContentTableContentEntry_description">message body message body message body message body message body message body</td>
+								</tr>
+								<tr class="projectViewBidManageBidContentTableContentEntry">
+									<td class="projectViewBidManageBidContentTableContentEntry_iteration">Iteration 3</td>
+									<td class="projectViewBidManageBidContentTableContentEntry_description">message body message body message body message body message body message body</td>
+								</tr>
+							</table>
+						</div>
 					</div>
 				</div>
-			</div>
-		</li>
-	</ul>
+			</li>
+			<li class="project_view_bidManage_bid_entry">
+				<div class="project_view_bidManage_bid_img"><a href="">[+]</a></div>
+				<div class="project_view_bidManage_bid_body">
+					<div class="project_view_bidManage_bid_displaybar">
+						<ul>
+							<li class="project_view_bidManage_bid_displaybar_bidder">Mark</li>
+							<li class="project_view_bidManage_bid_displaybar_iterations">4</li>
+							<li class="project_view_bidManage_bid_displaybar_amount">20</li>
+							<li class="project_view_bidManage_bid_displaybar_accept"><a href="">Accept</a></li>
+						</ul>
+					</div>
+					<div class="project_view_bidManage_bid_slidedownbox">
+						<div class="project_view_bidManage_bidContent_TableContent">
+							<table class="project_view_bidManage_bidContent_TableContent_Table" border="1" cellpadding="0" cellspacing="0">
+								<tr class="projectViewBidManageBidContentTableContentEntry">
+									<td class="projectViewBidManageBidContentTableContentEntry_iteration">Iteration 1</td>
+									<td class="projectViewBidManageBidContentTableContentEntry_description">message body message body message body message body message body message body</td>
+								</tr>
+								<tr class="projectViewBidManageBidContentTableContentEntry">
+									<td class="projectViewBidManageBidContentTableContentEntry_iteration">Iteration 2</td>
+									<td class="projectViewBidManageBidContentTableContentEntry_description">message body message body message body message body message body message body</td>
+								</tr>
+								<tr class="projectViewBidManageBidContentTableContentEntry">
+									<td class="projectViewBidManageBidContentTableContentEntry_iteration">Iteration 3</td>
+									<td class="projectViewBidManageBidContentTableContentEntry_description">message body message body message body message body message body message body</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="project_view_bidManage_bid_entry">
+				<div class="project_view_bidManage_bid_img"><a href="">[+]</a></div>
+				<div class="project_view_bidManage_bid_body">
+					<div class="project_view_bidManage_bid_displaybar">
+						<ul>
+							<li class="project_view_bidManage_bid_displaybar_bidder">Mark</li>
+							<li class="project_view_bidManage_bid_displaybar_iterations">4</li>
+							<li class="project_view_bidManage_bid_displaybar_amount">20</li>
+							<li class="project_view_bidManage_bid_displaybar_accept"><a href="">Accept</a></li>
+						</ul>
+					</div>
+					<div class="project_view_bidManage_bid_slidedownbox">
+						<div class="project_view_bidManage_bidContent_TableContent">
+							<table class="project_view_bidManage_bidContent_TableContent_Table" border="1" cellpadding="0" cellspacing="0">
+								<tr class="projectViewBidManageBidContentTableContentEntry">
+									<td class="projectViewBidManageBidContentTableContentEntry_iteration">Iteration 1</td>
+									<td class="projectViewBidManageBidContentTableContentEntry_description">message body message body message body message body message body message body</td>
+								</tr>
+								<tr class="projectViewBidManageBidContentTableContentEntry">
+									<td class="projectViewBidManageBidContentTableContentEntry_iteration">Iteration 2</td>
+									<td class="projectViewBidManageBidContentTableContentEntry_description">message body message body message body message body message body message body</td>
+								</tr>
+								<tr class="projectViewBidManageBidContentTableContentEntry">
+									<td class="projectViewBidManageBidContentTableContentEntry_iteration">Iteration 3</td>
+									<td class="projectViewBidManageBidContentTableContentEntry_description">message body message body message body message body message body message body</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</section>
 </section>
