@@ -8,11 +8,11 @@
 	</section>
 	<section id="project_bid_Body">
 		<!--IF OWNER : START OF CODE-->
-		<section id="project_bid_projectDetails_owner">
-			<ng:include src="'gui/html/project_view_detailsEdit.html'"></ng:include>
+		<section id="{{leftID}}">
+			<ng:include src="leftSrc"></ng:include>
 		</section>
-		<section id="project_bid_projectFunction_owner">
-			<ng:include src="'gui/html/project_view_bidManage.html'"></ng:include>
+		<section id="{{rightID}}">
+			<ng:include src="rightSrc"></ng:include>
 		</section>
 		<!--IF OWNER : END OF CODE-->
 		

@@ -91,10 +91,21 @@ function ProjectViewCtrl($resource){
 	
 	switch(projectRoute.role){
 		case "owner":
-			this.url = 'gui/html/project_manage.html';
+			this.leftID = 'project_bid_projectDetails_owner';
+			this.leftSrc = 'gui/html/project_view_detailsEdit.html';
+			this.rightID = 'project_bid_projectFunction_owner';
+			this.rightSrc = 'gui/html/project_view_bidManage.html';
 			break;
 		default:
-			this.url = 'gui/html/project_bid.html';
+			this.leftID = 'project_bid_projectDetails';
+			this.leftSrc = 'gui/html/project_view_detailsView.html';
+			this.rightID = 'project_bid_projectFunction';
+			if(projectRoute.role == 'bidder'){
+				this.rightSrc = 'gui/html/project_view_bidEdit.html';
+			}
+			else{
+				this.rightSrc = 'gui/html/project_view_bidAdd.html';
+			}
 	}
 }
 
