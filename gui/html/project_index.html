@@ -49,9 +49,7 @@
 			<td class="table_row projectList_project_owner">{{project.owner}}</td>
 			<td class="table_row projectList_project_status">{{project.status}}</td>
 			<td class="table_row projectList_project_budget">SGD${{project.budget}}</td>
-			<td class="table_row projectList_project_tags"><span ng:repeat="item in project.tags">
-				<span ng:hide="$position == 'first'">, </span>{{item}}</span>
-			</td>
+			<td class="table_row projectList_project_tags"><span ng:repeat="item in project.tags"><span ng:hide="$position == 'first'">, </span>{{item}}</span></td>
 			<td class="table_row projectList_project_created">{{project.created}}</td>
 
 			<!--<li class="table_row projectList_project_action"><a href="#/projects/accept/{{project.id}}">View</a> / <a href="#/projects/bid/{{project.id}}">Bid</a></li>-->
