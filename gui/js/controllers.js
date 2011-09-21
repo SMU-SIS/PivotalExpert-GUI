@@ -6,9 +6,6 @@ function PageRouter_Master($route, $location, $resource) { //router for the webs
 	//self.formServer = "http://localhost:8080/";
 	self.$location = $location;
 	
-	/* Navbar data */
-	this.navbar = $resource('rest/navbar/dashboard').get();
-	
 	/* DEFAULT Re-Directs */
 	$route.otherwise({redirectTo: '/'});
 	
@@ -139,6 +136,11 @@ function UserEditCtrl($resource) {
 function WorkroomCtrl($resource) {
 	this.workroom = $resource('rest/workroom/details/'+this.params.workroomID).get();
 	this.messages = $resource('rest/workroom/messages/'+this.params.workroomID).get();
+}
+
+function NavbarCtrl($resource){
+	/* Navbar data */
+	this.navbar = $resource('rest/navbar/dashboard').get();
 }
 
 //Method that checks for current user
