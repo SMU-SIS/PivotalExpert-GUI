@@ -58,13 +58,13 @@ function PageRouter_Master($route, $location, $resource) { //router for the webs
 	$route.parent(this);
 }
 
-function PageRouter_UserProjects($route) {
-	var self = this;
-}
-
-function PageRouter_ProjectsView($route) {
-	var self = this;
-}
+// function PageRouter_UserProjects($route) {
+// 	var self = this;
+// }
+// 
+// function PageRouter_ProjectsView($route) {
+// 	var self = this;
+// }
 
 function ProjectViewCtrl($resource){
 	this.projectID = this.params.projectID; //gets parameter passed from router
@@ -107,28 +107,28 @@ function ProjectViewCtrl($resource){
 	}
 }
 
-//note that the an "_" must be appended to RestCall_ instead of RestCall for unit testing to work
+//note that the an "_" must be appended to RestCall_ instead of RestCall_ for unit testing to work
 function ProjectListCtrl(RestCall_) {
   this.projects = RestCall_.query({action:'project', file:'project_index'});
   this.page="bid";
   //this.page="projects/accept";
 }
-//ProjectListCtrl.$inject = ['RestCall'];
+//ProjectListCtrl.$inject = ['RestCall_'];
 
-function ProjectDetailsCtrl(RestCall) {
-	this.projectDetails = RestCall.query({pageName:'project'});
-}
-//ProjectDetailsCtrl.$inject = ['RestCall'];
+// function ProjectDetailsCtrl(RestCall_) {
+// 	this.projectDetails = RestCall_.query({pageName:'project'});
+// }
+// //ProjectDetailsCtrl.$inject = ['RestCall_'];
+// 
+// function ProjectAcceptCtrl(RestCall_) {
+// 	this.projectAccept = RestCall_.query({action:'project', file:'project_accept'});
+// }
+// //ProjectAcceptCtrl.$inject = ['RestCall_'];
 
-function ProjectAcceptCtrl(RestCall) {
-	this.projectAccept = RestCall.query({action:'project', file:'project_accept'});
+function DashboardCtrl(RestCall_) {
+	this.dashboard = RestCall_.query({action:'dashboard', file:'dashboard'});
 }
-//ProjectAcceptCtrl.$inject = ['RestCall'];
-
-function DashboardCtrl(RestCall) {
-	this.dashboard = RestCall.query({action:'dashboard', file:'dashboard'});
-}
-//DashboardCtrl.$inject = ['RestCall'];
+//DashboardCtrl.$inject = ['RestCall_'];
 
 function UserEditCtrl($resource) {
 	this.user = $resource('rest/dashboard/user_edit').get();

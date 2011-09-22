@@ -4,15 +4,8 @@
 //var host = 'http://dev.pivotalexpert.com/'; //live dev rest
 var host = ''; //static test rest
 
-angular.service('RestCall', function($resource){
+angular.service('RestCall_', function($resource){
   return $resource(host+'rest/:action/:file', {}, {
     query: {method:'GET', isArray:true}
   });
 });
-
-angular.service('RestCall_GetModel', function($resource){
-return $resource(host+'rest/model/:model/:key', {}, {
-    query: {method:'GET', isArray:true}
-  });
-});
-
