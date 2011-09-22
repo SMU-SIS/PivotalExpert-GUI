@@ -2,10 +2,11 @@
 <!--this the screen for users to manage a current project-->
 
 
-<script type="text/javascript" >
+<script type="text/javascript">
 $(document).ready(function(){
 	$(".workroomTrigger").click(function(){
-		$(this).parent().next().slideToggle("fast");
+		//$(this).parent().next().slideToggle("fast");
+		$(".projectWorkplan_iteration_slidedownbox").slideToggle("fast");
 		$(this).toggleClass("active");
 		return false;
 	});
