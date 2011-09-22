@@ -113,6 +113,7 @@ function ProjectListCtrl(RestCall_) {
   this.page="bid";
   //this.page="projects/accept";
 }
+
 //ProjectListCtrl.$inject = ['RestCall_'];
 
 // function ProjectDetailsCtrl(RestCall_) {
