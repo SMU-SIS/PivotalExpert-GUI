@@ -4,6 +4,9 @@ $(document).ready(function(){
 		$(this).toggleClass("active");
 		return false;
 	});
+	
+	$("#dashboardTabs").tabs();
+	
 });
 
 

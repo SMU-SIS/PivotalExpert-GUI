@@ -308,10 +308,153 @@ form#projectAddBidForm button:hover, form#createNewProjectForm button:hover {
     color: #000000;
     cursor: pointer;
 }
-
-.projectAddBid_iterationPlan {
-
+.projectAddBid_iterationPlan 
 }
 
+
+#project_view_bidManage {
+	top: 0;
+	left: 0;
+	padding-top: 10px;
+}
+#project_view_bidManage_bidContent {
+	margin: 0;
+	font: Arial, Helvetica;
+}
+.project_view_bidManage_bidContent_Table {
+	padding-top: 10px;
+	border-left: 30px solid #FFFF00;
+}
+.project_view_bidManage_bidContent_Table tr {
+	position: relative;
+	width: 250px;
+}
+.projectViewBidManageBidContentTableHeader {
+}
+.displaybarHeader {
+	float: left;
+	font-weight: bold;
+	font-size: 10px;
+	color: #FFFFFF;
+	padding: 3px 7px 3px 6px;
+	margin-left: 5px;
+	background: #0054A6;
+}
+
+.project_view_bidManage_bidList {
+	min-height: 320px;
+	height: auto;
+}
+#project_view_bidManage ul {
+	list-style: none;
+	margin-top: 5px;
+	padding: 0;
+}
+#project_view_bidManage ul li {
+}
+.project_view_bidManage_bid_entry {
+	position: relative;
+	margin-bottom: 5px;
+}
+.project_view_bidManage_bid_img {
+	position: absolute;
+}
+.project_view_bidManage_bid_img a, .project_view_bidManage_bid_img a:active, .project_view_bidManage_bid_img a:visited {
+	text-decoration: none;
+	color: #0097FE;
+	font-size: 14px;
+	font-weight: bold;
+	padding-left: 2px;
+}
+
+.project_view_bidManage_bid_body {
+	position: relative;
+	margin: 0 0 0 35px;
+	font-size: 12px;
+}
+.project_view_bidManage_bid_displaybar {
+	position: absolute;
+	background: #E7E7E7;
+	padding-bottom: 2px;
+}
+.project_view_bidManage_bid_displaybar ul {
+	float: left;
+	padding: 0;
+	margin: 0;
+}
+.project_view_bidManage_bid_displaybar ul li {
+	float: left;
+	padding: 0 7px 1px 6px;
+	margin-right: 5px;
+	font-size: 11px;
+	font-weight: bold;
+}
+.project_view_bidManage_bid_displaybar ul li a, .project_view_bidManage_bid_displaybar ul li a:active, 
+.project_view_bidManage_bid_displaybar ul li a:visited {
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #FFFFFF;
+	font-size: 10px;
+	text-decoration: none;
+	padding: 1px 3px;
+	margin: 4px 0 0 326px;
+	color: #000000;
+	background: #FFD101;
+}
+.project_view_bidManage_bid_displaybar ul li a:hover {
+	color: #FFFFFF;
+	background: #000000;
+}
+.project_view_bidManage_bid_displaybar_bidder {
+	width: 80px;
+}
+.project_view_bidManage_bid_displaybar_iterations {
+	width: 67px;
+}
+.project_view_bidManage_bid_displaybar_amount {
+	width: 122px;
+}
+.project_view_bidManage_bid_displaybar_accept {
+	width: 38px;
+}
+
+.projectWorkplan_iteration_slidedownbox {
+	position: relative;
+	top: 0;
+	left: 0;
+	padding: 10px 25px 20px 25px;
+	background: #BAE9FF;
+	border: 1px dashed #000000;
+	border-top: 0;
+}
+.project_view_bidManage_bidContent_TableContent {
+	padding-top: 28px;
+	background: #BAE9FF;
+	border: 1px dashed #000000;
+	border-top: 0;
+}
+.project_view_bidManage_bidContent_TableContent_Table {
+}
+.project_view_bidManage_bidContent_TableContent_Table tr {
+}
+.project_view_bidManage_bidContent_TableContent_Table tr td {
+	padding: 4px 7px 6px 6px;
+	margin-right: 5px;
+}
+.projectViewBidManageBidContentTableContentEntry {
+}
+.projectViewBidManageBidContentTableContentEntry_iteration {
+	width: 80px;
+}
+.iterationHeaderText {
+	font-size: 10px;
+	font-style: italic;
+	border-left: 4px solid #0097FE;
+	padding-left: 8px;
+}
+.projectViewBidManageBidContentTableContentEntry_description {
+	border-bottom: 1px dotted #0097FE;
+}
 
 
