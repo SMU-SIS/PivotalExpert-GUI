@@ -223,6 +223,55 @@ body  {
 
 
 /***** Content *****/
+#alertBox {
+	position: relative;
+	margin-top: 15px;
+	padding: 12px 20px;
+	background: #EC008C;
+	-moz-border-radius-bottomright: 10px;
+	-webkit-border-radius: 0 0 10px 0;
+	border-radius: 0 0 10px 0; 
+	-webkit-box-shadow: 1px 1px 3px 2px rgba(121, 121, 121, 0.5);
+	-moz-box-shadow: 1px 1px 3px 2px rgba(121, 121, 121, 0.5);
+	box-shadow: 1px 1px 3px 2px rgba(121, 121, 121, 0.5); 
+	font: 14px Arial, Helvetica;
+	color: #FFFFFF;
+}
+.alertBox_icon {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.alertBox_msg {
+	position: relative;
+	margin: 0 100px 0 165px;
+}
+.alertBox_button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	-moz-right: 0;
+	-webkit-right: 0;
+	margin: 0 22px 0 0;
+}
+.alertBox_button button {
+	background: #000000;
+	color: #FFFFFF;
+	border: 0;
+	text-transform: uppercase;
+	font-size: 10px;
+	font-weight: bold;
+	padding: 12px 25px 5px 25px;
+	-moz-border-radius-bottomright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	-webkit-border-radius: 0 0 5px 5px;
+	border-radius: 0 0 5px 5px; 
+}
+.alertBox_button button:hover {
+	border-top: 6px solid #000000;
+	background: #FFFFFF;
+	color: #EC008C;
+}
 #content {
 	padding: 15px 0 15px 0;
 }
