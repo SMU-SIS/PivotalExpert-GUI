@@ -51,9 +51,9 @@ $(document).ready(function(){
 			</ul>
 			<ul class="projectWall_messagePost">
 				<li>
-					<form id="messagePostForm" action="" method="POST">
+					<form id="messagePostForm" action="form/workroom/sendMsg/{{workroom.id}}" method="POST">
 						<fieldset>
-							<textarea id="messagePost_theMsg" rows="" placeholder="Post a comment" required></textarea>
+							<textarea id="messagePost_theMsg" name="messagePost_theMsg" rows="" placeholder="Post a comment" required></textarea>
 							<button class="projectwall_sendmsg" id="messagePost_sendBtn" type="submit">Send</button>
 						</fieldset>
 					</form>
