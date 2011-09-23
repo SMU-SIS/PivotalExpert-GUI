@@ -168,7 +168,7 @@
 }
 form#projectAddBidForm, form#projectDetailsForm {
 	width: 440px;
-	min-height: 300px;
+	min-height: 340px;
 	height: auto;
 }
 form#createNewProjectForm {
