@@ -16,6 +16,6 @@ angular.service('RestCall_', function($resource){
 angular.service('RestCall_', function ($resource) {
   // No need for "query: {method:'GET', isArray:true}",
   // it's the default.
-  return $resource('/rest/:action/:file');
+  return $resource(host+'rest/:action/:file');
 
 }, { $inject: ['$resource'] });
