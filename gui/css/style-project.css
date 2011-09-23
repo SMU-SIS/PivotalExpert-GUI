@@ -83,14 +83,14 @@
 	cursor: pointer;
 }
 .projectList_project_title {
-	width: 200px;
+	width: 180px;
 	font-weight: bold;
 }
 .projectList_project_owner {
 	width: 100px;
 }
 .projectList_project_status {
-	width: 50px;
+	width: 80px;
 }
 .projectList_project_budget {
 	width: 95px;
@@ -168,7 +168,7 @@
 }
 form#projectAddBidForm, form#projectDetailsForm {
 	width: 440px;
-	min-height: 340px;
+	min-height: 350px;
 	height: auto;
 }
 form#createNewProjectForm {
