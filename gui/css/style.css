@@ -225,7 +225,7 @@ body  {
 /***** Content *****/
 #alertBox {
 	position: relative;
-	margin-top: 15px;
+	margin-top: 16px;
 	padding: 12px 20px;
 	background: #EC008C;
 	-moz-border-radius-bottomright: 10px;
@@ -241,6 +241,19 @@ body  {
 	position: absolute;
 	top: 0;
 	left: 0;
+	margin: 10px 0 0 30px;
+}
+.alertBox_notification {
+	margin: 0 0 0 10px;
+	padding: 4px 12px;
+	font-size: 9px;
+	font-weight: bold;
+	text-transform: uppercase;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px; 
+	background: #FFFFFF;
+	color: #EC008C;
 }
 .alertBox_msg {
 	position: relative;
