@@ -124,10 +124,8 @@
 	text-align: center;
 }
 .projectAcceptList_currentBids_actionSendMsg {
-
 }
 .projectAcceptList_currentBids_actionAccept {
-
 }
 .projectAcceptList_currentBids_iterationPlans {
 	display: none;
@@ -168,7 +166,7 @@
 }
 form#projectAddBidForm, form#projectDetailsForm {
 	width: 440px;
-	min-height: 350px;
+	min-height: 380px;
 	height: auto;
 }
 form#createNewProjectForm {
@@ -255,7 +253,7 @@ form#projectAddBidForm label, form#projectDetailsForm label, form#createNewProje
 	border-color: #00AEFF;
 }
 form#projectAddBidForm input:not([type=radio]), form#projectAddBidForm textarea, 
-form#projectDetailsForm input:not([type=radio]), form#projectDetailsForm textarea,
+form#projectDetailsForm input:not([type=radio]), form#projectDetailsForm textarea, form#projectDetailsForm select,
 form#createNewProjectForm input:not([type=radio]), form#createNewProjectForm textarea {
     background: #FFFFFF;
     border: 2px solid #E7E7E7;
@@ -267,6 +265,9 @@ form#createNewProjectForm input:not([type=radio]), form#createNewProjectForm tex
     outline: none;
     padding: 5px;
     width: 200px;
+}
+form#projectDetailsForm select {
+		
 }
 form#createNewProjectForm input:not([type=radio]), form#createNewProjectForm textarea {
 	width: 500px;
