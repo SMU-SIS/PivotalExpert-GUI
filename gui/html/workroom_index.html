@@ -77,9 +77,11 @@ $(document).ready(function(){
 						</div>
 						<div class="projectWorkplan_iteration_displaybar">
 							<span class="projectWorkplan_iteration_header">Iteration {{$index+1}}</span>
-                            <div class="projectWorkplan_iteration_status"><span class="iteration_status_completed">{{iteration.status}}</span>
-                            <a href="form/workroom/iterStatusUpdate/{{workroom.id}}/{{iteration.id}}/1" ng:hide="!iteration.increase" class="iteration_status_completed">{{iteration.increase}}</a>
-                            <a href="form/workroom/iterStatusUpdate/{{workroom.id}}/{{iteration.id}}/-1" ng:hide="!iteration.decrease" class="iteration_status_completed">{{iteration.decrease}}</a></div>
+                            <div class="projectWorkplan_iteration_status">
+								<span class="iteration_increase"><a href="form/workroom/iterStatusUpdate/{{workroom.id}}/{{iteration.id}}/1" ng:hide="!iteration.increase">{{iteration.increase}}</a></span>
+								<span class="iteration_decrease"><a href="form/workroom/iterStatusUpdate/{{workroom.id}}/{{iteration.id}}/-1" ng:hide="!iteration.decrease">{{iteration.decrease}}</a></span>
+								<span class="iteration_status">{{iteration.status}}</span>
+                            </div>
 						</div>
 					</div>
 				</li>

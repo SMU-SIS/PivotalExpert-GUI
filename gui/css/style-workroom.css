@@ -174,7 +174,7 @@
 	width: 85px;
 	background: #797979;
     border: none;
-    color: #ffffff;
+    color: #FFFFFF;
     display: inline;
     font: 10px Arial, Helvetica, sans-serif;
     letter-spacing: 1px;
@@ -183,7 +183,7 @@
     font-weight: bold;
     text-transform: uppercase;
 }
-.projectwall_sendmsg:hover, .projectWorkplan_iteration_actions a:hover {
+.projectwall_sendmsg:hover {
 	background: #F0F0F0;
 	color: #00AEFF;
 	border-color: #00AEFF;
@@ -199,6 +199,11 @@
 .projectWorkplan_iteration_actions a, .projectWorkplan_iteration_actions a:active, .projectWorkplan_iteration_actions a:visited {
 	color: #FFFFFF;
 	text-decoration: none;
+}
+.projectWorkplan_iteration_actions a:hover {
+	background: #F0F0F0;
+	color: #00AEFF;
+	border-color: #00AEFF;
 }
 
 form#messagePostForm input:not([type=radio]), form#messagePostForm textarea {
@@ -275,13 +280,23 @@ form#messagePostForm input:not([type=radio]), form#messagePostForm textarea {
 	-webkit-right: 0;
 	margin-right: 25px;
 }
-.iteration_status_completed {
+.iteration_status, .iteration_increase a, .iteration_increase a:active, .iteration_increase a:visited, 
+.iteration_decrease a, .iteration_decrease a:active, .iteration_decrease a:visited {
 	background: #000000;
 	color: #FFFFFF;
 	padding: 5px 15px;
 	font: 11px Arial, Vardana, Helvetica;
 	text-transform: uppercase;
 	font-weight: bold;
+	text-decoration: none;
+}
+.iteration_increase a, .iteration_increase a:active, .iteration_increase a:visited, 
+.iteration_decrease a, .iteration_decrease a:active, .iteration_decrease a:visited {
+	background: #0054A6;
+}
+.iteration_increase a:hover, .iteration_decrease a:hover {
+	background: #FFFF00;
+	color: #000000;
 }
 .projectWorkplan_iteration_slidedownbox {
 	position: relative;
