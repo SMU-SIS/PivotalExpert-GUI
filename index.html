@@ -55,11 +55,11 @@
 							<ul ng:show="currentUser.nickname">
 								<li><a href="#/">dashboard</a>
 									<ul>
-										<li class="navheader">My Workrooms</li>
+										<li ng:show="navbar.workrooms" class="navheader">My Workrooms</li>
 										<li ng:repeat="item in navbar.workrooms"><a href="#/workroom/{{item.id}}">{{item.title}}</a></li>
-										<li class="navheader">My Projects</li>
+										<li ng:show="navbar.projects" class="navheader">My Projects</li>
 										<li ng:repeat="item in navbar.projects"><a href="#/projects/{{item.id}}">{{item.title}}</a></li>
-										<li class="navheader">My Bids</li>
+										<li ng:show="navbar.bids" class="navheader">My Bids</li>
 										<li ng:repeat="item in navbar.bids"><a href="#/projects/{{item.id}}">{{item.title}}</a></li>
 									</ul>
 								</li>
