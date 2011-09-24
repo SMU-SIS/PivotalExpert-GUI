@@ -16,7 +16,6 @@
 }
 
 #user_profile_details {
-
 }
 .profile_details_nick {
 	font-size: 22px;
@@ -25,7 +24,6 @@
 	padding: 0 0 0 0;
 }
 .profile_details_pic {
-
 }
 .profile_details_school {
 	padding: 8px 0 8px 5px;
@@ -78,9 +76,7 @@
 	border-bottom: 1px solid #E2E2E2;
 }
 .profile_badges_Body {
-
 }
-
 
 #right_panel {
 	position: relative;
@@ -355,11 +351,134 @@
 	display: none; 
 }
 
-
-
 #user_newsfeed {
-
 }
 #user_projects {
+}
 
+
+/*** User Profile Edit ***/
+#user_details_edit_panel {
+}
+#user_details_edit_panel_body {
+	position: relative;
+}
+
+#user_profile_edit_personal {
+	position: relative;
+	width: 450px;
+}
+#user_profile_edit_personal_inputPhoto {
+	position: absolute;
+	left: 0;
+	top: 0;
+	margin-top: 55px;
+	border: 1px solid #888888;
+	width: 80px;
+	height: 80px;
+}
+.editPersonal_photo_text {
+	display: block;
+	background: #888888;
+	font-size: 11px;
+	font-weight: bold;
+	padding: 3px 8px;
+	color: #FFFFFF;
+	text-align: center;
+	border: 2px solid #888888;
+	text-transform: uppercase;
+}
+#user_profile_edit_personal_inputSegment {
+	position: relative;
+	margin-left: 100px;
+}
+#user_profile_edit_viewAccess {
+	position: absolute;
+	left: 0;
+	top: 0;
+	margin-left: 500px;
+	width: 380px;
+}
+#user_profile_edit_paypal {
+	position: absolute;
+	left: 0;
+	top: 0;
+	margin: 120px 0 0 500px;
+	width: 380px;
+}
+form#editPersonalForm {
+	min-height: 350px;
+	height: auto;
+}
+
+form#editPersonalForm fieldset  {
+	border: none;
+	margin-bottom: 10px;
+}
+form#editPersonalForm ol {	
+	padding: 0;
+    margin: 0;
+}
+form#editPersonalForm ol li {
+    position: relative;
+    margin: 2px 0 2px 0px;
+    line-height: 30px;
+    list-style: none;
+    float: left;
+}
+form#editPersonalForm label {
+    float: left;
+    font-size: 12px;
+    width: 140px;
+    cursor: default;
+}
+
+.editPersonal_developer_option, .editPersonal_allowAccess_option {
+	background: #FFFFFF;
+	font: italic 13px Georgia, "Times New Roman", Times, serif;
+    outline: none;
+    padding: 5px;
+}
+form#editPersonalForm input[type=radio] {
+	margin-right: 10px;
+}
+form#editPersonalForm input:not([type=radio]), form#editPersonalForm textarea {
+    background: #FFFFFF;
+    border: 2px solid #E7E7E7;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+    font: italic 13px Georgia, "Times New Roman", Times, serif;
+    outline: none;
+    padding: 5px;
+    width: 180px;
+}
+form#editPersonalForm input:not([type=submit]):focus, form#editPersonalForm textarea:focus {
+    background: #FFFF00;
+}
+
+#user_details_edit_panel_footer {
+	text-align: right;
+	margin: 30px 20px 0 0;
+}
+#user_details_edit_panel_footer fieldset button {
+    background: #00AEFF;
+    border: none;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -khtml-border-radius: 8px;
+    border-radius: 8px;
+    color: #ffffff;
+    display: inline;
+    font: 12px Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+    padding: 8px 35px;
+    text-transform: uppercase;
+}
+#user_details_edit_panel_footer fieldset button:hover {
+    background: #FFFF00;
+    text-shadow: 0 1px 1px #FFD200;
+    color: #000000;
+    cursor: pointer;
 }
