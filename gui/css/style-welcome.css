@@ -1,0 +1,88 @@
+
+#welcome_panel {
+	position relative;
+	margin: 0 auto;
+	padding: 0 0 40px 0;
+	width: 600px;
+	font: 22px "GeosansLightRegular", Helvetica, sans-serif;
+	font-weight: none;
+	text-align: left;
+	line-height: 30px;
+	color: #797979;
+}
+#body_head_img {
+	text-align: center;
+}
+#body_head_text {
+	margin: 10px 0 20px 0;
+	text-align: center;
+	font: 52px "OldStyle1HPLHS", Helvetica, sans-serif;
+	text-shadow: 4px 5px 20px #c2c2c2;
+	filter: dropshadow(color=#c2c2c2, offx=4, offy=5); 
+	border-left: 4px dotted #00AEFF;
+}
+#body_desc {
+	padding-left: 65px;
+}
+.body_p {
+}
+.logintext {
+	background: #797979;
+	color: #FFFFFF;
+	padding: 5px 12px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px; 
+	font-size: 10px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+#body_desc_footer {
+	position relative;
+	width: 550px;
+	border-right: 4px dotted #00AEFF;
+}
+form#emailer {
+	background: #E2E2E2;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	padding: 25px 20px 25px 20px;
+	width: 450px;
+}
+form#emailer input#emailer_email {
+	background: #FFFFFF;
+	border: none;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	border-radius: 3px;
+	font: italic 20px Georgia, "Times New Roman", Times, serif;
+	outline: none;
+	width: 250px;
+	line-height: 22px;
+	vertical-align: center;
+	list-style: none;
+	padding: 5px 10px;
+	margin-right: 20px;
+}
+form#emailer button {
+    background: #00AEFF;
+    border: none;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -khtml-border-radius: 8px;
+    border-radius: 8px;
+    color: #ffffff;
+    display: inline;
+    font: 14px "OldStyle1HPLHS", Helvetica, sans-serif;
+    letter-spacing: 1px;
+    padding: 7px 25px;
+    text-transform: uppercase;
+}
+form#emailer button:hover {
+    background: #FFFF00;
+    text-shadow: 0 1px 1px #FFD200;
+    color: #000000;
+    cursor: pointer;
+}
