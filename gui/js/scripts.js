@@ -5,7 +5,7 @@ $(document).ready(function(){
 		return false;
 	});
 	
-	$("#dashboardTabs").tabs();
+	//$("#dashboardTabs").tabs();
 	
 });
 
