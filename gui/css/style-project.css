@@ -83,11 +83,11 @@
 	cursor: pointer;
 }
 .projectList_project_title {
-	width: 180px;
+	width: 185px;
 	font-weight: bold;
 }
 .projectList_project_owner {
-	width: 100px;
+	width: 105px;
 }
 .projectList_project_status {
 	width: 80px;
@@ -96,7 +96,7 @@
 	width: 95px;
 }
 .projectList_project_tags {
-	width: 145px;
+	width: 135px;
 }
 .projectList_project_created {
 	width: 80px;

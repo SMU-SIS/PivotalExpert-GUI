@@ -16,70 +16,58 @@
 
 </style>
 
-<div id="user_details_edit_panel"> 
-	<div id="user_profile_edit_personal">
-		<h2>Edit Profile</h2>
-		<hr/>
-		<h4><u>Personal</u></h4>
-		<form action="form/dashboard/user_edit?goto={{$location.hashSearch.goto}}" method="POST">
-		<img src="http://www.gravatar.com/avatar/{{user.gravatar}}?s=80&d=mm">
-		<table>
-		<tr>
-			<td>Nickname</td>
-			<td><input type="text" name="nickname" value="{{user.nickname}}">
-		</tr>
-		<tr>
-			<td>Country</td>
-			<td><input type="text" name="country" value="coming soon" disabled>
-		</tr>
-		<tr>
-			<td>School</td>
-			<td><input type="text" name="school" value="coming soon" disabled>
-		</tr>
-		<tr>
-			<td>Developer</td>
-			<td>Yes <input type="radio" name="developer" value="Yes" disabled checked="checked">
-			<td>No <input type="radio" name="developer" value="No" disabled>
-		</tr>
-		<tr>
-			<td>About Me</td>
-			<td><textarea name="about_me" value="{{user.aboutMe}}"></textarea>
-		</tr>
-		<tr>
-				<td>Preferred Email Address</td>
-				<td><input type="text" name="email" value="{{user.contactEmail}}"></td>
-			</tr>
-			<tr>
-				<td>Allow</td>
-				<td>Everyone<input type="radio" name="allow" value="everyone"></td>
-				<td>Friends Only<input type="radio" name="allow" value="friends_only"></td>
-			</tr>
-			<tr>
-				<td>PayPal Email</td>
-				<td><input type="text" name="paypalemail" value="{{user.paypalEmail}}"></td>
-			</tr>
-		<table><br/>
-		<input type="submit" value="Save" name="submit"/>
-		</form>
-	</div>
-	
-	<!--
-	<div id="user_profile_edit_contactdetails">
-		<h4><u>Contact Details</u></h4>
-		<form>
-		<table>
+
+<section id="user_details_edit_panel">
+	<section class="section_header">Edit Profile</section>
+	<section id="user_profile_edit_personal">
+		<form id="editPersonalForm" action="form/dashboard/user_edit?goto={{$location.hashSearch.goto}}" method="POST">
+			<section class="section_subheader">Personal Details</section>
+			<section class="section_subheader_line"></section>
+			<fieldset class="editPersonalForm_photo">
+				<img src="http://www.gravatar.com/avatar/{{user.gravatar}}?s=80&d=mm">
+			</fieldset>
+			<fieldset>
+				<ol>
+					<li><label for="editPersonal_nickname">Nickname</label><input id="editPersonal_nickname" name="editPersonal_nickname" type="text" placeholder="" value="{{user.nickname}}" autofocus ng:required></li>
+					<li><label for="editPersonal_contactEmail">Email Address</label><input id="editPersonal_contactEmail" name="editPersonal_contactEmail" type="text" placeholder="" value="{{user.contactEmail}}" ng:required></li>
+					<li><label for="editPersonal_country">Country</label><input id="editPersonal_country" name="editPersonal_country" type="text" placeholder="" value="Coming Soon.." ng:required disabled></li>
+					<li><label for="editPersonal_institution">Institution</label><input id="editPersonal_institution" name="editPersonal_institution" type="text" placeholder="" value="Coming Soon.." ng:required disabled></li>
+					<li>
+						<label for="editPersonal_developer">Developer</label>
+						<span class="editPersonal_developer_yes">Yes<input type="radio" name="editPersonal_developer_option" value="Yes" disabled checked="checked"></span>
+						<span class="editPersonal_developer_No">No<input type="radio" name="editPersonal_developer_option" value="No" disabled></span>
+					</li>
+				</ol>
+				<ol>
+					<li><label for="editPersonal_aboutMe">About Me</label><textarea class="editPersonal_aboutMe" name="editPersonal_aboutMe" rows="" placeholder="" value="{{user.aboutMe}}" ng:required></textarea></li>
+				</ol>
+			</fieldset>
 			
-		</table><br/>
-		<input type="submit" value="submit" name="submit"/>
+			<section class="section_subheader">View Access Details</section>
+			<section class="section_subheader_line"></section>
+			<fieldset>
+				<ol>
+					<li>
+						<label for="editPersonal_allowAccess">Allow</label>
+						<span class="editPersonal_allowAccess_everyone">Everyone<input type="radio" name="editPersonal_allowAccess_option" value="everyone" disabled checked="checked"></span>
+						<span class="editPersonal_allowAccess_friends">Friends Only<input type="radio" name="editPersonal_allowAccess_option" value="friends_only" disabled></span>
+					</li>
+				</ol>
+			</fieldset>
+			
+			<section class="section_subheader">Paypal Details</section>
+			<section class="section_subheader_line"></section>
+			<fieldset>
+				<ol>
+					<li><label for="editPersonal_paypalEmail">PayPal Email</label><input id="editPersonal_paypalEmail" name="editPersonal_paypalEmail" type="text" placeholder="" value="{{user.paypalEmail}}" ng:required></li>
+				</ol>
+			</fieldset>
+			<fieldset>
+				<fieldset>
+					<button id="projectAddBid_bidBtn" type="submit">Save Profile</button>
+				</fieldset>
+			</fieldset>
 		</form>
-	</div>
-	<div id="user_profile_edit_paymentdetails">
-		<h4><u>Payment Details</u></h4>
-		<form action="" method="POST">
-		PayPal Email
-		<input type="text" name="email" value=""><br/>
-		<input type="submit" value="submit" name="submit"/>
-		</form>
-	</div>-->
-</div>
+	</section>
+</section>
 
