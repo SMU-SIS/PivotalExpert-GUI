@@ -55,7 +55,7 @@
 							<td class="table_row newsfeed_message_sent ">{{news_feed.time_sent}}</td>
 						</tr>
 						<tr ng:hide="dashboard[0].entries">
-							<td class="table_row newsfeed_message_from"><img src="{{news_feed.user_image}}"></td>
+							<td class="table_row newsfeed_message_from"><img src="gui/images/avatars/aperture50px.jpg"></td>
 							<td class="table_row newsfeed_message_text">
 								<span class="newsfeed_message_text_user">Welcome to PivotalExpert.com!</span><br />
 								<span class="newsfeed_message_text_msg">You have nothing in your newsfeed! 
@@ -111,6 +111,15 @@
 									<td class="table_row projectsmgt_workroom_price workroom_height">SGD${{workroom.budget}}</td>
 									<td class="table_row projectsmgt_workroom_action workroom_height"><a href="#/workroom/{{workroom.url}}">Manage {{workroom.url}}</a></td>
 								</tr>
+								<tr class="projectsmgtWorkroomTableEntry" ng:hide="dashboard[0].workrooms">
+									<td colspan="5"><h3>You have no workrooms yet</h3>
+										<strong>For Project Owners (<a href="#/projects/create">Become a project owner by creating a project!</a>)</strong>
+										<p>A workroom is created the moment you accept a student's bid to work for you.</p>
+										<strong>For Student Developers</strong>
+										<p>A workroom is created the moment your bid for a project is accepted by the owner! <a href="#/projects">Start looking for a project to bid for</a>!</p>
+									</td>
+									
+								</tr>
 							</table>
 						</section>
 					</section>
@@ -136,6 +145,9 @@
 									<td class="table_row_projects projectsmgt_projects_expiryDate">{{project.expire}}</td>
 									<td class="table_row_projects projectsmgt_projects_action"><a href="#/projects/{{project.id}}">View</a></td>
 								</tr>
+								<tr class="projectsmgtProjectsTableEntry" colspan="5" ng:hide="dashboard[0].projects"><td><h3>You have no projects yet!</h3>
+								<p>If you'd like to find student developers to help you with a project, you can start by <a href="#/projects/create">creating a project here</a>.</p>
+								</td></tr>
 							</table>
 						</section>
 					</section>
@@ -168,6 +180,9 @@
 									<td class="table_row projectsmgt_bids_date bids_height">{{bid.date}}</td>
 									<td class="table_row projectsmgt_bids_message bids_height">{{bid.messageUrl}}</td>
 								</tr>
+								<tr class="projectsmgtBidsTableEntry" colspan="5" ng:hide="dashboard[0].bids"><td><h3>You have no bids yet!</h3>
+								<p>If you'd like to earn some money by helping develop a project, you can start by <a href="#/projects">finding a project to bid for here</a>.</p>
+								</td></tr>
 							</table>
 						</section>
 					</section>
