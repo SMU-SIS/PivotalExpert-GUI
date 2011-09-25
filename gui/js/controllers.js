@@ -96,6 +96,10 @@ function ProjectViewCtrl($resource){
 			this.rightSrc = 'gui/html/project_view_bidAdd.html';
 			this.title = 'Bid for ';
 			break;
+		case "winner":
+			//redirect to workroom
+			this.rightSrc = 'gui/html/project_view_bidWon.html';
+			break;
 		case "closed":
 			this.rightSrc = 'gui/html/project_view_bidClosed.html';
 			this.title = 'View ';

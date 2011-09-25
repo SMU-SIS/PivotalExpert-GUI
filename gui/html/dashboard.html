@@ -54,6 +54,17 @@
 							</td>
 							<td class="table_row newsfeed_message_sent ">{{news_feed.time_sent}}</td>
 						</tr>
+						<tr ng:hide="dashboard[0].entries">
+							<td class="table_row newsfeed_message_from"><img src="{{news_feed.user_image}}"></td>
+							<td class="table_row newsfeed_message_text">
+								<span class="newsfeed_message_text_user">Welcome to PivotalExpert.com!</span><br />
+								<span class="newsfeed_message_text_msg">You have nothing in your newsfeed! 
+								Why don't you go find something to do here? 
+								<br/><br/>Are you looking for help with your idea? You can start by <a href="#/projects/create">creating a new project</a> for others to bid for.
+								<br/><br/>Or if you're a student, you can look for a project to take part from <a href="#/projects">our list of projects</a>!</span>
+							</td>
+							<td class="table_row newsfeed_message_sent "></td>
+						</tr>
 					</table>
 
 					Page 1
