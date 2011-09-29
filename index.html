@@ -53,7 +53,7 @@
 						<section id="country"><img src="gui/images/countries/sg.png" alt="Singapore" /> Singapore</section>
 						<nav ng:controller="NavbarCtrl">
 							<ul ng:show="currentUser.nickname">
-								<li><a href="#/">dashboard</a>
+								<li><a href="#/">my dashboard</a>
 									<ul>
 										<li ng:show="navbar.workrooms" class="navheader">My Workrooms</li>
 										<li ng:repeat="item in navbar.workrooms"><a href="#/workroom/{{item.id}}">{{item.title}}</a></li>
@@ -64,8 +64,8 @@
 									</ul>
 								</li>
 								<!--<li><a href="#/institutions">institutions</a></li>-->
-								<li><a href="#/projects">projects</a></li>
-								<li><a href="#/developers">developers</a></li>
+								<li><a href="#/projects">find a project</a></li>
+								<li><a href="#/developers">find a developer</a></li>
 							</ul>
 						</nav>
 					</section>
