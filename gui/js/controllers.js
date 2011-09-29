@@ -58,14 +58,6 @@ function PageRouter_Master($route, $location, $resource) { //router for the webs
 	$route.parent(this);
 }
 
-// function PageRouter_UserProjects($route) {
-// 	var self = this;
-// }
-// 
-// function PageRouter_ProjectsView($route) {
-// 	var self = this;
-// }
-
 function ProjectViewCtrl($resource){
 	this.projectID = this.params.projectID; //gets parameter passed from router
 	projectID = this.projectID; //passes parameter to a variable that JS can read within the included page
@@ -111,29 +103,16 @@ function ProjectViewCtrl($resource){
 	}
 }
 
-//note that the an "_" must be appended to RestCall_ instead of RestCall_ for unit testing to work
-function ProjectListCtrl(RestCall_) {
-  this.projects = RestCall_.query({action:'project', file:'project_index'});
+//note that the an "_" must be appended to RestCall instead of RestCall for unit testing to work
+function ProjectListCtrl($resource) {
+  this.projects = $resource('rest/project/project_index').query();
   this.page="bid";
   //this.page="projects/accept";
 }
 
-//ProjectListCtrl.$inject = ['RestCall_'];
-
-// function ProjectDetailsCtrl(RestCall_) {
-// 	this.projectDetails = RestCall_.query({pageName:'project'});
-// }
-// //ProjectDetailsCtrl.$inject = ['RestCall_'];
-// 
-// function ProjectAcceptCtrl(RestCall_) {
-// 	this.projectAccept = RestCall_.query({action:'project', file:'project_accept'});
-// }
-// //ProjectAcceptCtrl.$inject = ['RestCall_'];
-
-function DashboardCtrl(RestCall_) {
-	this.dashboard = RestCall_.query({action:'dashboard', file:'dashboard'});
+function DashboardCtrl($resource) {
+	this.dashboard = $resource('rest/dashboard/dashboard').query();
 }
-//DashboardCtrl.$inject = ['RestCall_'];
 
 function UserEditCtrl($resource) {
 	this.user = $resource('rest/dashboard/user_edit').get();

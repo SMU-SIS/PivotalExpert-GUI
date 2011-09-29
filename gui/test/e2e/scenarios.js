@@ -1,31 +1,50 @@
 /* jasmine-like end2end tests go here */
-describe('PhoneCat App', function() {
+describe('Pivotal Expert App', function() {
 
-  it('should redirect index.html to index.html#/phones', function() {
-    browser().navigateTo('../../app/index.html');
-    expect(browser().location().hash()).toBe('/phones');
-  });
+	it('should redirect index.html to index.html#/projects', function() {
+		browser().navigateTo('/index.html#/projects');
+		expect(browser().location().hash()).toBe('/projects');
+	});
+	
+	
+	describe('Project list view', 
+	function() {	
+		beforeEach(function() {
+			browser().navigateTo('/index.html#/projects');
+		});
+		
+		it('should return 10 projects in the list', function() {
+			expect( repeater('.projectListTableEntry').count() ).toBe(10);
+		});
+	});
+	
+	describe('Dashboard view', 
+	function() {	
+		beforeEach(function() {
+			browser().navigateTo('/index.html');
+		});
+		
+		it('should return 5 messages in the list', function() {
+			expect( repeater('.newsfeedTableEntry').count() ).toBe(5);
+		});
+		
+		it('should return 2 workrooms + 1 placeholder in the list', function() {
+			expect( repeater('.projectsmgtWorkroomTableEntry').count() ).toBe(3);
+		});
+		
+		it('should return 3 projects + 1 placeholder in the list', function() {
+			expect( repeater('.projectsmgtProjectsTableEntry').count() ).toBe(4);
+		});
+		
+		it('should return 1 bid + 1 placeholder in the list', function() {
+			expect( repeater('.projectsmgtBidsTableEntry').count() ).toBe(2);
+		});
+	});
+	
+	
+	
 
-
-  describe('Phone list view', function() {
-
-    beforeEach(function() {
-      browser().navigateTo('../../app/index.html#/phones');
-    });
-
-
-    it('should filter the phone list as user types into the search box', function() {
-      expect(repeater('.phones li').count()).toBe(20);
-
-      input('query').enter('nexus');
-      expect(repeater('.phones li').count()).toBe(1);
-
-      input('query').enter('motorola');
-      expect(repeater('.phones li').count()).toBe(8);
-    });
-
-
-    it('should be possible to control phone order via the drop down select box', function() {
+    /*it('should be possible to control phone order via the drop down select box', function() {
       input('query').enter('tablet'); //let's narrow the dataset to make the test assertions shorter
 
       expect(repeater('.phones li', 'Phone List').column('a')).
@@ -45,6 +64,7 @@ describe('PhoneCat App', function() {
       element('.phones li a').click();
       expect(browser().location().hash()).toBe('/phones/nexus-s');
     });
+    
   });
 
 
@@ -72,5 +92,5 @@ describe('PhoneCat App', function() {
       element('.phone-thumbs li:nth-child(1) img').click();
       expect(element('img.phone').attr('src')).toBe('img/phones/nexus-s.0.jpg');
     });
-  });
+  });*/
 });
