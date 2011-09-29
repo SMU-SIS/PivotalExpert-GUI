@@ -2,7 +2,7 @@
 describe('Pivotal Expert App', function() {
 
 	it('should redirect index.html to index.html#/projects', function() {
-		browser().navigateTo('/index.html#/projects');
+		browser().navigateTo('../../../#/projects');
 		expect(browser().location().hash()).toBe('/projects');
 	});
 	
@@ -10,7 +10,7 @@ describe('Pivotal Expert App', function() {
 	describe('Project list view', 
 	function() {	
 		beforeEach(function() {
-			browser().navigateTo('/index.html#/projects');
+			browser().navigateTo('../../../#/projects');
 		});
 		
 		it('should return 10 projects in the list', function() {
@@ -21,7 +21,7 @@ describe('Pivotal Expert App', function() {
 	describe('Dashboard view', 
 	function() {	
 		beforeEach(function() {
-			browser().navigateTo('/index.html');
+			browser().navigateTo('../../../');
 		});
 		
 		it('should return 5 messages in the list', function() {
@@ -71,7 +71,7 @@ describe('Pivotal Expert App', function() {
   describe('Phone detail view', function() {
 
     beforeEach(function() {
-      browser().navigateTo('../../app/index.html#/phones/nexus-s');
+      browser().navigateTo('../../../app../../../index.html#/phones/nexus-s');
     });
 
 

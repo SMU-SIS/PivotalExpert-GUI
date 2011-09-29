@@ -1,0 +1,23 @@
+application: pivotalexpertgui
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /gui
+  static_dir: gui
+  expiration: 1m
+
+- url: /rest
+  static_dir: rest
+  expiration: 1m
+
+- url: /
+  static_files: index.html
+  upload: index.html
+  expiration: 1m
+  
+- url: /index.html
+  static_files: index.html
+  upload: index.html
+  expiration: 1m
