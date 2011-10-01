@@ -141,3 +141,8 @@ CurrentUserController.prototype = {
 	}
 }
 
+//validation for forms
+function ValidationCtrl($invalidWidgets){
+  this.$invalidWidgets = $invalidWidgets;
+}
+//ValidationCtrl.$inject = ['$invalidWidgets'];
