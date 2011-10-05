@@ -1,31 +1,149 @@
 <!--page 2a: inbox-->
 <!--this is where the messages sent directly to the user are stored-->
-<h2>Inbox</h2>
 
 
-<form name="delete message" action="#" method="POST">
-<table>
-	<tr>
-		<td width="20"><input type="checkbox" name="master"><br/></td>
-		<td width="100">From</td>
-		<td width="200">Subject</td>
-		<td width="70">Date</td>
-	</tr>
-	
-	<hr/>
-	
-	<tr>
-		<td><input id=1 type="checkbox" ng:checked="{{master}}"></td>
-		<td>Alex</td>
-		<td>New deliverable!</td>
-		<td>15/8/11</td>
-	</tr>
-	<tr>
-		<td><input id=2 type="checkbox" ng:checked="{{master}}"></td>
-		<td>Mark</td>
-		<td>Testing</td>
-		<td>16/8/11</td>
-	</tr>
-</table>
-<input type="submit" name="submit" value="delete">
-</form>
+<style>
+
+
+#inbox_page {
+}
+#inbox_Header {
+}
+#inbox_Body {
+	position: relative;
+	border-top: 1px dotted #797979;
+}
+
+
+#inbox_sidebar {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 150px;
+	min-height: 100px;
+	padding: 5px 0 50px 0;
+	margin-top: 5px;
+	border-right: 1px dotted #797979;
+}
+#inbox_sidebar ul {
+	padding: 0;
+    margin: 0;
+}
+#inbox_sidebar ul li {
+	list-style: none;
+	font: 13px Arial, Helvetica;
+}
+#inbox_sidebar ul li a, #inbox_sidebar ul li a:active, #inbox_sidebar ul li a:visited {
+	text-decoration: none;
+	color: #000000;
+	font-weight: bold;
+	font-size: 12px;
+	margin: 1px 0 1px 0;
+	padding-left: 5px;
+	border-left: 5px solid #FFFF00;
+	width: 140px;
+	display: block;
+}
+#inbox_sidebar ul li a:hover {
+	background: #000000;
+	color: #FFFFFF;
+}
+#inbox_sidebar ul li a.mainlink, #inbox_sidebar ul li a.mainlink:active, #inbox_sidebar ul li a.mainlink:visited {
+	border-left: 5px solid #000000;
+}
+#inbox_sidebar ul li a.mainlink:hover {
+	background: #FFFF00;
+	color: #000000;
+}
+#inbox_sidebar ul.inboxlink_main {
+	margin-bottom: 8px;
+	text-transform: uppercase;
+
+}
+
+
+
+#inbox_main {
+	padding: 3px 0 0 5px;
+	position: relative;
+	top: 0;
+	left: 0;
+	min-height: 200px;
+	margin: 5px 0 0 152px;
+}
+#inbox_mailcontrols {
+
+}
+
+#inbox_mainview {
+
+}
+
+</style>
+
+
+<link rel="stylesheet" href="gui/css/style-inbox.css" type="text/css" media="screen" />
+<section id="inbox_page">
+	<section id="inbox_Header">
+		<section class="section_header">My Inbox</section>
+	</section>
+	<section id="inbox_Body">
+		<section id="inbox_sidebar">
+			<ul class="inboxlink_main">
+				<li><a class="mainlink" href="">Inbox</a></li>
+				<li><a class="mainlink" href="">Draft</a></li>
+			</ul>
+			<ul>
+				<li><a href="">Project A</a></li>
+				<li><a href="">Project B</a></li>
+				<li><a href="">Project C</a></li>
+			</ul>
+		</section>
+		<section id="inbox_main">
+			<section id="inbox_mailcontrols">
+				<ul>
+					<li><a href="">Delete</a></li>
+					<li><a href="">Compose Mail</a></li>
+				</ul>
+			</section>
+			<section id="inbox_mainview">
+			<!-- Interchangable section based on sidebar links -->
+				
+				<!--uncompleted segment -->
+				<form name="delete message" action="#" method="POST">
+				<table>
+					<tr>
+						<td width="20"><input type="checkbox" name="master"><br/></td>
+						<td width="100">From</td>
+						<td width="200">Subject</td>
+						<td width="70">Date</td>
+					</tr>
+					
+					<hr/>
+					
+					<tr>
+						<td><input id=1 type="checkbox" ng:checked="{{master}}"></td>
+						<td>Alex</td>
+						<td>New deliverable!</td>
+						<td>15/8/11</td>
+					</tr>
+					<tr>
+						<td><input id=2 type="checkbox" ng:checked="{{master}}"></td>
+						<td>Mark</td>
+						<td>Testing</td>
+						<td>16/8/11</td>
+					</tr>
+				</table>
+				<input type="submit" name="submit" value="delete">
+				</form>
+
+				
+				
+			</section>
+		</section>
+	</section>
+</section>
+
+
+
+
