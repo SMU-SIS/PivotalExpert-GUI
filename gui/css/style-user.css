@@ -50,6 +50,7 @@
 	border: 1px solid #000000;
 	padding: 3px;
 	text-align: center;
+	margin-bottom: 20px;
 }
 #user_profile_controls ul {
 	list-style: none;
@@ -66,11 +67,43 @@
 .profile_details_contactList {
 }
 
+
+#user_performance_panel {
+
+}
+.performance_panel_Header {
+	font-size: 11px;
+	font-weight: bold;
+	padding-bottom: 3px;
+	border-bottom: 1px solid #E2E2E2;
+}
+#user_performance_panel ul {
+	padding: 0;
+	margin: 0;
+}
+#user_performance_panel ul li {
+	position: relative;
+	list-style: none;
+}
+.performance_header {
+	position: relative;
+}
+.performance_value {
+	position: absolute;
+	left: 0;
+	top: 0;
+	margin-left: 100px;
+}
+.performance_completed {
+
+}
+
+
 #user_profile_badges {
 	margin-top: 20px;
 }
 .profile_badges_Header {
-	font-size: 12px;
+	font-size: 11px;
 	font-weight: bold;
 	padding-bottom: 3px;
 	border-bottom: 1px solid #E2E2E2;
