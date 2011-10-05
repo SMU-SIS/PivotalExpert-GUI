@@ -101,6 +101,10 @@
 .projectList_project_created {
 	width: 80px;
 }
+.required_tag {
+	color: #FF0000;
+	padding-left: 5px;
+}
 
 
 .projectAcceptCurrentBidsEntry {
