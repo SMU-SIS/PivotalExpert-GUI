@@ -59,6 +59,7 @@ function PageRouter_Master($route, $location, $resource) { //router for the webs
 	$route.parent(this);
 }
 
+//hold off writing test for this function till the rest gets done
 function ProjectViewCtrl($resource){
 	this.projectID = this.params.projectID; //gets parameter passed from router
 	projectID = this.projectID; //passes parameter to a variable that JS can read within the included page
@@ -104,7 +105,6 @@ function ProjectViewCtrl($resource){
 	}
 }
 
-//note that the an "_" must be appended to RestCall instead of RestCall for unit testing to work
 function ProjectListCtrl($resource) {
   this.projects = $resource('rest/project/project_index').query();
   this.page="bid";
