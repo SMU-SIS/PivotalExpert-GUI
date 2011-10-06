@@ -1,0 +1,17 @@
+[
+	{
+		"name":"Mark",
+		"country":"SG",
+		"school":"SMU",
+		"earnings":"SGD$50",
+		"badges":[]
+	},
+	{
+		"name":"Daniel",
+		"country":"SG",
+		"school":"SMU",
+		"earnings":"SGD$100",
+		"badges":["gui/images/badges/python1.png","gui/images/badges/python2.png"]
+	}
+
+]

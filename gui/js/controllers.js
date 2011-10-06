@@ -31,10 +31,8 @@ function PageRouter_Master($route, $location, $resource) { //router for the webs
 
 	
 	//developers module
-	$route.when('/developers',{template:'gui/html/developer_index.html'});
+	$route.when('/developers',{template:'gui/html/developer_index.html', controller: DevelopersCtrl});
 	$route.when('/developers/world/',{template:'gui/html/worldmap.html'}); 
-	
-	
 	$route.when('/developers/<country_id>',{template:''}); //TESTING
 	
 	/* FOOTER Re-Directs */
@@ -129,6 +127,12 @@ function WorkroomCtrl($resource) {
 function NavbarCtrl($resource){
 	/* Navbar data */
 	this.navbar = $resource('rest/navbar/dashboard').get();
+}
+
+function DevelopersCtrl($resource){
+	//this.developers = $resource('rest/developer').query();
+	this.developers = $resource('rest/developer').query();
+	this.orderProp = 'earnings';
 }
 
 //Method that checks for current user

@@ -1,51 +1,38 @@
 
-
-<style>
-
-#developers_home_page {
-
-}
-
-</style>
-
 <div id="developers_home_page">
-	<h1>Developers</h1>
-	<table border="1">
-		<thead>
-		<tr><h3>XX Developers Online<h3></tr>
-		<form action="" method="POST">
-			Sort by:
-			<select name="sort by" value="sort by">
-				<option value="username">Username</option>
-				<option value="country">Country</option>
-				<option value="school">School</option>
-				<option value="badges">Badges</option>
-				<option value="earnings">Earnings</option>
-			</select>
-			<input type="submit" value="Go!" name="">
-		</form>
-		<tr>
-			<th width="130">Username</th>
-			<th width="80">Country</th>
-			<th width="180">School</th>
-			<th width="70">Earnings</th>
-			<th width="70">Badges</th>
-			<th width="70">Contact</th>
-		</tr>
-		</thead>
-		<tbody>
-		<tr> <!--dummy row-->
-			<td><a href="user_profile.html">Developer1</a></td>
-			<td><a href="instituitions.html">Singapore</a></td>
-			<td><a href="">Singapore Management</a></td>
-			<td>$155</td><td>None</td>
-			<td><a href="send_message.html">Mail</a>/<a href="project_invite.html">Invite</a></td>
-		</tr> <!--dummy row end-->
+	
+	<h3>{{developers.$count}} Developers Online<h3>
+	<table>
+		Search: <input type="text" name="query"/>
+		<br/>
+		Sort by:
+		<select name="orderProp">
+			<option value="username">Name</option>
+			<option value="country">Country</option>
+			<option value="school">School</option>
+			<option value="badges">Badges</option>
+			<option value="earnings">Earnings</option>
+		</select>
 		
-		<tr> <!--repeating code-->
-			<td></td><td></td><td></td><td></td><td></td><td></td>
-		</tr> <!--repeating code end-->
-		</tbody>
+		<tr>
+			<th>Name</th>
+			<th>Country</th>
+			<th>School</th>
+			<th>Earnings</th>
+			<th>Badges</th>
+			<th>Contact</th>
+		</tr>
+				
+		<tr ng:repeat="developer in developers.$filter(query).$orderBy(orderProp)"> 
+			<td><a href="user_profile.html">{{developer.name}}</a></td>
+			<td>{{developer.country}}</td>
+			<td><a href="instituitions.html">{{developer.school}}</a></td>
+			<td>{{developer.earnings}}</td>
+			<td><span ng:repeat="item in developer.badges"><span ng:hide="$position == 'first'"></span><img src="{{item}}"/></span></td>
+			<td><a href="send_message.html">Mail</a>/<a href="project_invite.html">Invite</a></td>
+		</tr> 
+		
+
 	</table>
 	Page 1
 
