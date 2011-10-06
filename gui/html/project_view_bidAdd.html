@@ -2,16 +2,16 @@
 <form id="projectAddBidForm" action="form/project/addbid" method="POST">
 	<input type="hidden" name="projectAddBid_projectID" value="{{project.id}}"/>
 	<fieldset>
-		<legend>Bid for this Project</legend>
+		<legend>Bid for this project</legend>
 		<section class="section_subheader_line"></section>
 		<ol>
-			<li><label for="projectAddBid_price">Price per Iteration (SGD$)</label><input id="projectAddBid_price" name="projectAddBid_price" type="text" placeholder="Eg. 25.00" required autofocus></li>
-			<li><label for="projectAddBid_iterations">Iteration(s)</label><input id="projectAddBid_iterations" name="projectAddBid_iterations" type="number" min="1" required></li>
+			<li><label for="projectAddBid_price">Iteration Price (SGD$)<span class="required_tag">*</span></label><input id="projectAddBid_price" name="projectAddBid_price" type="text" placeholder="Eg. 25.00" ng:validate="integer:25" required autofocus></li>
+			<li><label for="projectAddBid_iterations">Iteration(s)<span class="required_tag">*</span></label><input id="projectAddBid_iterations" name="projectAddBid_iterations" type="number" min="1" required></li>
 		</ol>
 		<ol>
 			<!-- have to change following to a loop with Angular based on above Number of ITERATIONS-->
-			<li><label for="projectAddBid_iterationPlan">Iteration 1 Plan</label><textarea name="projectAddBid_task1" class="projectAddBid_iterationPlan" rows="" placeholder="Please fill in your plan for this iteration. Eg. Design paper prototype" required></textarea></li>
-			<li><label for="projectAddBid_iterationPlan">Iteration 2 Plan</label><textarea name="projectAddBid_task2" class="projectAddBid_iterationPlan" rows="" placeholder="Please fill in your plan for this iteration. Eg. Code login page with sign-in form" required></textarea></li>
+			<li><label for="projectAddBid_iterationPlan">Iteration 1 Plan<span class="required_tag">*</span></label><textarea name="projectAddBid_task1" class="projectAddBid_iterationPlan" rows="" placeholder="Please fill in your plan for this iteration. Eg. Design paper prototype" required></textarea></li>
+			<li><label for="projectAddBid_iterationPlan">Iteration 2 Plan</label><textarea name="projectAddBid_task2" class="projectAddBid_iterationPlan" rows="" placeholder="Please fill in your plan for this iteration. Eg. Code login page with sign-in form" ></textarea></li>
 			<!-- end loop -->
 		</ol>
 	</fieldset>
@@ -22,7 +22,7 @@
 			</ol>
 		</fieldset>
 		<fieldset>
-			<button id="projectAddBid_bidBtn" type="submit">Bid</button>
+			<button id="projectAddBid_bidBtn" type="submit" ng:disabled="{{$invalidWidgets.visible()||!projectAddBid_agreeToTerms}}">Bid</button>
 		</fieldset>
 	</fieldset>
 </form>

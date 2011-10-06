@@ -22,6 +22,9 @@
 			<span id="projectList_count">{{projects.$count}}</span> Projects Available
 		</section>
 		<span ng:show="currentUser.nickname" id="projectList_create_new"><a href="#/projects/create">Start a New Project</a></span>
+		
+		Search: <input type="text" name="query"/>
+		
 	</section>
 	<table id="project_index_Table" border="0" cellpadding="0" cellspacing="0">
 		<tr class="projectListTableHeader">
@@ -32,7 +35,7 @@
 			<td class="table_header projectList_project_tags">Tags</td>
 			<td class="table_header projectList_project_created">Created</td>
 		</tr>
-		<tr class="projectListTableEntry" ng:repeat="project in projects" 
+		<tr class="projectListTableEntry" ng:repeat="project in projects.$filter(query)" 
 			  onmouseover="HighlightProjectRow(this, true);" 
               onmouseout="HighlightProjectRow(this, false);" 
               onclick="GoToURL('#/projects/{{project.id}}');">

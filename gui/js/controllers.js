@@ -25,7 +25,10 @@ function PageRouter_Master($route, $location, $resource) { //router for the webs
 	$route.when('/projects/create',{template:'gui/html/project_create.html'});	
 	$route.when('/projects/:projectID',{template:'gui/html/project_view.html', controller: ProjectViewCtrl});
 	
+	//workroom module
 	$route.when('/workroom/:workroomID',{template:'gui/html/workroom_index.html', controller: WorkroomCtrl});	
+	$route.when('/workroom/:workroomID/comment',{template:'gui/html/project_comment.html'});	
+
 	
 	//developers module
 	$route.when('/developers',{template:'gui/html/developer_index.html'});
@@ -35,10 +38,10 @@ function PageRouter_Master($route, $location, $resource) { //router for the webs
 	$route.when('/developers/<country_id>',{template:''}); //TESTING
 	
 	/* FOOTER Re-Directs */
-	$route.when('/sitemap',{template:'gui/html/sitemap.html'});					// sitemap page
-	$route.when('/faq',{template:'gui/html/faq.html'});									// faq page
-	$route.when('/terms_of_service',{template:'gui/html/terms.html'});				// terms of service page
-	$route.when('/contact_us',{template:'gui/html/contact_us.html'});				// contact us page
+	$route.when('/sitemap',{template:'gui/html/sitemap.html'});// sitemap page
+	$route.when('/faq',{template:'gui/html/faq.html'});// faq page
+	$route.when('/terms_of_service',{template:'gui/html/terms.html'});// terms of service page
+	$route.when('/contact_us',{template:'gui/html/contact_us.html'});// contact us page
 	
 	
 	/* SUB-PAGES Re-Directs */

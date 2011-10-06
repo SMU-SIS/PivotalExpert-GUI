@@ -1,7 +1,6 @@
 <!--page 11: project_manage-->
 <!--this the screen for users to manage a current project-->
 
-
 <script type="text/javascript">
 $(document).ready(function(){
 	$(".workroomTrigger").click(function(){
@@ -53,7 +52,7 @@ $(document).ready(function(){
 				<li>
 					<form id="messagePostForm" action="form/workroom/sendMsg/{{workroom.id}}" method="POST">
 						<fieldset>
-							<textarea id="messagePost_theMsg" name="messagePost_theMsg" rows="" placeholder="Post a comment" required></textarea>
+							<textarea id="messagePost_theMsg" name="messagePost_theMsg" rows="" placeholder="Write on wall" required></textarea>
 							<button class="projectwall_sendmsg" id="messagePost_sendBtn" type="submit">Send</button>
 						</fieldset>
 					</form>
@@ -70,9 +69,9 @@ $(document).ready(function(){
 						<div class="projectWorkplan_iteration_slidedownbox">
 							<div class="projectWorkplan_iteration_description">{{iteration.task}}</div>
 							<div class="projectWorkplan_iteration_actions">
-								<!--<a class="projectWorkplan_iteration_actions_comment" href="">Comment</a>
+								<a class="projectWorkplan_iteration_actions_comment" href="#/workroom/{{workroom.id}}/comment">Comment</a>
 								<a class="projectWorkplan_iteration_actions_shift" href="">Shift</a>
-								<a class="projectWorkplan_iteration_actions_edit" href="">Edit</a>-->
+								<a class="projectWorkplan_iteration_actions_edit" href="">Edit</a>
 							</div>
 						</div>
 						<div class="projectWorkplan_iteration_displaybar">
