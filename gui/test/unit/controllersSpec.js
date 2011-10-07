@@ -177,5 +177,6 @@ describe('Pivotal Expert GUI controllers', function() {
 			expect(ctrl.developers[1].name).toBe("Daniel");
 		});
 	});//end of TEST 7	
-		
+	
+	
 });//end of PE GUI unit tests
