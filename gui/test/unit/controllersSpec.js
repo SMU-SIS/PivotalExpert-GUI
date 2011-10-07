@@ -134,6 +134,48 @@ describe('Pivotal Expert GUI controllers', function() {
 			expect(ctrl.workroom.description).toBe("Some description you have there");
 			expect(ctrl.messages.messages[0].timestamp).toBe("2011-09-21 (03:26 PM)");
 		});
-	});//end of TEST 5  
+	});//end of TEST 5
 	
+	
+	//TEST 6
+	describe('NavbarCtrl test', function(){
+		var scope, ctrl, $browser;
+		
+		beforeEach(function() {
+			scope = angular.scope();
+			$browser = scope.$service('$browser');
+			$browser.xhr.expectGET('rest/navbar/dashboard')
+			.respond({"workrooms": [{"id": "12050", "title": "First Project Ever"}, {"id": "17023", "title": "Third Project Ever"}], "bids": [{"id": "17021", "title": "Second Project Ever"}], "projects": [{"id": "10044", "title": "Seventh Project Ever"}, {"id": "10043", "title": "Fifth Project Ever"}, {"id": "14040", "title": "First Project Ever"}]});
+			ctrl = new scope.$new(NavbarCtrl);
+		});
+		
+		it('should return correct details in the dropdown navbar', function() {
+			$browser.xhr.flush();
+			expect(ctrl.navbar.projects[1].id).toBe("10043");
+			expect(ctrl.navbar.bids[0].id).toBe("17021");
+			expect(ctrl.navbar.workrooms[1].id).toBe("17023");
+		});
+	});//end of TEST 6
+
+
+	//TEST 7
+	describe('DevelopersCtrl test', function(){
+		var scope, ctrl, $browser;
+		
+		beforeEach(function() {
+			scope = angular.scope();
+			$browser = scope.$service('$browser');
+			$browser.xhr.expectGET('rest/developer')
+			.respond([{"name":"Mark","country":"SG","school":"SMU","earnings":"SGD$50","badges":[]},{"name":"Daniel","country":"SG",	"school":"SMU","earnings":"SGD$100","badges":["gui/images/badges/python1.png","gui/images/badges/python2.png"]}]);
+			ctrl = new scope.$new(DevelopersCtrl);
+		});
+		
+		it('should return 2 developers, mark and daniel', function() {
+			$browser.xhr.flush();
+			expect(ctrl.developers.length).toBe(2);
+			expect(ctrl.developers[0].name).toBe("Mark");
+			expect(ctrl.developers[1].name).toBe("Daniel");
+		});
+	});//end of TEST 7	
+		
 });//end of PE GUI unit tests
