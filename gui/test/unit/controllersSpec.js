@@ -112,14 +112,27 @@ describe('Pivotal Expert GUI controllers', function() {
 		beforeEach(function() {
 			scope = angular.scope();
 			$browser = scope.$service('$browser');
-			$browser.xhr.expectGET('rest/workroom/details/')
-			.respond({"description": "Some description you have there", "title": "First Project Ever", "owner_gravatar": "c4c0fcba5247b525031625b4062d085a", "dev": "Markchen", "dev_gravatar": "8a47e431b9e79c33985ee3bc280198dd", "iterations": [{"status": "In Review", "increase": "Accept", "task": "Planning to do something 1", "decrease": "Reject", "iterationNo": 1}, {"status": "In Queue", "increase": null, "task": "Planning to do something 2", "decrease": null, "iterationNo": 2}, {"status": "In Queue", "increase": null, "task": "Planning to do something 3", "decrease": null, "iterationNo": 3}, {"status": "In Queue", "increase": null, "task": "Planning to do something 4", "decrease": null, "iterationNo": 4}], "owner": "Danieltsou"});
-			ctrl = new scope.$new(WorkroomCtrl(12050));
 		});
 		
 		it('should return details of the workroom', function() {
+		
+			//sets the scope.param value of workroom id to static value: 12050
+			scope.params = {workroomID:'12050'};
+			
+			//1st xhr get request for WorkroomCtrl 
+			$browser.xhr.expectGET('rest/workroom/details/12050')
+			.respond({"description": "Some description you have there", "title": "First Project Ever", "owner_gravatar": "c4c0fcba5247b525031625b4062d085a", "dev": "Markchen", "dev_gravatar": "8a47e431b9e79c33985ee3bc280198dd", "iterations": [{"status": "In Review", "increase": "Accept", "task": "Planning to do something 1", "decrease": "Reject", "iterationNo": 1}, {"status": "In Queue", "increase": null, "task": "Planning to do something 2", "decrease": null, "iterationNo": 2}, {"status": "In Queue", "increase": null, "task": "Planning to do something 3", "decrease": null, "iterationNo": 3}, {"status": "In Queue", "increase": null, "task": "Planning to do something 4", "decrease": null, "iterationNo": 4}], "owner": "Danieltsou"});
+			
+			//2nd xhr get request for WorkroomCtrl
+			$browser.xhr.expectGET('rest/workroom/messages/12050')
+			.respond({"messages": [{"timestamp": "2011-09-21 (03:26 PM)", "message": "Tell me everything!", "user_gravatar": "8a47e431b9e79c33985ee3bc280198dd", "user": "Markchen"}, {"timestamp": "2011-09-21 (03:26 PM)", "message": "What would you like to know?", "user_gravatar": "c4c0fcba5247b525031625b4062d085a", "user": "Danieltsou"}, {"timestamp": "2011-09-21 (03:26 PM)", "message": "Hello Daniel, Thanks!", "user_gravatar": "8a47e431b9e79c33985ee3bc280198dd", "user": "Markchen"}, {"timestamp": "2011-09-21 (03:26 PM)", "message": "Hello Mark, welcome to my project", "user_gravatar": "c4c0fcba5247b525031625b4062d085a", "user": "Danieltsou"}]});
+			
+			ctrl = scope.$new(WorkroomCtrl);
+			
+			//flushing the xhr before tests
 			$browser.xhr.flush();
 			expect(ctrl.workroom.description).toBe("Some description you have there");
+			expect(ctrl.messages.messages[0].timestamp).toBe("2011-09-21 (03:26 PM)");
 		});
 	});//end of TEST 5  
 	
