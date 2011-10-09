@@ -7,21 +7,10 @@ describe('Pivotal Expert App', function() {
 	});
 	
 	
-	describe('Project list view', 
-	function() {	
-		beforeEach(function() {
-			browser().navigateTo('../../../#/projects');
-		});
-		
-		it('should return 10 projects in the list', function() {
-			expect( repeater('.projectListTableEntry').count() ).toBe(10);
-		});
-	});
-	
 	describe('Dashboard view', 
 	function() {	
 		beforeEach(function() {
-			browser().navigateTo('../../../');
+			browser().navigateTo('../../../index.html#');
 		});
 		
 		it('should return 5 messages in the list', function() {
@@ -39,6 +28,73 @@ describe('Pivotal Expert App', function() {
 		it('should return 1 bid + 1 placeholder in the list', function() {
 			expect( repeater('.projectsmgtBidsTableEntry').count() ).toBe(2);
 		});
+	});
+	
+	
+	
+	describe('Create a new project', function(){
+		beforeEach(function(){
+		
+			browser().nagivateTo('../../../index.html#/projects/create');
+			input('createNewProject_title').enter("e2eTestProject");
+			input('createNewProject_budget').enter(555);
+			input('createNewProject_description').enter("This project is automatically created by e2e");
+			input('createNewProject_tags').enter("AngularJS, Jasmine BDD");
+			select('projectAddBid_agreeToTerms');
+			select('projectAddBid_bidBtn');
+		});
+		
+	});
+	
+	describe('Project list view', 
+	function() {	
+		beforeEach(function() {
+			browser().navigateTo('../../../index.html#/projects');
+		});
+		
+		it('should return 10 projects in the list', function() {
+			expect( repeater('.projectListTableEntry').count() ).toBe(10);
+		});
+	});	
+	
+	describe('Workroom view', function(){
+		beforeEach(function(){
+			browser().navigateTo('../../../index.html#/workroom/12050');
+		});
+		
+		//tests the display for the workroom details
+		it('should have project title = "First Project Ever" with project description', function(){
+			expect(binding('workroom.title')).toBe("First Project Ever");
+			expect(binding('workroom.description')).toBe("Some description you have there");
+		});
+		
+		it('owner should be DanielTsou, developer mark chen', function(){
+			expect(binding('workroom.owner')).toBe("Danieltsou");
+			expect(binding('workroom.dev')).toBe("Markchen");
+		});
+		
+		//tests the chatroom
+		it('should have 4 entries', function(){
+			expect( repeater('.projectWall_message_entry').count()).toBe(4);
+		});
+		
+		//can only receive first entry, not sure how to test entry [2], etc yet.
+		it('first entry should be from mark chen, "Tell me everything!", at 2011-09-21 (03:26 PM)"', function(){
+			expect(binding('message.user')).toBe("Markchen");
+			expect(binding('message.message')).toBe("Tell me everything!");
+			expect(binding('message.timestamp')).toBe("2011-09-21 (03:26 PM)");
+		});
+		
+		//tests the iteration, workflow
+		it('should have 4 iterations', function(){
+			expect(repeater('.projectWorkplan_iteration_entry').count()).toBe(4);
+		});
+		
+		it('first entry should be "do something 1", "in review"',function(){
+			expect(binding('iteration.task')).toBe("Planning to do something 1");
+			expect(binding('iteration.status')).toBe("In Review");
+		});
+		
 	});
 	
 	
