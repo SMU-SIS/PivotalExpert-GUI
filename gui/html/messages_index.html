@@ -1,21 +1,21 @@
-<!--page 2a: inbox-->
-<!--this is where the messages sent directly to the user are stored-->
+<!--page 2a: messages-->
+<!--this is where the messagess sent directly to the user are stored-->
 
 
 <style>
 
 
-#inbox_page {
+#messages_page {
 }
-#inbox_Header {
+#messages_Header {
 }
-#inbox_Body {
+#messages_Body {
 	position: relative;
 	border-top: 1px dotted #797979;
 }
 
 
-#inbox_sidebar {
+#messages_sidebar {
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -25,15 +25,15 @@
 	margin-top: 5px;
 	border-right: 1px dotted #797979;
 }
-#inbox_sidebar ul {
+#messages_sidebar ul {
 	padding: 0;
     margin: 0;
 }
-#inbox_sidebar ul li {
+#messages_sidebar ul li {
 	list-style: none;
 	font: 13px Arial, Helvetica;
 }
-#inbox_sidebar ul li a, #inbox_sidebar ul li a:active, #inbox_sidebar ul li a:visited {
+#messages_sidebar ul li a, #messages_sidebar ul li a:active, #messages_sidebar ul li a:visited {
 	text-decoration: none;
 	color: #000000;
 	font-weight: bold;
@@ -44,18 +44,18 @@
 	width: 140px;
 	display: block;
 }
-#inbox_sidebar ul li a:hover {
+#messages_sidebar ul li a:hover {
 	background: #000000;
 	color: #FFFFFF;
 }
-#inbox_sidebar ul li a.mainlink, #inbox_sidebar ul li a.mainlink:active, #inbox_sidebar ul li a.mainlink:visited {
+#messages_sidebar ul li a.mainlink, #messages_sidebar ul li a.mainlink:active, #messages_sidebar ul li a.mainlink:visited {
 	border-left: 5px solid #000000;
 }
-#inbox_sidebar ul li a.mainlink:hover {
+#messages_sidebar ul li a.mainlink:hover {
 	background: #FFFF00;
 	color: #000000;
 }
-#inbox_sidebar ul.inboxlink_main {
+#messages_sidebar ul.messageslink_main {
 	margin-bottom: 8px;
 	text-transform: uppercase;
 
@@ -63,7 +63,7 @@
 
 
 
-#inbox_main {
+#messages_main {
 	padding: 3px 0 0 5px;
 	position: relative;
 	top: 0;
@@ -71,18 +71,18 @@
 	min-height: 200px;
 	margin: 5px 0 0 152px;
 }
-#inbox_mailcontrols {
+#messages_mailcontrols {
 
 }
-#inbox_mailcontrols ul {
+#messages_mailcontrols ul {
 	padding: 0;
     margin: 0;
 }
-#inbox_mailcontrols ul li {
+#messages_mailcontrols ul li {
 	list-style: none;
 	font: 13px Arial, Helvetica;
 }
-#inbox_mailcontrols ul li a, #inbox_mailcontrols ul li a:active, #inbox_mailcontrols ul li a:visited {
+#messages_mailcontrols ul li a, #messages_mailcontrols ul li a:active, #messages_mailcontrols ul li a:visited {
 	text-decoration: none;
 	float: right;
 	padding: 5px 14px;
@@ -93,22 +93,22 @@
 	margin-left: 5px;
 }
 
-#inbox_mainview {
+#messages_mainview {
 
 }
 
 </style>
 
 
-<link rel="stylesheet" href="gui/css/style-inbox.css" type="text/css" media="screen" />
-<section id="inbox_page">
-	<section id="inbox_Header">
-		<section class="section_header">My Inbox</section>
+<link rel="stylesheet" href="gui/css/style-messages.css" type="text/css" media="screen" />
+<section id="messages_page">
+	<section id="messages_Header">
+		<section class="section_header">My messages</section>
 	</section>
-	<section id="inbox_Body">
-		<section id="inbox_sidebar">
-			<ul class="inboxlink_main">
-				<li><a class="mainlink" href="">Inbox</a></li>
+	<section id="messages_Body">
+		<section id="messages_sidebar">
+			<ul class="messageslink_main">
+				<li><a class="mainlink" href="">messages</a></li>
 				<li><a class="mainlink" href="">Draft</a></li>
 			</ul>
 			<ul>
@@ -117,18 +117,18 @@
 				<li><a href="">Project C</a></li>
 			</ul>
 		</section>
-		<section id="inbox_main">
-			<section id="inbox_mailcontrols">
+		<section id="messages_main">
+			<section id="messages_mailcontrols">
 				<ul>
 					<li><a href="">Compose Mail</a></li>
 					<li><a href="">Delete</a></li>
 				</ul>
 			</section>
-			<section id="inbox_mainview">
+			<section id="messages_mainview">
 			<!-- Interchangable section based on sidebar links -->
 				
 				<!--uncompleted segment -->
-				<form name="delete message" action="#" method="POST">
+				<form name="delete messages" action="#" method="POST">
 				<table>
 					<tr>
 						<td width="20"><input type="checkbox" name="master"><br/></td>
