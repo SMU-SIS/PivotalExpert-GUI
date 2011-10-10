@@ -1,7 +1,7 @@
 
 
 <link rel="stylesheet" href="gui/css/style-project.css" type="text/css" media="screen" />
-<section id="create_new_project_page" ng:controller="ValidationCtrl">
+<section id="create_new_project_page">
 	<section id="create_new_project_Header">
 		<section class="section_header">Create New Project</section>
 	</section>
@@ -22,7 +22,7 @@
 						<li><input id="projectAddBid_agreeToTerms" name="projectAddBid_agreeToTerms" type="checkbox"><label for="projectAddBid_agreeToTerms">I agree to the terms</label></li>
 					</ol>
 				</fieldset>
-				<fieldset>
+				<fieldset ng:controller="ValidationCtrl">
 					<!--<button id="projectAddBid_bidBtn" type="submit">Post Project</button>-->
 					<button id="projectAddBid_bidBtn" type="submit" ng:disabled="{{$invalidWidgets.visible()||!projectAddBid_agreeToTerms}}">Post Project</button>
 				</fieldset>

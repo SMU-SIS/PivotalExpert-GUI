@@ -15,12 +15,12 @@
 			<li><label for="projectDetails_title">Title</label><input id="projectDetails_title" name="projectDetails_title" type="text" placeholder="" value="{{project.title}}"></li>
 			<li><label for="projectDetails_owner">Owner</label><input id="projectDetails_owner" name="projectDetails_owner" type="text" placeholder="" value="{{project.owner}}" disabled="disabled"></li>
 			<li><label for="projectDetails_description">Project Description</label><textarea id="projectDetails_description" name="projectDetails_description" rows="" placeholder="" value="{{project.description}}"></textarea></li>
-			<li><label for="projectDetails_budget">Total Budget (in SGD$)</label><input id="projectDetails_budget" name="projectDetails_budget" type="text" placeholder="" value="{{project.budget}}"></li>
+			<li><label for="projectDetails_budget">Total Budget (SGD$)</label><input id="projectDetails_budget" name="projectDetails_budget" type="text" placeholder="" value="{{project.budget}}" ng:validate="integer:25"></li>
 			<li><label for="projectDetails_tags">Tag(s)</label><textarea id="projectDetails_tags" name="projectDetails_tags" rows="6" placeholder="" value="{{project.tags}}"></textarea></li>
 		</ol>
 	</fieldset>
-	<fieldset>
-			<button class="updatebutton" id="projectAddBid_bidBtn" type="submit">Update</button>
+	<fieldset ng:controller="ValidationCtrl">
+			<button class="updatebutton" id="projectAddBid_bidBtn" type="submit" ng:disabled="{{$invalidWidgets.visible()}}">Update</button>
 	</fieldset>
 </form>
 

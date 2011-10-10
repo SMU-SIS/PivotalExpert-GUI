@@ -21,7 +21,7 @@
 				<li><input id="projectAddBid_agreeToTerms" name="projectAddBid_agreeToTerms" type="checkbox"><label for="projectAddBid_agreeToTerms">I agree to the terms</label></li>
 			</ol>
 		</fieldset>
-		<fieldset>
+		<fieldset ng:controller="ValidationCtrl">
 			<button id="projectAddBid_bidBtn" type="submit" ng:disabled="{{$invalidWidgets.visible()||!projectAddBid_agreeToTerms}}">Bid</button>
 		</fieldset>
 	</fieldset>
