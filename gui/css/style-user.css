@@ -80,23 +80,36 @@
 #user_performance_panel ul {
 	padding: 0;
 	margin: 0;
+	border-bottom: 1px solid #E2E2E2;
 }
 #user_performance_panel ul li {
 	position: relative;
 	list-style: none;
+	display: block;
+	margin: 2px 0 2px 0;
 }
 .performance_header {
 	position: relative;
+	font-size: 11px;
+	min-height: 28px;
+	line-height: 12px;
+	width: 105px;
+	
+	background: green;
 }
 .performance_value {
 	position: absolute;
 	left: 0;
 	top: 0;
-	margin-left: 100px;
+	margin-left: 105px;
+	padding-right: 2px;
+	font-size: 22px;
+	font-weight: bold;
+	width: 45px;
+	text-align: right;
+	color: #797979;
 }
-.performance_completed {
 
-}
 
 
 #user_profile_badges {
