@@ -19,7 +19,7 @@
 	<section id="project_index_Header">
 		<section class="section_header">Projects</section>
 		<section class="section_subheader">
-			<span id="projectList_count">{{projects.$count}}</span> Projects Available
+			<span id="projectList_count">{{projects.total}}</span> Projects Available
 		</section>
 		<span ng:show="currentUser.nickname" id="projectList_create_new"><a href="#/projects/create">Start a New Project</a></span>
 		
@@ -35,7 +35,7 @@
 			<td class="table_header projectList_project_tags">Tags</td>
 			<td class="table_header projectList_project_created">Created</td>
 		</tr>
-		<tr class="projectListTableEntry" ng:repeat="project in projects.$filter(query)" 
+		<tr class="projectListTableEntry" ng:repeat="project in projects.projectList" 
 			  onmouseover="HighlightProjectRow(this, true);" 
               onmouseout="HighlightProjectRow(this, false);" 
               onclick="GoToURL('#/projects/{{project.id}}');">
@@ -58,5 +58,11 @@
 			<!--<li class="table_row projectList_project_action"><a href="#/projects/accept/{{project.id}}">View</a> / <a href="#/projects/bid/{{project.id}}">Bid</a></li>-->
 	</tr>
 	</table>
+
+	<ul ng:controller="PaginationCtrl">
+        <li ng:hide="curpage==1"><a ng:href="{{pages[curpage-2]}}">previous</a></li>
+        <li ng:repeat="page in pages"><a href="{{page}}">{{pages.indexOf(page)+1}}</a></li>
+		<li ng:hide="noOfPages==curpage"><a ng:href="{{pages[curpage]}}">next</a></li>
+    </ul>
 </section>
-Page 1
+

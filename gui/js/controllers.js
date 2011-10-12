@@ -22,6 +22,7 @@ function PageRouter_Master($route, $location, $resource) { //router for the webs
 	
 	//projects module
 	$route.when('/projects',{template:'gui/html/project_index.html', controller: ProjectListCtrl});
+	$route.when('/projects/page/:pageID',{template:'gui/html/project_index.html', controller: ProjectListCtrl});
 	$route.when('/projects/create',{template:'gui/html/project_create.html'});	
 	$route.when('/projects/:projectID',{template:'gui/html/project_view.html', controller: ProjectViewCtrl});
 	
@@ -64,7 +65,7 @@ function ProjectViewCtrl($resource){
 	this.projectID = this.params.projectID; //gets parameter passed from router
 	projectID = this.projectID; //passes parameter to a variable that JS can read within the included page
 	
-	this.projectRoute = projectRoute = $.parseJSON($.ajax({url:'rest/project/project_view/'+projectID,dataType: 'json',async:false}).responseText);
+	this.projectRoute = projectRoute = $.parseJSON($.ajax({url:'rest/projects/project_view/'+projectID,dataType: 'json',async:false}).responseText);
 	
 	this.project = project = projectRoute.project;
 	
@@ -106,9 +107,17 @@ function ProjectViewCtrl($resource){
 }
 
 function ProjectListCtrl($resource) {
-  this.projects = $resource('rest/project/project_index').query();
-  this.page="bid";
-  //this.page="projects/accept";
+	var self = this;
+	if(self.params.pageID != null) {
+		self.curpage=self.params.pageID ;
+	} else {
+		self.curpage=1;
+	}
+	
+	self.projects = $resource('rest/projects/page/'+self.curpage).get(function(projects) { 
+                                                                self.total = projects.total; 
+                                                          });
+														  //alert(self.total);
 }
 
 function DashboardCtrl($resource) {
@@ -150,6 +159,32 @@ CurrentUserController.prototype = {
 
 //validation for forms
 function ValidationCtrl($invalidWidgets){
-  this.$invalidWidgets = $invalidWidgets;
+	this.$invalidWidgets = $invalidWidgets;
 }
 //ValidationCtrl.$inject = ['$invalidWidgets'];
+
+//Controls paging of lists such as projects and news feeds
+function PaginationCtrl(){
+	var self = this;
+	//alert("paging"+self.total);
+	var noOfPages = Math.ceil(self.total/ 10);//calculate number of pages
+	
+	//retrieve category of projects stored
+	var url = window.location.href;
+	var start = url.indexOf('#')+2 //index of first letter after # sign in URL
+	var end = url.substring(start).indexOf('/'); //index of the first / after # in URL
+	
+	//if there is more than one / after the #, set the index of the second / as the limit
+	if (end<=0){
+		var action = url.substring(start); 
+	} else {
+		var action = url.substring(start, start+end);
+	}
+	
+	//construct the page links (/projects/page/:pageID)
+	self.pages = [];
+	for (index=1;index<=noOfPages;index++) {
+		self.pages.push('#/' + action + '/page/' + index);
+	}
+	//return pages;
+}
