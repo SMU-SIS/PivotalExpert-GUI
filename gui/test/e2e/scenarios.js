@@ -35,6 +35,7 @@ describe('Pivotal Expert App', function() {
 	describe('Create a new project', function(){
 		beforeEach(function(){
 		
+			//creates a new project for testing
 			browser().nagivateTo('../../../index.html#/projects/create');
 			input('createNewProject_title').enter("e2eTestProject");
 			input('createNewProject_budget').enter(555);
