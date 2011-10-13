@@ -35,17 +35,83 @@ describe('Pivotal Expert App', function() {
 	describe('Create a new project', function(){
 		beforeEach(function(){
 		
-			//creates a new project for testing
+			//test this on GAE to make sure that the dynamically generated data corresponds
 			browser().nagivateTo('../../../index.html#/projects/create');
 			input('createNewProject_title').enter("e2eTestProject");
 			input('createNewProject_budget').enter(555);
 			input('createNewProject_description').enter("This project is automatically created by e2e");
 			input('createNewProject_tags').enter("AngularJS, Jasmine BDD");
-			select('projectAddBid_agreeToTerms');
-			select('projectAddBid_bidBtn');
+			input('projectAddBid_agreeToTerms').check();
+			element('projectAddBid_bidBtn').click();
 		});
 		
 	});
+	
+	/* scenarios to write tests for core function
+	TO BE DONE BY SATURDAY
+	describe('Bid for project', function(){
+	
+	});
+	
+	describe('Accept bids', function(){
+	
+	});
+	
+	describe('Workroom chat', function(){
+	
+	});
+
+	describe('Deliver iteration deliverable', function(){
+	
+	});
+
+	describe('Accept iteration deliverable', function(){
+	
+	});
+	
+	describe('Reject iteration deliverable', function(){
+	
+	});
+	
+	describe('Edit iteration status', function(){
+	
+	});	
+	
+	*/
+	
+	/*scenarios to write tests for non-core functions
+	TO BE DONE BY MONDAY
+
+	describe('Edit my user profile', function(){
+	
+	});
+
+	describe('Invite developer to project', function(){
+	
+	});	
+	
+	describe('View developer complete profile', function(){
+	
+	});
+
+	describe('Respond to project invitation', function(){
+	
+	});
+
+	describe('Add user to contact list', function(){
+	
+	});	
+	
+	describe('Suggest a badge', function(){
+	
+	});
+
+	describe('Suggest an institution', function(){
+	
+	});
+	
+	
+	*/
 	
 	describe('Project list view', 
 	function() {	
