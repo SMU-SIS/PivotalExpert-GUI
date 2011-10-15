@@ -9,7 +9,6 @@
 				<div class="profile_details_nick">{{currentUser.nickname}}</div>
 				<div class="profile_details_pic"><img src="http://www.gravatar.com/avatar/{{currentUser.gravatar}}?s=150&d=mm" alt="{{currentUser.nickname}}" border="3"/> </div>
 				<div class="profile_details_school" ng:show="currentUser.schoolName">
-					<span class="profile_details_school_logo"><img src="gui/images/schools/{{currentUser.schoolLogo}}-40px.png" alt="SMU"></span>
 					<span class="profile_details_school_initials">{{currentUser.schoolName}}</span>
 				</div>
 			</section>
@@ -24,25 +23,35 @@
 				<div class="performance_panel_Header">My Performance</div>
 				<ul>
 					<li>
-						<!-- <div class="performance_header" ng:show="user == deveoper">Money Earned: </div>
-						<!-- <div class="performance_header" ng:show="user == owner">Money Spent: </div>-->
-						<div class="performance_header">ABC</div>
-						<div class="performance_value">22</div>
+						<div class="performance_header">Monies<br />Earned:</div>
+						<div class="performance_value">25k</div>
 					</li>
 					<li>
-						<div class="performance_header">Projects Completed: </div>
+						<div class="performance_header">Projects Completed:</div>
 						<div class="performance_value">20</div>
 					</li>
 					<li>
-						<div class="performance_header">Projects in Progress: </div>
+						<div class="performance_header">Projects in Progress:</div>
 						<div class="performance_value">5</div>
 					</li>
 				</ul>
 			</section>
-			<!--<section id="user_profile_badges">
-				<div class="profile_badges_Header">My Badges</div>
-				<div class="profile_badges_Body"><a href="">Badge Details</a>
-			</section></div>-->
+			<section id="user_profile_badges_panel">
+				<div class="profile_badges_panel_Header">My Badges</div>
+				<ul>
+					<li>
+						<div class="profile_badges_header">PivotalExpert:</div>
+						<div class="profile_badges_value">20 <span class="profile_badges_score_total">/80</span></div>
+					</li>
+					<li>
+						<div class="profile_badges_header">Singpath:</div>
+						<div class="profile_badges_value">5 <span class="profile_badges_score_total">/20</span></div>
+					</li>
+					<li>
+						<div class="profile_badges_more_link"><a href="">more</a></div>
+					</li>
+				</ul>
+			</section>
 		</section>
 	</section>
 	<!--right panel-->
