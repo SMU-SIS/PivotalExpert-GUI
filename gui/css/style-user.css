@@ -215,25 +215,61 @@
 }
 
 
-#newsfeed_Table, #projectsmgt_workroom_Table, #projectsmgt_projects_Table, #projectsmgt_bids_Table {
+
+.paginator {
+            font-size: 80%;
+}
+.paginator a {
+    text-decoration: none;
+	border: solid 1px #AAE;
+	color: #15B;
+}
+.paginator a, .paginator span {
+    display: block;
+    float: left;
+    padding: 0.3em 0.5em;
+    margin-right: 5px;
+	margin-bottom: 5px;
+}
+.paginator .current {
+    background: #26B;
+    color: #FFFFFF;
+	border: solid 1px #AAE;
+}
+.paginator .current.prev, .paginator .current.next{
+	color:#999;
+	border-color:#999;
+	background: #FFFFFF;
+}
+
+
+.newsfeed_subpage {
+	
+}
+.newsfeed_Table, #projectsmgt_workroom_Table, #projectsmgt_projects_Table, #projectsmgt_bids_Table {
 	position: relative;
 	font-family: Helvetica, Arial;
 	font-size: 12px;
 	display: block-inline;
 	width: 660px;
 }
-#newsfeed_Table {
+.newsfeed_Table {
 	width: 680px;
 }
-#newsfeed_Table tr, #projectsmgt_workroom_Table tr, #projectsmgt_projects_Table tr, #projectsmgt_bids_Table tr {
+.newsfeed_Table tr, #projectsmgt_workroom_Table tr, #projectsmgt_projects_Table tr, #projectsmgt_bids_Table tr {
 	margin: 0;
 	padding: 0;
 }
-#newsfeed_Table tr td, #projectsmgt_workroom_Table tr td, #projectsmgt_projects_Table tr td, #projectsmgt_bids_Table tr td {
+.newsfeed_Table tr td, #projectsmgt_workroom_Table tr td, #projectsmgt_projects_Table tr td, #projectsmgt_bids_Table tr td {
 	display: inline-block;
 	list-style: none;
 	padding: 5px 10px;
 }
+
+
+
+
+
 .newsfeedTableHeader, .projectsmgtWorkroomTableHeader, .projectsmgtProjectsTableHeader, .projectsmgtBidsTableHeader {
 	background: #FFFF00;
 }
@@ -251,6 +287,8 @@
 	margin: 1px;
 	padding: 1px;
 	border-bottom: 1px solid #E2E2E2;
+	
+	background:green;
 }
 .newsfeed_message_from {
 	padding: 0;

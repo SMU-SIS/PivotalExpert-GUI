@@ -7,6 +7,8 @@ $(document).ready(function(){
 	
 	//$("#dashboardTabs").tabs();
 	
+	$("#newsfeed_subpage").pagination();
+	
 });
 
 
