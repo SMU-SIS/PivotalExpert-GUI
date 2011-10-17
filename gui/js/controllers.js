@@ -117,7 +117,7 @@ function ProjectListCtrl($resource) {
 		page = 1;
 	}
 
-	this.projects = $resource('http://dev.pivotalexpert.com/rest/projects/project_index/page/'+page).get();
+	this.projects = $resource('http://dev.pivotalexpert.com/rest/projects/project_index/page/'+page).get(); 	//Temp inserted for non-server rest call for data
 }
 
 function DashboardCtrl($resource) {
