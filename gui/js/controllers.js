@@ -36,6 +36,9 @@ function PageRouter_Master($route, $location, $resource) { //router for the webs
 	$route.when('/developers/world/',{template:'gui/html/worldmap.html'}); 
 	$route.when('/developers/<country_id>',{template:''}); //TESTING
 	
+	//settings module
+	$route.when('/settings/paypal',{template:'gui/html/settings_paypal.html', controller: SettingsPayPalCtrl});
+	
 	/* FOOTER Re-Directs */
 	$route.when('/sitemap',{template:'gui/html/sitemap.html'});// sitemap page
 	$route.when('/faq',{template:'gui/html/faq.html'});// faq page
@@ -107,17 +110,14 @@ function ProjectViewCtrl($resource){
 }
 
 function ProjectListCtrl($resource) {
-	var self = this;
-	if(self.params.pageID != null) {
-		self.curpage=self.params.pageID ;
-	} else {
-		self.curpage=1;
+	if (this.params.pageID) {
+		page = this.params.pageID;
 	}
-	
-	self.projects = $resource('rest/projects/page/'+self.curpage).get(function(projects) { 
-                                                                self.total = projects.total; 
-                                                          });
-														  //alert(self.total);
+	else {
+		page = 1;
+	}
+
+	this.projects = $resource('rest/projects/project_index/page/'+page).get();
 }
 
 function DashboardCtrl($resource) {
@@ -129,8 +129,14 @@ function UserEditCtrl($resource) {
 }
 
 function WorkroomCtrl($resource) {
-	this.workroom = $resource('rest/workroom/details/'+this.params.workroomID).get();
+	this.workroom = workroom = $.parseJSON($.ajax({url:'rest/workroom/details/'+this.params.workroomID,dataType: 'json',async:false}).responseText);
+	//this.workroom = $resource('rest/workroom/details/'+this.params.workroomID).get();
 	this.messages = $resource('rest/workroom/messages/'+this.params.workroomID).get();
+	
+	if (workroom.alert != null){
+		alert(workroom.alert);
+	}
+	workroom.alert = null;
 }
 
 function NavbarCtrl($resource){
@@ -142,6 +148,10 @@ function DevelopersCtrl($resource){
 	//this.developers = $resource('rest/developer').query();
 	this.developers = $resource('rest/developer').query();
 	this.orderProp = 'earnings';
+}
+
+function SettingsPayPalCtrl($resource){
+	this.pp_settings = $resource('rest/settings/paypal').get()
 }
 
 //Method that checks for current user
