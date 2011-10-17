@@ -21,9 +21,7 @@
 		<section class="section_subheader">
 			<span id="projectList_count">{{projects.total}}</span> Projects Available
 		</section>
-		<span ng:show="currentUser.nickname" id="projectList_create_new"><a href="#/projects/create">Start a New Project</a></span>
-		
-		Search: <input type="text" name="query"/>
+		<span ng:show="currentUser.nickname" id="projectList_create_new"><input type="text" id="search_query" name="search_query"/><a href="">Search</a></span>
 		
 	</section>
 	<table id="project_index_Table" border="0" cellpadding="0" cellspacing="0">
@@ -59,14 +57,57 @@
 	</tr>
 	</table>
 	
-	<ul>
-		<li><a href="#/projects/page/1">First</a></li>
-		<li ng:hide="projects.page_current == 1"><a href="#/projects/page/{{projects.page_current-1}}">Previous</a></li>
-        <li ng:repeat="page in projects.page_numbers"><span ng:hide="page == projects.page_current"><a href="#/projects/page/{{page}}">{{page}}</a></span>
-        <span ng:show="page == projects.page_current">{{page}}</span></li>
-        <li ng:hide="projects.page_current == projects.pages"><a href="#/projects/page/{{projects.page_current+1}}">Next</a></li>
-    	<li><a href="#/projects/page/{{projects.pages}}">Last</a></li>
+	<ul class="pagination_section">
+		<li class="pagination_sidelinks"><a href="#/projects/page/1">First</a></li>
+		<li class="pagination_sidelinks" ng:hide="projects.page_current == 1"><a href="#/projects/page/{{projects.page_current-1}}">></a></li>
+        <li ng:repeat="page in projects.page_numbers">
+        	<span class="pagination_pages" ng:hide="page == projects.page_current"><a href="#/projects/page/{{page}}">{{page}}</a></span>
+        	<span class="pagination_currentpage" ng:show="page == projects.page_current">{{page}}</span>
+        </li>
+        <li class="pagination_sidelinks" ng:hide="projects.page_current == projects.pages"><a href="#/projects/page/{{projects.page_current+1}}"><</a></li>
+    	<li class="pagination_sidelinks" ><a href="#/projects/page/{{projects.pages}}">Last</a></li>
     </ul>
+    
+    
+<style>
+ul.pagination_section {
+
+}
+ul.pagination_section li {
+	list-style: none;
+	float: left;
+	margin-right: 2px;
+	font: 12px bold;
+}
+.pagination_pages a, .pagination_pages a:active, .pagination_pages a:visited {
+
+}
+.pagination_pages a:hover {
+
+}
+.pagination_currentpage {
+	ackground: #26B;
+    color: #FFFFFF;
+	border: solid 1px #AAE;
+}
+.pagination_sidelinks a, .pagination_sidelinks a:active, .pagination_sidelinks a:visited {
+	border: 1px solid #0097FE;
+	background: #FFFFFF;
+	color: #0097FE;
+	display: block;
+	text-decoration: none;
+	padding: 2px 5px;
+	
+}
+.pagination_sidelinks a:hover {
+	background: #0097FE;
+	color: #000000;
+}
+
+
+
+</style>
+    
     
 </section>
 
