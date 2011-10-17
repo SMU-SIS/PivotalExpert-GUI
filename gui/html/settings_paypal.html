@@ -1,0 +1,49 @@
+<form>
+PayPal Email: <input type="text" name="settings_paypal_email" value="{{pp_settings.paypal_email}}"></input>
+<input type="submit" value="Save"/>
+</form>
+
+<table border="1px">
+	<tr>
+		<td>ID</td>
+		<td>Date</td>
+		<td>Amount</td>
+		<td>From</td>
+		<td>Paid?</td>
+		<td>To</td>
+		<td>Received?</td>
+		<td>Workroom</td>
+		<td>Week</td>
+		<td>Remarks</td>
+	</tr>
+	<tr ng:repeat="payment in pp_settings.paying">
+		<td>{{payment.id}}</td>
+		<td>{{payment.insertDate}}</td>
+		<td>US${{payment.amount}}</td>
+		<td>{{payment.sender}}</td>
+		<td ng:show="payment.paid">Paid</td>
+		<td ng:hide="payment.paid">Not Paid</td>
+		<td>{{payment.receiver}}</td>
+		<td ng:show="payment.received">Received</td>
+		<td ng:hide="payment.received">Not yet received</td>
+		<td><a href="#/workroom/{{payment.workroom_id}}">{{payment.workroom}}</a></td>
+		<td>{{payment.iteration}}</td>
+		<td ng:show="payment.failed">An error occured</td>
+		<td ng:hide="payment.failed">No errors</td>
+	</tr>
+	<tr ng:repeat="payment in pp_settings.receiving">
+		<td>{{payment.id}}</td>
+		<td>{{payment.insertDate}}</td>
+		<td>US${{payment.amount}}</td>
+		<td>{{payment.sender}}</td>
+		<td ng:show="payment.paid">Paid</td>
+		<td ng:hide="payment.paid">Not Paid</td>
+		<td>{{payment.receiver}}</td>
+		<td ng:show="payment.received">Received</td>
+		<td ng:hide="payment.received">Not yet received</td>
+		<td><a href="#/workroom/{{payment.workroom_id}}">{{payment.workroom}}</a></td>
+		<td>{{payment.iteration}}</td>
+		<td ng:show="payment.failed">An error occured</td>
+		<td ng:hide="payment.failed">No errors</td>
+	</tr>
+</table>
