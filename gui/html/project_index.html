@@ -21,7 +21,9 @@
 		<section class="section_subheader">
 			<span id="projectList_count">{{projects.total}}</span> Projects Available
 		</section>
-		<span ng:show="currentUser.nickname" id="projectList_create_new"><input type="text" id="search_query" name="search_query"/><a href="">Search</a></span>
+		<section id="project_index_searchbar">
+			<input type="text" id="projectList_search_query" name="projectList_search_query" placeholder="search a project" /><div ng:show="currentUser.nickname" id="projectList_search"><a href="">Search</a></div>
+		</section>
 	</section>
 	<table id="project_index_Table" border="0" cellpadding="0" cellspacing="0">
 		<tr class="projectListTableHeader">
