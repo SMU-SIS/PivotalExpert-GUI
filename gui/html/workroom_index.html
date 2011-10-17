@@ -2,6 +2,15 @@
 <!--this the screen for users to manage a current project-->
 
 <script type="text/javascript">
+
+function status_change(path,msg){
+	var answer = confirm(msg);
+	
+	if (answer) {
+		window.location = path;
+	}
+}
+
 $(document).ready(function(){
 	$(".workroomTrigger").click(function(){
 		//$(this).parent().next().slideToggle("fast");
@@ -77,8 +86,8 @@ $(document).ready(function(){
 						<div class="projectWorkplan_iteration_displaybar">
 							<span class="projectWorkplan_iteration_header">Iteration {{$index+1}}</span>
                             <div class="projectWorkplan_iteration_status">
-								<span class="iteration_increase"><a href="form/workroom/iterStatusUpdate/{{workroom.id}}/{{iteration.id}}/1" ng:hide="!iteration.increase">{{iteration.increase}}</a></span>
-								<span class="iteration_decrease"><a href="form/workroom/iterStatusUpdate/{{workroom.id}}/{{iteration.id}}/-1" ng:hide="!iteration.decrease">{{iteration.decrease}}</a></span>
+								<span class="iteration_increase"><a onclick='status_change("form/workroom/iterStatusUpdate/{{workroom.id}}/{{iteration.id}}/1","{{iteration.increaseAlert}}")' ng:hide="!iteration.increase">{{iteration.increase}}</a></span>
+								<span class="iteration_decrease"><a onclick='status_change("form/workroom/iterStatusUpdate/{{workroom.id}}/{{iteration.id}}/-1","{{iteration.decreaseAlert}}")' ng:hide="!iteration.decrease">{{iteration.decrease}}</a></span>
 								<span class="iteration_status">{{iteration.status}}</span>
                             </div>
 						</div>
