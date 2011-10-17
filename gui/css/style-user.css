@@ -215,34 +215,6 @@
 }
 
 
-
-.paginator {
-            font-size: 80%;
-}
-.paginator a {
-    text-decoration: none;
-	border: solid 1px #AAE;
-	color: #15B;
-}
-.paginator a, .paginator span {
-    display: block;
-    float: left;
-    padding: 0.3em 0.5em;
-    margin-right: 5px;
-	margin-bottom: 5px;
-}
-.paginator .current {
-    background: #26B;
-    color: #FFFFFF;
-	border: solid 1px #AAE;
-}
-.paginator .current.prev, .paginator .current.next{
-	color:#999;
-	border-color:#999;
-	background: #FFFFFF;
-}
-
-
 .newsfeed_subpage {
 	
 }

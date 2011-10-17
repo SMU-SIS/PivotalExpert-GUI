@@ -304,6 +304,56 @@ body  {
 }
 
 
+.pagination_section {
+	position: relative;
+	height: 35px;
+}
+.pagination_section ul {
+	position: absolute;
+	top: 0;
+	right: 10px;
+	-moz-right: 10px;
+	-webkit-right: 10px;
+	padding: 0;
+	margin-bottom: 5px;
+}
+.pagination_section ul li {
+	list-style: none;
+	float: left;
+	margin-right: 2px;
+	font: 12px bold;
+	text-align: center;
+}
+.pagination_sidelinks a, .pagination_sidelinks a:active, .pagination_sidelinks a:visited, 
+.pagination_pages a, .pagination_pages a:active, .pagination_pages a:visited {
+	border: 1px solid #0097FE;
+	background: #FFFFFF;
+	color: #0097FE;
+	display: block;
+	text-decoration: none;
+	padding: 2px 5px;
+}
+.pagination_pages a, .pagination_pages a:active, .pagination_pages a:visited {
+	padding: 2px 2px;
+	width: 14px;
+}
+.pagination_sidelinks a:hover, .pagination_pages a:hover {
+	background: #FFFF00;
+	color: #000000;
+}
+.currentsidelink , .currentpage {
+	background: #797979;
+    color: #FFFFFF;
+    display: block;
+	border: solid 1px #FFFF00;
+	padding: 2px 2px;
+	width: 14px;
+}
+.currentsidelink {
+	width: 32px;
+}
+
+
 
 /***** Footer *****/
 #bottom {
