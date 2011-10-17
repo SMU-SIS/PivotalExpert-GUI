@@ -58,11 +58,15 @@
 			<!--<li class="table_row projectList_project_action"><a href="#/projects/accept/{{project.id}}">View</a> / <a href="#/projects/bid/{{project.id}}">Bid</a></li>-->
 	</tr>
 	</table>
-	<span ng:hide="projects.page_current == 1"><a href="#/projects/page/{{projects.page_current-1}}">Previous</a></span>
-	<ul ng:repeat="page in projects.page_numbers">
-        <li ng:hide="page == projects.page_current"><a href="#/projects/page/{{page}}">{{page}}</a></li>
-        <li ng:show="page == projects.page_current">{{page}}</li>
+	
+	<ul>
+		<li><a href="#/projects/page/1">First</a></li>
+		<li ng:hide="projects.page_current == 1"><a href="#/projects/page/{{projects.page_current-1}}">Previous</a></li>
+        <li ng:repeat="page in projects.page_numbers"><span ng:hide="page == projects.page_current"><a href="#/projects/page/{{page}}">{{page}}</a></span>
+        <span ng:show="page == projects.page_current">{{page}}</span></li>
+        <li ng:hide="projects.page_current == projects.pages"><a href="#/projects/page/{{projects.page_current+1}}">Next</a></li>
+    	<li><a href="#/projects/page/{{projects.pages}}">Last</a></li>
     </ul>
-    <span ng:hide="projects.page_current == projects.pages"><a href="#/projects/page/{{projects.page_current+1}}">Next</a></span>
+    
 </section>
 
