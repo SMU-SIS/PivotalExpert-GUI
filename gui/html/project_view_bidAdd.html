@@ -1,5 +1,5 @@
 
-<form id="projectAddBidForm" action="form/project/addbid" method="POST">
+<form ng:show="project.paypal" id="projectAddBidForm" action="form/project/addbid" method="POST">
 	<input type="hidden" name="projectAddBid_projectID" value="{{project.id}}"/>
 	<fieldset>
 		<legend>Bid for this project</legend>
@@ -26,3 +26,6 @@
 		</fieldset>
 	</fieldset>
 </form>
+<div ng:hide="project.paypal">
+	You need to set up your PayPal account before you can bid for a project. Visit your <a href="#/settings/paypal">PayPal Settings page</a> to add your PayPal email address you wish to be paid at.
+</div>

@@ -1,4 +1,17 @@
-
+<script>
+function accept_bid(path,paypal){
+	if(paypal){
+		var answer = confirm('Are you sure you want to accept this bid? You will be directed to PayPal to pay for the first <iteration term>.');
+		
+		if (answer) {
+			window.location = path;
+		}
+	}
+	else{
+		alert('Sorry, this student does not have their PayPal account set up for you to accept their bid.');
+	}
+}
+</script>
 <section id="project_view_bidManage">
 	<section class="section_subheader">Manage Bid(s)</section>
 	<section class="section_subheader_line"></section>
@@ -21,7 +34,7 @@
 							<li class="project_view_bidManage_bid_displaybar_bidder">{{singlebid.dev}}</li>
 							<li class="project_view_bidManage_bid_displaybar_iterations">{{singlebid.no_of_iterations}}</li>
 							<li class="project_view_bidManage_bid_displaybar_amount">SGD${{singlebid.price_per_iter}}</li>
-							<li class="project_view_bidManage_bid_displaybar_accept"><a href="form/project/acceptBid/{{project.id}}/{{singlebid.dev_id}}">Accept</a></li>
+							<li class="project_view_bidManage_bid_displaybar_accept"><a onclick='accept_bid("form/project/acceptBid/{{project.id}}/{{singlebid.dev_id}}",{{singlebid.paypal}})'>Accept</a></li>
 						</ul>
 					</div>
 					<div class="project_view_bidManage_bid_slidedownbox">
