@@ -38,6 +38,7 @@ function PageRouter_Master($route, $location, $resource) { //router for the webs
 	
 	//settings module
 	$route.when('/settings/paypal',{template:'gui/html/settings_paypal.html', controller: SettingsPayPalCtrl});
+	$route.when('/settings/user',{template:'gui/html/user_edit.html', controller: UserEditCtrl});
 	
 	/* FOOTER Re-Directs */
 	$route.when('/sitemap',{template:'gui/html/sitemap.html'});// sitemap page
@@ -47,7 +48,6 @@ function PageRouter_Master($route, $location, $resource) { //router for the webs
 	
 	
 	/* SUB-PAGES Re-Directs */
-	$route.when('/edit_profile',{template:'gui/html/user_edit.html', controller: UserEditCtrl});
 	$route.when('/badges/suggest',{template:'gui/html/suggest_badge.html'});
 	$route.when('/messages',{template:'gui/html/messages_index.html'});
 	$route.when('/messages/compose',{template:'gui/html/messages_send.html'});
@@ -117,7 +117,7 @@ function ProjectListCtrl($resource) {
 		page = 1;
 	}
 
-	this.projects = $resource('http://dev.pivotalexpert.com/rest/projects/project_index/page/'+page).get(); 	//Temp inserted for non-server rest call for data
+	this.projects = $resource('rest/projects/project_index/page/'+page).get();
 }
 
 function DashboardCtrl($resource) {
