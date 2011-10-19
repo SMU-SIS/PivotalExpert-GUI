@@ -1,0 +1,134 @@
+
+/** Developer_Index & Developer_Create **/
+#developer_index_page {
+}
+#developer_index_Header {
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+#developer_accept_Header {
+}
+#developerList_count {
+	font-size: 22px;
+	border-left: 8px solid #FFFF00;
+	padding-left: 10px;
+}
+
+#developer_index_searchbar {
+	position: absolute;
+	top: 45px;
+	right: 0;
+	-moz-right: 0;
+	-webkit-right: 0;
+	float: right;
+	height: 24px;
+	display: block;
+	margin-right: 12px;
+	border-bottom: 4px solid #FFFF00;
+}
+#developerList_search {
+	position: absolute;
+	top: 0;
+	right: 0;
+	-moz-right: 0;
+	-webkit-right: 0;
+}
+#developerList_search a, #developerList_search a:active, #developerList_search a:link, #developerList_search a:visited {
+	background: #0054A6;
+	padding: 6px 16px;
+	font-size: 10px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #FFFFFF;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px; 
+}
+#developerList_search a:hover {
+	background: #00BFF3;
+}
+#developerList_search_query {
+	margin: 0 78px 0 0;
+	font: italic 13px Georgia, "Times New Roman", Times, serif;
+	padding: 3px;
+	padding-left: 8px;
+    width: 180px;
+    height: 18px;
+    display: block;
+    border: 0;
+    background: #F0F0F0;
+}
+#developerList_search_query:focus {
+	border: 2px solid #0054A6;
+}
+
+#developer_index_Table {
+	position: relative;
+	font-family: Helvetica, Arial;
+	font-size: 12px;
+	display: block-inline;
+	width: 878px;
+}
+#developer_index_Table tr {
+	margin: 0;
+	padding: 0;
+}
+#developer_index_Table tr td {
+	display: inline-block;
+	list-style: none;
+	padding: 5px 10px;
+	border-right: 2px #FFFFFF solid;
+}
+#developer_index_Table tr td:last-child {
+	border-right: 0;
+}
+
+.developerListTableHeader {
+	background: #00BFF3;
+	border-bottom: 2px #FFFFFF solid;
+}
+.table_header {
+	font-weight: bold;
+}
+.table_row {
+	min-height: 30px;
+}
+.developerListTableEntry {
+	margin-bottom: 1px;
+	padding: 1px;
+	width: 850px;
+	background: #E1E1E1;
+	border-bottom: 2px #FFFFFF solid;
+}
+.developerListTableEntry:hover {
+	cursor: pointer;
+}
+.developerList_developer_name {
+	width: 225px;
+	font-weight: bold;
+}
+.developerList_developer_country {
+	width: 105px;
+}
+.developerList_developer_school {
+	width: 80px;
+}
+.developerList_developer_badges {
+	width: 105px;
+}
+.developerList_developer_earnings {
+	width: 125px;
+}
+.developerList_developer_contact {
+	width: 105px;
+}
+.developer_pic {
+
+}
+.developer_name {
+
+}
+
+
