@@ -101,6 +101,7 @@
 	font-weight: bold;
 }
 .table_row {
+	min-height: 10px;
 }
 .projectListTableEntry {
 	margin-bottom: 1px;
