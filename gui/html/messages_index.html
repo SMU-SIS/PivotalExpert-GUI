@@ -156,6 +156,32 @@ ul#messages_mailcontrols_right li a, ul#messages_mailcontrols_right li a:active,
 				<!--<ng:include src="gui/html/messages_mailbox.html"></ng:include>-->
 				
 				
+				<form id="createNewProjectForm" action="{{formServer}}form/project/create" method="POST">
+					<fieldset>
+						<legend>Project Details</legend>
+						<ol>
+							<li><label for="createNewProject_title">Title<span class="required_tag">*</span></label><input id="createNewProject_title" name="createNewProject_title" type="text" placeholder="Eg. My Awesome Project"  autofocus required></li>
+							<li><label for="createNewProject_budget">Total Budget (SGD$)<span class="required_tag">*</span></label><input id="createNewProject_budget" name="createNewProject_budget" type="text" placeholder="Eg. 25.00" ng:validate="integer:25" required></li>
+							<li><label for="createNewProject_description">Project Description<span class="required_tag">*</span></label><textarea class="createNewProject_description" name="createNewProject_description" rows="" placeholder="Eg. This is a web-portal for entrepreneurs and students." required></textarea></li>
+							<li><label for="createNewProject_tags">Tag(s)</label><textarea class="createNewProject_tags" name="createNewProject_tags" rows="" placeholder="Eg. jQuery, HTML5, CSS"></textarea></li>
+						</ol>
+					</fieldset>
+					<fieldset>
+						<fieldset>
+							<ol>
+								<li><input id="projectAddBid_agreeToTerms" name="projectAddBid_agreeToTerms" type="checkbox"><label for="projectAddBid_agreeToTerms">I agree to the terms</label></li>
+							</ol>
+						</fieldset>
+						<fieldset ng:controller="ValidationCtrl">
+							<!--<button id="projectAddBid_bidBtn" type="submit">Post Project</button>-->
+							<button id="projectAddBid_bidBtn" type="submit" ng:disabled="{{$invalidWidgets.visible()||!projectAddBid_agreeToTerms}}">Post Project</button>
+						</fieldset>
+					</fieldset>
+				</form>
+				
+				
+				
+				
 				<form name="delete messages" action="#" method="POST">
 				<table>
 					<tr>
