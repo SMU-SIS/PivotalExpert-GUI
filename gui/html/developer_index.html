@@ -1,7 +1,86 @@
 
+<style>
+
+
+</style>
+
+<script src="gui/js/scripts.js"></script>
+<link rel="stylesheet" href="gui/css/style-developer.css" type="text/css" media="screen" />
+<section id="developer_index_page">
+	<section id="developer_index_Header">
+		<section class="section_header">Developers</section>
+		<section class="section_subheader">
+			<span id="developerList_count">{{developers.$count}}</span> Developers Online
+		</section>
+		<section id="developer_index_searchbar">
+			<input type="text" id="developerList_search_query" name="developerList_search_query" placeholder="search a developer" /><div ng:show="currentUser.nickname" id="developerList_search"><a href="">Search</a></div>
+		</section>
+	</section>
+	<table id="developer_index_Table" border="0" cellpadding="0" cellspacing="0">
+		<tr class="developerListTableHeader">
+			<td class="table_header developerList_developer_title">Name</td>
+			<td class="table_header developerList_developer_owner">Country</td>
+			<td class="table_header developerList_developer_status">School</td>
+			<td class="table_header developerList_developer_budget">Budget</td>
+			<td class="table_header developerList_developer_tags">Tags</td>
+			<td class="table_header developerList_developer_created">Created</td>
+		</tr>
+		<tr class="developerListTableEntry" ng:repeat="developer in developers.$filter(query).$orderBy(orderProp)" 
+			  onmouseover="HighlightDeveloperRow(this, true);" 
+              onmouseout="HighlightDeveloperRow(this, false);" 
+              onclick="GoToURL('#/developers/{{developer.id}}');">
+			<td class="table_row developerList_developer_title">{{developer.title}}</td>
+		<!-- <td class="table_row developerList_developer_title">
+				<div ng:show="currentUser.userType == 'developer'">
+				   <a href="#/developers/bid/{{developer.id}}">{{developer.title}}</a>
+				</div>
+				<div ng:show="currentUser.userType == 'hirer'">
+				   <a href="#/developers/bid/{{developer.id}}">{{developer.title}}</a>
+				</div>
+			</td>
+			-->
+			<td class="table_row developerList_developer_owner">{{developer.name}}</td>
+			<td class="table_row developerList_developer_status">{{developer.country}}</td>
+			<td class="table_row developerList_developer_school">{{developer.school}}</td>
+			<td class="table_row developerList_developer_budget">USD${{developer.earnings}}</td>
+			<td class="table_row developerList_developer_tags"><span ng:repeat="item in developer.tags"><span ng:hide="$position == 'first'">, </span>{{item}}</span></td>
+			<td class="table_row developerList_developer_created">{{developer.created}}</td>
+
+			<!--<li class="table_row developerList_developer_action"><a href="#/developers/accept/{{developer.id}}">View</a> / <a href="#/developers/bid/{{developer.id}}">Bid</a></li>-->
+	</tr>
+	</table>
+	
+	<div class="pagination_section">
+		<ul>
+			<li>
+				<span class="pagination_sidelinks" ng:hide="developers.page_current == 1"><a href="#/developers/page/1">First</a></span>
+				<span class="currentsidelink" ng:show="developers.page_current == 1">First</span>
+			</li>
+			<li class="pagination_sidelinks" ng:hide="developers.page_current == 1"><a href="#/developers/page/{{developers.page_current-1}}"><</a></li>
+			<li ng:repeat="page in developers.page_numbers">
+				<span class="pagination_pages" ng:hide="page == developers.page_current"><a href="#/developers/page/{{page}}">{{page}}</a></span>
+				<span class="pagination_pages_current currentpage" ng:show="page == developers.page_current">{{page}}</span>
+			</li>
+			<li class="pagination_sidelinks" ng:hide="developers.page_current == developers.pages"><a href="#/developers/page/{{developers.page_current+1}}">></a></li>
+			<li>
+				<span class="pagination_sidelinks" ng:hide="developers.page_current == developers.pages"><a href="#/developers/page/{{developers.pages}}">Last</a></span>
+				<span class="currentsidelink" ng:show="developers.page_current == developers.pages">Last</span>
+			</li>
+		</ul>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
 <div id="developers_home_page">
 	
-	<h3>{{developers.$count}} Developers Online<h3>
+	<h3><h3>
 	<table>
 		Search: <input type="text" name="query"/>
 		<br/>
@@ -29,7 +108,7 @@
 			<td><a href="instituitions.html">{{developer.school}}</a></td>
 			<td>{{developer.earnings}}</td>
 			<td><span ng:repeat="item in developer.badges"><span ng:hide="$position == 'first'"></span><img src="{{item}}"/></span></td>
-			<td><a href="send_message.html">Mail</a>/<a href="project_invite.html">Invite</a></td>
+			<td><a href="send_message.html">Mail</a>/<a href="developer_invite.html">Invite</a></td>
 		</tr> 
 		
 
