@@ -93,7 +93,9 @@
 	font-weight: bold;
 }
 .table_row {
-	min-height: 30px;
+	min-height: 32px;
+	line-height: 30px;
+	display: block;
 }
 .developerListTableEntry {
 	margin-bottom: 1px;
@@ -116,19 +118,83 @@
 	width: 80px;
 }
 .developerList_developer_badges {
-	width: 105px;
+	width: 125px;
 }
 .developerList_developer_earnings {
-	width: 125px;
+	width: 105px;
 }
 .developerList_developer_contact {
 	width: 105px;
 }
 .developer_pic {
-
 }
 .developer_name {
+	margin: 0 0 0 5px;
+}
+.developer_name a, .developer_name a:active, .developer_name a:visited {
+	text-decoration: none;
+	color: #000000;
+}
+.developer_name a:hover {
 
 }
+.developerList_developer_school a, .developerList_developer_school a:active, .developerList_developer_school a:visited {
+	font-size: 11px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-decoration: none;
+	background: #000000;
+	color: #FFFFFF;
+	padding: 2px 9px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px; 
+}
+.developerList_developer_school a:hover {
+	background: #FFFFFF;
+	color: #000000;
+}
+.developer_badges_earned {
+	font: 13px Arial, Helvetica;
+	height: 17px;
+	font-weight: bold;
+}
+.developer_badges_total {
+	font-size: 11px;
+	color: #797979;
+}
+.developerList_developer_badges a, .developerList_developer_badges a:active, .developerList_developer_badges a:visited {
+	font-size: 10px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-decoration: none;
+	background: #797979;
+	color: #FFFFFF;
+	padding: 1px 3px;
+	margin-left: 5px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px; 
+}
+.developerList_developer_badges a:hover {
+	background: #000000;
+}
+.developerList_developer_contact a, .developerList_developer_contact a:active, .developerList_developer_contact a:visited {
+	font-size: 10px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 1px 4px;
+	color: #000000;
+	background: #FFD101;
+}
+.developerList_developer_contact a:hover {
+	color: #FFFFFF;
+	background: #0097FE;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px; 
+}
+
 
 
