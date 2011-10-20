@@ -1,9 +1,4 @@
 
-<style>
-
-
-</style>
-
 <script src="gui/js/scripts.js"></script>
 <link rel="stylesheet" href="gui/css/style-developer.css" type="text/css" media="screen" />
 <section id="developer_index_page">
@@ -15,20 +10,20 @@
 		<section id="developer_index_searchbar">
 			<input type="text" id="developerList_search_query" name="developerList_search_query" placeholder="search a developer" /><div ng:show="currentUser.nickname" id="developerList_search"><a href="">Search</a></div>
 		</section>
-		
-		Sort by:
-		<select name="orderProp">
-			<option value="username">Name</option>
-			<option value="country">Country</option>
-			<option value="school">School</option>
-			<option value="badges">Badges</option>
-			<option value="earnings">Earnings</option>
-		</select>
-		
+		<section id="developer_index_sortbar">
+			<section class="sort_subheader">sort by:</section>
+			<select class="sort_select" name="orderProp">
+				<option class="sort_select_option" value="username">Name</option>
+				<option class="sort_select_option" value="country">Country</option>
+				<option class="sort_select_option" value="school">School</option>
+				<option class="sort_select_option" value="badges">Badges</option>
+				<option class="sort_select_option" value="earnings">Earnings</option>
+			</select>
+		</section>
 	</section>
 	<table id="developer_index_Table" border="0" cellpadding="0" cellspacing="0">
 		<tr class="developerListTableHeader">
-			<td class="table_header developerList_developer_name">Name</td>
+			<td class="table_header developerList_developer_name"><span class="developer_nameheader">Name</span></td>
 			<td class="table_header developerList_developer_country">Country</td>
 			<td class="table_header developerList_developer_school">School</td>
 			<td class="table_header developerList_developer_badges">Badges</td>

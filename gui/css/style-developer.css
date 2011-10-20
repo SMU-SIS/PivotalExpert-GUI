@@ -64,6 +64,32 @@
 	border: 2px solid #0054A6;
 }
 
+#developer_index_sortbar {
+	position: relative;
+	margin-right: 12px;
+	padding: 9px 0 3px 20px;
+	min-height: 25px;
+	line-height: 25px;
+	background: #000000;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+.sort_subheader {
+	font: 14px Arial, Helvetica bold;
+	font-variant: small-caps;
+}
+.sort_select {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 8px 0 0 80px;
+	width: 165px;
+	background: #000000;
+	font: 13px Arial, Helvetica bold;
+	color: #FFFFFF;
+}
+
+
 #developer_index_Table {
 	position: relative;
 	font-family: Helvetica, Arial;
@@ -84,7 +110,6 @@
 #developer_index_Table tr td:last-child {
 	border-right: 0;
 }
-
 .developerListTableHeader {
 	background: #00BFF3;
 	border-bottom: 2px #FFFFFF solid;
@@ -126,7 +151,8 @@
 .developerList_developer_contact {
 	width: 105px;
 }
-.developer_pic {
+.developer_nameheader, .developer_pic {
+	padding-left: 10px;
 }
 .developer_name {
 	margin: 0 0 0 5px;
