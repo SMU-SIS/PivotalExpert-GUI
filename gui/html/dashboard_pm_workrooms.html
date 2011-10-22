@@ -1,0 +1,59 @@
+<!-- this is the Workrooms tab belonging to the Project Management group-->
+					<section id="user_projectsmgt_workroom">
+						<section id="workroom_content" class="subtabcontent">	
+							<table id="projectsmgt_workroom_Table" border="0" cellpadding="0" cellspacing="0">
+								<tr class="projectsmgtWorkroomTableHeader">
+									<td class="table_header projectsmgt_workroom_title">Title</td>
+									<td class="table_header projectsmgt_workroom_owner">Owner</td>
+									<td class="table_header projectsmgt_workroom_developer">Developer</td>
+									<td class="table_header projectsmgt_workroom_iteration">Iteration</td>
+									<td class="table_header projectsmgt_workroom_price">Price</td>
+									<td class="table_header projectsmgt_workroom_action">Action</td>
+								</tr>
+								<tr class="projectsmgtWorkroomTableEntry" ng:repeat="workroom in dashboard[0].workrooms"
+									  onmouseover="HighlightWorkroomRow(this, true);" 
+									  onmouseout="HighlightWorkroomRow(this, false);" 
+									  onclick="GoToURL('#/workroom/{{workroom.id}}');">
+									<td class="table_row projectsmgt_workroom_title"><div class="workroom_title">{{workroom.title}}</div></td>
+									<td class="table_row projectsmgt_workroom_owner workroom_height">
+										<span class="projectsmgt_workroom_owner_pic"><img src="http://www.gravatar.com/avatar/{{workroom.owner_gravatar}}?s=50&d=mm"></span>
+										<span class="projectsmgt_workroom_owner_name">{{workroom.owner}}</span>
+									</td>
+									<td class="table_row projectsmgt_workroom_developer workroom_height">
+										<span class="projectsmgt_workroom_developer_pic"><img src="http://www.gravatar.com/avatar/{{workroom.developer_gravatar}}?s=50&d=mm"></span>
+										<span class="projectsmgt_workroom_developer_name">{{workroom.developer}}</span>
+									</td>
+									<td class="table_row projectsmgt_workroom_iteration workroom_height">{{workroom.iteration}}</td>
+									<td class="table_row projectsmgt_workroom_price workroom_height">SGD${{workroom.budget}}</td>
+									<td class="table_row projectsmgt_workroom_action workroom_height"><a href="#/workroom/{{workroom.url}}">Manage {{workroom.url}}</a></td>
+								</tr>
+								<tr class="projectsmgtWorkroomTableEntry" ng:hide="dashboard[0].workrooms">
+									<td colspan="5"><h3>You have no workrooms yet</h3>
+										<strong>For Project Owners (<a href="#/projects/create">Become a project owner by creating a project!</a>)</strong>
+										<p>A workroom is created the moment you accept a student's bid to work for you.</p>
+										<strong>For Student Developers</strong>
+										<p>A workroom is created the moment your bid for a project is accepted by the owner! <a href="#/projects">Start looking for a project to bid for</a>!</p>
+									</td>
+								</tr>
+							</table>
+							
+							<div class="pagination_section">
+								<ul>
+									<li>
+										<span class="pagination_sidelinks" ng:hide="myworkroom.page_current == 1"><a href="#/myworkroom/page/1">First</a></span>
+										<span class="currentsidelink" ng:show="myworkroom.page_current == 1">First</span>
+									</li>
+									<li class="pagination_sidelinks" ng:hide="myworkroom.page_current == 1"><a href="#/myworkroom/page/{{myworkroom.page_current-1}}"><</a></li>
+									<li ng:repeat="page in myworkroom.page_numbers">
+										<span class="pagination_pages" ng:hide="page == myworkroom.page_current"><a href="#/myworkroom/page/{{page}}">{{page}}</a></span>
+										<span class="pagination_pages_current currentpage" ng:show="page == myworkroom.page_current">{{page}}</span>
+									</li>
+									<li class="pagination_sidelinks" ng:hide="myworkroom.page_current == myworkroom.pages"><a href="#/myworkroom/page/{{myworkroom.page_current+1}}">></a></li>
+									<li>
+										<span class="pagination_sidelinks" ng:hide="myworkroom.page_current == myworkroom.pages"><a href="#/myworkroom/page/{{myworkroom.pages}}">Last</a></span>
+										<span class="currentsidelink" ng:show="myworkroom.page_current == myworkroom.pages">Last</span>
+									</li>
+								</ul>
+							</div>
+						</section>
+					</section>

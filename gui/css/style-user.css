@@ -211,7 +211,7 @@
 	border: 1px solid #E9E9E9;
 }
 #projectsmgt_content, #returnontime_content { 
-	display: none; 
+	/**display: none;**/ 
 }
 
 #newsfeed_Table, #projectsmgt_workroom_Table, #projectsmgt_projects_Table, #projectsmgt_bids_Table {
@@ -410,7 +410,7 @@
 	border: 1px solid #E9E9E9;
 }
 #projects_content, #bids_content { 
-	display: none; 
+	/**display: none;**/ 
 }
 
 #user_newsfeed {
@@ -454,7 +454,7 @@
 	position: relative;
 	margin-left: 100px;
 }
-#user_profile_edit_viewAccess {
+#user_profile_edit_school {
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -465,7 +465,7 @@
 	position: absolute;
 	left: 0;
 	top: 0;
-	margin: 120px 0 0 500px;
+	margin: 200px 0 0 500px;
 	width: 380px;
 }
 form#editPersonalForm {
@@ -521,8 +521,8 @@ form#editPersonalForm input:not([type=submit]):focus, form#editPersonalForm text
 }
 
 #user_details_edit_panel_footer {
-	text-align: right;
-	margin: 30px 20px 0 0;
+	text-align: left;
+	margin: 30px 0 0 265px;
 }
 #user_details_edit_panel_footer fieldset button {
     background: #00AEFF;
@@ -543,4 +543,7 @@ form#editPersonalForm input:not([type=submit]):focus, form#editPersonalForm text
     text-shadow: 0 1px 1px #FFD200;
     color: #000000;
     cursor: pointer;
+}
+span.formtext {
+	font: italic 13px Georgia, "Times New Roman", Times, serif;
 }

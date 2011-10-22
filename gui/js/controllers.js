@@ -38,10 +38,14 @@ function PageRouter_Master($route, $location, $resource) { //router for the webs
 	
 	//settings module
 	$route.when('/settings/paypal',{template:'gui/html/settings_paypal.html', controller: SettingsPayPalCtrl});
-	$route.when('/settings/user',{template:'gui/html/user_edit.html', controller: UserEditCtrl});
+	$route.when('/settings/user',{template:'gui/html/settings_user.html', controller: SettingsUserCtrl});
 	$route.when('/settings/school',{template:'gui/html/settings_school.html', controller: SettingsSchoolCtrl});
 	$route.when('/settings/school/saved',{template:'gui/html/settings_school_saved.html'});
 	$route.when('/settings/school/verify/:guid',{template:'gui/html/settings_school_verified.html', controller: SettingsSchoolVerifyCtrl});
+	
+	//messaging module
+	$route.when('/messages',{template:'gui/html/messages_index.html', controller:MessagesCtrl});
+	$route.when('/messages/compose',{template:'gui/html/messages_send.html'});
 	
 	/* FOOTER Re-Directs */
 	$route.when('/sitemap',{template:'gui/html/sitemap.html'});// sitemap page
@@ -52,9 +56,6 @@ function PageRouter_Master($route, $location, $resource) { //router for the webs
 	
 	/* SUB-PAGES Re-Directs */
 	$route.when('/badges/suggest',{template:'gui/html/suggest_badge.html'});
-	$route.when('/messages',{template:'gui/html/messages_index.html'});
-	$route.when('/messages/compose',{template:'gui/html/messages_send.html'});
-	
 	
 	$route.when('/user/<user_id>/view_profile',{template:''});	// TESTING
 	$route.when('/badges/<user_id>',{template:''});	// TESTING
@@ -125,9 +126,10 @@ function ProjectListCtrl($resource) {
 
 function DashboardCtrl($resource) {
 	this.dashboard = $resource('rest/dashboard/dashboard').query();
+	this.dashboard_view = 'gui/html/dashboard_newsfeed.html';
 }
 
-function UserEditCtrl($resource) {
+function SettingsUserCtrl($resource) {
 	this.user = $resource('rest/dashboard/user_edit').get();
 }
 
@@ -163,6 +165,10 @@ function SettingsSchoolCtrl($resource){
 
 function SettingsSchoolVerifyCtrl($resource){
 	this.verified = $resource('rest/settings/school/verify/'+this.params.guid).get()
+}
+
+function MessagesCtrl($resource){
+	this.msg_view = 'gui/html/messages_mailbox.html'
 }
 
 //Method that checks for current user
