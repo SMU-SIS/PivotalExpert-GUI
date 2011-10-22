@@ -36,6 +36,9 @@ function PageRouter_Master($route, $location, $resource) { //router for the webs
 	$route.when('/developers/world/',{template:'gui/html/worldmap.html'}); 
 	$route.when('/developers/<country_id>',{template:''}); //TESTING
 	
+	//user profiles
+	$route.when('/user/:id',{template:'gui/html/user_view.html'});
+	
 	//settings module
 	$route.when('/settings/paypal',{template:'gui/html/settings_paypal.html', controller: SettingsPayPalCtrl});
 	$route.when('/settings/user',{template:'gui/html/settings_user.html', controller: SettingsUserCtrl});
@@ -126,7 +129,6 @@ function ProjectListCtrl($resource) {
 
 function DashboardCtrl($resource) {
 	this.dashboard = $resource('rest/dashboard/dashboard').query();
-	this.dashboard_view = 'gui/html/dashboard_newsfeed.html';
 }
 
 function SettingsUserCtrl($resource) {
