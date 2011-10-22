@@ -5,9 +5,7 @@ $(document).ready(function(){
 		return false;
 	});
 	
-	//$("#dashboardTabs").tabs();
-	
-	$("#newsfeed_subpage").pagination();
+
 	
 });
 
