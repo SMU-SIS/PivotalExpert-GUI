@@ -24,10 +24,19 @@
 		<section id="project_index_searchbar">
 			<input type="text" id="projectList_search_query" name="projectList_search_query" placeholder="search a project" /><div ng:show="currentUser.nickname" id="projectList_search"><a href="">Search</a></div>
 		</section>
+		<section id="project_index_sortbar">
+			<section class="sort_subheader">sort by:</section>
+			<select class="sort_select" name="orderProp">
+				<option class="sort_select_option" value="username">Time</option>
+				<option class="sort_select_option" value="country">Owner</option>
+				<option class="sort_select_option" value="school">Status</option>
+				<option class="sort_select_option" value="badges">Budget</option>
+			</select>
+		</section>
 	</section>
 	<table id="project_index_Table" border="0" cellpadding="0" cellspacing="0">
 		<tr class="projectListTableHeader">
-			<td class="table_header projectList_project_title">Title</td>
+			<td class="table_header projectList_project_title"><span class="project_titleheader">Title</span></td>
 			<td class="table_header projectList_project_owner">Owner</td>
 			<td class="table_header projectList_project_status">Status</td>
 			<td class="table_header projectList_project_budget">Budget</td>
@@ -50,7 +59,7 @@
 			-->
 			<td class="table_row projectList_project_owner">{{project.owner}}</td>
 			<td class="table_row projectList_project_status">{{project.status}}</td>
-			<td class="table_row projectList_project_budget">SGD${{project.budget}}</td>
+			<td class="table_row projectList_project_budget">{{project.budget}}</td>
 			<td class="table_row projectList_project_tags"><span ng:repeat="item in project.tags"><span ng:hide="$position == 'first'">, </span>{{item}}</span></td>
 			<td class="table_row projectList_project_created">{{project.created}}</td>
 

@@ -1,9 +1,35 @@
+
+<form id="createNewProjectForm" action="{{formServer}}form/project/create" method="POST">
+	<fieldset>
+		<legend>Project Details</legend>
+		<ol>
+			<li><label for="createNewProject_title">Title<span class="required_tag">*</span></label><input id="createNewProject_title" name="createNewProject_title" type="text" placeholder="Eg. My Awesome Project"  autofocus required></li>
+			<li><label for="createNewProject_budget">Total Budget (SGD$)<span class="required_tag">*</span></label><input id="createNewProject_budget" name="createNewProject_budget" type="text" placeholder="Eg. 25.00" ng:validate="integer:25" required></li>
+			<li><label for="createNewProject_description">Project Description<span class="required_tag">*</span></label><textarea class="createNewProject_description" name="createNewProject_description" rows="" placeholder="Eg. This is a web-portal for entrepreneurs and students." required></textarea></li>
+			<li><label for="createNewProject_tags">Tag(s)</label><textarea class="createNewProject_tags" name="createNewProject_tags" rows="" placeholder="Eg. jQuery, HTML5, CSS"></textarea></li>
+		</ol>
+	</fieldset>
+	<fieldset>
+		<fieldset>
+			<ol>
+				<li><input id="projectAddBid_agreeToTerms" name="projectAddBid_agreeToTerms" type="checkbox"><label for="projectAddBid_agreeToTerms">I agree to the terms</label></li>
+			</ol>
+		</fieldset>
+		<fieldset ng:controller="ValidationCtrl">
+			<!--<button id="projectAddBid_bidBtn" type="submit">Post Project</button>-->
+			<button id="projectAddBid_bidBtn" type="submit" ng:disabled="{{$invalidWidgets.visible()||!projectAddBid_agreeToTerms}}">Post Project</button>
+		</fieldset>
+	</fieldset>
+</form>
+
+
+
 <form>
 PayPal Email: <input type="text" name="settings_paypal_email" value="{{pp_settings.paypal_email}}"></input>
 <input type="submit" value="Save"/>
 </form>
 
-<table border="1px">
+<table id="settings_paypal_Table" border="0" cellpadding="0" cellspacing="0">
 	<tr>
 		<td>ID</td>
 		<td>Date</td>
@@ -16,7 +42,7 @@ PayPal Email: <input type="text" name="settings_paypal_email" value="{{pp_settin
 		<td>Week</td>
 		<td>Remarks</td>
 	</tr>
-	<tr ng:repeat="payment in pp_settings.paying">
+	<!--<tr ng:repeat="payment in pp_settings.paying">
 		<td>{{payment.id}}</td>
 		<td>{{payment.insertDate}}</td>
 		<td>US${{payment.amount}}</td>
@@ -30,6 +56,21 @@ PayPal Email: <input type="text" name="settings_paypal_email" value="{{pp_settin
 		<td>{{payment.iteration}}</td>
 		<td ng:show="payment.failed">An error occured</td>
 		<td ng:hide="payment.failed">No errors</td>
+	</tr>-->
+	<tr>
+		<td>payment.id</td>
+		<td>payment.insertDate</td>
+		<td>US$payment.amount</td>
+		<td>payment.sender</td>
+		<td>Paid</td>
+		<!--<td>Not Paid</td>-->
+		<td>payment.receiver</td>
+		<td>Received/Not Received</td>
+		<!--<td>Not yet received</td>-->
+		<td><a href="">{{payment.workroom}}</a></td>
+		<td>{{payment.iteration}}</td>
+		<td>An error occured</td>
+		<!--<td>No errors</td>-->
 	</tr>
 	<tr ng:repeat="payment in pp_settings.receiving">
 		<td>{{payment.id}}</td>

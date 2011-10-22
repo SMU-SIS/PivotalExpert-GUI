@@ -214,32 +214,25 @@
 	display: none; 
 }
 
-
-.newsfeed_subpage {
-	
-}
-.newsfeed_Table, #projectsmgt_workroom_Table, #projectsmgt_projects_Table, #projectsmgt_bids_Table {
+#newsfeed_Table, #projectsmgt_workroom_Table, #projectsmgt_projects_Table, #projectsmgt_bids_Table {
 	position: relative;
 	font-family: Helvetica, Arial;
 	font-size: 12px;
 	display: block-inline;
 	width: 660px;
 }
-.newsfeed_Table {
+#newsfeed_Table {
 	width: 680px;
 }
-.newsfeed_Table tr, #projectsmgt_workroom_Table tr, #projectsmgt_projects_Table tr, #projectsmgt_bids_Table tr {
+#newsfeed_Table tr, #projectsmgt_workroom_Table tr, #projectsmgt_projects_Table tr, #projectsmgt_bids_Table tr {
 	margin: 0;
 	padding: 0;
 }
-.newsfeed_Table tr td, #projectsmgt_workroom_Table tr td, #projectsmgt_projects_Table tr td, #projectsmgt_bids_Table tr td {
+#newsfeed_Table tr td, #projectsmgt_workroom_Table tr td, #projectsmgt_projects_Table tr td, #projectsmgt_bids_Table tr td {
 	display: inline-block;
 	list-style: none;
 	padding: 5px 10px;
 }
-
-
-
 
 
 .newsfeedTableHeader, .projectsmgtWorkroomTableHeader, .projectsmgtProjectsTableHeader, .projectsmgtBidsTableHeader {
@@ -259,8 +252,6 @@
 	margin: 1px;
 	padding: 1px;
 	border-bottom: 1px solid #E2E2E2;
-	
-	background:green;
 }
 .newsfeed_message_from {
 	padding: 0;
