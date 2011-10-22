@@ -1,0 +1,122 @@
+<!--page 13: instituiton_index-->
+<!--this is the institutions list for a selected country-->
+
+<style>
+
+#institutions_page {
+
+}
+#institutions_search {
+
+}
+#institutions_stack {
+
+}
+
+
+</style>
+
+
+
+
+<!--<script>
+	CurrentUserController.$inject = ['$resource'];
+  function CurrentUserController($resource){
+   this.Activity = $resource( 'rest/user/current_user');
+	this.fetch();
+  }
+  CurrentUserController.prototype = {
+   fetch: function(){
+    this.currentUser = this.Activity.get();
+    this.$parent.currentUser = this.currentUser;
+   }
+
+</script>-->
+
+
+<script src="gui/js/scripts.js"></script>
+<link rel="stylesheet" href="gui/css/style-institution.css" type="text/css" media="screen" />
+<section id="institution_index_page">
+	<section id="institution_index_Header">
+		<section class="section_header">Institutions</section>
+		<section class="section_subheader">
+			<span id="institutionList_count">{{institutions.$count}}</span> Institutions Available
+		</section>
+		
+		
+	</section>
+	
+	
+	<table id="institution_index_Table" border="0" cellpadding="0" cellspacing="0">
+		<tr class="projectListTableHeader">
+			<td class="table_header projectList_project_title">Title</td>
+			<td class="table_header projectList_project_owner">Owner</td>
+			<td class="table_header projectList_project_status">Status</td>
+			<td class="table_header projectList_project_budget">Budget</td>
+			<td class="table_header projectList_project_tags">Tags</td>
+			<td class="table_header projectList_project_created">Created</td>
+		</tr>
+		<tr class="projectListTableEntry" ng:repeat="project in projects">
+			<td class="table_row projectList_project_title">{{project.title}}</td>
+		<!-- <td class="table_row projectList_project_title">
+				<div ng:show="currentUser.userType == 'developer'">
+				   <a href="#/projects/bid/{{project.id}}">{{project.title}}</a>
+				</div>
+				<div ng:show="currentUser.userType == 'hirer'">
+				   <a href="#/projects/bid/{{project.id}}">{{project.title}}</a>
+				</div>
+			</td>
+			-->
+			<td class="table_row projectList_project_owner">{{project.owner}}</td>
+			<td class="table_row projectList_project_status">{{project.status}}</td>
+			<td class="table_row projectList_project_budget">SGD${{project.budget}}</td>
+			<td class="table_row projectList_project_tags"><span ng:repeat="item in project.tags">
+				<span ng:hide="$position == 'first'">, </span>{{item}}</span>
+			</td>
+			<td class="table_row projectList_project_created">{{project.created}}</td>
+
+			<!--<li class="table_row projectList_project_action"><a href="#/projects/accept/{{project.id}}">View</a> / <a href="#/projects/bid/{{project.id}}">Bid</a></li>-->
+	</tr>
+	</table>
+</section>
+Page 1
+
+
+
+
+
+
+<div id="">
+
+	<h3>Singapore</h3>
+	<img src="" width="120" height="70"/>
+	Total Developers:
+	<h2>63</h2>
+	<hr/>
+	<a href="#/institutions/add">Add New School</a>
+	<div id="institutions_search">
+		<form action="" method="POST">
+			Search <input type="text" name="search" value=""/>
+			<input type="submit" name="submit" value="submit"/>
+		</form>
+	</div>
+	<br/>
+	<div id="institutions_stack">
+		<table border="1">
+			<tr>
+				<td width="250">Institution</td>
+				<td width="220">Website</td>
+				<td>Developers</td>
+			</tr>
+			<tr>
+				<td>Singapore Management University</td>
+				<td>www.smu.edu.sg</td>
+				<td>122</td>
+			</tr>	
+		</table>
+	</div>
+	Page 1
+
+</div>
+
+
