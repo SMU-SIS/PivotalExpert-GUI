@@ -1,0 +1,9 @@
+<div ng:show="verified.verified_success">
+	Congratulations, you have succesfully verified that you indeed are a student, and you are now allowed to bid for a project! 
+	
+	Nickname: {{verified.user_nickname}} 
+	School: {{verified.user_school}}
+</div>
+<div ng:hide="verified.verified_success">
+	Sorry, but you either have an invalid verification link, or the link has expired. Click here to verify your email again.
+</div>

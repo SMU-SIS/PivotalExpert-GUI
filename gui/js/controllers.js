@@ -39,6 +39,9 @@ function PageRouter_Master($route, $location, $resource) { //router for the webs
 	//settings module
 	$route.when('/settings/paypal',{template:'gui/html/settings_paypal.html', controller: SettingsPayPalCtrl});
 	$route.when('/settings/user',{template:'gui/html/user_edit.html', controller: UserEditCtrl});
+	$route.when('/settings/school',{template:'gui/html/settings_school.html', controller: SettingsSchoolCtrl});
+	$route.when('/settings/school/saved',{template:'gui/html/settings_school_saved.html'});
+	$route.when('/settings/school/verify/:guid',{template:'gui/html/settings_school_verified.html', controller: SettingsSchoolVerifyCtrl});
 	
 	/* FOOTER Re-Directs */
 	$route.when('/sitemap',{template:'gui/html/sitemap.html'});// sitemap page
@@ -152,6 +155,14 @@ function DevelopersCtrl($resource){
 
 function SettingsPayPalCtrl($resource){
 	this.pp_settings = $resource('rest/settings/paypal').get()
+}
+
+function SettingsSchoolCtrl($resource){
+	this.schools = $resource('rest/settings/get_schools').query()
+}
+
+function SettingsSchoolVerifyCtrl($resource){
+	this.verified = $resource('rest/settings/school/verify/'+this.params.guid).get()
 }
 
 //Method that checks for current user

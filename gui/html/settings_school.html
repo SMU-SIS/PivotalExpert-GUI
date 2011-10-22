@@ -1,0 +1,8 @@
+<form action="/form/settings/school" method="post">
+	School: <select name="school_domain">
+		<option ng:repeat="school in schools" value="{{school.domain}}">{{school.name}}</option>
+		<option value="hi">test</option>
+	</select><br/>
+	School Email Address: <input type="text" name="school_user_id"/> @ {{school_domain}}
+	<input type="submit" value="Save Changes">
+</form>
