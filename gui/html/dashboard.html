@@ -1,7 +1,7 @@
 
 <script src="gui/js/scripts.js"></script>
 <link rel="stylesheet" href="gui/css/style-user.css" type="text/css" media="screen" />
-<section class="body_main" ng:controller="DashboardCtrl">
+<section class="body_main" ng:controller="DashboardCtrl" ng:init="dashboard_view = 'gui/html/dashboard_newsfeed.html'">
 	<!--left panel-->
 	<section id="left_panel">
 		<section id="user_details_panel"> 
@@ -23,7 +23,7 @@
 				<div class="performance_panel_Header">My Performance</div>
 				<ul>
 					<li>
-						<div class="performance_header">Monies<br />Earned:</div>
+						<div class="performance_header">Total<br />Earnings:</div>
 						<div class="performance_value">25k</div>
 					</li>
 					<li>
@@ -59,202 +59,15 @@
 		<section id="user_info_panel"> 
 			<section class="tabs">
 				<ul class="tabs">
-					<li><a href="javascript:tabSwitch_dashboard('newsfeed_tab', 'newsfeed_content');" id="newsfeed_tab" class="active">News Feed</a></li>
-					<li><a href="javascript:tabSwitch_dashboard('projectsmgt_tab', 'projectsmgt_content');" id="projectsmgt_tab">Project Management</a></li>
+					<li><a ng:click="dashboard_view = 'gui/html/dashboard_newsfeed.html'" id="newsfeed_tab" class="active" onclick="$(this).addClass('active');$('#projectsmgt_tab').removeClass('active');">News Feed</a></li>
+					<li><a ng:click="dashboard_view = 'gui/html/dashboard_pm.html'" id="projectsmgt_tab" onclick="$(this).addClass('active');$('#newsfeed_tab').removeClass('active');">Project Management</a></li>
 					<!--<li><a href="javascript:tabSwitch_dashboard('returnontime_tab', 'returnontime_content');" id="returnontime_tab">Return-on-Time</a></li>-->
 				</ul>
 			</section>
 			<span id="projectList_create_new"><a href="#/projects/create">Start a New Project</a></span>
-			<section id="user_newsfeed">
-				<section id="newsfeed_content" class="tabcontent">
-					
-						<table class="newsfeed_Table" border="0" cellpadding="0" cellspacing="0">
-							<tr class="newsfeedTableHeader">
-								<td class="table_header newsfeed_message_from">From</td>
-								<td class="table_header newsfeed_message_text">Message</td>
-								<td class="table_header newsfeed_message_sent">Sent</td>
-							</tr>
-						</table>
-						<section id="newsfeed_subpage">
-							<div class="newsfeedTableEntry" ng:repeat="news_feed in dashboard[0].entries">
-								<span class="table_row newsfeed_message_from"><img src="{{news_feed.user_image}}"></span>
-								<span class="table_row newsfeed_message_text">
-									<span class="newsfeed_message_text_user">{{news_feed.subject}}</span><br />
-									<span class="newsfeed_message_text_msg">{{news_feed.message}}</span>
-								</span>
-								<span class="table_row newsfeed_message_sent ">{{news_feed.time_sent}}</span>
-							</div>
-						</section>
-						<table>
-							<tr ng:hide="dashboard[0].entries">
-								<td class="table_row newsfeed_message_from"><img src="gui/images/avatars/aperture50px.jpg"></td>
-								<td class="table_row newsfeed_message_text">
-									<span class="newsfeed_message_text_user">Welcome to PivotalExpert.com!</span><br />
-									<span class="newsfeed_message_text_msg">You have nothing in your newsfeed! 
-									Why don't you go find something to do here? 
-									<br/><br/>Are you looking for help with your idea? You can start by <a href="#/projects/create">creating a new project</a> for others to bid for.
-									<br/><br/>Or if you're a student, you can look for a project to take part from <a href="#/projects">our list of projects</a>!</span>
-								</td>
-								<td class="table_row newsfeed_message_sent "></td>
-							</tr>
-						</table>
-						
-					
-						<!--<table class="newsfeed_Table" border="0" cellpadding="0" cellspacing="0">
-							<tr class="newsfeedTableHeader">
-								<td class="table_header newsfeed_message_from">From</td>
-								<td class="table_header newsfeed_message_text">Message</td>
-								<td class="table_header newsfeed_message_sent">Sent</td>
-							</tr>
-							<tr class="newsfeedTableEntry" ng:repeat="news_feed in dashboard[0].entries">
-								<td class="table_row newsfeed_message_from"><img src="{{news_feed.user_image}}"></td>
-								<td class="table_row newsfeed_message_text">
-									<span class="newsfeed_message_text_user">{{news_feed.subject}}</span><br />
-									<span class="newsfeed_message_text_msg">{{news_feed.message}}</span>
-								</td>
-								<td class="table_row newsfeed_message_sent ">{{news_feed.time_sent}}</td>
-							</tr>
-							<tr ng:hide="dashboard[0].entries">
-								<td class="table_row newsfeed_message_from"><img src="gui/images/avatars/aperture50px.jpg"></td>
-								<td class="table_row newsfeed_message_text">
-									<span class="newsfeed_message_text_user">Welcome to PivotalExpert.com!</span><br />
-									<span class="newsfeed_message_text_msg">You have nothing in your newsfeed! 
-									Why don't you go find something to do here? 
-									<br/><br/>Are you looking for help with your idea? You can start by <a href="#/projects/create">creating a new project</a> for others to bid for.
-									<br/><br/>Or if you're a student, you can look for a project to take part from <a href="#/projects">our list of projects</a>!</span>
-								</td>
-								<td class="table_row newsfeed_message_sent "></td>
-							</tr>
-						</table>-->
-					<br />
-				</section>
-			</section>
 
-			<section id="user_projectsmgt">
-				<section id="projectsmgt_content" class="tabcontent">	
-					<section class="subtabs">
-						<ul class="subtabs">
-							<li><a href="javascript:tabSwitch_projectmgt('workroom_tab', 'workroom_content');" id="workroom_tab" class="active">My Workrooms</a></li>
-							<li><a href="javascript:tabSwitch_projectmgt('projects_tab', 'projects_content');" id="projects_tab">My Projects</a></li>
-							<li><a href="javascript:tabSwitch_projectmgt('bids_tab', 'bids_content');" id="bids_tab">My Bids</a></li>
-						</ul>
-					</section>
-					
-					<!-- this is the Workrooms tab belonging to the Project Management group-->
-					<section id="user_projectsmgt_workroom">
-						<section id="workroom_content" class="subtabcontent">	
-							<table id="projectsmgt_workroom_Table" border="0" cellpadding="0" cellspacing="0">
-								<tr class="projectsmgtWorkroomTableHeader">
-									<td class="table_header projectsmgt_workroom_title">Title</td>
-									<td class="table_header projectsmgt_workroom_owner">Owner</td>
-									<td class="table_header projectsmgt_workroom_developer">Developer</td>
-									<td class="table_header projectsmgt_workroom_iteration">Iteration</td>
-									<td class="table_header projectsmgt_workroom_price">Price</td>
-									<td class="table_header projectsmgt_workroom_action">Action</td>
-								</tr>
-								<tr class="projectsmgtWorkroomTableEntry" ng:repeat="workroom in dashboard[0].workrooms"
-									  onmouseover="HighlightWorkroomRow(this, true);" 
-									  onmouseout="HighlightWorkroomRow(this, false);" 
-									  onclick="GoToURL('#/workroom/{{workroom.id}}');">
-									<td class="table_row projectsmgt_workroom_title"><div class="workroom_title">{{workroom.title}}</div></td>
-									<td class="table_row projectsmgt_workroom_owner workroom_height">
-										<span class="projectsmgt_workroom_owner_pic"><img src="http://www.gravatar.com/avatar/{{workroom.owner_gravatar}}?s=50&d=mm"></span>
-										<span class="projectsmgt_workroom_owner_name">{{workroom.owner}}</span>
-									</td>
-									<td class="table_row projectsmgt_workroom_developer workroom_height">
-										<span class="projectsmgt_workroom_developer_pic"><img src="http://www.gravatar.com/avatar/{{workroom.developer_gravatar}}?s=50&d=mm"></span>
-										<span class="projectsmgt_workroom_developer_name">{{workroom.developer}}</span>
-									</td>
-									<td class="table_row projectsmgt_workroom_iteration workroom_height">{{workroom.iteration}}</td>
-									<td class="table_row projectsmgt_workroom_price workroom_height">SGD${{workroom.budget}}</td>
-									<td class="table_row projectsmgt_workroom_action workroom_height"><a href="#/workroom/{{workroom.url}}">Manage {{workroom.url}}</a></td>
-								</tr>
-								<tr class="projectsmgtWorkroomTableEntry" ng:hide="dashboard[0].workrooms">
-									<td colspan="5"><h3>You have no workrooms yet</h3>
-										<strong>For Project Owners (<a href="#/projects/create">Become a project owner by creating a project!</a>)</strong>
-										<p>A workroom is created the moment you accept a student's bid to work for you.</p>
-										<strong>For Student Developers</strong>
-										<p>A workroom is created the moment your bid for a project is accepted by the owner! <a href="#/projects">Start looking for a project to bid for</a>!</p>
-									</td>
-									
-								</tr>
-							</table>
-						</section>
-					</section>
-					
-					<!-- this is the Projects tab belonging to the Project Management group-->
-					<section id="user_projectsmgt_projects">
-						<section id="projects_content" class="subtabcontent">	
-							<table id="projectsmgt_projects_Table" border="0" cellpadding="0" cellspacing="0">
-								<tr class="projectsmgtProjectsTableHeader">
-									<td class="table_header projectsmgt_projects_title">Title</td>
-									<td class="table_header projectsmgt_projects_status">Status</td>
-									<td class="table_header projectsmgt_projects_budget">Budget</td>
-									<td class="table_header projectsmgt_projects_expiryDate">Expiry Date</td>
-									<td class="table_header projectsmgt_projects_action">Action</td>
-								</tr>
-								<tr class="projectsmgtProjectsTableEntry" ng:repeat="project in dashboard[0].projects"
-									  onmouseover="HighlightProjectsRow(this, true);" 
-									  onmouseout="HighlightProjectsRow(this, false);" 
-									  onclick="GoToURL('#/projects/{{project.id}}');">
-									<td class="table_row_projects projectsmgt_projects_title">{{project.title}}</td>
-									<td class="table_row_projects projectsmgt_projects_status">{{project.status}}</td>
-									<td class="table_row_projects projectsmgt_projects_budget">SGD${{project.amount}}</td>
-									<td class="table_row_projects projectsmgt_projects_expiryDate">{{project.expire}}</td>
-									<td class="table_row_projects projectsmgt_projects_action"><a href="#/projects/{{project.id}}">View</a></td>
-								</tr>
-								<tr class="projectsmgtProjectsTableEntry" colspan="5" ng:hide="dashboard[0].projects"><td><h3>You have no projects yet!</h3>
-								<p>If you'd like to find student developers to help you with a project, you can start by <a href="#/projects/create">creating a project here</a>.</p>
-								</td></tr>
-							</table>
-						</section>
-					</section>
-					
-					<!-- this is the Bids tab belonging to the Project Management group-->
-					<section id="user_projectsmgt_bids">
-						<section id="bids_content" class="subtabcontent">	
-							<table id="projectsmgt_bids_Table" border="0" cellpadding="0" cellspacing="0">
-								<tr class="projectsmgtBidsTableHeader">
-									<td class="table_header projectsmgt_bids_title">Title</td>
-									<td class="table_header projectsmgt_bids_owner">Owner</td>
-									<td class="table_header projectsmgt_bids_tags">Tags</td>
-									<td class="table_header projectsmgt_bids_status">Status</td>
-									<td class="table_header projectsmgt_bids_date">Date</td>
-									<td class="table_header projectsmgt_bids_message">Message</td>
-								</tr>
-								<tr class="projectsmgtBidsTableEntry" ng:repeat="bid in dashboard[0].bids"
-									  onmouseover="HighlightBidsRow(this, true);" 
-									  onmouseout="HighlightBidsRow(this, false);" 
-									  onclick="GoToURL('#/projects/{{bid.project_id}}');">
-									<td class="table_row projectsmgt_bids_title">{{bid.title}}</td>
-									<td class="table_row projectsmgt_bids_owner bids_height">
-										<span class="projectsmgt_bids_owner_pic"><img src="http://www.gravatar.com/avatar/{{bid.owner_gravatar}}?s=50&d=mm"></span>
-										<span class="projectsmgt_bids_owner_name">{{bid.owner}}</span>
-									</td>
-									<td class="table_row projectsmgt_bids_tags bids_height">
-										<span ng:repeat="tag in bid.tags"><span ng:hide="$position == 'first'">, </span>{{tag}}</span>
-									</td>
-									<td class="table_row projectsmgt_bids_status bids_height">{{bid.status}}</td>
-									<td class="table_row projectsmgt_bids_date bids_height">{{bid.date}}</td>
-									<td class="table_row projectsmgt_bids_message bids_height">{{bid.messageUrl}}</td>
-								</tr>
-								<tr class="projectsmgtBidsTableEntry" colspan="5" ng:hide="dashboard[0].bids"><td><h3>You have no bids yet!</h3>
-								<p>If you'd like to earn some money by helping develop a project, you can start by <a href="#/projects">finding a project to bid for here</a>.</p>
-								</td></tr>
-							</table>
-						</section>
-					</section>
-					
-					Page 1
-					<br/>
-				</section>
-			</section>
-			
-			<section id="user_returnontime">
-				<section id="returnontime_content" class="tabcontent">	
-					<!--the graph generated will be displayed here-->
-				</section>	
-			</section>
+			<ng:include src="dashboard_view"/>
+
 		</section>
 	</section>
 </section>

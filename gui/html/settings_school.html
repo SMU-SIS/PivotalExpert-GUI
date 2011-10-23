@@ -1,0 +1,13 @@
+<h1>Verify your school</h1>
+<form action="/form/settings/school" method="post">
+	<div>
+		School: <select name="school_domain">
+					<option value="" default>-- Select a school --</option>
+					<option ng:repeat="school in schools" value="{{school.domain}}">{{school.name}}</option>
+				</select>
+	</div>
+	<div ng:show="school_domain">
+	School Email Address: <input type="text" name="school_user_id"/> @ {{school_domain}}
+	<input type="submit" value="Verify My School ID">
+	</div>
+</form>

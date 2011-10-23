@@ -1,0 +1,16 @@
+<!--page 2c: send_message-->
+<!--this is a send new private message form-->
+
+<h2>Send a New Message!</h2>
+
+<form action="form/message/send" method="POST">
+To    <input type="text" name="msgTo" value="{{$location.hashSearch.msgTo}}"><br/>
+Subject <input type="text" name="msgSubject" value="{{$location.hashSearch.msgSubject}}"><br/>
+Message <input type="text" name="msgMsg" value="{{$location.hashSearch.msgMsg}}" width="200" height="500"><br/> 
+
+<br/>
+
+<input type="submit" value="send">
+<input type="button" name="back" value="back">
+
+</form>

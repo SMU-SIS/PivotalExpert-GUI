@@ -1,41 +1,70 @@
 
-<div id="developers_home_page">
-	
-	<h3>{{developers.$count}} Developers Online<h3>
-	<table>
-		Search: <input type="text" name="query"/>
-		<br/>
-		Sort by:
-		<select name="orderProp">
-			<option value="username">Name</option>
-			<option value="country">Country</option>
-			<option value="school">School</option>
-			<option value="badges">Badges</option>
-			<option value="earnings">Earnings</option>
-		</select>
-		
-		<tr>
-			<th>Name</th>
-			<th>Country</th>
-			<th>School</th>
-			<th>Earnings</th>
-			<th>Badges</th>
-			<th>Contact</th>
+<script src="gui/js/scripts.js"></script>
+<link rel="stylesheet" href="gui/css/style-developer.css" type="text/css" media="screen" />
+<section id="developer_index_page">
+	<section id="developer_index_Header">
+		<section class="section_header">Developers</section>
+		<section class="section_subheader">
+			<span id="developerList_count">{{developers.$count}}</span> Developers Online
+		</section>
+		<section id="developer_index_searchbar">
+			<input type="text" id="developerList_search_query" name="developerList_search_query" placeholder="search a developer" /><div ng:show="currentUser.nickname" id="developerList_search"><a href="">Search</a></div>
+		</section>
+		<section id="developer_index_sortbar">
+			<section class="sort_subheader">sort by:</section>
+			<select class="sort_select" name="orderProp">
+				<option class="sort_select_option" value="username">Name</option>
+				<option class="sort_select_option" value="country">Country</option>
+				<option class="sort_select_option" value="school">School</option>
+				<option class="sort_select_option" value="badges">Badges</option>
+				<option class="sort_select_option" value="earnings">Earnings</option>
+			</select>
+		</section>
+	</section>
+	<table id="developer_index_Table" border="0" cellpadding="0" cellspacing="0">
+		<tr class="developerListTableHeader">
+			<td class="table_header developerList_developer_name"><span class="developer_nameheader">Name</span></td>
+			<td class="table_header developerList_developer_country">Country</td>
+			<td class="table_header developerList_developer_school">School</td>
+			<td class="table_header developerList_developer_badges">Badges</td>
+			<td class="table_header developerList_developer_earnings">Earnings</td>
+			<td class="table_header developerList_developer_contact">Contact</td>
 		</tr>
-				
-		<tr ng:repeat="developer in developers.$filter(query).$orderBy(orderProp)"> 
-			<td><a href="user_profile.html">{{developer.name}}</a></td>
-			<td>{{developer.country}}</td>
-			<td><a href="instituitions.html">{{developer.school}}</a></td>
-			<td>{{developer.earnings}}</td>
-			<td><span ng:repeat="item in developer.badges"><span ng:hide="$position == 'first'"></span><img src="{{item}}"/></span></td>
-			<td><a href="send_message.html">Mail</a>/<a href="project_invite.html">Invite</a></td>
-		</tr> 
-		
-
+		<tr class="developerListTableEntry" ng:repeat="developer in developers.$filter(query).$orderBy(orderProp)" 
+			  onmouseover="HighlightDeveloperRow(this, true);" 
+              onmouseout="HighlightDeveloperRow(this, false);" 
+              onclick="GoToURL('#/developers/{{developer.id}}');">
+			<td class="table_row developerList_developer_name">
+				<span class="developer_pic"><img src="gui/images/user.jpg" width="30px" height="30px"></span>
+				<span class="developer_name"><a href="user_profile.html">{{developer.name}}</a></span>
+			</td>
+			<td class="table_row developerList_developer_country">{{developer.country}}</td>
+			<td class="table_row developerList_developer_school"><a href="instituitions.html">{{developer.school}}</a></td>
+			<td class="table_row developerList_developer_badges">
+				<!--<span ng:repeat="item in developer.badges"><span ng:hide="$position == 'first'"></span><img src="{{item}}"/></span>-->
+				<span class="developer_badges_earned">earned{{total_earned_badges}} <span class="developer_badges_total">/ total{{total_possible_earned_badges}}</span></span> <a href="">more</a>
+			</td>
+			<td class="table_row developerList_developer_earnings">{{developer.earnings}}</td>
+			<td class="table_row developerList_developer_contact"><a href="send_message.html">Mail</a> | <a href="developer_invite.html">Invite</a></td>
+	</tr>
 	</table>
-	Page 1
-
-</div>
-
-
+	
+	<div class="pagination_section">
+		<ul>
+			<li>
+				<span class="pagination_sidelinks" ng:hide="developers.page_current == 1"><a href="#/developers/page/1">First</a></span>
+				<span class="currentsidelink" ng:show="developers.page_current == 1">First</span>
+			</li>
+			<li class="pagination_sidelinks" ng:hide="developers.page_current == 1"><a href="#/developers/page/{{developers.page_current-1}}"><</a></li>
+			<li ng:repeat="page in developers.page_numbers">
+				<span class="pagination_pages" ng:hide="page == developers.page_current"><a href="#/developers/page/{{page}}">{{page}}</a></span>
+				<span class="pagination_pages_current currentpage" ng:show="page == developers.page_current">{{page}}</span>
+			</li>
+			<li class="pagination_sidelinks" ng:hide="developers.page_current == developers.pages"><a href="#/developers/page/{{developers.page_current+1}}">></a></li>
+			<li>
+				<span class="pagination_sidelinks" ng:hide="developers.page_current == developers.pages"><a href="#/developers/page/{{developers.pages}}">Last</a></span>
+				<span class="currentsidelink" ng:show="developers.page_current == developers.pages">Last</span>
+			</li>
+		</ul>
+    </div>
+</section>
