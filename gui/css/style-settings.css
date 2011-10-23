@@ -1,8 +1,8 @@
 
 /** Developer_Index **/
-#developer_index_page {
+#settings_paypal_page {
 }
-#developer_index_Header {
+#settings_paypal_Header {
 	position: relative;
 	margin: 0;
 	padding: 0;
@@ -13,7 +13,7 @@
 	padding-left: 10px;
 }
 
-#developer_index_searchbar {
+#settings_paypal_emailbar {
 	position: absolute;
 	top: 45px;
 	right: 0;
@@ -25,14 +25,14 @@
 	margin-right: 12px;
 	border-bottom: 4px solid #FFFF00;
 }
-#developerList_search {
+#settings_paypal_email_save {
 	position: absolute;
 	top: 0;
 	right: 0;
 	-moz-right: 0;
 	-webkit-right: 0;
 }
-#developerList_search a, #developerList_search a:active, #developerList_search a:link, #developerList_search a:visited {
+#settings_paypal_email_save a, #settings_paypal_email_save a:active, #settings_paypal_email_save a:visited {
 	background: #0054A6;
 	padding: 6px 16px;
 	font-size: 10px;
@@ -44,10 +44,10 @@
 	-moz-border-radius: 3px;
 	border-radius: 3px; 
 }
-#developerList_search a:hover {
+#settings_paypal_email_save a:hover {
 	background: #00BFF3;
 }
-#developerList_search_query {
+#settings_paypal_email {
 	margin: 0 78px 0 0;
 	font: italic 13px Georgia, "Times New Roman", Times, serif;
 	padding: 3px;
@@ -58,11 +58,11 @@
     border: 0;
     background: #F0F0F0;
 }
-#developerList_search_query:focus {
+#settings_paypal_email:focus {
 	border: 2px solid #0054A6;
 }
 
-#developer_index_sortbar {
+#settings_paypal_sortbar {
 	position: relative;
 	margin-right: 12px;
 	padding: 9px 0 3px 20px;
@@ -71,6 +71,9 @@
 	background: #000000;
 	color: #FFFFFF;
 	font-weight: bold;
+	
+		
+	margin-top: 100px;
 }
 .sort_subheader {
 	font: 14px Arial, Helvetica bold;
@@ -88,24 +91,24 @@
 }
 
 
-#developer_index_Table {
+#settings_paypal_Table {
 	position: relative;
 	font-family: Helvetica, Arial;
 	font-size: 12px;
 	display: block-inline;
 	width: 878px;
 }
-#developer_index_Table tr {
+#settings_paypal_Table tr {
 	margin: 0;
 	padding: 0;
 }
-#developer_index_Table tr td {
+#settings_paypal_Table tr td {
 	display: inline-block;
 	list-style: none;
 	padding: 5px 10px;
 	border-right: 2px #FFFFFF solid;
 }
-#developer_index_Table tr td:last-child {
+#settings_paypal_Table tr td:last-child {
 	border-right: 0;
 }
 .developerListTableHeader {
