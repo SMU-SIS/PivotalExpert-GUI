@@ -57,6 +57,10 @@ function HighlightPaypalRow(tableRow, highLight) {
 	if (highLight) { tableRow.style.backgroundColor = '#FFFF00'; }
 	else { tableRow.style.backgroundColor = '#E1E1E1'; }
 }
+function HighlightMessagesRow(tableRow, highLight) {
+	if (highLight) { tableRow.style.backgroundColor = '#FFFF00'; }
+	else { tableRow.style.backgroundColor = '#E1E1E1'; }
+}
 function GoToURL(theUrl) {
 	document.location.href = theUrl;
 }

@@ -1,3 +1,198 @@
 
+#messages_page {
+}
+#messages_Header {
+	position: relative;
+}
+#compose_mail_section {
+	position: absolute;
+	top: 0;
+	right: 0;
+	-moz-right: 0;
+	-webkit-right: 0;
+	margin-top: 5px;
+}
+#compose_mail_section ul {
+	float: right;
+	margin: 0;
+	padding: 0;
+}
+#compose_mail_section ul li {
+	list-style: none;
+}
+#compose_mail_section ul li a, #compose_mail_section ul li a:active, #compose_mail_section ul li a:visited {
+	text-decoration: none;
+	padding: 6px 28px;
+	background: #0097FE;
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 11px;
+	margin-left: 5px;
+	text-transform: uppercase;
+	float: right;
+}
+#compose_mail_section ul li a:hover {
+	background: #797979;
+}
 
 
+#messages_Body {
+	position: relative;
+	border-top: 1px dotted #797979;
+}
+#messages_sidebar {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 150px;
+	min-height: 100px;
+	padding: 2px 0 50px 0;
+	margin-top: 6px;
+	border-right: 1px dotted #797979;
+}
+#messages_sidebar ul {
+	padding: 0;
+    margin: 0;
+}
+#messages_sidebar ul li {
+	list-style: none;
+	font: 13px Arial, Helvetica;
+}
+#messages_sidebar ul li a, #messages_sidebar ul li a:active, #messages_sidebar ul li a:visited {
+	text-decoration: none;
+	color: #000000;
+	font-weight: bold;
+	font-size: 12px;
+	margin: 1px 0 1px 0;
+	padding-left: 5px;
+	border-left: 5px solid #FFFF00;
+	width: 140px;
+	display: block;
+}
+#messages_sidebar ul li a:hover {
+	background: #000000;
+	color: #FFFFFF;
+}
+#messages_sidebar ul li a.mainlink, #messages_sidebar ul li a.mainlink:active, #messages_sidebar ul li a.mainlink:visited {
+	border-left: 5px solid #000000;
+}
+#messages_sidebar ul li a.mainlink:hover {
+	background: #FFFF00;
+	color: #000000;
+}
+#messages_sidebar ul.messageslink_main {
+	margin-bottom: 20px;
+	text-transform: uppercase;
+}
+
+
+#messages_main {
+	padding: 0 0 0 5px;
+	position: relative;
+	top: 0;
+	left: 0;
+	min-height: 200px;
+	margin: 5px 0 0 152px;
+}
+#messages_mailcontrols {	
+	height: 16px;
+}
+#messages_mailcontrols_left {
+}
+#messages_mailcontrols_left, #messages_mailcontrols_right {
+	padding: 0;
+    margin: 0;
+}
+#messages_mailcontrols_left li, #messages_mailcontrols_right li {
+	list-style: none;
+	font: 13px Arial, Helvetica;
+}
+#messages_deletebtn {
+	text-decoration: none;
+	padding: 5px 8px;
+	background: #FFFFFF;
+	color: #000000;
+	font-weight: bold;
+	font-size: 10px;
+	margin: 0 0 0 5px;
+	text-transform: uppercase;
+	border: 1px solid #000000;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px; 
+	float: left;
+}
+#messages_deletebtn:hover {
+	background: #000000;
+	color: #FFFFFF;
+}
+#messages_mailcontrols_right {
+}
+#messages_mailcontrols_right li {
+	font-weight: bold;
+	font-size: 12px;
+}
+
+#messages_mainview {
+	min-height: 100px;
+}
+
+
+#messages_display_Table {
+	position: relative;
+	font-family: Helvetica, Arial;
+	font-size: 12px;
+	display: block-inline;
+	width: 732px;
+}
+#messages_display_Table tr {
+	margin: 0;
+	padding: 0;
+}
+#messages_display_Table tr td {
+	display: inline-block;
+	list-style: none;
+	padding: 5px 10px;
+	border-right: 2px #FFFFFF solid;
+}
+#messages_display_Table tr td:last-child {
+	border-right: 0;
+}
+.messages_displayTableHeader {
+	background: #00BFF3;
+	border-bottom: 2px #FFFFFF solid;
+}
+.table_header {
+	font-weight: bold;
+}
+.table_row {
+	min-height: 20px;
+	line-height: 18px;
+	display: block;
+}
+.messages_displayTableEntry {
+	margin-bottom: 1px;
+	padding: 1px;
+	background: #E1E1E1;
+	border-bottom: 2px #FFFFFF solid;
+}
+.messages_displayTableEntry:hover {
+	cursor: pointer;
+}
+.messages_display_checkbox {
+	width: 20px;
+	font-weight: bold;
+}
+.messages_display_from {
+	width: 120px;
+}
+.messages_display_subject {
+	width: 400px;
+}
+.messages_display_date {
+	width: 60px;
+}
+
+.messages_display_idheader, .messages_display_idtext {
+	padding-left: 10px;
+}
