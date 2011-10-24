@@ -112,33 +112,86 @@ body  {
 }
 #top_links nav {
 	position: absolute;
-	margin: 68px 50px 0 0;
+	margin: 76px 0 0 0;
 	top: 0;
 	right: 0;
 	-moz-right: 0;
 	-webkit-right: 0;
+	z-index: 12;
 }
 #top_links nav ul {
 	list-style: none;
-	margin: 0 auto;
-	position: absolute;
+	margin: 0;
+	width: auto;
 }
 #top_links nav ul li {
-	margin: 0;
-	float: left;
+	float: right;
 	position: relative;
 	width: auto;
 }
-#top_links a, #top_links a:active, #top_links a:visited {
+#top_links nav ul li a, #top_links nav ul li a:active, #top_links nav ul li a:visited {
 	text-decoration: none;
-	color: #888888;
+	color: #797979;
+	background: #FFFFFF;
+	display: block;
+	font: 16px Verdana, Arial, sans-serif;
 	font-weight: bold;
 	font-size: 12px;
-	padding-left: 5px;
+	font-variant: small-caps;
+	padding: 3px 12px;
+	margin-left: 3px;
+	border-left: 1px solid #797979;
+	border-right: 1px solid #797979;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	-webkit-border-radius: 5px 5px 0 0;
+	border-radius: 5px 5px 0 0; 
 }
-#top_links a:hover {
+#top_links nav ul li a:hover {
+	color: #FFFF00;
+	border-color: #FFFF00;
+	background: #000000;
+}
+#top_links nav ul li:hover ul {
+	left: 0;
+}
+#top_links nav ul ul {
+	position: absolute;
+	left: -9999px;
+}
+#top_links nav ul li ul {
+}
+#top_links nav ul li ul li {
+}
+#top_links nav ul li ul li a, #top_links nav ul li ul li a:active, #top_links nav ul li ul li a:visited {
+	background: #0097FE;
+	border-top: 5px solid #0097FE;
+	border-bottom: 5px solid #0097FE;
+	border-left: 0;
+	border-right: 0;
+	color: #FFFFFF;
+	font-size: 11px;
+	margin-left: 3px;
+	width: 60px;
+	-moz-border-radius-topleft: 0;
+	-moz-border-radius-topright: 0;
+	-webkit-border-radius: 0 0 0 0;
+	border-radius: 0 0 0 0; 
+}
+#top_links nav ul li ul li a:hover {
+	border-left: 5px solid #000000;
+	border-top: 5px solid #FFFF00;
+	border-bottom: 5px solid #FFFF00;
 	color: #000000;
+	background: #FFFF00;
 }
+#top_links nav ul li li {
+	float: none;
+	margin: 0;
+	border: none;
+	white-space: nowrap;
+}
+
 
 #top_separator {
 	position: absolute;

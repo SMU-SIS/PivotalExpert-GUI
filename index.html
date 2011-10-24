@@ -45,6 +45,13 @@
 										<span ng:show="!currentUser.nickname"><a href="https://pivotalexpert.rpxnow.com/openid/v2/signin?token_url={{$location.protocol}}://{{$location.host}}:{{$location.port}}/rpx.php">login</a></span>
 	 									<span ng:show="currentUser.nickname" ><a href="logout?target=/#{{$location.hashPath}}">logout</a></span>
 	 								</li>
+	 								<li><a href="">settings</a>
+										<ul>
+											<li><a href="#/settings/user">Profile</a></li>
+											<li><a href="#/settings/paypal">Paypal</a></li>
+											<li><a href="#/settings/school">School</a></li>
+										</ul>
+									</li>
 								</ul>
 							</nav>
 						</section>
@@ -66,13 +73,6 @@
 								</li>
 								<li><a href="#/projects">find a project</a></li>
 								<li><a href="#/developers">find a developer</a></li>
-								<li><a href=''>set</a>
-									<ul>
-										<li><a href="#/settings/user">Profile</a></li>
-										<li><a href="#/settings/paypal">Paypal</a></li>
-										<li><a href="#/settings/school">School</a></li>
-									</ul>
-								</li>
 							</ul>
 						</nav>
 					</section>
