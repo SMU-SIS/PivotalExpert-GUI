@@ -13,6 +13,7 @@
 		</section>
 	</section>
 	<section id="messages_Body">
+		<!-- START INSERT messages_navbar <NG:INCLUDE> HERE -->
 		<section id="messages_sidebar">
 			<ul class="messageslink_main">
 				<li><a class="mainlink" href="">Messages</a></li>
@@ -24,7 +25,9 @@
 				<li><a href="">Project C</a></li>
 			</ul>
 		</section>
+		<!-- END INSERT messages_navbar <NG:INCLUDE> HERE -->
 		<section id="messages_main">
+			<!-- START INSERT messages_mailbox <NG:INCLUDE> HERE -->
 			<form id="messages_manageForm" action="" method="POST">
 				<section id="messages_mailcontrols">
 					<ul id="messages_mailcontrols_left">
@@ -55,9 +58,6 @@
 				</section>
 				<hr />
 				<section id="messages_mainview">
-					<!-- Interchangable section based on sidebar links HERE -->
-					<!--<ng:include src="gui/html/messages_mailbox.html"></ng:include>-->
-					
 					<table id="messages_display_Table" border="0" cellpadding="0" cellspacing="0">
 						<tr class="messages_displayTableHeader">
 							<td class="table_header messages_display_checkbox"><input type="checkbox" name="master"></td>
@@ -114,7 +114,6 @@
 						
 					</table>
 				</section>
-				
 				<section id="messages_mailcontrols">
 					<ul id="messages_mailcontrols_left">
 						<li><input id="messages_deletebtn" type="submit" name="submit" value="Delete"></li>
@@ -143,6 +142,7 @@
 					</ul>
 				</section>
 			</form>
+			<!-- END INSERT messages_mailbox <NG:INCLUDE> HERE -->
 		</section>
 	</section>
 </section>

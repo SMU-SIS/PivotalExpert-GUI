@@ -1,1 +1,117 @@
 
+<section id="messages_main">
+<!-- START INSERT messages_mailbox <NG:INCLUDE> HERE -->
+<form id="messages_manageForm" action="" method="POST">
+	<section id="messages_mailcontrols">
+		<ul id="messages_mailcontrols_left">
+			<li><input id="messages_deletebtn" type="submit" name="submit" value="Delete"></li>
+		</ul>
+		<ul id="messages_mailcontrols_right">
+			<li>
+				<div class="pagination_section">
+					<ul>
+						<li>
+							<span class="pagination_sidelinks" ng:hide="messages_manage.page_current == 1"><a href="#/messages_manage/page/1">First</a></span>
+							<span class="currentsidelink" ng:show="messages_manage.page_current == 1">First</span>
+						</li>
+						<li class="pagination_sidelinks" ng:hide="messages_manage.page_current == 1"><a href="#/messages_manage/page/{{messages_manage.page_current-1}}"><</a></li>
+						<li ng:repeat="page in messages_manage.page_numbers">
+							<span class="pagination_pages" ng:hide="page == messages_manage.page_current"><a href="#/messages_manage/page/{{page}}">{{page}}</a></span>
+							<span class="pagination_pages_current currentpage" ng:show="page == messages_manage.page_current">{{page}}</span>
+						</li>
+						<li class="pagination_sidelinks" ng:hide="messages_manage.page_current == messages_manage.pages"><a href="#/messages_manage/page/{{messages_manage.page_current+1}}">></a></li>
+						<li>
+							<span class="pagination_sidelinks" ng:hide="messages_manage.page_current == messages_manage.pages"><a href="#/messages_manage/page/{{messages_manage.pages}}">Last</a></span>
+							<span class="currentsidelink" ng:show="messages_manage.page_current == messages_manage.pages">Last</span>
+						</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+	</section>
+	<hr />
+	<section id="messages_mainview">
+		<table id="messages_display_Table" border="0" cellpadding="0" cellspacing="0">
+			<tr class="messages_displayTableHeader">
+				<td class="table_header messages_display_checkbox"><input type="checkbox" name="master"></td>
+				<td class="table_header messages_display_from">From</td>
+				<td class="table_header messages_display_subject">Subject</td>
+				<td class="table_header messages_display_date">Date</td>
+			</tr>
+			<!--<tr class="messages_displayTableEntry" ng:repeat="developer in developers.$filter(query).$orderBy(orderProp)" 
+				  onmouseover="HighlightMessagesRow(this, true);" 
+				  onmouseout="HighlightMessagesRow(this, false);" 
+				  onclick="GoToURL('#/developers/{{developer.id}}');">
+				<td class="table_row messages_display_checkbox"><input id="1" type="checkbox" ng:checked="{{master}}"></td>
+				<td class="table_row messages_display_from">From</td>
+				<td class="table_row messages_display_subject">Subject</td>
+				<td class="table_row messages_display_date">Date</td>
+			</tr>-->
+			
+			<tr class="messages_displayTableEntry"
+				  onmouseover="HighlightMessagesRow(this, true);" 
+				  onmouseout="HighlightMessagesRow(this, false);" 
+				  onclick="GoToURL('#/developers/{{developer.id}}');">
+				<td class="table_row messages_display_checkbox"><input id="1" type="checkbox" ng:checked="{{master}}"></td>
+				<td class="table_row messages_display_from">Alex</td>
+				<td class="table_row messages_display_subject">New deliverable!</td>
+				<td class="table_row messages_display_date">15/8/11</td>
+			</tr>
+			<tr class="messages_displayTableEntry"
+				  onmouseover="HighlightMessagesRow(this, true);" 
+				  onmouseout="HighlightMessagesRow(this, false);" 
+				  onclick="GoToURL('#/developers/{{developer.id}}');">
+				<td class="table_row messages_display_checkbox"><input id="1" type="checkbox" ng:checked="{{master}}"></td>
+				<td class="table_row messages_display_from">Alex</td>
+				<td class="table_row messages_display_subject">New deliverable!</td>
+				<td class="table_row messages_display_date">15/8/11</td>
+			</tr>
+			<tr class="messages_displayTableEntry"
+				  onmouseover="HighlightMessagesRow(this, true);" 
+				  onmouseout="HighlightMessagesRow(this, false);" 
+				  onclick="GoToURL('#/developers/{{developer.id}}');">
+				<td class="table_row messages_display_checkbox"><input id="2" type="checkbox" ng:checked="{{master}}"></td>
+				<td class="table_row messages_display_from">Mark</td>
+				<td class="table_row messages_display_subject">Testing</td>
+				<td class="table_row messages_display_date">16/8/11</td>
+			</tr>
+			<tr class="messages_displayTableEntry"
+				  onmouseover="HighlightMessagesRow(this, true);" 
+				  onmouseout="HighlightMessagesRow(this, false);" 
+				  onclick="GoToURL('#/developers/{{developer.id}}');">
+				<td class="table_row messages_display_checkbox"><input id="2" type="checkbox" ng:checked="{{master}}"></td>
+				<td class="table_row messages_display_from">Mark</td>
+				<td class="table_row messages_display_subject">Testing</td>
+				<td class="table_row messages_display_date">16/8/11</td>
+			</tr>
+			
+		</table>
+	</section>
+	<section id="messages_mailcontrols">
+		<ul id="messages_mailcontrols_left">
+			<li><input id="messages_deletebtn" type="submit" name="submit" value="Delete"></li>
+		</ul>
+		<ul id="messages_mailcontrols_right">
+			<li>
+				<div class="pagination_section">
+					<ul>
+						<li>
+							<span class="pagination_sidelinks" ng:hide="messages_manage.page_current == 1"><a href="#/messages_manage/page/1">First</a></span>
+							<span class="currentsidelink" ng:show="messages_manage.page_current == 1">First</span>
+						</li>
+						<li class="pagination_sidelinks" ng:hide="messages_manage.page_current == 1"><a href="#/messages_manage/page/{{messages_manage.page_current-1}}"><</a></li>
+						<li ng:repeat="page in messages_manage.page_numbers">
+							<span class="pagination_pages" ng:hide="page == messages_manage.page_current"><a href="#/messages_manage/page/{{page}}">{{page}}</a></span>
+							<span class="pagination_pages_current currentpage" ng:show="page == messages_manage.page_current">{{page}}</span>
+						</li>
+						<li class="pagination_sidelinks" ng:hide="messages_manage.page_current == messages_manage.pages"><a href="#/messages_manage/page/{{messages_manage.page_current+1}}">></a></li>
+						<li>
+							<span class="pagination_sidelinks" ng:hide="messages_manage.page_current == messages_manage.pages"><a href="#/messages_manage/page/{{messages_manage.pages}}">Last</a></span>
+							<span class="currentsidelink" ng:show="messages_manage.page_current == messages_manage.pages">Last</span>
+						</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+	</section>
+</form>
