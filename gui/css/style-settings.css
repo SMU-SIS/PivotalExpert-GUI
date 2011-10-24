@@ -1,5 +1,4 @@
 
-/** Developer_Index **/
 #settings_paypal_page {
 }
 #settings_paypal_Header {
@@ -7,23 +6,28 @@
 	margin: 0;
 	padding: 0;
 }
-#developerList_count {
-	font-size: 22px;
-	border-left: 8px solid #FFFF00;
-	padding-left: 10px;
-}
 
 #settings_paypal_emailbar {
 	position: absolute;
-	top: 45px;
+	top: 0;
 	right: 0;
 	-moz-right: 0;
 	-webkit-right: 0;
 	float: right;
 	height: 24px;
 	display: block;
-	margin-right: 12px;
-	border-bottom: 4px solid #FFFF00;
+	margin: 0 12px 0 0;
+	width: 350px;
+	padding: 4px 0;
+	border-top: 2px solid #00AEFF;
+	border-bottom: 2px solid #00AEFF;
+}
+#settings_paypal_emailbar label {
+	font-size: 12px;
+	font-style: italic;
+	min-height: 20px;
+	line-height: 22px;
+	cursor: default;
 }
 #settings_paypal_email_save {
 	position: absolute;
@@ -31,9 +35,10 @@
 	right: 0;
 	-moz-right: 0;
 	-webkit-right: 0;
+	margin-top: 4px;
 }
 #settings_paypal_email_save a, #settings_paypal_email_save a:active, #settings_paypal_email_save a:visited {
-	background: #0054A6;
+	background: #00AEFF;
 	padding: 6px 16px;
 	font-size: 10px;
 	font-weight: bold;
@@ -45,10 +50,14 @@
 	border-radius: 3px; 
 }
 #settings_paypal_email_save a:hover {
-	background: #00BFF3;
+	background: #FFFF00;
+	color: #000000;
 }
 #settings_paypal_email {
-	margin: 0 78px 0 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 4px 68px 0 95px;
 	font: italic 13px Georgia, "Times New Roman", Times, serif;
 	padding: 3px;
 	padding-left: 8px;
@@ -57,9 +66,6 @@
     display: block;
     border: 0;
     background: #F0F0F0;
-}
-#settings_paypal_email:focus {
-	border: 2px solid #0054A6;
 }
 
 #settings_paypal_sortbar {
@@ -71,9 +77,6 @@
 	background: #000000;
 	color: #FFFFFF;
 	font-weight: bold;
-	
-		
-	margin-top: 100px;
 }
 .sort_subheader {
 	font: 14px Arial, Helvetica bold;
@@ -89,7 +92,6 @@
 	font: 13px Arial, Helvetica bold;
 	color: #FFFFFF;
 }
-
 
 #settings_paypal_Table {
 	position: relative;
@@ -111,7 +113,7 @@
 #settings_paypal_Table tr td:last-child {
 	border-right: 0;
 }
-.developerListTableHeader {
+.settings_paypalTableHeader {
 	background: #00BFF3;
 	border-bottom: 2px #FFFFFF solid;
 }
@@ -119,94 +121,55 @@
 	font-weight: bold;
 }
 .table_row {
-	min-height: 32px;
-	line-height: 30px;
+	min-height: 30px;
+	line-height: 28px;
 	display: block;
 }
-.developerListTableEntry {
+.settings_paypalTableEntry {
 	margin-bottom: 1px;
 	padding: 1px;
 	width: 850px;
 	background: #E1E1E1;
 	border-bottom: 2px #FFFFFF solid;
 }
-.developerListTableEntry:hover {
+.settings_paypalTableEntry:hover {
 	cursor: pointer;
 }
-.developerList_developer_name {
-	width: 225px;
+.settings_paypal_id {
+	width: 80px;
 	font-weight: bold;
 }
-.developerList_developer_country {
-	width: 105px;
+.settings_paypal_date {
+	width: 75px;
 }
-.developerList_developer_school {
+.settings_paypal_amount {
 	width: 80px;
 }
-.developerList_developer_badges {
-	width: 125px;
+.settings_paypal_from {
+	width: 85px;
 }
-.developerList_developer_earnings {
-	width: 105px;
+.settings_paypal_paid {
+	width: 25px;
 }
-.developerList_developer_contact {
-	width: 105px;
+.settings_paypal_to {
+	width: 85px;
 }
-.developer_nameheader, .developer_pic {
+.settings_paypal_received {
+	width: 55px;
+}
+.settings_paypal_workroom {
+	width: 70px;
+}
+.settings_paypal_week {
+	width: 30px;
+}
+.settings_paypal_remarks {
+	width: 60px;
+}
+.settings_paypal_idheader, .settings_paypal_idtext {
 	padding-left: 10px;
 }
-.developer_name {
-	margin: 0 0 0 5px;
-}
-.developer_name a, .developer_name a:active, .developer_name a:visited {
-	text-decoration: none;
-	color: #000000;
-}
-.developer_name a:hover {
-
-}
-.developerList_developer_school a, .developerList_developer_school a:active, .developerList_developer_school a:visited {
-	font-size: 11px;
-	font-weight: bold;
-	text-transform: uppercase;
-	text-decoration: none;
-	background: #000000;
-	color: #FFFFFF;
-	padding: 2px 9px;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px; 
-}
-.developerList_developer_school a:hover {
-	background: #FFFFFF;
-	color: #000000;
-}
-.developer_badges_earned {
-	font: 13px Arial, Helvetica;
-	height: 17px;
-	font-weight: bold;
-}
-.developer_badges_total {
-	font-size: 11px;
-	color: #797979;
-}
-.developerList_developer_badges a, .developerList_developer_badges a:active, .developerList_developer_badges a:visited {
-	font-size: 10px;
-	font-weight: bold;
-	text-transform: uppercase;
-	text-decoration: none;
-	background: #797979;
-	color: #FFFFFF;
-	padding: 1px 3px;
-	margin-left: 5px;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px; 
-}
-.developerList_developer_badges a:hover {
-	background: #000000;
-}
-.developerList_developer_contact a, .developerList_developer_contact a:active, .developerList_developer_contact a:visited {
+.settings_paypal_workroom a, .settings_paypal_workroom a:active, .settings_paypal_workroom a:visited {
 	font-size: 10px;
 	font-weight: bold;
 	text-transform: uppercase;
@@ -215,7 +178,7 @@
 	color: #000000;
 	background: #FFD101;
 }
-.developerList_developer_contact a:hover {
+.settings_paypal_workroom a:hover {
 	color: #FFFFFF;
 	background: #0097FE;
 	-webkit-border-radius: 4px;

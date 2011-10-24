@@ -19,14 +19,14 @@
 
 #project_index_searchbar {
 	position: absolute;
-	top: 45px;
+	top: 0;
 	right: 0;
 	-moz-right: 0;
 	-webkit-right: 0;
 	float: right;
 	height: 24px;
 	display: block;
-	margin-right: 12px;
+	margin: 45px 12px 0 0;
 	border-bottom: 4px solid #FFFF00;
 }
 #projectList_search {
