@@ -87,7 +87,7 @@
 
 
 #messages_main {
-	padding: 0 0 0 5px;
+	padding: 2px 0 0 5px;
 	position: relative;
 	top: 0;
 	left: 0;
@@ -107,7 +107,7 @@
 	list-style: none;
 	font: 13px Arial, Helvetica;
 }
-#messages_deletebtn, #messages_sendbtn {
+#messages_deletebtn, #messages_sendbtn, #messages_replybtn, #messages_forwardbtn {
 	text-decoration: none;
 	padding: 5px 8px;
 	background: #FFFFFF;
@@ -122,7 +122,7 @@
 	border-radius: 5px; 
 	float: left;
 }
-#messages_deletebtn:hover, #messages_sendbtn:hover {
+#messages_deletebtn:hover, #messages_sendbtn:hover, #messages_replybtn:hover, #messages_forwardbtn:hover {
 	background: #000000;
 	color: #FFFFFF;
 }
@@ -140,24 +140,23 @@
 	min-height: 100px;
 }
 
-#messages_mainview_sendMsg, #messages_mainview_replyMsg {
-
+#messages_mainview_sendMsg, #messages_mainview_replyMsg, #messages_mainview_realmailMsg {
 }
-#messages_mainview_sendMsg ul, #messages_mainview_replyMsg ul {
+#messages_mainview_sendMsg ul, #messages_mainview_replyMsg ul, #messages_mainview_realmailMsg ul {
 	padding: 0;
 	margin-left: 5px;
 }
-#messages_mainview_sendMsg ul li, #messages_mainview_replyMsg ul li {
+#messages_mainview_sendMsg ul li, #messages_mainview_replyMsg ul li, #messages_mainview_realmailMsg ul li {
 	list-style: none;
 	position: relative;
 	width: 725px;
 	margin-bottom: 12px;
 }
-#messages_mainview_sendMsg label, #messages_mainview_replyMsg label {
+#messages_mainview_sendMsg label, #messages_mainview_replyMsg label, #messages_mainview_realmailMsg label {
 	font-size: 12px;
 	font-weight: bold;
 }
-#messages_mainview_sendMsg input, #messages_mainview_replyMsg input {
+#messages_mainview_sendMsg input, #messages_mainview_replyMsg input, .messages_read_text {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -171,11 +170,20 @@
     border: 1px solid #797979;
     background: #FFFFFF;
 }
-#messages_mainview_sendMsg textarea, #messages_mainview_replyMsg textarea {
+.messages_read_text {
+	border: 0;
+}
+#messages_mainview_sendMsg textarea, #messages_mainview_replyMsg textarea, .messages_read_msgtext {
 	margin-top: 10px;
 	width: 720px;
 	min-height: 200px;
 	height: auto;
+}
+.messages_read_msgtext {
+	border-top: 1px solid #797979;
+	padding-top: 10px;
+	min-height: 50px;
+	font-size: 13px;
 }
 
 

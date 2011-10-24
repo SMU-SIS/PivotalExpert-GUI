@@ -27,11 +27,13 @@
 		</section>
 		<!-- END INSERT messages_navbar <NG:INCLUDE> HERE -->
 		<section id="messages_main">
-			<!-- START INSERT messages_mailbox / messages_send / messages_reply <NG:INCLUDE> HERE -->
-			<form id="messages_replyForm" action="form/message/send" method="POST">
+			<!-- START INSERT messages_mailbox / messages_readmail / messages_send / messages_reply <NG:INCLUDE> HERE -->
+			<form id="messages_readmailForm" action="" method="POST">
 				<section id="messages_mailcontrols">
 					<ul id="messages_mailcontrols_left">
-						<li><input id="messages_sendbtn" type="submit" name="submit" value="Send"></li>
+						<li><input id="messages_replybtn" type="submit" name="submit" value="Reply"></li>
+						<li><input id="messages_forwardbtn" type="submit" name="submit" value="Forward"></li>
+						<li><input id="messages_deletebtn" type="submit" name="submit" value="Delete"></li>
 					</ul>
 					<ul id="messages_mailcontrols_right">
 						<li></li>
@@ -39,18 +41,20 @@
 				</section>
 				<hr />
 				<section id="messages_mainview">
-					<section id="messages_mainview_replyMsg">
+					<section id="messages_mainview_realmailMsg">
 						<ul>
-							<li><label for="messages_msgFrom">From:</label><input class="messages_msgFrom" type="text" name="msgTo" value=""></li>
-							<li><label for="messages_msgTo">To:</label><input class="messages_msgTo" type="text" name="msgTo" value=""></li>
-							<li><label for="messages_msgSubject">Subject:</label><input class="messages_msgSubject" type="text" name="msgSubject" value=""></li>
-							<li><textarea class="messages_msgMsg" name="msgMsg" rows="" placeholder="" value="" ></textarea></li>
+							<li><label for="messages_msgFrom">From:</label><span class="messages_read_text">abc</span></li>
+							<li><label for="messages_msgTo">To:</label><span class="messages_read_text">abc</span></li>
+							<li><label for="messages_msgSubject">Subject:</label><span class="messages_read_text">abc</span></li>
+							<li><div class="messages_read_msgtext">abc</div></li>
 						</ul>
 					</section>
 				</section>
 				<section id="messages_mailcontrols">
 					<ul id="messages_mailcontrols_left">
-						<li><input id="messages_sendbtn" type="submit" name="submit" value="Send"></li>
+						<li><input id="messages_replybtn" type="submit" name="submit" value="Reply"></li>
+						<li><input id="messages_forwardbtn" type="submit" name="submit" value="Forward"></li>
+						<li><input id="messages_deletebtn" type="submit" name="submit" value="Delete"></li>
 					</ul>
 					<ul id="messages_mailcontrols_right">
 						<li></li>
@@ -58,7 +62,7 @@
 				</section>
 			</form>
 			
-			<!-- END INSERT messages_mailbox / messages_send / messages_reply <NG:INCLUDE> HERE -->
+			<!-- END INSERT messages_mailbox / messages_readmail / messages_send / messages_reply <NG:INCLUDE> HERE -->
 		</section>
 	</section>
 </section>
