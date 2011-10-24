@@ -107,7 +107,7 @@
 	list-style: none;
 	font: 13px Arial, Helvetica;
 }
-#messages_deletebtn {
+#messages_deletebtn, #messages_sendbtn {
 	text-decoration: none;
 	padding: 5px 8px;
 	background: #FFFFFF;
@@ -122,9 +122,12 @@
 	border-radius: 5px; 
 	float: left;
 }
-#messages_deletebtn:hover {
+#messages_deletebtn:hover, #messages_sendbtn:hover {
 	background: #000000;
 	color: #FFFFFF;
+}
+#messages_sendbtn {
+	padding: 5px 12px;
 }
 #messages_mailcontrols_right {
 }
@@ -135,6 +138,44 @@
 
 #messages_mainview {
 	min-height: 100px;
+}
+
+#messages_mainview_sendMsg {
+
+}
+#messages_mainview_sendMsg ul {
+	padding: 0;
+	margin-left: 5px;
+}
+#messages_mainview_sendMsg ul li {
+	list-style: none;
+	position: relative;
+	width: 725px;
+	margin-bottom: 12px;
+}
+#messages_mainview_sendMsg label {
+	font-size: 12px;
+	font-weight: bold;
+}
+#messages_mainview_sendMsg input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-left: 114px;
+	font: italic 13px Georgia, "Times New Roman", Times, serif;
+	padding: 3px;
+	padding-left: 8px;
+    width: 600px;
+    height: 18px;
+    display: block;
+    border: 1px solid #797979;
+    background: #FFFFFF;
+}
+#messages_mainview_sendMsg textarea {
+	margin-top: 10px;
+	width: 720px;
+	min-height: 200px;
+	height: auto;
 }
 
 
