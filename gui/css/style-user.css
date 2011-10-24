@@ -461,13 +461,6 @@
 	margin-left: 500px;
 	width: 380px;
 }
-#user_profile_edit_paypal {
-	position: absolute;
-	left: 0;
-	top: 0;
-	margin: 200px 0 0 500px;
-	width: 380px;
-}
 form#editPersonalForm {
 	min-height: 350px;
 	height: auto;
