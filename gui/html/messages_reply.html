@@ -1,18 +1,32 @@
 <!--page 2b: reply_message-->
 <!--this is a send new private message form-->
 
-<form action="#" method="POST">
-From    <input type="text" name="user" value=""> 
-<input type="submit" name="block user" value="block"><br/>
-Subject <input type="text" name="subject" value=""><br/>
-Date    <input type="text" name="date" value=""><br/>
-Message <input type="text" name="message" value="" width="200" height="500"><br/> 
-
-<br/>
-
-<input type="button" name="reply" value="reply">
-<input type="button" name="forward" value="forward">
-<input type="button" name="delete" value="delete">
-<input type="button" name="back" value="back">
-
+<form id="messages_replyForm" action="form/message/send" method="POST">
+	<section id="messages_mailcontrols">
+		<ul id="messages_mailcontrols_left">
+			<li><input id="messages_sendbtn" type="submit" name="submit" value="Send"></li>
+		</ul>
+		<ul id="messages_mailcontrols_right">
+			<li></li>
+		</ul>
+	</section>
+	<hr />
+	<section id="messages_mainview">
+		<section id="messages_mainview_replyMsg">
+			<ul>
+				<li><label for="messages_msgFrom">From:</label><input class="messages_msgFrom" type="text" name="msgTo" value=""></li>
+				<li><label for="messages_msgTo">To:</label><input class="messages_msgTo" type="text" name="msgTo" value=""></li>
+				<li><label for="messages_msgSubject">Subject:</label><input class="messages_msgSubject" type="text" name="msgSubject" value=""></li>
+				<li><textarea class="messages_msgMsg" name="msgMsg" rows="" placeholder="" value="" ></textarea></li>
+			</ul>
+		</section>
+	</section>
+	<section id="messages_mailcontrols">
+		<ul id="messages_mailcontrols_left">
+			<li><input id="messages_sendbtn" type="submit" name="submit" value="Send"></li>
+		</ul>
+		<ul id="messages_mailcontrols_right">
+			<li></li>
+		</ul>
+	</section>
 </form>

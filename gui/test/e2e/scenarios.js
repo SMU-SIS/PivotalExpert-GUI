@@ -16,8 +16,11 @@ describe('Pivotal Expert App', function() {
 		it('1.1.1 should return 0 messages, 1 workroom, 2 projects, 1 bid in the list', function() {
 			browser().navigateTo('/');
 			expect( repeater('.newsfeedTableEntry').count() ).toBe(1);
+			element('#projectsmgt_tab').click();
 			expect( repeater('.projectsmgtWorkroomTableEntry').count() ).toBe(2);
+			element('#projects_tab').click();
 			expect( repeater('.projectsmgtProjectsTableEntry').count() ).toBe(3);
+			element('#bids_tab').click();
 			expect( repeater('.projectsmgtBidsTableEntry').count() ).toBe(2);
 		});
 	});
@@ -35,9 +38,8 @@ describe('Pivotal Expert App', function() {
 
 	describe('1.3 Workroom view', function(){
 		beforeEach(function(){
-			
 			browser().navigateTo('/#');
-			element('#user_projectsmgt').click();
+			element('#projectsmgt_tab').click();
 			element('#projectsmgt_workroom_Table tr:nth-child(2) td:nth-child(1)').click();
 
 		});
@@ -81,6 +83,8 @@ describe('Pivotal Expert App', function() {
 	
 		it('should have 3 projects in my list', function(){
 			browser().navigateTo('/#');
+			element('#projectsmgt_tab').click();
+			element('#projects_tab').click();
 			expect( repeater('.projectsmgtProjectsTableEntry').count()).toBe(3);
 		});
 	
@@ -106,15 +110,16 @@ describe('Pivotal Expert App', function() {
 		
 		it('should have a new project in my list', function(){
 			browser().navigateTo('/#');
-			expect(browser().location().hash()).toBe('/');
+			element('#projectsmgt_tab').click();
+			element('#projects_tab').click();			
 			expect( repeater('.projectsmgtProjectsTableEntry').count()).toBe(4);
 			
 		});
 		
 		it('should display the correct new project', function(){
 			browser().navigateTo('/#');
-			element('#user_projectsmgt').click();
-			element('#user_projectsmgt_projects').click();
+			element('#projectsmgt_tab').click();
+			element('#projects_tab').click();			
 			element('#projectsmgt_projects_Table tr:nth-child(2) td:nth-child(1)').click();
 
 			expect(binding('project.title')).toBe('e2eTestProject');
@@ -123,11 +128,49 @@ describe('Pivotal Expert App', function() {
 		});
 	});
 	
-	/*
-	describe('2.2 Bid for project', function(){
 	
+	describe('2.2 Bid for project', function(){
+		it('should set up paypal account', function(){
+			browser().navigateTo('/#/settings/paypal');
+			input('settings_paypal_email').enter('kenneth.kok.2009@gmail.com');
+			
+			//this function is incomplete, unable to carry on test
+			element('settings_paypal_email_save').click();
+		});
+	
+		it('should have 3 projects in my list', function(){
+			browser().navigateTo('/#');
+			element('#projectsmgt_tab').click();
+			element('#projects_tab').click();			
+			expect( repeater('.projectsmgtProjectsTableEntry').count()).toBe(4);
+		});	
+		
+		it('should show all my bids to be 1 + 1 placeholder', function(){
+			browser().navigateTo('/#');
+			element('#projectsmgt_tab').click();
+			element('#bids_tab').click();
+			expect( repeater('.projectsmgtBidsTableEntry').count() ).toBe(2);
+		});
+		
+		it('should allow me to bid for the correct project', function(){
+			browser().navigateTo('/#/projects');
+			//pause();
+		//	element('#projectListTableEntry tr:nth-child(2) td:nth-child(1)').click();		
+			element('#project_index_Table tr:nth-child(3) td:nth-child(1)').click();			
+			expect(binding('project.title')).toBe("Last Project Ever");
+		});
+		
+		it('bids for the project in 2 iterations at 50 dollars each', function(){
+			input('projectAddBid_price').enter("55");
+			input('projectAddBid_task1').enter("plan 1");
+			input('projectAddBid_task2').enter("plan 2");
+			input("projectAddBid_agreeToTerms").check();
+		});
+		
+		
 	});
 	
+	/*
 	describe('2.3.1 Accept bids', function(){
 	
 	});

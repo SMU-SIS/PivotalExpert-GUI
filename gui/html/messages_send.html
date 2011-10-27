@@ -1,16 +1,31 @@
 <!--page 2c: send_message-->
 <!--this is a send new private message form-->
 
-<h2>Send a New Message!</h2>
-
-<form action="form/message/send" method="POST">
-To    <input type="text" name="msgTo" value="{{$location.hashSearch.msgTo}}"><br/>
-Subject <input type="text" name="msgSubject" value="{{$location.hashSearch.msgSubject}}"><br/>
-Message <input type="text" name="msgMsg" value="{{$location.hashSearch.msgMsg}}" width="200" height="500"><br/> 
-
-<br/>
-
-<input type="submit" value="send">
-<input type="button" name="back" value="back">
-
+<form id="messages_sendForm" action="form/message/send" method="POST">
+	<section id="messages_mailcontrols">
+		<ul id="messages_mailcontrols_left">
+			<li><input id="messages_sendbtn" type="submit" name="submit" value="Send"></li>
+		</ul>
+		<ul id="messages_mailcontrols_right">
+			<li></li>
+		</ul>
+	</section>
+	<hr />
+	<section id="messages_mainview">
+		<section id="messages_mainview_sendMsg">
+			<ul>
+				<li><label for="messages_msgTo">To:</label><input class="messages_msgTo" type="text" name="msgTo" value="{{$location.hashSearch.msgTo}}"></li>
+				<li><label for="messages_msgSubject">Subject:</label><input class="messages_msgSubject" type="text" name="msgSubject" value="{{$location.hashSearch.msgSubject}}"></li>
+				<li><textarea class="messages_msgMsg" name="msgMsg" rows="" placeholder="" value="{{$location.hashSearch.msgMsg}" ></textarea></li>
+			</ul>
+		</section>
+	</section>
+	<section id="messages_mailcontrols">
+		<ul id="messages_mailcontrols_left">
+			<li><input id="messages_sendbtn" type="submit" name="submit" value="Send"></li>
+		</ul>
+		<ul id="messages_mailcontrols_right">
+			<li></li>
+		</ul>
+	</section>
 </form>
