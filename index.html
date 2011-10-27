@@ -41,11 +41,13 @@
 						<section id="top_links">
 							<nav>
 								<ul ng:controller="CurrentUserController">
-									<li>
-										<span ng:show="!currentUser.nickname"><a href="https://pivotalexpert.rpxnow.com/openid/v2/signin?token_url={{$location.protocol}}://{{$location.host}}:{{$location.port}}/rpx.php">login</a></span>
-	 									<span ng:show="currentUser.nickname" ><a href="logout?target=/#{{$location.hashPath}}">logout</a></span>
+									<li ng:show="!currentUser.nickname">
+										<span><a href="https://pivotalexpert.rpxnow.com/openid/v2/signin?token_url={{$location.protocol}}://{{$location.host}}:{{$location.port}}/rpx.php">login</a></span>
 	 								</li>
-	 								<li><a href="">settings</a>
+	 								<li ng:show="currentUser.nickname">
+		 								<span><a href="logout?target=/#{{$location.hashPath}}">logout</a></span>
+	 								</li>
+	 								<li ng:show="currentUser.nickname"><a href="">settings</a>
 										<ul>
 											<li><a href="#/settings/user">Profile</a></li>
 											<li><a href="#/settings/paypal">Paypal</a></li>
