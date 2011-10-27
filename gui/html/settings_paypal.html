@@ -5,7 +5,9 @@
 	<section id="settings_paypal_Header">
 		<section class="section_header">Settings | PayPal</section>
 		<section id="settings_paypal_emailbar">
-			<label for="createNewProject_title">PayPal Email:</label><input type="text" id="settings_paypal_email" name="settings_paypal_email" placeholder="update my PayPal email" value="{{pp_settings.paypal_email}}" /><div id="settings_paypal_email_save"><a href="">Save</a></div>
+			<form method="post" action="form/settings/paypal">
+			<label for="createNewProject_title">PayPal Email:</label><input type="text" id="settings_paypal_email" name="settings_paypal_email" placeholder="update my PayPal email" value="{{pp_settings.paypal_email}}" /><div id="settings_paypal_email_save"><input type="submit" value="Save"/></div>
+			</form>
 		</section>
 		<section id="settings_paypal_sortbar">
 			<section class="sort_subheader">sort by:</section>
@@ -34,7 +36,31 @@
 			<td class="table_header settings_paypal_week">Week</td>
 			<td class="table_header settings_paypal_remarks">Remarks</td>
 		</tr>
-		<!--<tr class="settings_paypalTableEntry" ng:repeat="payment in pp_settings.receiving" 
+		<tr class="settings_paypalTableEntry" ng:repeat="payment in pp_settings.paying" 
+			  onmouseover="HighlightPaypalRow(this, true);" 
+              onmouseout="HighlightPaypalRow(this, false);" 
+              onclick="GoToURL('#/developers/{{developer.id}}');">
+			<td class="table_row settings_paypal_id"><span class="settings_paypal_idtext">{{payment.id}}</span></td>
+			<td class="table_row settings_paypal_date">{{payment.insertDate}}</td>
+			<td class="table_row settings_paypal_amount">USD${{payment.amount}}</td>
+			<td class="table_row settings_paypal_from">{{payment.sender}}</td>
+			<td class="table_row settings_paypal_paid">
+				<span ng:show="payment.paid">Yes</span>
+				<span ng:hide="payment.paid">No</span>	
+			</td>
+			<td class="table_row settings_paypal_to">{{payment.receiver}}</td>
+			<td class="table_row settings_paypal_received">
+				<span ng:show="payment.received">Yes</span>
+				<span ng:hide="payment.received">No</span>
+			</td>
+			<td class="table_row settings_paypal_workroom"><a href="#/workroom/{{payment.workroom_id}}">Visit Workroom</a></td>
+			<td class="table_row settings_paypal_week">{{payment.iteration}}</td>
+			<td class="table_row settings_paypal_remarks">
+				<span ng:show="payment.failed">Errors</span>
+				<span ng:hide="payment.failed">No errors</span>
+			</td>
+		</tr>
+		<tr class="settings_paypalTableEntry" ng:repeat="payment in pp_settings.receiving" 
 			  onmouseover="HighlightPaypalRow(this, true);" 
               onmouseout="HighlightPaypalRow(this, false);" 
               onclick="GoToURL('#/developers/{{developer.id}}');">
@@ -57,9 +83,9 @@
 				<span ng:show="payment.failed">Errors</span>
 				<span ng:hide="payment.failed">No errors</span>
 			</td>
-		</tr>-->
+		</tr>
 		
-		<tr class="settings_paypalTableEntry"" 
+		<!--<tr class="settings_paypalTableEntry"" 
 			  onmouseover="HighlightPaypalRow(this, true);" 
               onmouseout="HighlightPaypalRow(this, false);" 
               onclick="GoToURL('#/developers/{{developer.id}}');">
@@ -82,7 +108,7 @@
 				<span ng:show="payment.failed">Errors</span>
 				<span ng:hide="payment.failed">No errors</span>
 			</td>
-		</tr>
+		</tr>-->
 	</table>
 	
 	<div class="pagination_section">
