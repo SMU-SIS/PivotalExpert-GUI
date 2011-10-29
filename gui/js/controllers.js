@@ -23,6 +23,8 @@ function PageRouter_Master($route, $location, $resource) { //router for the webs
 	//projects module
 	$route.when('/projects',{template:'gui/html/project_index.html', controller: ProjectListCtrl});
 	$route.when('/projects/page/:pageID',{template:'gui/html/project_index.html', controller: ProjectListCtrl});
+	$route.when('/projects/search/:search',{template:'gui/html/project_index.html', controller: ProjectListCtrl});
+	$route.when('/projects/search/:search/:pageID',{template:'gui/html/project_index.html', controller: ProjectListCtrl});
 	$route.when('/projects/create',{template:'gui/html/project_create.html'});	
 	$route.when('/projects/:projectID',{template:'gui/html/project_view.html', controller: ProjectViewCtrl});
 	
@@ -125,7 +127,12 @@ function ProjectListCtrl($resource) {
 		page = 1;
 	}
 
-	this.projects = $resource('rest/projects/project_index/page/'+page).get();
+	if (this.params.search) {
+		this.projects = $resource('rest/projects/project_index/search/'+this.params.search+'/'+page).get();
+	}
+	else {
+		this.projects = $resource('rest/projects/project_index/page/'+page).get();
+	}
 }
 
 function DashboardCtrl($resource) {
