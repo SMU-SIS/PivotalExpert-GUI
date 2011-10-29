@@ -33,8 +33,9 @@ function PageRouter_Master($route, $location, $resource) { //router for the webs
 	
 	//developers module
 	$route.when('/developers',{template:'gui/html/developer_index.html', controller: DevelopersCtrl});
-	$route.when('/developers/world/',{template:'gui/html/worldmap.html'}); 
-	$route.when('/developers/<country_id>',{template:''}); //TESTING
+	$route.when('/developers/page/:pageID',{template:'gui/html/developer_index.html', controller: DevelopersCtrl});
+//	$route.when('/developers/world/',{template:'gui/html/worldmap.html'}); 
+//	$route.when('/developers/<country_id>',{template:''}); //TESTING
 	
 	//user profiles
 	$route.when('/user/:id',{template:'gui/html/user_view.html'});
@@ -152,9 +153,14 @@ function NavbarCtrl($resource){
 }
 
 function DevelopersCtrl($resource){
-	//this.developers = $resource('rest/developer').query();
-	this.developers = $resource('rest/developer').query();
-	this.orderProp = 'earnings';
+	if (this.params.pageID) {
+		page = this.params.pageID;
+	}
+	else {
+		page = 1;
+	}
+	
+	this.developers = $resource('rest/developers/developers_index/'+page).get();
 }
 
 function SettingsPayPalCtrl($resource){

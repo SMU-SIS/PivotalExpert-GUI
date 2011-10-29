@@ -5,7 +5,7 @@
 	<section id="developer_index_Header">
 		<section class="section_header">Developers</section>
 		<section class="section_subheader">
-			<span id="developerList_count">{{developers.$count}}</span> Developers Online
+			<span id="developerList_count">{{developers.total}}</span> Developers Available
 		</section>
 		<section id="developer_index_searchbar">
 			<input type="text" id="developerList_search_query" name="developerList_search_query" placeholder="search a developer" /><div ng:show="currentUser.nickname" id="developerList_search"><a href="">Search</a></div>
@@ -30,13 +30,13 @@
 			<td class="table_header developerList_developer_earnings">Earnings</td>
 			<td class="table_header developerList_developer_contact">Contact</td>
 		</tr>
-		<tr class="developerListTableEntry" ng:repeat="developer in developers.$filter(query).$orderBy(orderProp)" 
+		<tr class="developerListTableEntry" ng:repeat="developer in developers.developerList.$filter(query).$orderBy(orderProp)" 
 			  onmouseover="HighlightDeveloperRow(this, true);" 
               onmouseout="HighlightDeveloperRow(this, false);" 
-              onclick="GoToURL('#/developers/{{developer.id}}');">
+              onclick="GoToURL('#/user/{{developer.id}}');">
 			<td class="table_row developerList_developer_name">
-				<span class="developer_pic"><img src="gui/images/user.jpg" width="30px" height="30px"></span>
-				<span class="developer_name"><a href="user_profile.html">{{developer.name}}</a></span>
+				<span class="developer_pic"><img src="http://www.gravatar.com/avatar/{{developer.gravatar}}?s=30&d=mm"></span>
+				<span class="developer_name"><a href="user_profile.html">{{developer.nickname}}</a></span>
 			</td>
 			<td class="table_row developerList_developer_country">{{developer.country}}</td>
 			<td class="table_row developerList_developer_school"><a href="instituitions.html">{{developer.school}}</a></td>
