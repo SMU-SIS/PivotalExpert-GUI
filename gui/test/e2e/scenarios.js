@@ -45,18 +45,18 @@ describe('Pivotal Expert App', function() {
 		});
 		
 		//tests the display for the workroom details
-		it('should have project title = "First Project Ever" with project description', function(){
+		it('1.3.1 should have project title = "First Project Ever" with project description', function(){
 			expect(binding('workroom.title')).toBe("Eight Project Ever (Developer: Kennethkok)");
 			expect(binding('workroom.description')).toBe("Some description you have there");
 		});
 		
-		it('owner should be DanielTsou, developer mark chen', function(){
+		it('1.3.2 owner should be DanielTsou, developer mark chen', function(){
 			expect(binding('workroom.owner')).toBe("Raymondchua");
 			expect(binding('workroom.dev')).toBe("Kennethkok");
 		});
 		
 		//tests the chatroom
-		it('should have 4 entries', function(){
+		it('1.3.3 should have 4 entries', function(){
 			expect( repeater('.projectWall_message_entry').count()).toBe(0);
 		});
 		
@@ -68,11 +68,11 @@ describe('Pivotal Expert App', function() {
 		});*/
 		
 		//tests the iteration, workflow
-		it('should have 4 iterations', function(){
+		it('1.3.4 should have 4 iterations', function(){
 			expect(repeater('.projectWorkplan_iteration_entry').count()).toBe(4);
 		});
 		
-		it('first entry should be "do something 1", "in review"',function(){
+		it('1.3.5 first entry should be "do something 1", "in review"',function(){
 			expect(binding('iteration.task')).toBe("Planning to do something 1");
 			expect(binding('iteration.status')).toBe("Completed");
 		});
@@ -81,7 +81,7 @@ describe('Pivotal Expert App', function() {
 	
 	describe('2.1 Create a new project', function(){
 	
-		it('should have 3 projects in my list', function(){
+		it('2.1.1 should have 3 projects in my list', function(){
 			browser().navigateTo('/#');
 			element('#projectsmgt_tab').click();
 			element('#projects_tab').click();
@@ -89,14 +89,14 @@ describe('Pivotal Expert App', function() {
 		});
 	
 			//test this on GAE to make sure that the dynamically generated data corresponds
-		it('should go navigate to project create page', function(){
+		it('2.1.2 should go navigate to project create page', function(){
 			browser().navigateTo('/#/projects/create');
 			//expect(browser().location().hash()).toBe('/');
 			//element('#projectList_create_new').click();
 			expect(browser().location().hash()).toBe('/projects/create');
 		});
 		
-		it('should input the appropriate params', function(){
+		it('2.1.3 should input the appropriate params', function(){
 			input('createNewProject_title').enter('e2eTestProject');
 			input('createNewProject_budget').enter('555');
 			input('createNewProject_description').enter("This project is automatically created by e2e");
@@ -108,7 +108,7 @@ describe('Pivotal Expert App', function() {
 			sleep(1);
 		});
 		
-		it('should have a new project in my list', function(){
+		it('2.1.4 should have a new project in my list', function(){
 			browser().navigateTo('/#');
 			element('#projectsmgt_tab').click();
 			element('#projects_tab').click();			
@@ -116,7 +116,7 @@ describe('Pivotal Expert App', function() {
 			
 		});
 		
-		it('should display the correct new project', function(){
+		it('2.1.5 should display the correct new project', function(){
 			browser().navigateTo('/#');
 			element('#projectsmgt_tab').click();
 			element('#projects_tab').click();			
@@ -130,7 +130,7 @@ describe('Pivotal Expert App', function() {
 	
 	
 	describe('2.2 Bid for project', function(){
-		it('should set up paypal account', function(){
+		it('2.2.1 should set up paypal account', function(){
 			browser().navigateTo('/#/settings/paypal');
 			input('settings_paypal_email').enter('kenneth.kok.2009@gmail.com');
 			
@@ -138,21 +138,21 @@ describe('Pivotal Expert App', function() {
 			element('settings_paypal_email_save').click();
 		});
 	
-		it('should have 3 projects in my list', function(){
+		it('2.2.2 should have 3 projects in my list', function(){
 			browser().navigateTo('/#');
 			element('#projectsmgt_tab').click();
 			element('#projects_tab').click();			
 			expect( repeater('.projectsmgtProjectsTableEntry').count()).toBe(4);
 		});	
 		
-		it('should show all my bids to be 1 + 1 placeholder', function(){
+		it('2.2.3 should show all my bids to be 1 + 1 placeholder', function(){
 			browser().navigateTo('/#');
 			element('#projectsmgt_tab').click();
 			element('#bids_tab').click();
 			expect( repeater('.projectsmgtBidsTableEntry').count() ).toBe(2);
 		});
 		
-		it('should allow me to bid for the correct project', function(){
+		it('2.2.4 should allow me to bid for the correct project', function(){
 			browser().navigateTo('/#/projects');
 			//pause();
 		//	element('#projectListTableEntry tr:nth-child(2) td:nth-child(1)').click();		
@@ -160,7 +160,7 @@ describe('Pivotal Expert App', function() {
 			expect(binding('project.title')).toBe("Last Project Ever");
 		});
 		
-		it('bids for the project in 2 iterations at 50 dollars each', function(){
+		it('2.2.5 bids for the project in 2 iterations at 50 dollars each', function(){
 			input('projectAddBid_price').enter("55");
 			input('projectAddBid_task1').enter("plan 1");
 			input('projectAddBid_task2').enter("plan 2");
