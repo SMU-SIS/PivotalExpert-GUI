@@ -1,0 +1,61 @@
+<!--page 3: user_edit-->
+<!--this is where the user is able to edit profile, required upon first login-->
+
+<script src="gui/js/mustlogin.js"></script>
+<link rel="stylesheet" href="gui/css/style-user.css" type="text/css" media="screen" />
+<section id="user_details_edit_panel">
+	<section class="section_header">Edit Profile</section>
+	<form id="editPersonalForm" action="form/dashboard/user_edit?goto={{$location.hashSearch.goto}}" method="POST">
+		<section id="user_details_edit_panel_body">
+			<section id="user_profile_edit_personal">
+				<section class="section_subheader">Personal Details</section>
+				<section class="section_subheader_line"></section>
+				<section id="user_profile_edit_personal_inputPhoto">
+					<fieldset>
+						<img src="http://www.gravatar.com/avatar/{{user.gravatar}}?s=80&d=mm">
+						<span class="editPersonal_photo_text">Photo</span>
+					</fieldset>
+				</section>
+				<section id="user_profile_edit_personal_inputSegment">
+					<fieldset>
+						<ol>
+							<li><label for="editPersonal_nickname">Nickname</label><input id="editPersonal_nickname" name="editPersonal_nickname" type="text" placeholder="" value="{{user.nickname}}" autofocus ></li>
+							<li><label for="editPersonal_contactEmail">Email Address</label><input id="editPersonal_contactEmail" name="editPersonal_contactEmail" type="text" placeholder="" value="{{user.contactEmail}}" ></li>
+							<li><label for="editPersonal_country">Country</label><input id="editPersonal_country" name="editPersonal_country" type="text" placeholder="" value="Coming Soon.." ng:required disabled></li>
+							<li><label for="editPersonal_institution">Institution</label><input id="editPersonal_institution" name="editPersonal_institution" type="text" placeholder="" value="Coming Soon.." ng:required disabled></li>
+							<!--<li>
+								<label for="editPersonal_developer">Developer</label>
+								<span class="editPersonal_developer_option"><input type="radio" name="editPersonal_developer_option" value="Yes" disabled checked="checked">Yes</span>
+								<span class="editPersonal_developer_option"><input type="radio" name="editPersonal_developer_option" value="No" disabled>No</span>
+							</li>-->
+						</ol>
+						<ol>
+							<li><label for="editPersonal_aboutMe">About Me</label><textarea class="editPersonal_aboutMe" name="editPersonal_aboutMe" rows="" placeholder="" value="{{user.aboutMe}}" ></textarea></li>
+						</ol>
+					</fieldset>
+				</section>
+			</section>
+			
+			<!--<section id="user_profile_edit_viewAccess">
+				<section class="section_subheader">View Access Details</section>
+				<section class="section_subheader_line"></section>
+				<fieldset>
+					<ol>
+						<li>
+							<label for="editPersonal_allowAccess">Allow</label>
+							<span class="editPersonal_allowAccess_option"><input type="radio" name="editPersonal_allowAccess_option" value="everyone" checked="checked">Everyone</span>
+							<span class="editPersonal_allowAccess_option"><input type="radio" name="editPersonal_allowAccess_option" value="friends_only">Friends Only</span>
+						</li>
+					</ol>
+				</fieldset>
+			</section>-->
+		</section>
+		
+		<section id="user_details_edit_panel_footer">
+			<fieldset>
+				<button id="projectAddBid_bidBtn" type="submit">Save Profile</button>
+			</fieldset>
+		</section>
+	</form>
+</section>
+
