@@ -3,9 +3,9 @@
 <link rel="stylesheet" href="gui/css/style-developer.css" type="text/css" media="screen" />
 <section id="developer_index_page">
 	<section id="developer_index_Header">
-		<section class="section_header">Developers</section>
+		<section class="section_header">Developers <span ng:show="developers.search">Search: {{developers.search}}</span></section>
 		<section class="section_subheader">
-			<span id="developerList_count">{{developers.total}}</span> Developers Available
+			<span id="developerList_count">{{developers.total}}</span> Developers <span ng:hide="developers.search">Available</span><span ng:show="developers.search">Found</span>
 		</section>
 		<section id="developer_index_searchbar">
 			<input type="text" id="developerList_search_query" name="developerList_search_query" placeholder="search a developer" /><div ng:show="currentUser.nickname" id="developerList_search"><a href="">Search</a></div>
