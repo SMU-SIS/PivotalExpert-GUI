@@ -22,15 +22,15 @@
 			<span id="projectList_count">{{projects.total}}</span> Projects <span ng:hide="projects.search">Available</span><span ng:show="projects.search">Found</span>
 		</section>
 		<section id="project_index_searchbar">
-			<input type="text" id="projectList_search_query" name="projectList_search_query" value="{{projects.search}}" placeholder="search a project" /><div id="projectList_search"><a href="#/projects/search/{{projectList_search_query}}">Search</a></div>
+			<input type="text" id="projectList_search_query" name="projectList_search_query" value="{{projects.search}}" placeholder="search a project" /><div id="projectList_search"><a href="#/projects/search/{{projectList_search_query}}/-created">Search</a></div>
 		</section>
 		<section id="project_index_sortbar">
 			<section class="sort_subheader">sort by:</section>
-			<select class="sort_select" name="orderProp">
-				<option class="sort_select_option" value="username">Time</option>
-				<option class="sort_select_option" value="country">Owner</option>
-				<option class="sort_select_option" value="school">Status</option>
-				<option class="sort_select_option" value="badges">Budget</option>
+			<select class="sort_select" name="sort" onchange="document.location = '/#/projects/page/1/'+$(this).val()">
+				<option class="sort_select_option" value="-created">Created</option>
+				<option class="sort_select_option" value="owner">Owner</option>
+				<option class="sort_select_option" value="status">Status</option>
+				<option class="sort_select_option" value="budget">Budget</option>
 			</select>
 		</section>
 	</section>
@@ -70,17 +70,17 @@
 	<div class="pagination_section">
 		<ul>
 			<li>
-				<span class="pagination_sidelinks" ng:hide="projects.page_current == 1"><a ng:hide="projects.search" href="#/projects/page/1">First</a><a ng:show="projects.search" href="#/projects/search/{{projects.search}}/1">First</a></span>
+				<span class="pagination_sidelinks" ng:hide="projects.page_current == 1"><a ng:hide="projects.search" href="#/projects/page/1/{{sort}}">First</a><a ng:show="projects.search" href="#/projects/search/{{projects.search}}/1/{{sort}}">First</a></span>
 				<span class="currentsidelink" ng:show="projects.page_current == 1">First</span>
 			</li>
-			<li class="pagination_sidelinks" ng:hide="projects.page_current == 1"><a ng:hide="projects.search" href="#/projects/page/{{projects.page_current-1}}"><</a><a ng:show="projects.search" href="#/projects/search/{{projects.search}}/{{projects.page_current-1}}"><</a></li>
+			<li class="pagination_sidelinks" ng:hide="projects.page_current == 1"><a ng:hide="projects.search" href="#/projects/page/{{projects.page_current-1}}/{{sort}}"><</a><a ng:show="projects.search" href="#/projects/search/{{projects.search}}/{{projects.page_current-1}}/{{sort}}"><</a></li>
 			<li ng:repeat="page in projects.page_numbers">
-				<span class="pagination_pages" ng:hide="page == projects.page_current"><a ng:hide="projects.search" href="#/projects/page/{{page}}">{{page}}</a><a ng:show="projects.search" href="#/projects/search/{{projects.search}}/{{page}}">{{page}}</a></span>
+				<span class="pagination_pages" ng:hide="page == projects.page_current"><a ng:hide="projects.search" href="#/projects/page/{{page}}/{{sort}}">{{page}}</a><a ng:show="projects.search" href="#/projects/search/{{projects.search}}/{{page}}/{{sort}}">{{page}}</a></span>
 				<span class="pagination_pages_current currentpage" ng:show="page == projects.page_current">{{page}}</span>
 			</li>
-			<li class="pagination_sidelinks" ng:hide="projects.page_current == projects.pages"><a ng:hide="projects.search" href="#/projects/page/{{projects.page_current+1}}">></a><a ng:show="projects.search" href="#/projects/search/{{projects.search}}/{{projects.page_current+1}}">></a></li>
+			<li class="pagination_sidelinks" ng:hide="projects.page_current == projects.pages"><a ng:hide="projects.search" href="#/projects/page/{{projects.page_current+1}}/{{sort}}">></a><a ng:show="projects.search" href="#/projects/search/{{projects.search}}/{{projects.page_current+1}}/{{sort}}">></a></li>
 			<li>
-				<span class="pagination_sidelinks" ng:hide="projects.page_current == projects.pages"><a ng:hide="projects.search" href="#/projects/page/{{projects.pages}}">Last</a><a ng:show="projects.search" href="#/projects/search/{{projects.search}}/{{projects.pages}}">Last</a></span>
+				<span class="pagination_sidelinks" ng:hide="projects.page_current == projects.pages"><a ng:hide="projects.search" href="#/projects/page/{{projects.pages}}/{{sort}}">Last</a><a ng:show="projects.search" href="#/projects/search/{{projects.search}}/{{projects.pages}}/{{sort}}">Last</a></span>
 				<span class="currentsidelink" ng:show="projects.page_current == projects.pages">Last</span>
 			</li>
 		</ul>

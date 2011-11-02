@@ -22,9 +22,9 @@ function PageRouter_Master($route, $location, $resource) { //router for the webs
 	
 	//projects module
 	$route.when('/projects',{template:'gui/html/project_index.html', controller: ProjectListCtrl});
-	$route.when('/projects/page/:pageID',{template:'gui/html/project_index.html', controller: ProjectListCtrl});
-	$route.when('/projects/search/:search',{template:'gui/html/project_index.html', controller: ProjectListCtrl});
-	$route.when('/projects/search/:search/:pageID',{template:'gui/html/project_index.html', controller: ProjectListCtrl});
+	$route.when('/projects/page/:pageID/:sort',{template:'gui/html/project_index.html', controller: ProjectListCtrl});
+	$route.when('/projects/search/:search/:sort',{template:'gui/html/project_index.html', controller: ProjectListCtrl});
+	$route.when('/projects/search/:search/:pageID/:sort',{template:'gui/html/project_index.html', controller: ProjectListCtrl});
 	$route.when('/projects/create',{template:'gui/html/project_create.html'});	
 	$route.when('/projects/:projectID',{template:'gui/html/project_view.html', controller: ProjectViewCtrl});
 	
@@ -36,6 +36,8 @@ function PageRouter_Master($route, $location, $resource) { //router for the webs
 	//developers module
 	$route.when('/developers',{template:'gui/html/developer_index.html', controller: DevelopersCtrl});
 	$route.when('/developers/page/:pageID',{template:'gui/html/developer_index.html', controller: DevelopersCtrl});
+	$route.when('/developers/search/:search',{template:'gui/html/developer_index.html', controller: DevelopersCtrl});
+	$route.when('/developers/search/:search/:pageID',{template:'gui/html/developer_index.html', controller: DevelopersCtrl});
 //	$route.when('/developers/world/',{template:'gui/html/worldmap.html'}); 
 //	$route.when('/developers/<country_id>',{template:''}); //TESTING
 	
@@ -127,11 +129,16 @@ function ProjectListCtrl($resource) {
 		page = 1;
 	}
 
+	this.sort = '-created';
+	if (this.params.sort) {
+		this.sort = this.params.sort;
+	}
+	
 	if (this.params.search) {
-		this.projects = $resource('rest/projects/project_index/search/'+this.params.search+'/'+page).get();
+		this.projects = $resource('rest/projects/project_index/search/'+this.params.search+'/'+page+'/'+this.sort).get();
 	}
 	else {
-		this.projects = $resource('rest/projects/project_index/page/'+page).get();
+		this.projects = $resource('rest/projects/project_index/page/'+page+'/'+this.sort).get();
 	}
 }
 
@@ -167,7 +174,17 @@ function DevelopersCtrl($resource){
 		page = 1;
 	}
 	
-	this.developers = $resource('rest/developers/developers_index/'+page).get();
+	sort = '';
+	if (this.params.sort) {
+		sort = '/sort/'+this.params.sort;
+	}
+	
+	if (this.params.search) {
+		this.developers = $resource('rest/developers/developers_index/search/'+this.params.search+'/'+page).get();
+	}
+	else {
+		this.developers = $resource('rest/developers/developers_index/page/'+page+sort).get();
+	}
 }
 
 function SettingsPayPalCtrl($resource){
