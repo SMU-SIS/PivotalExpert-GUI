@@ -77,11 +77,11 @@ $(document).ready(function(){
 						<div class="projectWorkplan_iteration_img"><a href="" class="workroomTrigger"></a></div>
 						<div class="projectWorkplan_iteration_slidedownbox" ng:init="edit = 'False'">
 							<div class="projectWorkplan_iteration_description"><span ng:hide="edit">{{iteration.task}}</span>
-							<div ng:show="edit"><form method="post" action=""><textarea name="iteration_task" value="{{iteration.task}}"></textarea><button type="submit">Save</button></form><button ng:click="edit = 'False'">Cancel</button></div></div>
+							<div ng:show="edit"><form method="post" action="/form/workroom/edit/iteration/{{iteration.id}}"><textarea name="iteration_task" value="{{iteration.task}}"></textarea><button type="submit">Save</button></form><button ng:click="edit = 'False'">Cancel</button></div></div>
 							<div class="projectWorkplan_iteration_actions">
 								<!--<a class="projectWorkplan_iteration_actions_comment" href="#/workroom/{{workroom.id}}/comment">Comment</a>-->
 								<a class="projectWorkplan_iteration_actions_shift" href="">Shift</a>
-								<a class="projectWorkplan_iteration_actions_edit" ng:click="edit = 'True'">Edit</a>
+								<a class="projectWorkplan_iteration_actions_edit" ng:show="iteration.editable" ng:click="edit = 'True'">Edit</a>
 							</div>
 						</div>
 						<div class="projectWorkplan_iteration_displaybar">
