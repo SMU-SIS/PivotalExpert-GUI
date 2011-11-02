@@ -75,12 +75,13 @@ $(document).ready(function(){
 				<li class="projectWorkplan_iteration_entry" ng:repeat="iteration in workroom.iterations">
 					<div class="projectWorkplan_iteration_body">
 						<div class="projectWorkplan_iteration_img"><a href="" class="workroomTrigger"></a></div>
-						<div class="projectWorkplan_iteration_slidedownbox">
-							<div class="projectWorkplan_iteration_description">{{iteration.task}}</div>
+						<div class="projectWorkplan_iteration_slidedownbox" ng:init="edit = 'False'">
+							<div class="projectWorkplan_iteration_description"><span ng:hide="edit">{{iteration.task}}</span>
+							<div ng:show="edit"><form method="post" action=""><textarea name="iteration_task" value="{{iteration.task}}"></textarea><button type="submit">Save</button></form><button ng:click="edit = 'False'">Cancel</button></div></div>
 							<div class="projectWorkplan_iteration_actions">
 								<a class="projectWorkplan_iteration_actions_comment" href="#/workroom/{{workroom.id}}/comment">Comment</a>
 								<a class="projectWorkplan_iteration_actions_shift" href="">Shift</a>
-								<a class="projectWorkplan_iteration_actions_edit" href="">Edit</a>
+								<a class="projectWorkplan_iteration_actions_edit" ng:click="edit = 'True'">Edit</a>
 							</div>
 						</div>
 						<div class="projectWorkplan_iteration_displaybar">
