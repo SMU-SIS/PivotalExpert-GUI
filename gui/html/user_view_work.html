@@ -1,1 +1,70 @@
-My work
+<h3>My work</h3>
+<ul ng:init="workrooms = 'True'">
+	<li><a ng:click="workrooms = 'True'">My Work</a></li>
+	<li><a ng:click="workrooms = 'False'">My Projects</a></li>
+
+<div ng:show="workrooms">
+	<div ng:show="user.workrooms_owner">
+	<strong>Work I Own</strong>
+	<table>
+		<tr>
+			<th>Title</th>
+			<th>Description</th>
+			<th>Developer</th>
+			<th>Current Iteration</th>
+			<th>Project</th>
+		</tr>
+		<tr ng:repeat="workroom in user.workrooms_owner">
+			<td>{{workroom.title}}</td>
+			<td>{{workroom.description}}</td>
+			<td><a href="#/user/{{workroom.dev_id}}">
+				<img src="http://www.gravatar.com/avatar/{{workroom.dev_gravatar}}?s=30&d=mm"/>
+				{{workroom.dev_nickname}}
+				</a></td>
+			<td>{{workroom.current_iteration}}/{{workroom.total_iterations}}</td>
+			<td><a href="#/project/{{workroom.project_id}}">View</a></td>
+		</tr>
+	</table>
+	</div>
+	
+	<div ng:show="user.workrooms_dev">
+	<strong>Work I Develop For</strong>
+	<table>
+		<tr>
+			<th>Title</th>
+			<th>Description</th>
+			<th>Owner</th>
+			<th>Current Iteration</th>
+			<th>Project</th>
+		</tr>
+		<tr ng:repeat="workroom in user.workrooms_dev">
+			<td>{{workroom.title}}</td>
+			<td>{{workroom.description}}</td>
+			<td><a href="#/user/{{workroom.owner_id}}">
+				<img src="http://www.gravatar.com/avatar/{{workroom.owner_gravatar}}?s=30&d=mm"/>
+				{{workroom.dev_nickname}}
+				</a></td>
+			<td>{{workroom.current_iteration}}/{{workroom.total_iterations}}</td>
+			<td><a href="#/project/{{workroom.project_id}}">View</a></td>
+		</tr>
+	</table>
+	</div>
+</div>
+
+<div ng:hide="workrooms">
+	<strong>Projects I Own</strong>
+	<table>
+		<tr>
+			<th>Title</th>
+			<th>Status</th>
+			<th>Budget</th>
+			<th>View</th>
+		</tr>
+		<tr ng:repeat="project in user.projects">
+			<td>{{project.title}}</td>
+			<td>{{project.status}}</td>
+			<td>{{project.budget}}</td>
+			<td><a href="#/project/{{project.id}}">View</a></td>
+		</tr>
+	</table>
+</div>

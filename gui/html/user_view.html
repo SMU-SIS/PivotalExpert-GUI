@@ -1,16 +1,16 @@
 <link media="screen" type="text/css" href="gui/css/style-user.css" rel="stylesheet">
 <section id="left_panel" style="top: 168px;">
 	<div class="profile_details_pic">
-		<img src="http://www.gravatar.com/avatar/{{currentUser.gravatar}}?s=150&d=mm" alt="{{currentUser.nickname}}" border="3"/> </div>
-		<div class="profile_details_school" ng:show="currentUser.schoolName">
-			<span class="profile_details_school_initials">{{currentUser.schoolName}}</span>
+		<img src="http://www.gravatar.com/avatar/{{user.gravatar}}?s=150&d=mm" alt="{{currentUser.nickname}}" border="3"/> </div>
+		<div class="profile_details_school" ng:show="user.school">
+			<span class="profile_details_school_initials">{{user.school_short}}</span>
 		</div>
 	</div>
 </section>
 <section id="right_panel">
 	<section id="user_heading" style="border-bottom: 1px solid gray;padding-bottom:10px">
-		<div class="profile_details_nick" style="margin-bottom:0">JediMDan</div>
-		<span id="user_heading_subtitle" style="font-size:12px;color:gray">Verified Developer from Singapore Management University</span>
+		<div class="profile_details_nick" style="margin-bottom:0">{{user.nickname}}</div>
+		<span id="user_heading_subtitle" style="font-size:12px;color:gray" ng:show="user.verified">Verified Developer from {{user.school}}</span>
 	</section>
 	<section id="user_tabs">
 		<ul>

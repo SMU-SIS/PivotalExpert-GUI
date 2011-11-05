@@ -42,7 +42,7 @@ function PageRouter_Master($route, $location, $resource) { //router for the webs
 //	$route.when('/developers/<country_id>',{template:''}); //TESTING
 	
 	//user profiles
-	$route.when('/user/:id',{template:'gui/html/user_view.html'});
+	$route.when('/user/:id',{template:'gui/html/user_view.html', controller: UserViewCtrl});
 	
 	//settings module
 	$route.when('/settings/paypal',{template:'gui/html/settings_paypal.html', controller: SettingsPayPalCtrl});
@@ -50,6 +50,7 @@ function PageRouter_Master($route, $location, $resource) { //router for the webs
 	$route.when('/settings/school',{template:'gui/html/settings_school.html', controller: SettingsSchoolCtrl});
 	$route.when('/settings/school/saved',{template:'gui/html/settings_school_saved.html'});
 	$route.when('/settings/school/verify/:guid',{template:'gui/html/settings_school_verified.html', controller: SettingsSchoolVerifyCtrl});
+	$route.when('/settings/school/suggest',{template:'gui.html/settings_school_suggest.html'});
 	
 	//messaging module
 	$route.when('/messages',{template:'gui/html/messages_index.html', controller:MessagesCtrl});
@@ -64,9 +65,6 @@ function PageRouter_Master($route, $location, $resource) { //router for the webs
 	
 	/* SUB-PAGES Re-Directs */
 	$route.when('/badges/suggest',{template:'gui/html/suggest_badge.html'});
-	
-	$route.when('/user/<user_id>/view_profile',{template:''});	// TESTING
-	$route.when('/badges/<user_id>',{template:''});	// TESTING
 	
 	
 	$route.onChange(function() {
@@ -183,7 +181,7 @@ function DevelopersCtrl($resource){
 		this.developers = $resource('rest/developers/developers_index/search/'+this.params.search+'/'+page).get();
 	}
 	else {
-		this.developers = $resource('rest/developers/developers_index/page/'+page+sort).get();
+		analanaanananajkfhdkjhathis.developers = $resource('rest/developers/developers_index/page/'+page+sort).get();
 	}
 }
 
@@ -201,6 +199,10 @@ function SettingsSchoolVerifyCtrl($resource){
 
 function MessagesCtrl($resource){
 	this.msg_view = 'gui/html/messages_mailbox.html'
+}
+
+function UserViewCtrl($resource){
+	this.user = $resource('rest/user/view/'+this.params.id).get();
 }
 
 //Method that checks for current user
