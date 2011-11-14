@@ -1,3 +1,48 @@
+
+<script src="gui/js/scripts.js"></script>
+<link rel="stylesheet" href="gui/css/style-user.css" type="text/css" media="screen" />
+<section class="body_main" ng:controller="DashboardCtrl" ng:init="dashboard_view = 'gui/html/dashboard_newsfeed.html'">
+	<!--left panel-->
+	<section id="left_panel">
+		<section id="user_details_panel"> 
+			<section id="user_profile_details">
+				<div class="user_view_details_nick">{{currentUser.nickname}}</div>
+				<div class="user_view_details_pic"><img src="http://www.gravatar.com/avatar/{{user.gravatar}}?s=150&d=mm" alt="{{currentUser.nickname}}" border="3"/></div>
+				<div class="user_view_details_school" ng:show="user.school">
+					<span class="user_view_details_school_initials">{{user.school_short}}</span>
+				</div>
+			</section>
+			<section id="user_view_controls">
+				<ul>
+					<li class="profile_details_editProfile"><a href="#/settings/user" alt="Edit Profile"><img src="gui/icons/edit.png" alt="Edit Profile"></a></li>
+					<li class="profile_details_messages"><a href="#/messages" alt="Inbox"><img src="gui/icons/inbox.png" alt="Inbox"></a></li>
+					<li class="profile_details_contactList"><a href="#/contact_list" alt="Contact List"><img src="gui/icons/contactlist.png" alt="Contact List"></a></li>
+				</ul>
+			</section>
+		</section>
+	</section>
+	<!--right panel-->
+	<section id="right_panel">
+		<section id="user_info_panel"> 
+			<section class="tabs">
+				<ul class="tabs">
+					<li><a ng:click="dashboard_view = 'gui/html/dashboard_newsfeed.html'" id="newsfeed_tab" class="active" onclick="$(this).addClass('active');$('#projectsmgt_tab').removeClass('active');">Profile</a></li>
+					<li><a ng:click="dashboard_view = 'gui/html/dashboard_pm.html'" id="projectsmgt_tab" onclick="$(this).addClass('active');$('#newsfeed_tab').removeClass('active');">Projects</a></li>
+					<li><a ng:click="dashboard_view = 'gui/html/dashboard_pm.html'" id="projectsmgt_tab" onclick="$(this).addClass('active');$('#newsfeed_tab').removeClass('active');">Badges</a></li>
+				</ul>
+			</section>
+			<span id="projectList_create_new"><a href="#/projects/create">Start a New Project</a></span>
+
+			<ng:include src="dashboard_view"/>
+
+		</section>
+	</section>
+</section>
+
+
+
+
+
 <link media="screen" type="text/css" href="gui/css/style-user.css" rel="stylesheet">
 <section id="left_panel" style="top: 168px;">
 	<div class="profile_details_pic">

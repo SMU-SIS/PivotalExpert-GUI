@@ -17,20 +17,20 @@
 
 #user_profile_details {
 }
-.profile_details_nick {
+.profile_details_nick, .user_view_details_nick {
 	font-size: 22px;
 	font-weight: bold;
 	margin: 0 0 20px 0;
 	padding: 0 0 0 0;
 }
-.profile_details_pic {
+.profile_details_pic, .user_view_details_pic {
 }
-.profile_details_school {
+.profile_details_school, .user_view_details_school {
 	padding: 8px 0 8px 5px;
 	background: #000000;
 	height: 36px;
 }
-.profile_details_school_initials {
+.profile_details_school_initials, .user_view_details_school_initials {
 	position: absolute;
 	left: 15px;
 	font: 26px "GeosansLightRegular", Verdana, sans-serif;
@@ -41,7 +41,7 @@
 	border-left: 6px solid #FFFF00;
 }
 
-#user_profile_controls {
+#user_profile_controls, #user_view_controls {
 	border: 1px solid #000000;
 	padding: 3px;
 	text-align: center;
