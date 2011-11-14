@@ -6,7 +6,7 @@
 	<section id="left_panel">
 		<section id="user_details_panel"> 
 			<section id="user_profile_details">
-				<div class="user_view_details_nick">{{currentUser.nickname}}</div>
+				<div class="user_view_details_nick">{{user.nickname}}</div>
 				<div class="user_view_details_pic"><img src="http://www.gravatar.com/avatar/{{user.gravatar}}?s=150&d=mm" alt="{{currentUser.nickname}}" border="3"/></div>
 				<div class="user_view_details_school" ng:show="user.school">
 					<span class="user_view_details_school_initials">{{user.school_short}}</span>
@@ -26,45 +26,14 @@
 		<section id="user_info_panel"> 
 			<section class="tabs">
 				<ul class="tabs">
-					<li><a ng:click="dashboard_view = 'gui/html/dashboard_newsfeed.html'" id="newsfeed_tab" class="active" onclick="$(this).addClass('active');$('#projectsmgt_tab').removeClass('active');">Profile</a></li>
-					<li><a ng:click="dashboard_view = 'gui/html/dashboard_pm.html'" id="projectsmgt_tab" onclick="$(this).addClass('active');$('#newsfeed_tab').removeClass('active');">Projects</a></li>
-					<li><a ng:click="dashboard_view = 'gui/html/dashboard_pm.html'" id="projectsmgt_tab" onclick="$(this).addClass('active');$('#newsfeed_tab').removeClass('active');">Badges</a></li>
+					<li><a ng:click="user_view = 'gui/html/user_view_profile.html'" id="user_profile_tab" class="active" onclick="$(this).addClass('active');$('#user_projects_tab').removeClass('active');$('#user_badges_tab').removeClass('active');">Profile</a></li>
+					<li><a ng:click="user_view = 'gui/html/user_view_projects.html'" id="user_projects_tab" onclick="$(this).addClass('active');$('#user_profile_tab').removeClass('active');$('#user_badges_tab').removeClass('active');">Projects</a></li>
+					<li><a ng:click="user_view = 'gui/html/user_view_badges.html'" id="user_badges_tab" onclick="$(this).addClass('active');$('#user_profile_tab').removeClass('active');$('#user_projects_tab').removeClass('active');">Badges</a></li>
 				</ul>
 			</section>
-			<span id="projectList_create_new"><a href="#/projects/create">Start a New Project</a></span>
-
-			<ng:include src="dashboard_view"/>
-
+			<section id="user_content" ng:init="user_view = 'gui/html/user_view_profile.html'">
+				<ng:include src="user_view" />
+			</section>
 		</section>
-	</section>
-</section>
-
-
-
-
-
-<link media="screen" type="text/css" href="gui/css/style-user.css" rel="stylesheet">
-<section id="left_panel" style="top: 168px;">
-	<div class="profile_details_pic">
-		<img src="http://www.gravatar.com/avatar/{{user.gravatar}}?s=150&d=mm" alt="{{currentUser.nickname}}" border="3"/></div>
-		<div class="profile_details_school" ng:show="user.school">
-			<span class="profile_details_school_initials">{{user.school_short}}</span>
-		</div>
-	</div>
-</section>
-<section id="right_panel">
-	<section id="user_heading" style="border-bottom: 1px solid gray;padding-bottom:10px">
-		<div class="profile_details_nick" style="margin-bottom:0">{{user.nickname}}</div>
-		<span id="user_heading_subtitle" style="font-size:12px;color:gray" ng:show="user.verified">Verified Developer from {{user.school}}</span>
-	</section>
-	<section id="user_tabs">
-		<ul>
-			<li><a ng:click="user_view = 'gui/html/user_view_profile.html'">Profile</a></li>
-			<li><a ng:click="user_view = 'gui/html/user_view_work.html'">Work</a></li>
-			<li><a ng:click="user_view = 'gui/html/user_view_badges.html'">Badges</a></li>
-		</ul>
-	</section>
-	<section id="user_content" ng:init="user_view = 'gui/html/user_view_profile.html'">
-		<ng:include src="user_view"/>
 	</section>
 </section>

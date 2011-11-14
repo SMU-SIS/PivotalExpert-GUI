@@ -260,16 +260,89 @@
 .newsfeed_message_text {
 	width: 330px;
 }
-.newsfeed_message_text_user {
+.message_from_empty {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 15px 0 0 10px;
+}
+.message_text_empty {
+	position: relative;
+	margin: 0 0 0 75px;
+	
+}
+.newsfeed_message_text_user, .message_text_empty_header {
 	font-weight: bold;
 }
-.newsfeed_message_text_msg {
+.newsfeed_message_text_empty {
+	width: 580px;
+}
+.newsfeed_message_text_msg, .message_text_empty_msg {
 	position: relative;
 	padding-top: 5px;
 	display: block;
 }
+.newsfeed_message_text_empty_msg {
+	margin-top: 10px;
+}
+.message_text_empty_msg a, .message_text_empty_msg a:active, .message_text_empty_msg a:visited {
+	text-decoration: none;
+	color: #0097FE;
+	font-weight: bold;
+}
+.message_text_empty_msg a:hover {
+	text-decoration: underline;
+	color: #000000
+}
 .newsfeed_message_sent {
 	width: 210px;
+}
+
+.settings_bigspeechbubble {
+	position: relative;
+	padding: 25px;
+	margin: 25px 0 10px 10px;
+	color: #FFFFFF;
+	background: #075698; /* default background for browsers without gradient support */
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#2e88c4), to(#075698));
+	background:-moz-linear-gradient(#2e88c4, #075698);
+	background:-o-linear-gradient(#2e88c4, #075698);
+	background:linear-gradient(#2e88c4, #075698);
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	width: 500px;
+	text-align: center;
+	font: 42px "CaviarDreamsRegular", Helvetica, sans-serif;
+}
+.settings_bigspeechbubble:after {
+	content: "";
+	position: absolute;
+	bottom: -20px; 
+	left: 50px; 
+	border-width: 20px 0 0 20px; 
+	border-style: solid;
+	border-color: #075698 transparent; 
+    display: block; 
+    width: 0;
+}
+.settings_bigspeechbubble.top {
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#075698), to(#2e88c4));
+	background:-moz-linear-gradient(#075698, #2e88c4);
+	background:-o-linear-gradient(#075698, #2e88c4);
+	background:linear-gradient(#075698, #2e88c4);
+}
+.settings_bigspeechbubble.top:after {
+	top: -20px;
+	right: 50px; 
+	bottom: auto;
+	left: auto;
+	border-width: 20px 20px 0 0; 
+	border-color: transparent #075698; 
+}
+.base_sunburst {
+	margin-top: 20px;
+	height: 205px;
 }
 
 

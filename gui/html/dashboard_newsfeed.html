@@ -1,49 +1,51 @@
+
 <section id="user_newsfeed">
-				<section id="newsfeed_content" class="tabcontent">
-						<table id="newsfeed_Table" border="0" cellpadding="0" cellspacing="0">
-							<tr class="newsfeedTableHeader">
-								<td class="table_header newsfeed_message_from">From</td>
-								<td class="table_header newsfeed_message_text">Message</td>
-								<td class="table_header newsfeed_message_sent">Sent</td>
-							</tr>
-							<tr class="newsfeedTableEntry" ng:repeat="news_feed in dashboard[0].entries">
-								<td class="table_row newsfeed_message_from"><img src="{{news_feed.user_image}}"></td>
-								<td class="table_row newsfeed_message_text">
-									<span class="newsfeed_message_text_user">{{news_feed.subject}}</span><br />
-									<span class="newsfeed_message_text_msg">{{news_feed.message}}</span>
-								</td>
-								<td class="table_row newsfeed_message_sent ">{{news_feed.time_sent}}</td>
-							</tr>
-							<tr ng:hide="dashboard[0].entries">
-								<td class="table_row newsfeed_message_from"><img src="gui/images/avatars/aperture50px.jpg"></td>
-								<td class="table_row newsfeed_message_text">
-									<span class="newsfeed_message_text_user">Welcome to PivotalExpert.com!</span><br />
-									<span class="newsfeed_message_text_msg">You have nothing in your newsfeed! 
-									Why don't you go find something to do here? 
-									<br/><br/>Are you looking for help with your idea? You can start by <a href="#/projects/create">creating a new project</a> for others to bid for.
-									<br/><br/>Or if you're a student, you can look for a project to take part from <a href="#/projects">our list of projects</a>!</span>
-								</td>
-								<td class="table_row newsfeed_message_sent "></td>
-							</tr>
-						</table>
-						
-						<div class="pagination_section">
-							<ul>
-								<li>
-									<span class="pagination_sidelinks" ng:hide="newsfeeds.page_current == 1"><a href="#/newsfeeds/page/1">First</a></span>
-									<span class="currentsidelink" ng:show="newsfeeds.page_current == 1">First</span>
-								</li>
-								<li class="pagination_sidelinks" ng:hide="newsfeeds.page_current == 1"><a href="#/newsfeeds/page/{{newsfeeds.page_current-1}}"><</a></li>
-								<li ng:repeat="page in newsfeeds.page_numbers">
-									<span class="pagination_pages" ng:hide="page == newsfeeds.page_current"><a href="#/newsfeeds/page/{{page}}">{{page}}</a></span>
-									<span class="pagination_pages_current currentpage" ng:show="page == newsfeeds.page_current">{{page}}</span>
-								</li>
-								<li class="pagination_sidelinks" ng:hide="newsfeeds.page_current == newsfeeds.pages"><a href="#/newsfeeds/page/{{newsfeeds.page_current+1}}">></a></li>
-								<li>
-									<span class="pagination_sidelinks" ng:hide="newsfeeds.page_current == newsfeeds.pages"><a href="#/newsfeeds/page/{{newsfeeds.pages}}">Last</a></span>
-									<span class="currentsidelink" ng:show="newsfeeds.page_current == newsfeeds.pages">Last</span>
-								</li>
-							</ul>
-						</div>
-				</section>
-			</section>
+	<section id="newsfeed_content" class="tabcontent">
+			<table id="newsfeed_Table" border="0" cellpadding="0" cellspacing="0">
+				<tr class="newsfeedTableHeader" ng:show="dashboard[0].entries">
+					<td class="table_header newsfeed_message_from">From</td>
+					<td class="table_header newsfeed_message_text">Message</td>
+					<td class="table_header newsfeed_message_sent">Sent</td>
+				</tr>
+				<tr class="newsfeedTableEntry" ng:repeat="news_feed in dashboard[0].entries">
+					<td class="table_row newsfeed_message_from"><img src="{{news_feed.user_image}}"></td>
+					<td class="table_row newsfeed_message_text">
+						<span class="newsfeed_message_text_user">{{news_feed.subject}}</span><br />
+						<span class="newsfeed_message_text_msg">{{news_feed.message}}</span>
+					</td>
+					<td class="table_row newsfeed_message_sent ">{{news_feed.time_sent}}</td>
+				</tr>
+				<tr ng:hide="dashboard[0].entries">
+					<td class="table_row">
+						<section class="message_from_empty"><img src="gui/images/avatars/aperture50px.jpg"></section>
+						<section class="message_text_empty">
+							<span class="message_text_empty_header">Welcome to PivotalExpert.com!</span><br />
+							<span class="message_text_empty_msg">You have nothing in your newsfeed! Why don't you go find something to do here?<br />Are you looking for help with your idea? You can start by <a href="#/projects/create">creating a new project</a> for others to bid for.
+							<br /><br />Or if you're a student, you can look for a project to take part from <a href="#/projects">our list of projects</a>!</span><br />
+							<section class="settings_bigspeechbubble">Let's get started! ;)</section>
+							<section class="base_sunburst"><img src="gui/images/bottomburst-v02.jpg" /></section>
+						</section>
+					</td>
+				</tr>
+			</table>
+			
+			<div class="pagination_section" ng:show="dashboard[0].entries">
+				<ul>
+					<li>
+						<span class="pagination_sidelinks" ng:hide="newsfeeds.page_current == 1"><a href="#/newsfeeds/page/1">First</a></span>
+						<span class="currentsidelink" ng:show="newsfeeds.page_current == 1">First</span>
+					</li>
+					<li class="pagination_sidelinks" ng:hide="newsfeeds.page_current == 1"><a href="#/newsfeeds/page/{{newsfeeds.page_current-1}}"><</a></li>
+					<li ng:repeat="page in newsfeeds.page_numbers">
+						<span class="pagination_pages" ng:hide="page == newsfeeds.page_current"><a href="#/newsfeeds/page/{{page}}">{{page}}</a></span>
+						<span class="pagination_pages_current currentpage" ng:show="page == newsfeeds.page_current">{{page}}</span>
+					</li>
+					<li class="pagination_sidelinks" ng:hide="newsfeeds.page_current == newsfeeds.pages"><a href="#/newsfeeds/page/{{newsfeeds.page_current+1}}">></a></li>
+					<li>
+						<span class="pagination_sidelinks" ng:hide="newsfeeds.page_current == newsfeeds.pages"><a href="#/newsfeeds/page/{{newsfeeds.pages}}">Last</a></span>
+						<span class="currentsidelink" ng:show="newsfeeds.page_current == newsfeeds.pages">Last</span>
+					</li>
+				</ul>
+			</div>
+	</section>
+</section>
