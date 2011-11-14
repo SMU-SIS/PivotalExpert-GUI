@@ -314,6 +314,7 @@
 	padding: 34px;
 }
 .settings_notificationtext {
+	position: relative;
 	margin: 4px 0 65px 0;
 	font-size: 12px;
 }
@@ -321,8 +322,59 @@
 	padding-bottom: 8px;
 	border-bottom: 2px dotted #EC008C;
 }
+.settings_headertext {
+	font-size: 18px;
+	font-weight: bold;
+}
+.settings_notificationparatext {
+	width: 500px;
+	margin: 20px 0 80px 190px;
+}
+
+#settings_notification_verifiedacct {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 80px 0 0 165px;
+	text-align: left;
+	padding: 10px 50px;
+	border-top: 2px solid #F0F0F0;
+	border-bottom: 2px solid #F0F0F0;
+	font-size: 18px;
+	width: 450px;
+}
+.settings_notification_verifiedacct_header {
+	font-size: 12px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.settings_notification_verifiedacct_text {
+	font-size: 16px;
+}
+.right {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 10px 0 0 180px;
+}
+.rightbottom {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 35px 0 0 180px;
+}
+.shiftright {
+	margin: 35px 0 0 82px;
+}
 .settings_spacer {
 	height: 28px;
+}
+.settings_notification_verifiedacct_header a, .settings_notification_verifiedacct_header a:active, .settings_notification_verifiedacct_header:visited {
+	color: #000000;
+	text-decoration: none;
+}
+.settings_notification_verifiedacct_header a:hover {
+	color: #0097FE;
 }
 .base_sunburst {
 	margin-top: 20px;
