@@ -1,21 +1,43 @@
 
 
+<style>
 
 
+.sort_select_school {
 
-<section class="section_header">Settings | Verify School</section>
+}
+.sort_select_school_option {
+
+}
+#settings_school_sortbar {
+
+}
+
+</style>
 
 
-<h1>Verify your school</h1>
-<form action="/form/settings/school" method="post">
-	<div>
-		School: <select name="school_domain">
-					<option value="" default>-- Select a school --</option>
-					<option ng:repeat="school in schools" value="{{school.domain}}">{{school.name}}</option>
-				</select>
-	</div>
-	<div ng:show="school_domain">
-	School Email Address: <input type="text" name="school_user_id"/> @ {{school_domain}}
-	<input type="submit" value="Verify My School ID">
-	</div>
-</form>
+<script src="gui/js/scripts.js"></script>
+<link rel="stylesheet" href="gui/css/style-settings.css" type="text/css" media="screen" />
+<section id="settings_paypal_page">
+	<section id="settings_paypal_Header">
+		<section class="section_header">Settings | Verify School</section>
+		<section id="settings_paypal_emailbar">
+			<form method="post" action="form/settings/school">
+			<label for="createNewProject_title">Verify Your School:</label>
+			<select class="sort_select_school" name="school_domain">
+				<option class="sort_select_school_option" value="" default>-- Select a school --</option>
+				<option class="sort_select_school_option" ng:repeat="school in schools" value="{{school.domain}}">{{school.name}}</option>
+			</select>
+			</form>
+		</section>
+		<section id="settings_school_sortbar">
+			<section class="sort_subheader">sort by:</section>
+			<div ng:show="school_domain">
+			School Email Address: <input type="text" name="school_user_id"/> @ {{school_domain}}
+			<input type="submit" value="Verify My School ID">
+			</div>
+		</section>
+	</section>
+	
+</section>
+
