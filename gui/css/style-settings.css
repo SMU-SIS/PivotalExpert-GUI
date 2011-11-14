@@ -1,7 +1,7 @@
 
-#settings_paypal_page {
+#settings_paypal_page, #settings_school_page {
 }
-#settings_paypal_Header {
+#settings_paypal_Header, #settings_school_Header {
 	position: relative;
 	margin: 0;
 	padding: 0;
@@ -37,7 +37,7 @@
 	-webkit-right: 0;
 	margin-top: 4px;
 }
-#settings_paypal_email_save a, #settings_paypal_email_save a:active, #settings_paypal_email_save a:visited {
+#settings_paypal_email_savebtn {
 	background: #00AEFF;
 	padding: 6px 16px;
 	font-size: 10px;
@@ -48,8 +48,9 @@
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px; 
+	border: 0;
 }
-#settings_paypal_email_save a:hover {
+#settings_paypal_email_savebtn:hover {
 	background: #FFFF00;
 	color: #000000;
 }
