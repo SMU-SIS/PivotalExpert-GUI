@@ -55,6 +55,26 @@
 #user_profile_controls ul li {
 	display: inline;
 }
+#user_view_controls ul {
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+	text-align: left;
+}
+#user_view_controls ul li {
+	display: block;
+	margin-left: 6px;
+}
+#user_view_controls ul li a, #user_view_controls ul li a:active, #user_view_controls ul li a:visited {
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 10px;
+	font-weight: bold;
+	color: #000000;
+}
+#user_view_controls ul li a:hover {
+	color: #0097FE;
+}
 .profile_details_editProfile {
 }
 .profile_details_messages {
