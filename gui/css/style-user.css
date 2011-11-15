@@ -63,27 +63,32 @@
 }
 
 
-#user_performance_panel, #user_profile_badges_panel {
+#user_performance_panel, #user_profile_badges_panel,
+#user_view_profile_user_performance_panel, #user_view_profile_user_profile_badges_panel {
 	margin-bottom: 15px;
 }
-.performance_panel_Header, .profile_badges_panel_Header {
+.performance_panel_Header, .profile_badges_panel_Header,
+.user_view_profile_performance_panel_Header, .user_view_profile_badges_panel_Header {
 	font-size: 11px;
 	font-weight: bold;
 	padding-bottom: 3px;
 	border-bottom: 1px solid #E2E2E2;
 }
-#user_performance_panel ul, #user_profile_badges_panel ul {
+#user_performance_panel ul, #user_profile_badges_panel ul,
+#user_view_profile_user_performance_panel ul, #user_view_profile_user_profile_badges_panel ul {
 	padding: 0;
 	margin: 0;
 	border-bottom: 1px solid #E2E2E2;
 }
-#user_performance_panel ul li, #user_profile_badges_panel ul li {
+#user_performance_panel ul li, #user_profile_badges_panel ul li,
+#user_view_profile_user_performance_panel ul li, #user_view_profile_user_profile_badges_panel ul li {
 	position: relative;
 	list-style: none;
 	display: block;
 	margin: 2px 0 2px 0;
 }
-.performance_header, .profile_badges_header {
+.performance_header, .profile_badges_header,
+.user_view_profile_performance_header, .user_view_profile_badges_header {
 	position: relative;
 	font-size: 12px;
 	min-height: 28px;
@@ -94,11 +99,16 @@
 	font-variant: small-caps;
 	background: #0097FE;
 }
-.profile_badges_header {
+.user_view_profile_performance_header, .user_view_profile_badges_header {
+	font-size: 13px;
+	width: 345px;
+}
+.profile_badges_header, .user_view_profile_badges_header {
 	min-height: 16px;
 	line-height: 12px;
 }
-.performance_value, .profile_badges_value {
+.performance_value, .profile_badges_value,
+.user_view_profile_performance_value, .user_view_profile_badges_value {
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -114,26 +124,42 @@
 	border-top: 1px solid #FFFFFF;
 	border-left: 1px solid #0097FE;
 }
-.profile_badges_value {
+.user_view_profile_performance_value, .user_view_profile_badges_value {
+	margin-left: 350px;
+	width: 306px;
+	font-size: 22px;
+}
+.profile_badges_value, .user_view_profile_badges_value {
 	font: 13px Arial, Helvetica;
 	height: 17px;
 	font-weight: bold;
 }
-.profile_badges_score_total {
+.user_view_profile_badges_value {
+	font-size: 16px;
+}
+.profile_badges_score_total, .user_view_profile_badges_score_total {
 	font-size: 11px;
 	color: #797979;
 }
-.profile_badges_more_link {
+.user_view_profile_badges_score_total {
+	font-size: 13px;
+}
+.profile_badges_more_link, .user_view_profile_badges_more_link {
 	text-align: right;
 }
-.profile_badges_more_link a, .profile_badges_more_link a:active, .profile_badges_more_link a:visited {
+.user_view_profile_badges_more_link {
+	width: 660px;
+	font-size: 11px;
+}
+.profile_badges_more_link a, .profile_badges_more_link a:active, .profile_badges_more_link a:visited,
+.user_view_profile_badges_more_link a, .user_view_profile_badges_more_link a:active, .user_view_profile_badges_more_link a:visited {
 	color: #797979;
 	font-size: 12px;
 	font-weight: bold;
 	font-variant: small-caps;
 	text-decoration: none;
 }
-.profile_badges_more_link a:hover {
+.profile_badges_more_link a:hover, .user_view_profile_badges_more_link a:hover {
 	color: #0097FE;
 	text-decoration: underline;
 }
@@ -214,41 +240,46 @@
 	/**display: none;**/ 
 }
 
-#newsfeed_Table, #projectsmgt_workroom_Table, #projectsmgt_projects_Table, #projectsmgt_bids_Table {
+#newsfeed_Table, #projectsmgt_workroom_Table, #projectsmgt_projects_Table, #projectsmgt_bids_Table,
+#user_view_profile_Table {
 	position: relative;
 	font-family: Helvetica, Arial;
 	font-size: 12px;
 	display: block-inline;
 	width: 660px;
 }
-#newsfeed_Table {
+#newsfeed_Table, #user_view_profile_Table {
 	width: 680px;
 }
-#newsfeed_Table tr, #projectsmgt_workroom_Table tr, #projectsmgt_projects_Table tr, #projectsmgt_bids_Table tr {
+#newsfeed_Table tr, #projectsmgt_workroom_Table tr, #projectsmgt_projects_Table tr, #projectsmgt_bids_Table tr,
+#user_view_profile_Table tr {
 	margin: 0;
 	padding: 0;
 }
-#newsfeed_Table tr td, #projectsmgt_workroom_Table tr td, #projectsmgt_projects_Table tr td, #projectsmgt_bids_Table tr td {
+#newsfeed_Table tr td, #projectsmgt_workroom_Table tr td, #projectsmgt_projects_Table tr td, #projectsmgt_bids_Table tr td,
+#user_view_profile_Table tr td {
 	display: inline-block;
 	list-style: none;
 	padding: 5px 10px;
 }
 
 
-.newsfeedTableHeader, .projectsmgtWorkroomTableHeader, .projectsmgtProjectsTableHeader, .projectsmgtBidsTableHeader {
+.newsfeedTableHeader, .projectsmgtWorkroomTableHeader, .projectsmgtProjectsTableHeader, .projectsmgtBidsTableHeader,
+.userviewprofileTableHeader {
 	background: #FFFF00;
 }
 .table_header {
 	font-weight: bold;
 }
 .table_row {
+	position: relative;
 	margin-top: 8px;
 	min-height: 65px;
 }
 .table_row_projects {
 	margin: 8px 0 5px 0;
 }
-.newsfeedTableEntry {
+.newsfeedTableEntry, .userviewprofileTableEntry {
 	margin: 1px;
 	padding: 1px;
 	border-bottom: 1px solid #E2E2E2;
@@ -260,16 +291,15 @@
 .newsfeed_message_text {
 	width: 330px;
 }
-.message_from_empty {
+.message_from_empty, .message_from_profile_empty {
 	position: absolute;
 	top: 0;
 	left: 0;
-	margin: 15px 0 0 10px;
+	margin: 5px 0 0 10px;
 }
 .message_text_empty {
 	position: relative;
 	margin: 0 0 0 75px;
-	
 }
 .newsfeed_message_text_user, .message_text_empty_header {
 	font-weight: bold;
@@ -516,6 +546,8 @@
 #user_newsfeed {
 }
 #user_projects {
+}
+#user_newsfeed {
 }
 
 

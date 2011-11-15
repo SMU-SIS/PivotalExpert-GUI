@@ -1,7 +1,7 @@
 
 <script src="gui/js/scripts.js"></script>
 <link rel="stylesheet" href="gui/css/style-user.css" type="text/css" media="screen" />
-<section class="body_main" ng:controller="DashboardCtrl" ng:init="dashboard_view = 'gui/html/dashboard_newsfeed.html'">
+<section class="body_main" ng:init="user_view = 'gui/html/user_view_profile.html'">
 	<!--left panel-->
 	<section id="left_panel">
 		<section id="user_details_panel"> 
@@ -14,9 +14,8 @@
 			</section>
 			<section id="user_view_controls">
 				<ul>
-					<li class="profile_details_editProfile"><a href="#/settings/user" alt="Edit Profile"><img src="gui/icons/edit.png" alt="Edit Profile"></a></li>
-					<li class="profile_details_messages"><a href="#/messages" alt="Inbox"><img src="gui/icons/inbox.png" alt="Inbox"></a></li>
-					<li class="profile_details_contactList"><a href="#/contact_list" alt="Contact List"><img src="gui/icons/contactlist.png" alt="Contact List"></a></li>
+					<li class="profile_details_editProfile"><a href="#/settings/user" alt="Edit Profile"><img src="gui/icons/edit.png" alt="Edit Profile">Add as Friend</a></li>
+					<li class="profile_details_messages"><a href="#/messages" alt="Inbox"><img src="gui/icons/inbox.png" alt="Inbox">Send a Message</a></li>
 				</ul>
 			</section>
 		</section>
@@ -31,9 +30,7 @@
 					<li><a ng:click="user_view = 'gui/html/user_view_badges.html'" id="user_badges_tab" onclick="$(this).addClass('active');$('#user_profile_tab').removeClass('active');$('#user_work_tab').removeClass('active');">My Badges</a></li>
 				</ul>
 			</section>
-			<section id="user_view" ng:init="user_view = 'gui/html/user_view_profile.html'">
-				<ng:include src="user_view" />
-			</section>
+			<ng:include src="user_view" />
 		</section>
 	</section>
 </section>
