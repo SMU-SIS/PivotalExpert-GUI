@@ -2,32 +2,29 @@
 <section id="user_projectsmgt_workroom">
 	<section id="workroom_content" class="subtabcontent">	
 		<table id="projectsmgt_workroom_Table" border="0" cellpadding="0" cellspacing="0">
-			<tr class="projectsmgtWorkroomTableHeader" ng:show="dashboard[0].workrooms">
-				<td class="table_header projectsmgt_workroom_title">Title</td>
-				<td class="table_header projectsmgt_workroom_owner">Owner</td>
-				<td class="table_header projectsmgt_workroom_developer">Developer</td>
-				<td class="table_header projectsmgt_workroom_iteration">Iteration</td>
-				<td class="table_header projectsmgt_workroom_price">Price</td>
-				<td class="table_header projectsmgt_workroom_action">Action</td>
+			<tr class="projectsmgtWorkroomTableHeader" ng:show="user.workrooms_owner">
+				<td class="table_header user_wrk_workroom_title">Title</td>
+				<td class="table_header user_wrk_workroom_description">Description</td>
+				<td class="table_header user_wrk_workroom_developer">Developer</td>
+				<td class="table_header user_wrk_workroom_iteration">Iteration</td>
+				<td class="table_header user_wrk_workroom_action">Project</td>
 			</tr>
-			<tr class="projectsmgtWorkroomTableEntry" ng:repeat="workroom in dashboard[0].workrooms"
+			<tr class="projectsmgtWorkroomTableEntry" ng:repeat="workroom in user.workrooms_owner"
 				  onmouseover="HighlightWorkroomRow(this, true);" 
 				  onmouseout="HighlightWorkroomRow(this, false);" 
 				  onclick="GoToURL('#/workroom/{{workroom.id}}');">
 				<td class="table_row projectsmgt_workroom_title"><div class="workroom_title">{{workroom.title}}</div></td>
-				<td class="table_row projectsmgt_workroom_owner workroom_height">
-					<span class="projectsmgt_workroom_owner_pic"><img src="http://www.gravatar.com/avatar/{{workroom.owner_gravatar}}?s=50&d=mm"></span>
-					<span class="projectsmgt_workroom_owner_name">{{workroom.owner}}</span>
+				<td class="table_row user_wrk_workroom_description workroom_height">{{workroom.description}}</td>
+				<td class="table_row user_wrk_workroom_developer workroom_height">
+					<a href="#/user/{{workroom.dev_id}}">
+						<span class="user_wrk_workroom_developer_pic"><img src="http://www.gravatar.com/avatar/{{workroom.dev_gravatar}}?s=50&d=mm"/></span>
+						<span class="user_wrk_workroom_developer_name">{{workroom.dev_nickname}}</span>
+					</a>
 				</td>
-				<td class="table_row projectsmgt_workroom_developer workroom_height">
-					<span class="projectsmgt_workroom_developer_pic"><img src="http://www.gravatar.com/avatar/{{workroom.developer_gravatar}}?s=50&d=mm"></span>
-					<span class="projectsmgt_workroom_developer_name">{{workroom.developer}}</span>
-				</td>
-				<td class="table_row projectsmgt_workroom_iteration workroom_height">{{workroom.iteration}}</td>
-				<td class="table_row projectsmgt_workroom_price workroom_height">USD${{workroom.budget}}</td>
-				<td class="table_row projectsmgt_workroom_action workroom_height"><a href="#/workroom/{{workroom.url}}">Manage {{workroom.url}}</a></td>
+				<td class="table_row user_wrk_workroom_iteration workroom_height">{{workroom.current_iteration}}/{{workroom.total_iterations}}</td>
+				<td class="table_row user_wrk_workroom_action workroom_height"><a href="#/project/{{workroom.project_id}}">View</a></td>
 			</tr>
-			<tr ng:hide="dashboard[0].workrooms">
+			<tr ng:hide="user.workrooms_owner">
 				<td class="table_row">
 					<section class="message_from_empty"><img src="http://www.gravatar.com/avatar/{{user.gravatar}}?s=50&d=mm" alt="{{currentUser.nickname}}" border="3"/></section>
 					<section class="message_text_empty">
@@ -40,7 +37,7 @@
 			</tr>
 		</table>
 		
-		<div class="pagination_section" ng:show="dashboard[0].workrooms">
+		<div class="pagination_section" ng:show="user.workrooms_owner">
 			<ul>
 				<li>
 					<span class="pagination_sidelinks" ng:hide="myworkroom.page_current == 1"><a href="#/myworkroom/page/1">First</a></span>

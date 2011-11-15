@@ -367,15 +367,15 @@
 	border-bottom: 4px solid #000000;
 }
 .projectsmgt_workroom_owner, .projectsmgt_workroom_developer, .projectsmgt_bids_owner, 
-.user_wrk_workroom_owner {
+.user_wrk_workroom_owner, .user_wrk_workroom_developer {
 	position: relative;
 	width: 110px;
 }
 .projectsmgt_workroom_owner_pic, .projectsmgt_workroom_developer_pic, .projectsmgt_bids_owner_pic, 
-.user_wrk_workroom_owner_pic {
+.user_wrk_workroom_owner_pic, .user_wrk_workroom_developer_pic {
 }
 .projectsmgt_workroom_owner_name, .projectsmgt_workroom_developer_name, .projectsmgt_bids_owner_name, 
-.user_wrk_workroom_owner_name {
+.user_wrk_workroom_owner_name, .user_wrk_workroom_developer_name {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -401,12 +401,13 @@
 .user_wrk_workroom_iteration {
 	width: 40px;
 }
-.user_wrk_workroom_price {
+.user_wrk_workroom_action {
 	width: 65px;
 }
 
 .projectsmgt_workroom_action a, .projectsmgt_workroom_action a:active, .projectsmgt_workroom_action a:visited,
-.projectsmgt_projects_action a, .projectsmgt_projects_action a:active, .projectsmgt_projects_action a:visited {
+.projectsmgt_projects_action a, .projectsmgt_projects_action a:active, .projectsmgt_projects_action a:visited,
+.user_wrk_workroom_action a, .user_wrk_workroom_action a:active, .user_wrk_workroom_action a:visited {
 	font-size: 10px;
 	font-weight: bold;
 	text-transform: uppercase;
@@ -415,7 +416,8 @@
 	color: #000000;
 	background: #FFD101;
 }
-.projectsmgt_workroom_action a:hover, .projectsmgt_projects_action a:hover {
+.projectsmgt_workroom_action a:hover, .projectsmgt_projects_action a:hover,
+.user_wrk_workroom_action a:hover {
 	color: #FFFFFF;
 	background: #000000;
 }
