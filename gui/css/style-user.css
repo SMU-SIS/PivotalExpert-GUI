@@ -578,41 +578,46 @@
 	position: relative;
 }
 
-#user_profile_edit_personal {
-	position: relative;
-	width: 450px;
+.highlightleft {
+	padding-left: 50px;
+	border-left: 152px solid #FFFF00;
 }
+
 #user_profile_edit_personal_inputPhoto {
 	position: absolute;
 	left: 0;
 	top: 0;
 	margin-top: 55px;
 	border: 1px solid #888888;
-	width: 80px;
-	height: 80px;
+	width: 150px;
+	height: 180px;
 }
 .editPersonal_photo_text {
 	display: block;
 	background: #888888;
-	font-size: 11px;
+	font-size: 14px;
 	font-weight: bold;
-	padding: 3px 8px;
+	padding: 5px 0;
 	color: #FFFFFF;
 	text-align: center;
 	border: 2px solid #888888;
 	text-transform: uppercase;
 }
-#user_profile_edit_personal_inputSegment {
+
+#user_profile_edit_personal, #user_profile_edit_school {
 	position: relative;
-	margin-left: 100px;
+	top: 0;
+	left: 0;
+	margin: 0 0 0 200px;
+	width: 650px;
 }
 #user_profile_edit_school {
-	position: absolute;
-	left: 0;
-	top: 0;
-	margin-left: 500px;
-	width: 380px;
 }
+
+#user_profile_edit_personal_inputSegment {
+	position: relative;
+}
+
 form#editPersonalForm {
 	min-height: 350px;
 	height: auto;
@@ -628,7 +633,7 @@ form#editPersonalForm ol {
 }
 form#editPersonalForm ol li {
     position: relative;
-    margin: 2px 0 2px 0px;
+    margin: 5px 0px;
     line-height: 30px;
     list-style: none;
     float: left;
@@ -658,16 +663,19 @@ form#editPersonalForm input:not([type=radio]), form#editPersonalForm textarea {
     border-radius: 3px;
     font: italic 13px Georgia, "Times New Roman", Times, serif;
     outline: none;
-    padding: 5px;
-    width: 180px;
+    padding: 8px;
+    width: 480px;
+}
+form#editPersonalForm textarea {
+	min-height: 100px;
 }
 form#editPersonalForm input:not([type=submit]):focus, form#editPersonalForm textarea:focus {
     background: #FFFF00;
 }
 
 #user_details_edit_panel_footer {
-	text-align: left;
-	margin: 30px 0 0 265px;
+	text-align: right;
+	margin: 30px 50px 0 265px;
 }
 #user_details_edit_panel_footer fieldset button {
     background: #00AEFF;
@@ -678,9 +686,9 @@ form#editPersonalForm input:not([type=submit]):focus, form#editPersonalForm text
     border-radius: 8px;
     color: #ffffff;
     display: inline;
-    font: 12px Arial, Helvetica, sans-serif;
+    font: 14px Arial, Helvetica, sans-serif;
     letter-spacing: 1px;
-    padding: 8px 35px;
+    padding: 8px 55px;
     text-transform: uppercase;
 }
 #user_details_edit_panel_footer fieldset button:hover {
