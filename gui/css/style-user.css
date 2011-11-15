@@ -210,7 +210,7 @@
 	padding: 15px;
 	border: 1px solid #E9E9E9;
 }
-#projectsmgt_content, #returnontime_content { 
+#projectsmgt_content, #returnontime_content, #user_work_content { 
 	/**display: none;**/ 
 }
 
@@ -366,13 +366,16 @@
 	font-weight: bold;
 	border-bottom: 4px solid #000000;
 }
-.projectsmgt_workroom_owner, .projectsmgt_workroom_developer, .projectsmgt_bids_owner {
+.projectsmgt_workroom_owner, .projectsmgt_workroom_developer, .projectsmgt_bids_owner, 
+.user_wrk_workroom_owner {
 	position: relative;
 	width: 110px;
 }
-.projectsmgt_workroom_owner_pic, .projectsmgt_workroom_developer_pic, .projectsmgt_bids_owner_pic {
+.projectsmgt_workroom_owner_pic, .projectsmgt_workroom_developer_pic, .projectsmgt_bids_owner_pic, 
+.user_wrk_workroom_owner_pic {
 }
-.projectsmgt_workroom_owner_name, .projectsmgt_workroom_developer_name, .projectsmgt_bids_owner_name {
+.projectsmgt_workroom_owner_name, .projectsmgt_workroom_developer_name, .projectsmgt_bids_owner_name, 
+.user_wrk_workroom_owner_name {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -389,6 +392,19 @@
 .projectsmgt_workroom_action {
 	width: 55px;
 }
+.user_wrk_workroom_title {
+	width: 120px;
+}
+.user_wrk_workroom_description {
+	width: 160px;
+}
+.user_wrk_workroom_iteration {
+	width: 40px;
+}
+.user_wrk_workroom_price {
+	width: 65px;
+}
+
 .projectsmgt_workroom_action a, .projectsmgt_workroom_action a:active, .projectsmgt_workroom_action a:visited,
 .projectsmgt_projects_action a, .projectsmgt_projects_action a:active, .projectsmgt_projects_action a:visited {
 	font-size: 10px;
@@ -419,6 +435,18 @@
 .projectsmgt_projects_action {
 	width: 45px;
 }
+.user_wrk_projects_title {
+	width: 210px;
+}
+.user_wrk_projects_status {
+	width: 170px;
+}
+.user_wrk_projects_budget {
+	width: 105px;
+}
+.user_wrk_projects_action {
+	width: 45px;
+}
 
 .projectsmgt_bids_title {
 	padding-left: 5px;
@@ -443,20 +471,17 @@
 	line-height: 12px;
 }
 
-
-#projectsmgt_content {
-}
-#projectsmgt_content ul.subtabs {
+#projectsmgt_content ul.subtabs, #user_work_content ul.subtabs {
 	margin: 0; 
 	padding: 0;
 	margin-top: 5px;
 	margin-bottom: 6px;
 }
-#projectsmgt_content ul.subtabs li {
+#projectsmgt_content ul.subtabs li, #user_work_content ul.subtabs li {
 	list-style: none;
 	display: inline;
 }
-#projectsmgt_content ul.subtabs li a {
+#projectsmgt_content ul.subtabs li a, #user_work_content ul.subtabs li a {
 	background-color: #E9E9E9;
 	color: #000000;
 	padding:8px 14px 8px 14px;
@@ -467,10 +492,10 @@
 	text-transform: uppercase;
 	border: 1px solid #E9E9E9;
 }
-#projectsmgt_content ul.subtabs li a:hover {
+#projectsmgt_content ul.subtabs li a:hover, #user_work_content ul.subtabs li a:hover {
 	background-color: #FFFF00;
 }
-#projectsmgt_content ul.subtabs li a.active {
+#projectsmgt_content ul.subtabs li a.active, #user_work_content ul.subtabs li a.active {
 	background-color: #FFFFFF;
 	color: #282E32;
 	border: 1px solid #E9E9E9;

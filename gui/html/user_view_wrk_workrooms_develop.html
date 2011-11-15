@@ -1,0 +1,57 @@
+
+<section id="user_projectsmgt_workroom">
+	<section id="workroom_content" class="subtabcontent">	
+		<table id="projectsmgt_workroom_Table" border="0" cellpadding="0" cellspacing="0">
+			<tr class="projectsmgtWorkroomTableHeader" ng:hide="user.workrooms_dev">
+				<td class="table_header user_wrk_workroom_title">Title</td>
+				<td class="table_header user_wrk_workroom_description">Description</td>
+				<td class="table_header user_wrk_workroom_owner">Owner</td>
+				<td class="table_header user_wrk_workroom_iteration">Iteration</td>
+				<td class="table_header user_wrk_workroom_price">Price</td>
+			</tr>
+			<tr class="projectsmgtWorkroomTableEntry" ng:repeat="workroom in user.workrooms_dev"
+				  onmouseover="HighlightWorkroomRow(this, true);" 
+				  onmouseout="HighlightWorkroomRow(this, false);" 
+				  onclick="GoToURL('#/workroom/{{workroom.id}}');">
+				<td class="table_row projectsmgt_workroom_title"><div class="workroom_title">{{workroom.title}}</div></td>
+				<td class="table_row user_wrk_workroom_description workroom_height">{{workroom.iteration}}</td>
+				<td class="table_row user_wrk_workroom_owner workroom_height">
+					<span class="user_wrk_workroom_owner_pic"><img src="http://www.gravatar.com/avatar/{{workroom.owner_gravatar}}?s=50&d=mm"></span>
+					<span class="user_wrk_workroom_owner_name">{{workroom.owner}}</span>
+				</td>
+				<td class="table_row user_wrk_workroom_iteration workroom_height">{{workroom.iteration}}</td>
+				<td class="table_row user_wrk_workroom_price workroom_height">USD${{workroom.budget}}</td>
+			</tr>
+			<tr ng:hide="user.workrooms_dev">
+				<td class="table_row">
+					<section class="message_from_empty"><img src="http://www.gravatar.com/avatar/{{user.gravatar}}?s=50&d=mm" alt="{{currentUser.nickname}}" border="3"/></section>
+					<section class="message_text_empty">
+						<span class="message_text_empty_header">Work in Progress! ;)</span><br />
+						<span class="message_text_empty_msg">I'm still working on something. Check me back later or drop me a message! ;)
+						<section class="settings_bigspeechbubble">Got an idea?</section>
+						<section class="base_sunburst"><img src="gui/images/bottomburst-v02.jpg" /></section>
+					</section>
+				</td>
+			</tr>
+		</table>
+		
+		<div class="pagination_section" ng:show="dashboard[0].workrooms">
+			<ul>
+				<li>
+					<span class="pagination_sidelinks" ng:hide="myworkroom.page_current == 1"><a href="#/myworkroom/page/1">First</a></span>
+					<span class="currentsidelink" ng:show="myworkroom.page_current == 1">First</span>
+				</li>
+				<li class="pagination_sidelinks" ng:hide="myworkroom.page_current == 1"><a href="#/myworkroom/page/{{myworkroom.page_current-1}}"><</a></li>
+				<li ng:repeat="page in myworkroom.page_numbers">
+					<span class="pagination_pages" ng:hide="page == myworkroom.page_current"><a href="#/myworkroom/page/{{page}}">{{page}}</a></span>
+					<span class="pagination_pages_current currentpage" ng:show="page == myworkroom.page_current">{{page}}</span>
+				</li>
+				<li class="pagination_sidelinks" ng:hide="myworkroom.page_current == myworkroom.pages"><a href="#/myworkroom/page/{{myworkroom.page_current+1}}">></a></li>
+				<li>
+					<span class="pagination_sidelinks" ng:hide="myworkroom.page_current == myworkroom.pages"><a href="#/myworkroom/page/{{myworkroom.pages}}">Last</a></span>
+					<span class="currentsidelink" ng:show="myworkroom.page_current == myworkroom.pages">Last</span>
+				</li>
+			</ul>
+		</div>
+	</section>
+</section>

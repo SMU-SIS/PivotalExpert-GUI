@@ -1,49 +1,14 @@
 
-<section id="user_projectsmgt_projects">
-	<section id="projects_content" class="subtabcontent">	
-		<table id="projectsmgt_projects_Table" border="0" cellpadding="0" cellspacing="0">
-			<tr class="projectsmgtProjectsTableHeader" ng:show="dashboard[0].projects">
-				<td class="table_header projectsmgt_projects_title">Title</td>
-				<td class="table_header projectsmgt_projects_status">Status</td>
-				<td class="table_header projectsmgt_projects_budget">Budget</td>
-				<td class="table_header projectsmgt_projects_expiryDate">Expiry Date</td>
-				<td class="table_header projectsmgt_projects_action">Action</td>
-			</tr>
-			<tr class="projectsmgtProjectsTableEntry" ng:repeat="project in dashboard[0].projects"
-				  onmouseover="HighlightProjectsRow(this, true);" 
-				  onmouseout="HighlightProjectsRow(this, false);" 
-				  onclick="GoToURL('#/projects/{{project.id}}');">
-				<td class="table_row_projects projectsmgt_projects_title">{{project.title}}</td>
-				<td class="table_row_projects projectsmgt_projects_status">{{project.status}}</td>
-				<td class="table_row_projects projectsmgt_projects_budget">SGD${{project.amount}}</td>
-				<td class="table_row_projects projectsmgt_projects_expiryDate">{{project.expire}}</td>
-				<td class="table_row_projects projectsmgt_projects_action"><a href="#/projects/{{project.id}}">View</a></td>
-			</tr>
-			<tr ng:hide="dashboard[0].projects">
-				<td class="table_row">
-					
-				</td>
-			</tr>
-		</table>
-		
-		<div class="pagination_section" ng:show="dashboard[0].projects">
-			<ul>
-				<li>
-					<span class="pagination_sidelinks" ng:hide="myprojects.page_current == 1"><a href="#/myprojects/page/1">First</a></span>
-					<span class="currentsidelink" ng:show="myprojects.page_current == 1">First</span>
-				</li>
-				<li class="pagination_sidelinks" ng:hide="myprojects.page_current == 1"><a href="#/myprojects/page/{{myprojects.page_current-1}}"><</a></li>
-				<li ng:repeat="page in myprojects.page_numbers">
-					<span class="pagination_pages" ng:hide="page == myprojects.page_current"><a href="#/myprojects/page/{{page}}">{{page}}</a></span>
-					<span class="pagination_pages_current currentpage" ng:show="page == myprojects.page_current">{{page}}</span>
-				</li>
-				<li class="pagination_sidelinks" ng:hide="myprojects.page_current == myprojects.pages"><a href="#/myprojects/page/{{myprojects.page_current+1}}">></a></li>
-				<li>
-					<span class="pagination_sidelinks" ng:hide="myprojects.page_current == myprojects.pages"><a href="#/myprojects/page/{{myprojects.pages}}">Last</a></span>
-					<span class="currentsidelink" ng:show="myprojects.page_current == myprojects.pages">Last</span>
-				</li>
+<section id="user_work_view" ng:init="user_work_view = 'gui/html/user_view_wrk_workrooms_own.html'">
+	<section id="user_work_content" class="tabcontent">	
+		<section class="subtabs">
+			<ul class="subtabs">
+				<li><a ng:click="user_work_view = 'gui/html/user_view_wrk_workrooms_own.html'" id="wrk_workrooms_own_tab" class="active"  onclick="$(this).addClass('active');$('#wrk_workrooms_develop_tab').removeClass('active');$('#wrk_projects_own_tab').removeClass('active');">Work I Own</a></li>
+				<li><a ng:click="user_work_view = 'gui/html/user_view_wrk_workrooms_develop.html'" id="wrk_workrooms_develop_tab" class="active"  onclick="$(this).addClass('active');$('#wrk_workrooms_own_tab').removeClass('active');$('#wrk_projects_own_tab').removeClass('active');">Work I Develop</a></li>
+				<li><a ng:click="user_work_view = 'gui/html/user_view_wrk_projects_own.html'" id="wrk_projects_own_tab" onclick="$(this).addClass('active');$('#wrk_workrooms_own_tab').removeClass('active');$('#wrk_workrooms_develop_tab').removeClass('active');">Projects I Own</a></li>
 			</ul>
-		</div>
+		</section>
+		<ng:include src="user_work_view" />
 	</section>
 </section>
 
@@ -52,11 +17,6 @@
 
 
 
-
-<h3>My work</h3>
-<ul ng:init="workrooms = 'True'">
-	<li><a ng:click="workrooms = 'True'">My Work</a></li>
-	<li><a ng:click="workrooms = 'False'">My Projects</a></li>
 
 <div ng:show="workrooms">
 	<div ng:show="user.workrooms_owner">
@@ -106,20 +66,3 @@
 	</div>
 </div>
 
-<div ng:hide="workrooms">
-	<strong>Projects I Own</strong>
-	<table>
-		<tr>
-			<th>Title</th>
-			<th>Status</th>
-			<th>Budget</th>
-			<th>View</th>
-		</tr>
-		<tr ng:repeat="project in user.projects">
-			<td>{{project.title}}</td>
-			<td>{{project.status}}</td>
-			<td>{{project.budget}}</td>
-			<td><a href="#/project/{{project.id}}">View</a></td>
-		</tr>
-	</table>
-</div>
