@@ -1,53 +1,62 @@
 <!-- this is the Bids tab belonging to the Project Management group-->
-					<section id="user_projectsmgt_bids">
-						<section id="bids_content" class="subtabcontent">	
-							<table id="projectsmgt_bids_Table" border="0" cellpadding="0" cellspacing="0">
-								<tr class="projectsmgtBidsTableHeader">
-									<td class="table_header projectsmgt_bids_title">Title</td>
-									<td class="table_header projectsmgt_bids_owner">Owner</td>
-									<td class="table_header projectsmgt_bids_tags">Tags</td>
-									<td class="table_header projectsmgt_bids_status">Status</td>
-									<td class="table_header projectsmgt_bids_date">Date</td>
-									<td class="table_header projectsmgt_bids_message">Message</td>
-								</tr>
-								<tr class="projectsmgtBidsTableEntry" ng:repeat="bid in dashboard[0].bids"
-									  onmouseover="HighlightBidsRow(this, true);" 
-									  onmouseout="HighlightBidsRow(this, false);" 
-									  onclick="GoToURL('#/projects/{{bid.project_id}}');">
-									<td class="table_row projectsmgt_bids_title">{{bid.title}}</td>
-									<td class="table_row projectsmgt_bids_owner bids_height">
-										<span class="projectsmgt_bids_owner_pic"><img src="http://www.gravatar.com/avatar/{{bid.owner_gravatar}}?s=50&d=mm"></span>
-										<span class="projectsmgt_bids_owner_name">{{bid.owner}}</span>
-									</td>
-									<td class="table_row projectsmgt_bids_tags bids_height">
-										<span ng:repeat="tag in bid.tags"><span ng:hide="$position == 'first'">, </span>{{tag}}</span>
-									</td>
-									<td class="table_row projectsmgt_bids_status bids_height">{{bid.status}}</td>
-									<td class="table_row projectsmgt_bids_date bids_height">{{bid.date}}</td>
-									<td class="table_row projectsmgt_bids_message bids_height">{{bid.messageUrl}}</td>
-								</tr>
-								<tr class="projectsmgtBidsTableEntry" colspan="5" ng:hide="dashboard[0].bids"><td><h3>You have no bids yet!</h3>
-								<p>If you'd like to earn some money by helping develop a project, you can start by <a href="#/projects">finding a project to bid for here</a>.</p>
-								</td></tr>
-							</table>
-							
-							<div class="pagination_section">
-								<ul>
-									<li>
-										<span class="pagination_sidelinks" ng:hide="mybids.page_current == 1"><a href="#/mybids/page/1">First</a></span>
-										<span class="currentsidelink" ng:show="mybids.page_current == 1">First</span>
-									</li>
-									<li class="pagination_sidelinks" ng:hide="mybids.page_current == 1"><a href="#/mybids/page/{{mybids.page_current-1}}"><</a></li>
-									<li ng:repeat="page in mybids.page_numbers">
-										<span class="pagination_pages" ng:hide="page == mybids.page_current"><a href="#/mybids/page/{{page}}">{{page}}</a></span>
-										<span class="pagination_pages_current currentpage" ng:show="page == mybids.page_current">{{page}}</span>
-									</li>
-									<li class="pagination_sidelinks" ng:hide="mybids.page_current == mybids.pages"><a href="#/mybids/page/{{mybids.page_current+1}}">></a></li>
-									<li>
-										<span class="pagination_sidelinks" ng:hide="mybids.page_current == mybids.pages"><a href="#/mybids/page/{{mybids.pages}}">Last</a></span>
-										<span class="currentsidelink" ng:show="mybids.page_current == mybids.pages">Last</span>
-									</li>
-								</ul>
-							</div>
-						</section>
+<section id="user_projectsmgt_bids">
+	<section id="bids_content" class="subtabcontent">	
+		<table id="projectsmgt_bids_Table" border="0" cellpadding="0" cellspacing="0">
+			<tr class="projectsmgtBidsTableHeader" ng:show="dashboard[0].bids">
+				<td class="table_header projectsmgt_bids_title">Title</td>
+				<td class="table_header projectsmgt_bids_owner">Owner</td>
+				<td class="table_header projectsmgt_bids_tags">Tags</td>
+				<td class="table_header projectsmgt_bids_status">Status</td>
+				<td class="table_header projectsmgt_bids_date">Date</td>
+				<td class="table_header projectsmgt_bids_message">Message</td>
+			</tr>
+			<tr class="projectsmgtBidsTableEntry" ng:repeat="bid in dashboard[0].bids"
+				  onmouseover="HighlightBidsRow(this, true);" 
+				  onmouseout="HighlightBidsRow(this, false);" 
+				  onclick="GoToURL('#/projects/{{bid.project_id}}');">
+				<td class="table_row projectsmgt_bids_title">{{bid.title}}</td>
+				<td class="table_row projectsmgt_bids_owner bids_height">
+					<span class="projectsmgt_bids_owner_pic"><img src="http://www.gravatar.com/avatar/{{bid.owner_gravatar}}?s=50&d=mm"></span>
+					<span class="projectsmgt_bids_owner_name">{{bid.owner}}</span>
+				</td>
+				<td class="table_row projectsmgt_bids_tags bids_height">
+					<span ng:repeat="tag in bid.tags"><span ng:hide="$position == 'first'">, </span>{{tag}}</span>
+				</td>
+				<td class="table_row projectsmgt_bids_status bids_height">{{bid.status}}</td>
+				<td class="table_row projectsmgt_bids_date bids_height">{{bid.date}}</td>
+				<td class="table_row projectsmgt_bids_message bids_height">{{bid.messageUrl}}</td>
+			</tr>
+			<tr ng:hide="dashboard[0].bids">
+				<td class="table_row">
+					<section class="message_from_empty"><img src="gui/images/avatars/aperture50px.jpg"></section>
+					<section class="message_text_empty">
+						<span class="message_text_empty_header">Welcome to PivotalExpert.com!</span><br />
+						<span class="message_text_empty_msg">You have no bids yet!<br /><br />
+						If you'd like to find student developers to help you with a project, you can start by <a href="#/projects/create">creating a project here</a>.
+						<section class="settings_bigspeechbubble">Let's start something!</section>
+						<section class="base_sunburst"><img src="gui/images/bottomburst-v02.jpg" /></section>
 					</section>
+				</td>
+			</tr>
+		</table>
+		
+		<div class="pagination_section" ng:show="dashboard[0].bids">
+			<ul>
+				<li>
+					<span class="pagination_sidelinks" ng:hide="mybids.page_current == 1"><a href="#/mybids/page/1">First</a></span>
+					<span class="currentsidelink" ng:show="mybids.page_current == 1">First</span>
+				</li>
+				<li class="pagination_sidelinks" ng:hide="mybids.page_current == 1"><a href="#/mybids/page/{{mybids.page_current-1}}"><</a></li>
+				<li ng:repeat="page in mybids.page_numbers">
+					<span class="pagination_pages" ng:hide="page == mybids.page_current"><a href="#/mybids/page/{{page}}">{{page}}</a></span>
+					<span class="pagination_pages_current currentpage" ng:show="page == mybids.page_current">{{page}}</span>
+				</li>
+				<li class="pagination_sidelinks" ng:hide="mybids.page_current == mybids.pages"><a href="#/mybids/page/{{mybids.page_current+1}}">></a></li>
+				<li>
+					<span class="pagination_sidelinks" ng:hide="mybids.page_current == mybids.pages"><a href="#/mybids/page/{{mybids.pages}}">Last</a></span>
+					<span class="currentsidelink" ng:show="mybids.page_current == mybids.pages">Last</span>
+				</li>
+			</ul>
+		</div>
+	</section>
+</section>

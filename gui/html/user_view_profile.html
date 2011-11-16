@@ -1,2 +1,90 @@
-<h3>About me</h3>
-<p>{{user.about}}</p>
+
+<section id="user_view_profile">
+	<section id="user_view_profile_content" class="tabcontent">
+			<table id="user_view_profile_Table" border="0" cellpadding="0" cellspacing="0">
+				<tr class="userviewprofileTableHeader">
+					<td class="table_header message_text_header">About Me</td>
+				</tr>
+				<tr class="userviewprofileTableEntry" ng:show="user.about">
+					<td class="table_row message_text_msg">{{user.about}}</td>
+				</tr>
+				<tr ng:hide="user.about">
+					<td class="table_row">
+						<section class="message_from_profile_empty"><img src="http://www.gravatar.com/avatar/{{user.gravatar}}?s=50&d=mm" alt="{{currentUser.nickname}}" border="3"/></section>
+						<section class="message_text_empty">
+							<span class="message_text_empty_header">Details coming right up!</span><br />
+							<span class="message_text_empty_msg">I'm taking some time to write a little more about myself. Do come back to check on my profile later or drop me a message! ;)</span><br />
+						</section>
+					</td>
+				</tr>
+				
+				<tr class="userviewprofileTableHeader">
+					<td class="table_header message_text_header">Email</td>
+				</tr>
+				<tr class="userviewprofileTableEntry" ng:show="user.email">
+					<td class="table_row message_text_msg"><strong>{{user.email}}</strong></td>
+				</tr>
+				<tr ng:hide="user.email">
+					<td class="table_row">
+						<section class="message_from_profile_empty"><img src="http://www.gravatar.com/avatar/{{user.gravatar}}?s=50&d=mm" alt="{{currentUser.nickname}}" border="3"/></section>
+						<section class="message_text_empty">
+							<span class="message_text_empty_header">Email coming right up!</span><br />
+							<span class="message_text_empty_msg">I'm taking some time to setup my email account. Do come back to check on my profile later or drop me a message! ;)</span><br />
+						</section>
+					</td>
+				</tr>
+				
+				<tr class="userviewprofileTableHeader">
+					<td class="table_header message_text_header">Vital Statistics</td>
+				</tr>
+				<tr class="userviewprofileTableEntry" ng:hide="user.about">
+					<td class="table_row message_text_msg">
+						<section id="user_view_profile_user_performance_panel">
+							<div class="user_view_profile_performance_panel_Header">My Performance</div>
+							<ul>
+								<li>
+									<div class="user_view_profile_performance_header">Total Earnings:</div>
+									<div class="user_view_profile_performance_value">USD$25,039</div>
+								</li>
+								<li>
+									<div class="user_view_profile_performance_header">Projects Completed:</div>
+									<div class="user_view_profile_performance_value">20</div>
+								</li>
+								<li>
+									<div class="user_view_profile_performance_header">Weekly Plans Completed:</div>
+									<div class="user_view_profile_performance_value">12</div>
+								</li>
+								<li>
+									<div class="user_view_profile_performance_header">Projects in Progress:</div>
+									<div class="user_view_profile_performance_value">5</div>
+								</li>
+								<li>
+									<div class="user_view_profile_performance_header">Projects Dropped:</div>
+									<div class="user_view_profile_performance_value">1</div>
+								</li>
+							</ul>
+						</section>
+						<section id="user_view_profile_user_profile_badges_panel">
+							<div class="user_view_profile_badges_panel_Header">My Badges</div>
+							<ul>
+								<li>
+									<div class="user_view_profile_badges_header">PivotalExpert:</div>
+									<div class="user_view_profile_badges_value">20 <span class="user_view_profile_badges_score_total">/80</span></div>
+								</li>
+								<li>
+									<div class="user_view_profile_badges_header">Singpath:</div>
+									<div class="user_view_profile_badges_value">5 <span class="user_view_profile_badges_score_total">/20</span></div>
+								</li>
+								<li>
+									<div class="user_view_profile_badges_more_link"><a href="">more</a></div>
+								</li>
+							</ul>
+						</section>
+					
+					</td>
+				</tr>
+			</table>
+	</section>
+</section>
+
+

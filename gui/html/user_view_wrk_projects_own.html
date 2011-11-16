@@ -1,39 +1,36 @@
-<!-- this is the Projects tab belonging to the Project Management group-->
+
 <section id="user_projectsmgt_projects">
 	<section id="projects_content" class="subtabcontent">	
 		<table id="projectsmgt_projects_Table" border="0" cellpadding="0" cellspacing="0">
-			<tr class="projectsmgtProjectsTableHeader" ng:show="dashboard[0].projects">
-				<td class="table_header projectsmgt_projects_title">Title</td>
-				<td class="table_header projectsmgt_projects_status">Status</td>
-				<td class="table_header projectsmgt_projects_budget">Budget</td>
-				<td class="table_header projectsmgt_projects_expiryDate">Expiry Date</td>
-				<td class="table_header projectsmgt_projects_action">Action</td>
+			<tr class="projectsmgtProjectsTableHeader" ng:show="user.projects">
+				<td class="table_header user_wrk_projects_title">Title</td>
+				<td class="table_header user_wrk_projects_status">Status</td>
+				<td class="table_header user_wrk_projects_budget">Budget</td>
+				<td class="table_header user_wrk_projects_action">Action</td>
 			</tr>
-			<tr class="projectsmgtProjectsTableEntry" ng:repeat="project in dashboard[0].projects"
+			<tr class="projectsmgtProjectsTableEntry" ng:repeat="project in user.projects"
 				  onmouseover="HighlightProjectsRow(this, true);" 
 				  onmouseout="HighlightProjectsRow(this, false);" 
 				  onclick="GoToURL('#/projects/{{project.id}}');">
-				<td class="table_row_projects projectsmgt_projects_title">{{project.title}}</td>
-				<td class="table_row_projects projectsmgt_projects_status">{{project.status}}</td>
-				<td class="table_row_projects projectsmgt_projects_budget">USD${{project.amount}}</td>
-				<td class="table_row_projects projectsmgt_projects_expiryDate">{{project.expire}}</td>
-				<td class="table_row_projects projectsmgt_projects_action"><a href="#/projects/{{project.id}}">View</a></td>
+				<td class="table_row_projects user_wrk_projects_title">{{project.title}}</td>
+				<td class="table_row_projects user_wrk_projects_status">{{project.status}}</td>
+				<td class="table_row_projects user_wrk_projects_budget">USD${{project.amount}}</td>
+				<td class="table_row_projects user_wrk_projects_action"><a href="#/projects/{{project.id}}">View</a></td>
 			</tr>
-			<tr ng:hide="dashboard[0].projects">
+			<tr ng:hide="user.projects">
 				<td class="table_row">
-					<section class="message_from_empty"><img src="gui/images/avatars/aperture50px.jpg"></section>
+					<section class="message_from_profile_empty"><img src="http://www.gravatar.com/avatar/{{user.gravatar}}?s=50&d=mm" alt="{{currentUser.nickname}}" border="3"/></section>
 					<section class="message_text_empty">
-						<span class="message_text_empty_header">Welcome to PivotalExpert.com!</span><br />
-						<span class="message_text_empty_msg">You have no projects yet!<br /><br />
-						If you'd like to find student developers to help you with a project, you can start by <a href="#/projects/create">creating a project here</a>.
-						<section class="settings_bigspeechbubble">Let's create something!</section>
+						<span class="message_text_empty_header">Work in Progress! ;)</span><br />
+						<span class="message_text_empty_msg">I'm still working on something. Check me back later or drop me a message! ;)
+						<section class="settings_bigspeechbubble">Something exciting's coming!</section>
 						<section class="base_sunburst"><img src="gui/images/bottomburst-v02.jpg" /></section>
 					</section>
 				</td>
 			</tr>
 		</table>
 		
-		<div class="pagination_section" ng:show="dashboard[0].projects">
+		<div class="pagination_section" ng:show="user.projects">
 			<ul>
 				<li>
 					<span class="pagination_sidelinks" ng:hide="myprojects.page_current == 1"><a href="#/myprojects/page/1">First</a></span>

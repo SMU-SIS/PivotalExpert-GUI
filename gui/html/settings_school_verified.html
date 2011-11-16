@@ -1,10 +1,26 @@
-<h1>Your school account has been verified</h1>
-<div ng:show="verified.verified_success">
-	Congratulations, you have succesfully verified that you indeed are a student, and you are now allowed to bid for a project! 
-	
-	Nickname: {{verified.user_nickname}} 
-	School: {{verified.user_school}}
-</div>
-<div ng:hide="verified.verified_success">
-	Sorry, but you either have an invalid verification link, or the link has expired. Click here to verify your email again.
-</div>
+
+<link rel="stylesheet" href="gui/css/style-settings.css" type="text/css" media="screen" />
+<section id="settings_school_sortbar" ng:show="verified.verified_success">
+	<section class="settings_bigspeechbubble">Hooray !!! ;)</section>
+	<section class="settings_notificationtext">
+		<span class="settings_notificationtext_line settings_headertext">Your school account has been verified!</span><br />
+		<section class="settings_notificationparatext">Congratulations! You have succesfully verified that you indeed are a student, and you are now allowed to bid for a project!</section>
+		<section id="settings_notification_verifiedacct">
+			<span class="settings_notification_verifiedacct_header">Nickname:</span><span class="settings_notification_verifiedacct_text right">{{verified.user_nickname}}</span><br />
+			<span class="settings_notification_verifiedacct_header">School:</span><span class="settings_notification_verifiedacct_text right rightbottom">{{verified.user_school}}</span>
+		</section>
+	</section>
+	<section class="base_sunburst"><img src="gui/images/bottomburst-v02.jpg" /></section>
+</section>
+<section id="settings_school_sortbar" ng:hide="verified.verified_success">
+	<section class="settings_bigspeechbubble">Whoops !!! :(</section>
+	<section class="settings_notificationtext">
+		<span class="settings_notificationtext_line settings_headertext">Verification Error.</span><br />
+		<section class="settings_notificationparatext">Sorry, but you either have an invalid verification link, or the link has expired.</section>
+		<section id="settings_notification_verifiedacct">
+			<span class="settings_notification_verifiedacct_header shiftright"><a href="">Click here</a> to verify your email again.</span>
+		</section>
+	</section>
+	<section class="base_sunburst"><img src="gui/images/bottomburst-v02.jpg" /></section>
+</section>
+

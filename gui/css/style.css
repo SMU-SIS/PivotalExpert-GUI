@@ -75,7 +75,7 @@ body  {
     font: 100% Verdana, Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #E6E6E6;
+    background: url("../images/bkgrd.jpg") #E6E6E6;
     text-align: center;
     color: #000000;
 }

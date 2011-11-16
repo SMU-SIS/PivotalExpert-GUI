@@ -17,20 +17,20 @@
 
 #user_profile_details {
 }
-.profile_details_nick {
+.profile_details_nick, .user_view_details_nick {
 	font-size: 22px;
 	font-weight: bold;
 	margin: 0 0 20px 0;
 	padding: 0 0 0 0;
 }
-.profile_details_pic {
+.profile_details_pic, .user_view_details_pic {
 }
-.profile_details_school {
+.profile_details_school, .user_view_details_school {
 	padding: 8px 0 8px 5px;
 	background: #000000;
 	height: 36px;
 }
-.profile_details_school_initials {
+.profile_details_school_initials, .user_view_details_school_initials {
 	position: absolute;
 	left: 15px;
 	font: 26px "GeosansLightRegular", Verdana, sans-serif;
@@ -41,7 +41,7 @@
 	border-left: 6px solid #FFFF00;
 }
 
-#user_profile_controls {
+#user_profile_controls, #user_view_controls {
 	border: 1px solid #000000;
 	padding: 3px;
 	text-align: center;
@@ -55,6 +55,26 @@
 #user_profile_controls ul li {
 	display: inline;
 }
+#user_view_controls ul {
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+	text-align: left;
+}
+#user_view_controls ul li {
+	display: block;
+	margin-left: 6px;
+}
+#user_view_controls ul li a, #user_view_controls ul li a:active, #user_view_controls ul li a:visited {
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 10px;
+	font-weight: bold;
+	color: #000000;
+}
+#user_view_controls ul li a:hover {
+	color: #0097FE;
+}
 .profile_details_editProfile {
 }
 .profile_details_messages {
@@ -63,27 +83,32 @@
 }
 
 
-#user_performance_panel, #user_profile_badges_panel {
+#user_performance_panel, #user_profile_badges_panel,
+#user_view_profile_user_performance_panel, #user_view_profile_user_profile_badges_panel {
 	margin-bottom: 15px;
 }
-.performance_panel_Header, .profile_badges_panel_Header {
+.performance_panel_Header, .profile_badges_panel_Header,
+.user_view_profile_performance_panel_Header, .user_view_profile_badges_panel_Header {
 	font-size: 11px;
 	font-weight: bold;
 	padding-bottom: 3px;
 	border-bottom: 1px solid #E2E2E2;
 }
-#user_performance_panel ul, #user_profile_badges_panel ul {
+#user_performance_panel ul, #user_profile_badges_panel ul,
+#user_view_profile_user_performance_panel ul, #user_view_profile_user_profile_badges_panel ul {
 	padding: 0;
 	margin: 0;
 	border-bottom: 1px solid #E2E2E2;
 }
-#user_performance_panel ul li, #user_profile_badges_panel ul li {
+#user_performance_panel ul li, #user_profile_badges_panel ul li,
+#user_view_profile_user_performance_panel ul li, #user_view_profile_user_profile_badges_panel ul li {
 	position: relative;
 	list-style: none;
 	display: block;
 	margin: 2px 0 2px 0;
 }
-.performance_header, .profile_badges_header {
+.performance_header, .profile_badges_header,
+.user_view_profile_performance_header, .user_view_profile_badges_header {
 	position: relative;
 	font-size: 12px;
 	min-height: 28px;
@@ -94,11 +119,16 @@
 	font-variant: small-caps;
 	background: #0097FE;
 }
-.profile_badges_header {
+.user_view_profile_performance_header, .user_view_profile_badges_header {
+	font-size: 13px;
+	width: 345px;
+}
+.profile_badges_header, .user_view_profile_badges_header {
 	min-height: 16px;
 	line-height: 12px;
 }
-.performance_value, .profile_badges_value {
+.performance_value, .profile_badges_value,
+.user_view_profile_performance_value, .user_view_profile_badges_value {
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -114,26 +144,42 @@
 	border-top: 1px solid #FFFFFF;
 	border-left: 1px solid #0097FE;
 }
-.profile_badges_value {
+.user_view_profile_performance_value, .user_view_profile_badges_value {
+	margin-left: 350px;
+	width: 306px;
+	font-size: 22px;
+}
+.profile_badges_value, .user_view_profile_badges_value {
 	font: 13px Arial, Helvetica;
 	height: 17px;
 	font-weight: bold;
 }
-.profile_badges_score_total {
+.user_view_profile_badges_value {
+	font-size: 16px;
+}
+.profile_badges_score_total, .user_view_profile_badges_score_total {
 	font-size: 11px;
 	color: #797979;
 }
-.profile_badges_more_link {
+.user_view_profile_badges_score_total {
+	font-size: 13px;
+}
+.profile_badges_more_link, .user_view_profile_badges_more_link {
 	text-align: right;
 }
-.profile_badges_more_link a, .profile_badges_more_link a:active, .profile_badges_more_link a:visited {
+.user_view_profile_badges_more_link {
+	width: 660px;
+	font-size: 11px;
+}
+.profile_badges_more_link a, .profile_badges_more_link a:active, .profile_badges_more_link a:visited,
+.user_view_profile_badges_more_link a, .user_view_profile_badges_more_link a:active, .user_view_profile_badges_more_link a:visited {
 	color: #797979;
 	font-size: 12px;
 	font-weight: bold;
 	font-variant: small-caps;
 	text-decoration: none;
 }
-.profile_badges_more_link a:hover {
+.profile_badges_more_link a:hover, .user_view_profile_badges_more_link a:hover {
 	color: #0097FE;
 	text-decoration: underline;
 }
@@ -210,45 +256,50 @@
 	padding: 15px;
 	border: 1px solid #E9E9E9;
 }
-#projectsmgt_content, #returnontime_content { 
+#projectsmgt_content, #returnontime_content, #user_work_content { 
 	/**display: none;**/ 
 }
 
-#newsfeed_Table, #projectsmgt_workroom_Table, #projectsmgt_projects_Table, #projectsmgt_bids_Table {
+#newsfeed_Table, #projectsmgt_workroom_Table, #projectsmgt_projects_Table, #projectsmgt_bids_Table,
+#user_view_profile_Table {
 	position: relative;
 	font-family: Helvetica, Arial;
 	font-size: 12px;
 	display: block-inline;
 	width: 660px;
 }
-#newsfeed_Table {
+#newsfeed_Table, #user_view_profile_Table {
 	width: 680px;
 }
-#newsfeed_Table tr, #projectsmgt_workroom_Table tr, #projectsmgt_projects_Table tr, #projectsmgt_bids_Table tr {
+#newsfeed_Table tr, #projectsmgt_workroom_Table tr, #projectsmgt_projects_Table tr, #projectsmgt_bids_Table tr,
+#user_view_profile_Table tr {
 	margin: 0;
 	padding: 0;
 }
-#newsfeed_Table tr td, #projectsmgt_workroom_Table tr td, #projectsmgt_projects_Table tr td, #projectsmgt_bids_Table tr td {
+#newsfeed_Table tr td, #projectsmgt_workroom_Table tr td, #projectsmgt_projects_Table tr td, #projectsmgt_bids_Table tr td,
+#user_view_profile_Table tr td {
 	display: inline-block;
 	list-style: none;
 	padding: 5px 10px;
 }
 
 
-.newsfeedTableHeader, .projectsmgtWorkroomTableHeader, .projectsmgtProjectsTableHeader, .projectsmgtBidsTableHeader {
+.newsfeedTableHeader, .projectsmgtWorkroomTableHeader, .projectsmgtProjectsTableHeader, .projectsmgtBidsTableHeader,
+.userviewprofileTableHeader {
 	background: #FFFF00;
 }
 .table_header {
 	font-weight: bold;
 }
 .table_row {
+	position: relative;
 	margin-top: 8px;
 	min-height: 65px;
 }
 .table_row_projects {
 	margin: 8px 0 5px 0;
 }
-.newsfeedTableEntry {
+.newsfeedTableEntry, .userviewprofileTableEntry {
 	margin: 1px;
 	padding: 1px;
 	border-bottom: 1px solid #E2E2E2;
@@ -260,16 +311,88 @@
 .newsfeed_message_text {
 	width: 330px;
 }
-.newsfeed_message_text_user {
+.message_from_empty, .message_from_profile_empty {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 5px 0 0 10px;
+}
+.message_text_empty {
+	position: relative;
+	margin: 0 0 0 75px;
+}
+.newsfeed_message_text_user, .message_text_empty_header {
 	font-weight: bold;
 }
-.newsfeed_message_text_msg {
+.newsfeed_message_text_empty {
+	width: 580px;
+}
+.newsfeed_message_text_msg, .message_text_empty_msg {
 	position: relative;
 	padding-top: 5px;
 	display: block;
 }
+.newsfeed_message_text_empty_msg {
+	margin-top: 10px;
+}
+.message_text_empty_msg a, .message_text_empty_msg a:active, .message_text_empty_msg a:visited {
+	text-decoration: none;
+	color: #0097FE;
+	font-weight: bold;
+}
+.message_text_empty_msg a:hover {
+	text-decoration: underline;
+	color: #000000
+}
 .newsfeed_message_sent {
 	width: 210px;
+}
+
+.settings_bigspeechbubble {
+	position: relative;
+	padding: 25px;
+	margin: 25px 0 10px 10px;
+	color: #FFFFFF;
+	background: #075698; /* default background for browsers without gradient support */
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#2e88c4), to(#075698));
+	background:-moz-linear-gradient(#2e88c4, #075698);
+	background:-o-linear-gradient(#2e88c4, #075698);
+	background:linear-gradient(#2e88c4, #075698);
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	width: 500px;
+	text-align: center;
+	font: 42px "CaviarDreamsRegular", Helvetica, sans-serif;
+}
+.settings_bigspeechbubble:after {
+	content: "";
+	position: absolute;
+	bottom: -20px; 
+	left: 50px; 
+	border-width: 20px 0 0 20px; 
+	border-style: solid;
+	border-color: #075698 transparent; 
+    display: block; 
+    width: 0;
+}
+.settings_bigspeechbubble.top {
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#075698), to(#2e88c4));
+	background:-moz-linear-gradient(#075698, #2e88c4);
+	background:-o-linear-gradient(#075698, #2e88c4);
+	background:linear-gradient(#075698, #2e88c4);
+}
+.settings_bigspeechbubble.top:after {
+	top: -20px;
+	right: 50px; 
+	bottom: auto;
+	left: auto;
+	border-width: 20px 20px 0 0; 
+	border-color: transparent #075698; 
+}
+.base_sunburst {
+	margin-top: 20px;
+	height: 205px;
 }
 
 
@@ -293,13 +416,16 @@
 	font-weight: bold;
 	border-bottom: 4px solid #000000;
 }
-.projectsmgt_workroom_owner, .projectsmgt_workroom_developer, .projectsmgt_bids_owner {
+.projectsmgt_workroom_owner, .projectsmgt_workroom_developer, .projectsmgt_bids_owner, 
+.user_wrk_workroom_owner, .user_wrk_workroom_developer {
 	position: relative;
 	width: 110px;
 }
-.projectsmgt_workroom_owner_pic, .projectsmgt_workroom_developer_pic, .projectsmgt_bids_owner_pic {
+.projectsmgt_workroom_owner_pic, .projectsmgt_workroom_developer_pic, .projectsmgt_bids_owner_pic, 
+.user_wrk_workroom_owner_pic, .user_wrk_workroom_developer_pic {
 }
-.projectsmgt_workroom_owner_name, .projectsmgt_workroom_developer_name, .projectsmgt_bids_owner_name {
+.projectsmgt_workroom_owner_name, .projectsmgt_workroom_developer_name, .projectsmgt_bids_owner_name, 
+.user_wrk_workroom_owner_name, .user_wrk_workroom_developer_name {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -316,8 +442,22 @@
 .projectsmgt_workroom_action {
 	width: 55px;
 }
+.user_wrk_workroom_title {
+	width: 120px;
+}
+.user_wrk_workroom_description {
+	width: 160px;
+}
+.user_wrk_workroom_iteration {
+	width: 40px;
+}
+.user_wrk_workroom_action {
+	width: 65px;
+}
+
 .projectsmgt_workroom_action a, .projectsmgt_workroom_action a:active, .projectsmgt_workroom_action a:visited,
-.projectsmgt_projects_action a, .projectsmgt_projects_action a:active, .projectsmgt_projects_action a:visited {
+.projectsmgt_projects_action a, .projectsmgt_projects_action a:active, .projectsmgt_projects_action a:visited,
+.user_wrk_workroom_action a, .user_wrk_workroom_action a:active, .user_wrk_workroom_action a:visited {
 	font-size: 10px;
 	font-weight: bold;
 	text-transform: uppercase;
@@ -326,7 +466,8 @@
 	color: #000000;
 	background: #FFD101;
 }
-.projectsmgt_workroom_action a:hover, .projectsmgt_projects_action a:hover {
+.projectsmgt_workroom_action a:hover, .projectsmgt_projects_action a:hover,
+.user_wrk_workroom_action a:hover {
 	color: #FFFFFF;
 	background: #000000;
 }
@@ -344,6 +485,18 @@
 	width: 120px;
 }
 .projectsmgt_projects_action {
+	width: 45px;
+}
+.user_wrk_projects_title {
+	width: 210px;
+}
+.user_wrk_projects_status {
+	width: 170px;
+}
+.user_wrk_projects_budget {
+	width: 105px;
+}
+.user_wrk_projects_action {
 	width: 45px;
 }
 
@@ -370,20 +523,17 @@
 	line-height: 12px;
 }
 
-
-#projectsmgt_content {
-}
-#projectsmgt_content ul.subtabs {
+#projectsmgt_content ul.subtabs, #user_work_content ul.subtabs {
 	margin: 0; 
 	padding: 0;
 	margin-top: 5px;
 	margin-bottom: 6px;
 }
-#projectsmgt_content ul.subtabs li {
+#projectsmgt_content ul.subtabs li, #user_work_content ul.subtabs li {
 	list-style: none;
 	display: inline;
 }
-#projectsmgt_content ul.subtabs li a {
+#projectsmgt_content ul.subtabs li a, #user_work_content ul.subtabs li a {
 	background-color: #E9E9E9;
 	color: #000000;
 	padding:8px 14px 8px 14px;
@@ -394,10 +544,10 @@
 	text-transform: uppercase;
 	border: 1px solid #E9E9E9;
 }
-#projectsmgt_content ul.subtabs li a:hover {
+#projectsmgt_content ul.subtabs li a:hover, #user_work_content ul.subtabs li a:hover {
 	background-color: #FFFF00;
 }
-#projectsmgt_content ul.subtabs li a.active {
+#projectsmgt_content ul.subtabs li a.active, #user_work_content ul.subtabs li a.active {
 	background-color: #FFFFFF;
 	color: #282E32;
 	border: 1px solid #E9E9E9;
@@ -417,6 +567,8 @@
 }
 #user_projects {
 }
+#user_newsfeed {
+}
 
 
 /*** User Profile Edit ***/
@@ -426,41 +578,46 @@
 	position: relative;
 }
 
-#user_profile_edit_personal {
-	position: relative;
-	width: 450px;
+.highlightleft {
+	padding-left: 50px;
+	border-left: 152px solid #FFFF00;
 }
+
 #user_profile_edit_personal_inputPhoto {
 	position: absolute;
 	left: 0;
 	top: 0;
 	margin-top: 55px;
 	border: 1px solid #888888;
-	width: 80px;
-	height: 80px;
+	width: 150px;
+	height: 180px;
 }
 .editPersonal_photo_text {
 	display: block;
 	background: #888888;
-	font-size: 11px;
+	font-size: 14px;
 	font-weight: bold;
-	padding: 3px 8px;
+	padding: 5px 0;
 	color: #FFFFFF;
 	text-align: center;
 	border: 2px solid #888888;
 	text-transform: uppercase;
 }
-#user_profile_edit_personal_inputSegment {
+
+#user_profile_edit_personal, #user_profile_edit_school {
 	position: relative;
-	margin-left: 100px;
+	top: 0;
+	left: 0;
+	margin: 0 0 0 200px;
+	width: 650px;
 }
 #user_profile_edit_school {
-	position: absolute;
-	left: 0;
-	top: 0;
-	margin-left: 500px;
-	width: 380px;
 }
+
+#user_profile_edit_personal_inputSegment {
+	position: relative;
+}
+
 form#editPersonalForm {
 	min-height: 350px;
 	height: auto;
@@ -476,7 +633,7 @@ form#editPersonalForm ol {
 }
 form#editPersonalForm ol li {
     position: relative;
-    margin: 2px 0 2px 0px;
+    margin: 5px 0px;
     line-height: 30px;
     list-style: none;
     float: left;
@@ -506,16 +663,19 @@ form#editPersonalForm input:not([type=radio]), form#editPersonalForm textarea {
     border-radius: 3px;
     font: italic 13px Georgia, "Times New Roman", Times, serif;
     outline: none;
-    padding: 5px;
-    width: 180px;
+    padding: 8px;
+    width: 480px;
+}
+form#editPersonalForm textarea {
+	min-height: 100px;
 }
 form#editPersonalForm input:not([type=submit]):focus, form#editPersonalForm textarea:focus {
     background: #FFFF00;
 }
 
 #user_details_edit_panel_footer {
-	text-align: left;
-	margin: 30px 0 0 265px;
+	text-align: right;
+	margin: 30px 50px 0 265px;
 }
 #user_details_edit_panel_footer fieldset button {
     background: #00AEFF;
@@ -526,9 +686,9 @@ form#editPersonalForm input:not([type=submit]):focus, form#editPersonalForm text
     border-radius: 8px;
     color: #ffffff;
     display: inline;
-    font: 12px Arial, Helvetica, sans-serif;
+    font: 14px Arial, Helvetica, sans-serif;
     letter-spacing: 1px;
-    padding: 8px 35px;
+    padding: 8px 55px;
     text-transform: uppercase;
 }
 #user_details_edit_panel_footer fieldset button:hover {

@@ -1,70 +1,14 @@
-<h3>My work</h3>
-<ul ng:init="workrooms = 'True'">
-	<li><a ng:click="workrooms = 'True'">My Work</a></li>
-	<li><a ng:click="workrooms = 'False'">My Projects</a></li>
 
-<div ng:show="workrooms">
-	<div ng:show="user.workrooms_owner">
-	<strong>Work I Own</strong>
-	<table>
-		<tr>
-			<th>Title</th>
-			<th>Description</th>
-			<th>Developer</th>
-			<th>Current Iteration</th>
-			<th>Project</th>
-		</tr>
-		<tr ng:repeat="workroom in user.workrooms_owner">
-			<td>{{workroom.title}}</td>
-			<td>{{workroom.description}}</td>
-			<td><a href="#/user/{{workroom.dev_id}}">
-				<img src="http://www.gravatar.com/avatar/{{workroom.dev_gravatar}}?s=30&d=mm"/>
-				{{workroom.dev_nickname}}
-				</a></td>
-			<td>{{workroom.current_iteration}}/{{workroom.total_iterations}}</td>
-			<td><a href="#/project/{{workroom.project_id}}">View</a></td>
-		</tr>
-	</table>
-	</div>
-	
-	<div ng:show="user.workrooms_dev">
-	<strong>Work I Develop For</strong>
-	<table>
-		<tr>
-			<th>Title</th>
-			<th>Description</th>
-			<th>Owner</th>
-			<th>Current Iteration</th>
-			<th>Project</th>
-		</tr>
-		<tr ng:repeat="workroom in user.workrooms_dev">
-			<td>{{workroom.title}}</td>
-			<td>{{workroom.description}}</td>
-			<td><a href="#/user/{{workroom.owner_id}}">
-				<img src="http://www.gravatar.com/avatar/{{workroom.owner_gravatar}}?s=30&d=mm"/>
-				{{workroom.dev_nickname}}
-				</a></td>
-			<td>{{workroom.current_iteration}}/{{workroom.total_iterations}}</td>
-			<td><a href="#/project/{{workroom.project_id}}">View</a></td>
-		</tr>
-	</table>
-	</div>
-</div>
+<section id="user_work_view" ng:init="user_work_view = 'gui/html/user_view_wrk_workrooms_own.html'">
+	<section id="user_work_content" class="tabcontent">	
+		<section class="subtabs">
+			<ul class="subtabs">
+				<li><a ng:click="user_work_view = 'gui/html/user_view_wrk_workrooms_own.html'" id="wrk_workrooms_own_tab" class="active"  onclick="$(this).addClass('active');$('#wrk_workrooms_develop_tab').removeClass('active');$('#wrk_projects_own_tab').removeClass('active');">Work I Own</a></li>
+				<li><a ng:click="user_work_view = 'gui/html/user_view_wrk_workrooms_develop.html'" id="wrk_workrooms_develop_tab" class="active"  onclick="$(this).addClass('active');$('#wrk_workrooms_own_tab').removeClass('active');$('#wrk_projects_own_tab').removeClass('active');">Work I Develop</a></li>
+				<li><a ng:click="user_work_view = 'gui/html/user_view_wrk_projects_own.html'" id="wrk_projects_own_tab" onclick="$(this).addClass('active');$('#wrk_workrooms_own_tab').removeClass('active');$('#wrk_workrooms_develop_tab').removeClass('active');">Projects I Own</a></li>
+			</ul>
+		</section>
+		<ng:include src="user_work_view" />
+	</section>
+</section>
 
-<div ng:hide="workrooms">
-	<strong>Projects I Own</strong>
-	<table>
-		<tr>
-			<th>Title</th>
-			<th>Status</th>
-			<th>Budget</th>
-			<th>View</th>
-		</tr>
-		<tr ng:repeat="project in user.projects">
-			<td>{{project.title}}</td>
-			<td>{{project.status}}</td>
-			<td>{{project.budget}}</td>
-			<td><a href="#/project/{{project.id}}">View</a></td>
-		</tr>
-	</table>
-</div>

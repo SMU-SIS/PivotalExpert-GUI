@@ -1,14 +1,12 @@
-			<section id="user_projectsmgt" ng:init="projectmgt_view = 'gui/html/dashboard_pm_workrooms.html'">
-				<section id="projectsmgt_content" class="tabcontent">	
-					<section class="subtabs">
-						<ul class="subtabs">
-							<li><a ng:click="projectmgt_view = 'gui/html/dashboard_pm_workrooms.html'" id="workroom_tab" class="active"  onclick="$(this).addClass('active');$('#projects_tab').removeClass('active');$('#bids_tab').removeClass('active')">My Workrooms</a></li>
-							<li><a ng:click="projectmgt_view = 'gui/html/dashboard_pm_projects.html'" id="projects_tab" onclick="$(this).addClass('active');$('#workroom_tab').removeClass('active');$('#bids_tab').removeClass('active')">My Projects</a></li>
-							<li><a ng:click="projectmgt_view = 'gui/html/dashboard_pm_bids.html'" id="bids_tab" onclick="$(this).addClass('active');$('#workroom_tab').removeClass('active');$('#projects_tab').removeClass('active')">My Bids</a></li>
-						</ul>
-					</section>
-					
-					<ng:include src="projectmgt_view"/>
-					<br/>
-				</section>
-			</section>
+<section id="user_projectsmgt" ng:init="projectmgt_view = 'gui/html/dashboard_pm_workrooms.html'">
+	<section id="projectsmgt_content" class="tabcontent">	
+		<section class="subtabs">
+			<ul class="subtabs">
+				<li><a ng:click="projectmgt_view = 'gui/html/dashboard_pm_workrooms.html'" id="workroom_tab" class="active"  onclick="$(this).addClass('active');$('#projects_tab').removeClass('active');$('#bids_tab').removeClass('active');">My Workrooms</a></li>
+				<li><a ng:click="projectmgt_view = 'gui/html/dashboard_pm_projects.html'" id="projects_tab" onclick="$(this).addClass('active');$('#workroom_tab').removeClass('active');$('#bids_tab').removeClass('active');">My Projects</a></li>
+				<li><a ng:click="projectmgt_view = 'gui/html/dashboard_pm_bids.html'" id="bids_tab" onclick="$(this).addClass('active');$('#workroom_tab').removeClass('active');$('#projects_tab').removeClass('active');">My Bids</a></li>
+			</ul>
+		</section>
+		<ng:include src="projectmgt_view" />
+	</section>
+</section>
