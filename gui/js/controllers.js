@@ -50,11 +50,14 @@ function PageRouter_Master($route, $location, $resource) { //router for the webs
 	$route.when('/settings/school',{template:'gui/html/settings_school.html', controller: SettingsSchoolCtrl});
 	$route.when('/settings/school/saved',{template:'gui/html/settings_school_saved.html'});
 	$route.when('/settings/school/verify/:guid',{template:'gui/html/settings_school_verified.html', controller: SettingsSchoolVerifyCtrl});
-	$route.when('/settings/school/suggest',{template:'gui.html/settings_school_suggest.html'});
+	$route.when('/settings/school/suggest',{template:'gui/html/settings_school_suggest.html'});
 	
 	//messaging module
 	$route.when('/messages',{template:'gui/html/messages_index.html', controller:MessagesCtrl});
 	$route.when('/messages/compose',{template:'gui/html/messages_send.html'});
+	
+	//admin module
+	$route.when('/admin/schools',{template:'gui/html/admin_schools.html', controller:AdminSchoolsCtrl});
 	
 	/* FOOTER Re-Directs */
 	$route.when('/sitemap',{template:'gui/html/sitemap.html'});// sitemap page
@@ -203,6 +206,10 @@ function MessagesCtrl($resource){
 
 function UserViewCtrl($resource){
 	this.user = $resource('rest/user/view/'+this.params.id).get();
+}
+
+function AdminSchoolsCtrl($resource){
+	this.schools = $resource('rest/admin/schools').query();
 }
 
 //Method that checks for current user

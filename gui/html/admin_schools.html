@@ -1,0 +1,30 @@
+<table>
+	<tr>
+		<th>
+			School
+		</th>
+		<th>
+			Abbreviation
+		</th>
+		<th>
+			Website
+		</th>
+		<th>
+			Email Domain
+		</th>
+		<th>
+			Suggested By
+		</th>
+		<th>
+			Suggested On
+		</th>
+	</tr>
+	<tr ng:repeat="school in schools">
+		<td>{{school.name}}</td>
+		<td>{{school.shortName}}</td>
+		<td>{{school.schoolWeb}}</td>
+		<td>{{school.emailDomain}}</td>
+		<td>{{school.suggestedBy}}</td>
+		<td>{{school.created}}</td>
+	</tr>
+</table>
