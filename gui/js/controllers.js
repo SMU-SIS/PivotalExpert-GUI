@@ -184,7 +184,7 @@ function DevelopersCtrl($resource){
 		this.developers = $resource('rest/developers/developers_index/search/'+this.params.search+'/'+page).get();
 	}
 	else {
-		analanaanananajkfhdkjhathis.developers = $resource('rest/developers/developers_index/page/'+page+sort).get();
+		this.developers = $resource('rest/developers/developers_index/page/'+page+sort).get();
 	}
 }
 
