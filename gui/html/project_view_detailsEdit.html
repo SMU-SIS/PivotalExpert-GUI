@@ -1,4 +1,10 @@
-
+<style>
+	.noninput_text {
+		font-family: Georgia,"Times New Roman",Times,serif;
+		font-size: 13px;
+		font-style: italic;
+	}
+</style>
 <form id="projectDetailsForm" action="form/project/edit/{{project.id}}" method="POST">
 	<fieldset>
 		<legend>Project Details</legend>
@@ -15,12 +21,34 @@
 			<li><label for="projectDetails_title">Title</label><input id="projectDetails_title" name="projectDetails_title" type="text" placeholder="" value="{{project.title}}"></li>
 			<li><label for="projectDetails_owner">Owner</label><input id="projectDetails_owner" name="projectDetails_owner" type="text" placeholder="" value="{{project.owner}}" disabled="disabled"></li>
 			<li><label for="projectDetails_description">Project Description</label><textarea id="projectDetails_description" name="projectDetails_description" rows="" placeholder="" value="{{project.description}}"></textarea></li>
+			<li><label for="projectDetails_requirements">Project Requirements</label><textarea id="projectDetails_requirements" name="projectDetails_requirements" rows="" placeholder="" value="{{project.requirements}}"></textarea></li>
+			<li ng:init="edit1 = 'false'" ng:hide="edit1"><label>Application Type<span class="required_tag">*</span></label> <span class='noninput_text'>{{project.appType}} [<a ng:click="edit1 = 'true'">change</a>]</span></li>
+			<li ng:show="edit1"><label for="projectDetails_type">Application Type<span class="required_tag">*</span></label><select name="projectDetails_type">
+							<option ng:repeat="item in appType">{{item.name}}</option>
+						</select></li>
+			<li ng:init="edit2 = 'false'" ng:hide="edit2"><label>Languages (Pick up to 3)<span class="required_tag">*</span></label> <span class='noninput_text'><span ng:repeat="item in project.languages">{{item}}, </span> [<a ng:click="edit2 = 'true'">change</a>]</span></li>
+			<li ng:show="edit2"><label for="projectDetails_languages">Languages<span class="required_tag">*</span></label> 
+				<ul class="projectListOptions">
+					<li ng:repeat="item in languages"><input type="checkbox" name="projectDetails_languages" value="{{item.name}}">{{item.name}}</input></li>
+					<li><input type="checkbox" name="projectDetails_languages" value="Others">Others</input></li>
+				</ul>
+			</li>
+			<li ng:init="edit3 = 'false'" ng:hide="edit3"><label>Database used<span class="required_tag">*</span></label> <span class='noninput_text'>{{project.database}} [<a ng:click="edit3 = 'true'">change</a>]</span></li>
+			<li ng:show="edit3"><label for="projectDetails_database">Database used<span class="required_tag">*</span></label>
+				<select name="projectDetails_database">
+					<option ng:repeat="item in databases" value="{{item.name}}">{{item.name}}</option>
+					<option value="Others">Others</option>
+				</select>
+			</li>
 			<li><label for="projectDetails_budget">Total Budget (SGD$)</label><input id="projectDetails_budget" name="projectDetails_budget" type="text" placeholder="" value="{{project.budget}}" ng:validate="integer:25"></li>
-			<li><label for="projectDetails_tags">Tag(s)</label><textarea id="projectDetails_tags" name="projectDetails_tags" rows="6" placeholder="" value="{{project.tags}}"></textarea></li>
+			<!--<li><label for="projectDetails_tags">Tag(s)</label><textarea id="projectDetails_tags" name="projectDetails_tags" rows="6" placeholder="" value="{{project.tags}}"></textarea></li>-->
 		</ol>
 	</fieldset>
 	<fieldset ng:controller="ValidationCtrl">
 			<button class="updatebutton" id="projectAddBid_bidBtn" type="submit" ng:disabled="{{$invalidWidgets.visible()}}">Update</button>
 	</fieldset>
+	<input type="hidden" name="projectDetails_type_edited" value="{{edit1}}">
+	<input type="hidden" name="projectDetails_languagues_edited" value="{{edit2}}">
+	<input type="hidden" name="projectDetails_database_edited" value="{{edit3}}">
 </form>
 
