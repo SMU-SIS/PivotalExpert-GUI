@@ -13,7 +13,23 @@
 					<li><label for="createNewProject_title">Title<span class="required_tag">*</span></label><input id="createNewProject_title" name="createNewProject_title" type="text" placeholder="Eg. My Awesome Project"  autofocus required></li>
 					<li><label for="createNewProject_budget">Total Budget (SGD$)<span class="required_tag">*</span></label><input id="createNewProject_budget" name="createNewProject_budget" type="text" placeholder="Eg. 25.00" ng:validate="integer:25" required></li>
 					<li><label for="createNewProject_description">Project Description<span class="required_tag">*</span></label><textarea class="createNewProject_description" name="createNewProject_description" rows="" placeholder="Eg. This is a web-portal for entrepreneurs and students." required></textarea></li>
-					<li><label for="createNewProject_tags">Tag(s)</label><textarea class="createNewProject_tags" name="createNewProject_tags" rows="" placeholder="Eg. jQuery, HTML5, CSS"></textarea></li>
+					<li><label for="createNewProject_requirements">Project Requirements<span class="required_tag">*</span></label><textarea class="createNewProject_requirements" name="createNewProject_requirements" rows="" placeholder="Eg. 1. A log in page. 2. Deployed onto Google App Engine." required></textarea></li>
+					<li><label for="createNewProject_type">Application Type<span class="required_tag">*</span></label><select name="createNewProject_type">
+									<option ng:repeat="item in appType">{{item.name}}</option>
+								</select></li>
+					<li><label for="createNewProject_languages">Languages (Pick up to 3)<span class="required_tag">*</span></label>
+						<ul class="projectListOptions">
+							<li ng:repeat="item in languages"><input type="checkbox" name="createNewProject_languages" value="{{item.name}}">{{item.name}}</input></li>
+							<li><input type="checkbox" name="createNewProject_languages" value="Others">Others</input></li>
+						</ul>
+					</li>
+					<li><label for="createNewProject_database">Database used<span class="required_tag">*</span></label>
+						<select name="createNewProject_database">
+							<option ng:repeat="item in databases" value="{{item.name}}">{{item.name}}</option>
+							<option value="Others">Others</option>
+						</select>
+					</li>
+					<!--<li><label for="createNewProject_tags">Tag(s)</label><textarea class="createNewProject_tags" name="createNewProject_tags" rows="" placeholder="Eg. jQuery, HTML5, CSS"></textarea></li>-->
 				</ol>
 			</fieldset>
 			<fieldset>
