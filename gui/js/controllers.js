@@ -25,7 +25,7 @@ function PageRouter_Master($route, $location, $resource) { //router for the webs
 	$route.when('/projects/page/:pageID/:sort',{template:'gui/html/project_index.html', controller: ProjectListCtrl});
 	$route.when('/projects/search/:search/:sort',{template:'gui/html/project_index.html', controller: ProjectListCtrl});
 	$route.when('/projects/search/:search/:pageID/:sort',{template:'gui/html/project_index.html', controller: ProjectListCtrl});
-	$route.when('/projects/create',{template:'gui/html/project_create.html'});	
+	$route.when('/projects/create',{template:'gui/html/project_create.html', controller: ProjectCreateCtrl});	
 	$route.when('/projects/:projectID',{template:'gui/html/project_view.html', controller: ProjectViewCtrl});
 	
 	//workroom module
@@ -84,10 +84,15 @@ function ProjectViewCtrl($resource){
 	this.projectRoute = projectRoute = $.parseJSON($.ajax({url:'rest/projects/project_view/'+projectID,dataType: 'json',async:false}).responseText);
 	
 	this.project = project = projectRoute.project;
+	this.iterationhack = iterationhack = projectRoute.iterationhack;
 	
 	this.leftID = 'project_bid_projectDetails';
 	this.leftSrc = 'gui/html/project_view_detailsView.html';
 	this.rightID = 'project_bid_projectFunction';
+	
+	this.appType = $resource('rest/projects/get_properties/0').query();
+	this.languages = $resource('rest/projects/get_properties/1').query();
+	this.databases = $resource('rest/projects/get_properties/2').query();
 	
 	switch(projectRoute.role){
 		case "owner":
@@ -141,6 +146,12 @@ function ProjectListCtrl($resource) {
 	else {
 		this.projects = $resource('rest/projects/project_index/page/'+page+'/'+this.sort).get();
 	}
+}
+
+function ProjectCreateCtrl($resource) {
+	this.appType = $resource('rest/projects/get_properties/0').query();
+	this.languages = $resource('rest/projects/get_properties/1').query();
+	this.databases = $resource('rest/projects/get_properties/2').query();
 }
 
 function DashboardCtrl($resource) {

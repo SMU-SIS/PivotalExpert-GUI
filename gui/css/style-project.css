@@ -199,6 +199,8 @@
 /** Project_Bid & Project_Create **/
 #project_bid_page, #create_new_project_page {
 	position: relative;
+	height: 600px;
+	z-index: 2;
 }
 #project_bid_Header {
 }
@@ -263,12 +265,22 @@ form#projectAddBidForm ol li, form#projectDetailsForm ol li, form#createNewProje
     line-height: 30px;
     list-style: none;
     float: left;
+    clear: both;
 }
 form#projectAddBidForm label, form#projectDetailsForm label, form#createNewProjectForm label {
     float: left;
     font-size: 12px;
     width: 180px;
     cursor: default;
+}
+ul.projectListOptions {
+	float: left;
+	padding: 0;
+	margin: 0;
+}
+
+ul.projectListOptions li {
+	float: left;
 }
 
 .detailslabel {
