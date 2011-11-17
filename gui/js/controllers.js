@@ -67,6 +67,7 @@ function PageRouter_Master($route, $location, $resource) { //router for the webs
 	
 	
 	/* SUB-PAGES Re-Directs */
+	$route.when('/badges',{template:'gui/html/badges_index.html'});
 	$route.when('/badges/suggest',{template:'gui/html/suggest_badge.html'});
 	
 	

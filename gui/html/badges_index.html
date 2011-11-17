@@ -1,0 +1,125 @@
+
+<script src="gui/js/scripts.js"></script>
+<link rel="stylesheet" href="gui/css/style-badge.css" type="text/css" media="screen" />
+<section id="badge_index_page">
+	<section id="badge_index_Header">
+		<section class="section_header">Badges <span ng:show="badges.search">Search: {{badges.search}}</span></section>
+		<section class="section_subheader">
+			<span id="badgeList_count">{{badges.total}}</span> Badges <span ng:hide="badges.search">Available</span><span ng:show="badges.search">Found</span>
+		</section>
+		<section id="badge_index_searchbar">
+			<input type="text" id="badgeList_search_query" name="badgeList_search_query" placeholder="search a badge" /><div ng:show="currentUser.nickname" id="badgeList_search"><a href="">Search</a></div>
+		</section>
+		<section id="badge_index_sortbar">
+			<section class="sort_subheader">sort by:</section>
+			<select class="sort_select" name="orderProp">
+				<option class="sort_select_option" value="badgename">Badge</option>
+				<option class="sort_select_option" value="country">Country</option>
+				<option class="sort_select_option" value="totaldevelopers">Total Developers</option>
+			</select>
+		</section>
+	</section>
+	<table id="badge_index_Table" border="0" cellpadding="0" cellspacing="0">
+		<tr class="badgeListTableHeader">
+			<td class="table_header badgeList_badge_name"><span class="badge_nameheader">Badge</span></td>
+			<td class="table_header badgeList_badge_country">Country</td>
+			<td class="table_header badgeList_badge_total_developers">Total Developers</td>
+		</tr>
+		<tr class="badgeListTableEntry" ng:repeat="badge in badges.badgeList.$filter(query).$orderBy(orderProp)" 
+			  onmouseover="HighlightBadgeRow(this, true);" 
+              onmouseout="HighlightBadgeRow(this, false);" 
+              onclick="GoToURL('#/instituitions/{{badge.id}}');">
+			<td class="table_row badgeList_badge_name">
+				<span class="badge_pic"><img src="gui/images/schools/{{badge.image}}"></span>
+				<span class="badge_name"><a href="badge.html">{{badge.name}} ({{badge.initials}})</a></span>
+			</td>
+			<td class="table_row badgeList_badge_country">{{badge.country}}</td>
+			<td class="table_row badgeList_badge_total_developers">{{badge.totaldevelopers}}</td>
+		</tr>
+
+<style>
+
+
+.badge_base_circle {
+	display: block;
+	width: 80px;
+	height: 80px;
+	-moz-border-radius: 40px;
+	-webkit-border-radius: 40px;
+	background: #797979;
+	text-align: center;
+	border: 4px dotted #FFFF00;
+}
+.badge_outer_circle {
+	display: block;
+	width: 70px;
+	height: 70px;
+	-moz-border-radius: 35px;
+	-webkit-border-radius: 35px;
+	background: #FFFF00;
+}
+.badge_circle_text {
+	
+	
+}
+
+</style>
+
+		
+		<tr class="badgeListTableEntry">
+			<td class="table_row badgeList_badge_name">
+				<span class="badge_pic"><span class="badge_base_circle"><span class="badge_outer_circle"><span class="badge_circle_text">Js</span></span></span></span>
+				<span class="badge_name"><a href="user_profile.html">Singapore Management University (SMU)</a></span>
+			</td>
+			<td class="table_row badgeList_badge_country">Singapore</td>
+			<td class="table_row badgeList_badge_total_developers total_developers_text">85<span class="total_developers_sidetext">developers</span></td>
+		</tr>
+		
+		
+		
+		<tr class="badgeListTableEntry"
+			  onmouseover="HighlightBadgeRow(this, true);" 
+              onmouseout="HighlightBadgeRow(this, false);" 
+              onclick="GoToURL('#/instituitions/{{badge.id}}');">
+			<td class="table_row badgeList_badge_name">
+				<span class="badge_pic"><img src="gui/images/schools/nuslogo.png"></span>
+				<span class="badge_name"><a href="user_profile.html">National University of Singapore (NUS)</a></span>
+			</td>
+			<td class="table_row badgeList_badge_country">Singapore</td>
+			<td class="table_row badgeList_badge_total_developers total_developers_text">70<span class="total_developers_sidetext">developers</span></td>
+		</tr>
+		<tr class="badgeListTableEntry"
+			  onmouseover="HighlightBadgeRow(this, true);" 
+              onmouseout="HighlightBadgeRow(this, false);" 
+              onclick="GoToURL('#/instituitions/{{badge.id}}');">
+			<td class="table_row badgeList_badge_name">
+				<span class="badge_pic"><img src="gui/images/schools/ntulogo.png"></span>
+				<span class="badge_name"><a href="user_profile.html">Nanyang Technological University (NTU)</a></span>
+			</td>
+			<td class="table_row badgeList_badge_country">Singapore</td>
+			<td class="table_row badgeList_badge_total_developers total_developers_text">50<span class="total_developers_sidetext">developers</span></td>
+		</tr>
+		
+	</table>
+	<section id="suggest_school_bar"><a href="#/badges/add">Add New School</a></section>
+	
+	<div class="pagination_section">
+		<ul>
+			<li>
+				<span class="pagination_sidelinks" ng:hide="badges.page_current == 1"><a href="#/badges/page/1">First</a></span>
+				<span class="currentsidelink" ng:show="badges.page_current == 1">First</span>
+			</li>
+			<li class="pagination_sidelinks" ng:hide="badges.page_current == 1"><a href="#/badges/page/{{badges.page_current-1}}"><</a></li>
+			<li ng:repeat="page in badges.page_numbers">
+				<span class="pagination_pages" ng:hide="page == badges.page_current"><a href="#/badges/page/{{page}}">{{page}}</a></span>
+				<span class="pagination_pages_current currentpage" ng:show="page == badges.page_current">{{page}}</span>
+			</li>
+			<li class="pagination_sidelinks" ng:hide="badges.page_current == badges.pages"><a href="#/badges/page/{{badges.page_current+1}}">></a></li>
+			<li>
+				<span class="pagination_sidelinks" ng:hide="badges.page_current == badges.pages"><a href="#/badges/page/{{badges.pages}}">Last</a></span>
+				<span class="currentsidelink" ng:show="badges.page_current == badges.pages">Last</span>
+			</li>
+		</ul>
+    </div>
+</section>
+

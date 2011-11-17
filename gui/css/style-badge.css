@@ -1,0 +1,251 @@
+
+/** Badge_Index **/
+#badge_index_page {
+}
+#badge_index_Header {
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+#badgeList_count {
+	font-size: 22px;
+	border-left: 8px solid #FFFF00;
+	padding-left: 10px;
+}
+
+#badge_index_searchbar {
+	position: absolute;
+	top: 0;
+	right: 0;
+	-moz-right: 0;
+	-webkit-right: 0;
+	float: right;
+	height: 24px;
+	display: block;
+	margin: 45px 12px 0 0;
+	border-bottom: 4px solid #FFFF00;
+}
+#badgeList_search {
+	position: absolute;
+	top: 0;
+	right: 0;
+	-moz-right: 0;
+	-webkit-right: 0;
+}
+#badgeList_search a, #badgeList_search a:active, #badgeList_search a:link, #badgeList_search a:visited {
+	background: #0054A6;
+	padding: 6px 16px;
+	font-size: 10px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #FFFFFF;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px; 
+}
+#badgeList_search a:hover {
+	background: #00BFF3;
+}
+#badgeList_search_query {
+	margin: 0 78px 0 0;
+	font: italic 13px Georgia, "Times New Roman", Times, serif;
+	padding: 3px;
+	padding-left: 8px;
+    width: 180px;
+    height: 18px;
+    display: block;
+    border: 0;
+    background: #F0F0F0;
+}
+#badgeList_search_query:focus {
+	border: 2px solid #0054A6;
+}
+
+#badge_index_sortbar {
+	position: relative;
+	margin-right: 12px;
+	padding: 9px 0 3px 20px;
+	min-height: 25px;
+	line-height: 25px;
+	background: #000000;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+.sort_subheader {
+	font: 14px Arial, Helvetica bold;
+	font-variant: small-caps;
+}
+.sort_select {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 8px 0 0 80px;
+	width: 165px;
+	background: #000000;
+	font: 13px Arial, Helvetica bold;
+	color: #FFFFFF;
+}
+
+
+#badge_index_Table {
+	position: relative;
+	font-family: Helvetica, Arial;
+	font-size: 12px;
+	display: block-inline;
+	width: 878px;
+}
+#badge_index_Table tr {
+	margin: 0;
+	padding: 0;
+}
+#badge_index_Table tr td {
+	display: inline-block;
+	list-style: none;
+	padding: 5px 10px;
+	border-right: 1px #E1E1E1 solid;
+}
+#badge_index_Table tr td:last-child {
+	border-right: 0;
+}
+.badgeListTableHeader {
+	background: #00BFF3;
+	margin-bottom: 2px;
+	border-bottom: 1px solid #FFFFFF;
+}
+.table_header {
+	font-weight: bold;
+}
+.table_row {
+	min-height: 62px;
+	line-height: 60px;
+	display: block;
+}
+.badgeListTableEntry {
+	padding: 1px;
+	background: #FFFFFF;
+	border: 1px solid #E1E1E1;
+}
+.badgeListTableEntry:hover {
+	cursor: pointer;
+}
+.badgeList_badge_name {
+	width: 430px;
+	font-weight: bold;
+}
+.badgeList_badge_country {
+	width: 150px;
+}
+.badgeList_badge_total_developers {
+	width: 220px;
+}
+.total_developers_text {
+	font: Helvetica, Arial;
+	font-size: 46px;
+	font-weight: bold;
+	color: #797979;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	text-align: right;
+}
+.total_developers_sidetext {
+	font-size: 14px;
+}
+.badge_nameheader, .badge_pic {
+	padding-left: 10px;
+}
+.badge_pic img {
+	width: 100px;
+}
+.badge_name {
+	margin: 0 0 0 5px;
+}
+.badge_name a, .badge_name a:active, .badge_name a:visited {
+	text-decoration: none;
+	color: #000000;
+}
+.badge_name a:hover {
+
+}
+.badgeList_badge_school a, .badgeList_badge_school a:active, .badgeList_badge_school a:visited {
+	font-size: 11px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-decoration: none;
+	background: #000000;
+	color: #FFFFFF;
+	padding: 2px 9px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px; 
+}
+.badgeList_badge_school a:hover {
+	background: #FFFFFF;
+	color: #000000;
+}
+.badge_badges_earned {
+	font: 13px Arial, Helvetica;
+	height: 17px;
+	font-weight: bold;
+}
+.badge_badges_total {
+	font-size: 11px;
+	color: #797979;
+}
+.badgeList_badge_badges a, .badgeList_badge_badges a:active, .badgeList_badge_badges a:visited {
+	font-size: 10px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-decoration: none;
+	background: #797979;
+	color: #FFFFFF;
+	padding: 1px 3px;
+	margin-left: 5px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px; 
+}
+.badgeList_badge_badges a:hover {
+	background: #000000;
+}
+.badgeList_badge_contact a, .badgeList_badge_contact a:active, .badgeList_badge_contact a:visited {
+	font-size: 10px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 1px 4px;
+	color: #000000;
+	background: #FFD101;
+}
+.badgeList_badge_contact a:hover {
+	color: #FFFFFF;
+	background: #0097FE;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px; 
+}
+
+#suggest_school_bar {
+	position: relative;
+}
+#suggest_school_bar a, #suggest_school_bar a:active, #suggest_school_bar a:visited {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 10px 0 0 20px;
+	padding-left: 10px;
+	text-decoration: none;
+	font: 12px Arial, Helvetica;
+	font-weight: bold;
+	text-transform: uppercase;
+	border-left: 8px solid #FFFF00;
+	border-bottom: 2px dotted #000000;
+	color: #000000;
+}
+#suggest_school_bar a:hover {
+	color: #0097FE;
+	border-left: 8px solid #000000;
+}
+
+
