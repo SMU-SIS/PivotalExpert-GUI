@@ -19,8 +19,8 @@ function accept_bid(path,paypal){
 		<table class="project_view_bidManage_bidContent_Table" border="0" cellpadding="0" cellspacing="0">
 			<tr class="projectViewBidManageBidContentTableHeader">
 				<td class="project_view_bidManage_bid_displaybar_bidder displaybarHeader">Bidder</td>
-				<td class="project_view_bidManage_bid_displaybar_iterations displaybarHeader">Iteration(s)</td>
-				<td class="project_view_bidManage_bid_displaybar_amount displaybarHeader">Amount per Iteration</td>
+				<td class="project_view_bidManage_bid_displaybar_iterations displaybarHeader">Week(s)</td>
+				<td class="project_view_bidManage_bid_displaybar_amount displaybarHeader">Amount per Week</td>
 				<td class="project_view_bidManage_bid_displaybar_accept displaybarHeader">Accept</td>
 			</tr>
 		</table>
@@ -33,7 +33,7 @@ function accept_bid(path,paypal){
 						<ul>
 							<li class="project_view_bidManage_bid_displaybar_bidder">{{singlebid.dev}}</li>
 							<li class="project_view_bidManage_bid_displaybar_iterations">{{singlebid.no_of_iterations}}</li>
-							<li class="project_view_bidManage_bid_displaybar_amount">SGD${{singlebid.price_per_iter}}</li>
+							<li class="project_view_bidManage_bid_displaybar_amount">USD${{singlebid.price_per_iter}}</li>
 							<li class="project_view_bidManage_bid_displaybar_accept"><a onclick='accept_bid("form/project/acceptBid/{{project.id}}/{{singlebid.dev_id}}",{{singlebid.paypal}})'>Accept</a></li>
 						</ul>
 					</div>
@@ -42,7 +42,7 @@ function accept_bid(path,paypal){
 							<div id="project_view_bidManage_bidContent_{{$index}}" style="display:none;padding-bottom: 15px;">
 							<table class="project_view_bidManage_bidContent_TableContent_Table" border="0" cellpadding="0" cellspacing="0">
 								<tr class="projectViewBidManageBidContentTableContentEntry" ng:repeat="task in singlebid.iterations">
-									<td class="projectViewBidManageBidContentTableContentEntry_iteration"><span class="iterationHeaderText">Iteration {{$index+1}}</span></td>
+									<td class="projectViewBidManageBidContentTableContentEntry_iteration"><span class="iterationHeaderText">Week {{$index+1}}</span></td>
 									<td class="projectViewBidManageBidContentTableContentEntry_description">{{task}}</td>
 								</tr>
 							</table>

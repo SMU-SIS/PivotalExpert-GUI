@@ -4,15 +4,19 @@
 	<fieldset>
 		<legend>Bid for this project</legend>
 		<section class="section_subheader_line"></section>
-		<ol>
-			<li><label for="projectAddBid_price">Iteration Price (SGD$)<span class="required_tag">*</span></label><input id="projectAddBid_price" name="projectAddBid_price" type="text" placeholder="Eg. 25.00" ng:validate="integer:25" required autofocus></li>
-			<li><label for="projectAddBid_iterations">Iteration(s)<span class="required_tag">*</span></label><input id="projectAddBid_iterations" name="projectAddBid_iterations" type="number" min="1" required></li>
+		<ol ng:init="projectAddBid_iterations = 1">
+			<li><label for="projectAddBid_price">Weekly Price (USD$)<span class="required_tag">*</span></label><input id="projectAddBid_price" name="projectAddBid_price" type="text" placeholder="Eg. 25.00" ng:validate="integer:25" required autofocus></li>
+			<li><label for="projectAddBid_iterations">Weeks(s)<span class="required_tag">*</span></label><input id="projectAddBid_iterations" name="projectAddBid_iterations" type="number" min="1" required></li>
+			<li><label for="projectAddBid_buttons">&nbsp;</label><a ng:click="projectAddBid_iterations = projectAddBid_iterations + 1">[+]</a> <a ng:click="projectAddBid_iterations = projectAddBid_iterations - 1">[-]</a></li>
 		</ol>
 		<ol>
 			<!-- have to change following to a loop with Angular based on above Number of ITERATIONS-->
-			<li><label for="projectAddBid_iterationPlan">Iteration 1 Plan<span class="required_tag">*</span></label><textarea name="projectAddBid_task1" class="projectAddBid_iterationPlan" rows="" placeholder="Please fill in your plan for this iteration. Eg. Design paper prototype" required></textarea></li>
-			<li><label for="projectAddBid_iterationPlan">Iteration 2 Plan</label><textarea name="projectAddBid_task2" class="projectAddBid_iterationPlan" rows="" placeholder="Please fill in your plan for this iteration. Eg. Code login page with sign-in form" ></textarea></li>
+			<li ng:repeat="i in iterationhack" ng:show="$index < projectAddBid_iterations"><label for="projectAddBid_iterationPlan">Week {{$index+1}} Plan<span class="required_tag">*</span></label><textarea name="projectAddBid_task{{$index+1}}" class="projectAddBid_iterationPlan" rows="" placeholder="Please fill in your plan for this iteration. Eg. Design paper prototype"></textarea></li>
+			<!--<li><label for="projectAddBid_iterationPlan">Week 2 Plan</label><textarea name="projectAddBid_task2" class="projectAddBid_iterationPlan" rows="" placeholder="Please fill in your plan for this iteration. Eg. Code login page with sign-in form" ></textarea></li>-->
 			<!-- end loop -->
+		</ol>
+		<ol>
+			<li><label for="expectedEarnings">I expect to earn ($USD)</label><input name="expectedEarnings" type="text" value="{{projectAddBid_iterations * projectAddBid_price}}" disabled></li>
 		</ol>
 	</fieldset>
 	<fieldset>
