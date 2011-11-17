@@ -1,122 +1,103 @@
-<!--page 13: instituiton_index-->
-<!--this is the institutions list for a selected country-->
-
-<style>
-
-#institutions_page {
-
-}
-#institutions_search {
-
-}
-#institutions_stack {
-
-}
-
-
-</style>
-
-
-
-
-<!--<script>
-	CurrentUserController.$inject = ['$resource'];
-  function CurrentUserController($resource){
-   this.Activity = $resource( 'rest/user/current_user');
-	this.fetch();
-  }
-  CurrentUserController.prototype = {
-   fetch: function(){
-    this.currentUser = this.Activity.get();
-    this.$parent.currentUser = this.currentUser;
-   }
-
-</script>-->
-
 
 <script src="gui/js/scripts.js"></script>
 <link rel="stylesheet" href="gui/css/style-institution.css" type="text/css" media="screen" />
 <section id="institution_index_page">
 	<section id="institution_index_Header">
-		<section class="section_header">Institutions</section>
+		<section class="section_header">Institutions <span ng:show="institutions.search">Search: {{institutions.search}}</span></section>
 		<section class="section_subheader">
-			<span id="institutionList_count">{{institutions.$count}}</span> Institutions Available
+			<span id="institutionList_count">{{institutions.total}}</span>
+			<span id="selectcountry" ng:show="currentUser.nickname">
+				<select class="sort_select_country" name="country_domain">
+					<option class="sort_select_country_option" value="" default>{{currentUser.country}}</option>
+					<option class="sort_select_country_option" ng:repeat="country in countries" value="{{country.domain}}">{{country.name}}</option>
+				</select>
+			</span> Institutions <span ng:hide="institutions.search">Available</span><span ng:show="institutions.search">Found</span>
 		</section>
-		
-		
+		<section id="institution_index_searchbar">
+			<input type="text" id="institutionList_search_query" name="institutionList_search_query" placeholder="search a institution" /><div ng:show="currentUser.nickname" id="institutionList_search"><a href="">Search</a></div>
+		</section>
+		<section id="institution_index_sortbar">
+			<section class="sort_subheader">sort by:</section>
+			<select class="sort_select" name="orderProp">
+				<option class="sort_select_option" value="institutionname">Institution</option>
+				<option class="sort_select_option" value="country">Country</option>
+				<option class="sort_select_option" value="totaldevelopers">Total Developers</option>
+			</select>
+		</section>
 	</section>
-	
-	
 	<table id="institution_index_Table" border="0" cellpadding="0" cellspacing="0">
-		<tr class="projectListTableHeader">
-			<td class="table_header projectList_project_title">Title</td>
-			<td class="table_header projectList_project_owner">Owner</td>
-			<td class="table_header projectList_project_status">Status</td>
-			<td class="table_header projectList_project_budget">Budget</td>
-			<td class="table_header projectList_project_tags">Tags</td>
-			<td class="table_header projectList_project_created">Created</td>
+		<tr class="institutionListTableHeader">
+			<td class="table_header institutionList_institution_name"><span class="institution_nameheader">Institution</span></td>
+			<td class="table_header institutionList_institution_country">Country</td>
+			<td class="table_header institutionList_institution_total_developers">Total Developers</td>
 		</tr>
-		<tr class="projectListTableEntry" ng:repeat="project in projects">
-			<td class="table_row projectList_project_title">{{project.title}}</td>
-		<!-- <td class="table_row projectList_project_title">
-				<div ng:show="currentUser.userType == 'developer'">
-				   <a href="#/projects/bid/{{project.id}}">{{project.title}}</a>
-				</div>
-				<div ng:show="currentUser.userType == 'hirer'">
-				   <a href="#/projects/bid/{{project.id}}">{{project.title}}</a>
-				</div>
+		<tr class="institutionListTableEntry" ng:repeat="institution in institutions.institutionList.$filter(query).$orderBy(orderProp)" 
+			  onmouseover="HighlightInstitutionRow(this, true);" 
+              onmouseout="HighlightInstitutionRow(this, false);" 
+              onclick="GoToURL('#/instituitions/{{institution.id}}');">
+			<td class="table_row institutionList_institution_name">
+				<span class="institution_pic"><img src="gui/images/schools/{{institution.image}}"></span>
+				<span class="institution_name"><a href="institution.html">{{institution.name}} ({{institution.initials}})</a></span>
 			</td>
-			-->
-			<td class="table_row projectList_project_owner">{{project.owner}}</td>
-			<td class="table_row projectList_project_status">{{project.status}}</td>
-			<td class="table_row projectList_project_budget">SGD${{project.budget}}</td>
-			<td class="table_row projectList_project_tags"><span ng:repeat="item in project.tags">
-				<span ng:hide="$position == 'first'">, </span>{{item}}</span>
+			<td class="table_row institutionList_institution_country">{{institution.country}}</td>
+			<td class="table_row institutionList_institution_total_developers">{{institution.totaldevelopers}}</td>
+		</tr>
+		
+		
+		<tr class="institutionListTableEntry"
+			  onmouseover="HighlightInstitutionRow(this, true);" 
+              onmouseout="HighlightInstitutionRow(this, false);" 
+              onclick="GoToURL('#/instituitions/{{institution.id}}');">
+			<td class="table_row institutionList_institution_name">
+				<span class="institution_pic"><img src="gui/images/schools/smulogo.png"></span>
+				<span class="institution_name"><a href="user_profile.html">Singapore Management University (SMU)</a></span>
 			</td>
-			<td class="table_row projectList_project_created">{{project.created}}</td>
-
-			<!--<li class="table_row projectList_project_action"><a href="#/projects/accept/{{project.id}}">View</a> / <a href="#/projects/bid/{{project.id}}">Bid</a></li>-->
-	</tr>
+			<td class="table_row institutionList_institution_country">Singapore</td>
+			<td class="table_row institutionList_institution_total_developers total_developers_text">85<span class="total_developers_sidetext">developers</span></td>
+		</tr>
+		<tr class="institutionListTableEntry"
+			  onmouseover="HighlightInstitutionRow(this, true);" 
+              onmouseout="HighlightInstitutionRow(this, false);" 
+              onclick="GoToURL('#/instituitions/{{institution.id}}');">
+			<td class="table_row institutionList_institution_name">
+				<span class="institution_pic"><img src="gui/images/schools/nuslogo.png"></span>
+				<span class="institution_name"><a href="user_profile.html">National University of Singapore (NUS)</a></span>
+			</td>
+			<td class="table_row institutionList_institution_country">Singapore</td>
+			<td class="table_row institutionList_institution_total_developers total_developers_text">70<span class="total_developers_sidetext">developers</span></td>
+		</tr>
+		<tr class="institutionListTableEntry"
+			  onmouseover="HighlightInstitutionRow(this, true);" 
+              onmouseout="HighlightInstitutionRow(this, false);" 
+              onclick="GoToURL('#/instituitions/{{institution.id}}');">
+			<td class="table_row institutionList_institution_name">
+				<span class="institution_pic"><img src="gui/images/schools/ntulogo.png"></span>
+				<span class="institution_name"><a href="user_profile.html">Nanyang Technological University (NTU)</a></span>
+			</td>
+			<td class="table_row institutionList_institution_country">Singapore</td>
+			<td class="table_row institutionList_institution_total_developers total_developers_text">50<span class="total_developers_sidetext">developers</span></td>
+		</tr>
+		
 	</table>
+	<section id="suggest_school_bar"><a href="#/institutions/add">Add New School</a></section>
+	
+	<div class="pagination_section">
+		<ul>
+			<li>
+				<span class="pagination_sidelinks" ng:hide="institutions.page_current == 1"><a href="#/institutions/page/1">First</a></span>
+				<span class="currentsidelink" ng:show="institutions.page_current == 1">First</span>
+			</li>
+			<li class="pagination_sidelinks" ng:hide="institutions.page_current == 1"><a href="#/institutions/page/{{institutions.page_current-1}}"><</a></li>
+			<li ng:repeat="page in institutions.page_numbers">
+				<span class="pagination_pages" ng:hide="page == institutions.page_current"><a href="#/institutions/page/{{page}}">{{page}}</a></span>
+				<span class="pagination_pages_current currentpage" ng:show="page == institutions.page_current">{{page}}</span>
+			</li>
+			<li class="pagination_sidelinks" ng:hide="institutions.page_current == institutions.pages"><a href="#/institutions/page/{{institutions.page_current+1}}">></a></li>
+			<li>
+				<span class="pagination_sidelinks" ng:hide="institutions.page_current == institutions.pages"><a href="#/institutions/page/{{institutions.pages}}">Last</a></span>
+				<span class="currentsidelink" ng:show="institutions.page_current == institutions.pages">Last</span>
+			</li>
+		</ul>
+    </div>
 </section>
-Page 1
-
-
-
-
-
-
-<div id="">
-
-	<h3>Singapore</h3>
-	<img src="" width="120" height="70"/>
-	Total Developers:
-	<h2>63</h2>
-	<hr/>
-	<a href="#/institutions/add">Add New School</a>
-	<div id="institutions_search">
-		<form action="" method="POST">
-			Search <input type="text" name="search" value=""/>
-			<input type="submit" name="submit" value="submit"/>
-		</form>
-	</div>
-	<br/>
-	<div id="institutions_stack">
-		<table border="1">
-			<tr>
-				<td width="250">Institution</td>
-				<td width="220">Website</td>
-				<td>Developers</td>
-			</tr>
-			<tr>
-				<td>Singapore Management University</td>
-				<td>www.smu.edu.sg</td>
-				<td>122</td>
-			</tr>	
-		</table>
-	</div>
-	Page 1
-
-</div>
-
 
