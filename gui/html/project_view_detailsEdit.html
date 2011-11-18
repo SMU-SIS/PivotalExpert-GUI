@@ -22,15 +22,18 @@
 			<li><label for="projectDetails_owner">Owner</label><input id="projectDetails_owner" name="projectDetails_owner" type="text" placeholder="" value="{{project.owner}}" disabled="disabled"></li>
 			<li><label for="projectDetails_description">Project Description</label><textarea id="projectDetails_description" name="projectDetails_description" rows="" placeholder="" value="{{project.description}}"></textarea></li>
 			<li><label for="projectDetails_requirements">Project Requirements</label><textarea id="projectDetails_requirements" name="projectDetails_requirements" rows="" placeholder="" value="{{project.requirements}}"></textarea></li>
-			<li ng:init="edit1 = 'false'" ng:hide="edit1"><label>Application Type<span class="required_tag">*</span></label> <span class='noninput_text'>{{project.appType}} [<a ng:click="edit1 = 'true'">change</a>]</span></li>
-			<li ng:show="edit1"><label for="projectDetails_type">Application Type<span class="required_tag">*</span></label><select name="projectDetails_type">
-							<option ng:repeat="item in appType">{{item.name}}</option>
-						</select></li>
+			<li ng:init="edit1 = 'false'" ng:hide="edit1"><label>Application Type<span class="required_tag">*</span></label><span class='noninput_text'>{{project.appType}} [<a ng:click="edit1 = 'true'">change</a>]</span></li>
+			<li ng:show="edit1"><label for="projectDetails_type">Application Type<span class="required_tag">*</span></label>
+				<select name="projectDetails_type">
+					<option ng:repeat="item in appType">{{item.name}}</option>
+				</select>
+			</li>
 			<li ng:init="edit2 = 'false'" ng:hide="edit2"><label>Languages (Pick up to 3)<span class="required_tag">*</span></label> <span class='noninput_text'><span ng:repeat="item in project.languages">{{item}}, </span> [<a ng:click="edit2 = 'true'">change</a>]</span></li>
-			<li ng:show="edit2"><label for="projectDetails_languages">Languages<span class="required_tag">*</span></label> 
-				<ul class="projectListOptions">
-					<li ng:repeat="item in languages"><input type="checkbox" name="projectDetails_languages" value="{{item.name}}">{{item.name}}</input></li>
-				</ul>
+			<li ng:show="edit2">
+				<label id="projectDetails_languages_lbl" for="projectDetails_languages">Languages<span class="required_tag">*</span></label> 
+					<ul id="languageOptionBox">
+						<li ng:repeat="item in languages"><input class="projectDetails_languages_checkbox" type="checkbox" name="projectDetails_languages" value="{{item.name}}" /><div class="projectDetails_languages_text">{{item.name}}</div></li>
+					</ul>
 			</li>
 			<li ng:init="edit3 = 'false'" ng:hide="edit3"><label>Database used<span class="required_tag">*</span></label> <span class='noninput_text'>{{project.database}} [<a ng:click="edit3 = 'true'">change</a>]</span></li>
 			<li ng:show="edit3"><label for="projectDetails_database">Database used<span class="required_tag">*</span></label>
@@ -39,7 +42,7 @@
 					<option value="Others">Others</option>
 				</select>
 			</li>
-			<li><label for="projectDetails_budget">Total Budget (SGD$)</label><input id="projectDetails_budget" name="projectDetails_budget" type="text" placeholder="" value="{{project.budget}}" ng:validate="integer:25"></li>
+			<li><label for="projectDetails_budget">Total Budget (USD$)</label><input id="projectDetails_budget" name="projectDetails_budget" type="text" placeholder="" value="{{project.budget}}" ng:validate="integer:25"></li>
 			<!--<li><label for="projectDetails_tags">Tag(s)</label><textarea id="projectDetails_tags" name="projectDetails_tags" rows="6" placeholder="" value="{{project.tags}}"></textarea></li>-->
 		</ol>
 	</fieldset>

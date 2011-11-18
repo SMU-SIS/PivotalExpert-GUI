@@ -9,15 +9,16 @@
 		<ol>
 			<li><label for="projectAddBid_price">Weekly Allowance (USD$)</label><input id="projectAddBid_price" name="projectAddBid_price" type="text" placeholder="" value="{{bid.price_per_iter}}" ng:validate="integer:25" autofocus></li>
 			<li><label for="projectAddBid_iterations">Week(s)</label><input id="projectAddBid_iterations" name="projectAddBid_iterations" type="number" value="{{bid.no_of_iterations}}" ></li>
-			<li><label for="projectAddBid_buttons">&nbsp;</label>[<a ng:click="projectAddBid_iterations = projectAddBid_iterations + 1">More weeks!</a>] [<a ng:click="projectAddBid_iterations = projectAddBid_iterations - 1">Less weeks!</a>]</li>
+			<li>
+				<img id="current_user_image" src="http://www.gravatar.com/avatar/{{currentUser.gravatar}}?s=50&d=mm" alt="{{currentUser.nickname}}" border="3"/>
+				<section class="project_addBid_smallspeechbubble">I expect to earn USD${{projectAddBid_iterations * projectAddBid_price}} in {{projectAddBid_iterations}} weeks</section>
+			</li>
+			<li id="projectAddBid_buttons"><label for="projectAddBid_buttons">&nbsp;</label><a id="projectAddBid_buttons_more" ng:click="projectAddBid_iterations = projectAddBid_iterations + 1">[ + ] More weeks</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a id="projectAddBid_buttons_less" ng:click="projectAddBid_iterations = projectAddBid_iterations - 1">[ - ] Less weeks</a></li>
 		</ol>
 		<ol>
 			<!-- have to change following to a loop with Angular based on above Number of ITERATIONS-->
 			<li ng:repeat="task in iterationhack" ng:show="$index < projectAddBid_iterations"><label for="projectAddBid_iterationPlan">Week {{$index+1}} Plan</label><textarea name="projectAddBid_task{{$index+1}}" class="projectAddBid_iterationPlan" rows="7" placeholder="" value="{{bid.iterations[$index]}}"></textarea></li>
 			<!-- end loop -->
-		</ol>
-		<ol>
-			<li><label style="width:400px">I expect to earn US${{projectAddBid_iterations * projectAddBid_price}} in {{projectAddBid_iterations}} weeks</label></li>
 		</ol>
 	</fieldset>
 	<fieldset>

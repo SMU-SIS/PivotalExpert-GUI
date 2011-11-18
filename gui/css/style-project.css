@@ -4,6 +4,10 @@
 }
 #project_accept_page {
 }
+
+#create_new_project_section {
+}
+
 #project_index_Header {
 	position: relative;
 	margin: 0;
@@ -199,7 +203,7 @@
 /** Project_Bid & Project_Create **/
 #project_bid_page, #create_new_project_page {
 	position: relative;
-	height: 600px;
+	min-height: 640px;
 	z-index: 2;
 }
 #project_bid_Header {
@@ -210,17 +214,33 @@
 	position: relative;
 }
 
+#project_addthis, #user_addthis {
+	font-size: 10px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+#project_addthis {
+	position: absolute;
+	top: 0;
+	right: 0;
+	-moz-right: 0;
+	-webkit-right: 0;
+	margin: 2px 20px 0 0;
+}
+#user_addthis {
+}
+
 #project_bid_projectFunction_owner {
 	position: relative;
 	left: 0;
 	top: 0;
-	margin: 0 0 0 480px;
+	margin: 0 0 0 460px;
 }
 #project_bid_projectFunction {
-	position: absolute;
+	position: relative;
 	left: 0;
 	top: 0;
-	margin: 0 0 0 480px;
+	margin: 0 0 0 460px;
 }
 #project_bid_projectDetails_owner {
 	position: absolute;
@@ -228,10 +248,13 @@
 	top: 0;
 }
 #project_bid_projectDetails {
-	position: relative;
+	position: absolute;
+	left: 0;
+	top: 0;
 }
 form#projectAddBidForm, form#projectDetailsForm {
-	width: 440px;
+	position: relative;
+	width: 420px;
 	min-height: 380px;
 	height: auto;
 }
@@ -248,7 +271,8 @@ form#projectAddBidForm fieldset fieldset, form#createNewProjectForm fieldset fie
 	margin-left: 180px;
 }
 
-form#projectAddBidForm legend, form#projectDetailsForm legend, form#createNewProjectForm legend, #project_accept_acceptBid {
+form#projectAddBidForm legend, form#projectDetailsForm legend, form#createNewProjectForm legend, #project_accept_acceptBid,
+.project_section_subheader {
     color: #000000;
     font-size: 16px;
     font-weight: bold;
@@ -273,15 +297,60 @@ form#projectAddBidForm label, form#projectDetailsForm label, form#createNewProje
     width: 180px;
     cursor: default;
 }
-ul.projectListOptions {
-	float: left;
-	padding: 0;
-	margin: 0;
+form#createNewProjectForm select, form#projectDetailsForm select {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0 0 0 180px;
+	padding: 4px 5px;
+	width: 515px;
+	height: 32px;
+	background: #F0F0F0;
+	font: italic 13px Georgia, "Times New Roman", Times, serif;
+	color: #000000;
+	border: 2px solid #E7E7E7;
+}
+form#projectDetailsForm select {
+	width: 215px;
 }
 
-ul.projectListOptions li {
+#projectDetails_languages_lbl {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#languageOptionBox, #languageOptionBox_create {
+	position: relative;
+	height: 80px;
+	margin: 2px 0 0 180px;
+	overflow-y: scroll;
+	width: 203px;
+	border: 2px solid #E7E7E7;
+	-moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    clear: both;
+    padding: 0 0 10px 8px;
+    list-style: none;
+	font-size: 12px;
 	float: left;
 }
+#languageOptionBox_create {
+	width: 502px;
+}
+#languageOptionBox li, #languageOptionBox_create li {
+	position: relative;
+	line-height: 14px;
+	height: 14px;
+}
+.projectDetails_languages_text {
+	position: relative;
+	top: 0;
+	left: 0;
+	margin-left: 25px;
+	padding-top: 2px	;
+}
+
 
 .detailslabel {
 	position: absolute;
@@ -329,7 +398,7 @@ ul.projectListOptions li {
 	border-color: #00AEFF;
 }
 form#projectAddBidForm input:not([type=radio]), form#projectAddBidForm textarea, 
-form#projectDetailsForm input:not([type=radio]), form#projectDetailsForm textarea, form#projectDetailsForm select,
+form#projectDetailsForm input:not([type=radio]), form#projectDetailsForm textarea, 
 form#createNewProjectForm input:not([type=radio]), form#createNewProjectForm textarea {
     background: #FFFFFF;
     border: 2px solid #E7E7E7;
@@ -342,23 +411,23 @@ form#createNewProjectForm input:not([type=radio]), form#createNewProjectForm tex
     padding: 5px;
     width: 200px;
 }
-form#projectDetailsForm select {
-		
-}
+
 form#createNewProjectForm input:not([type=radio]), form#createNewProjectForm textarea {
 	width: 500px;
 }
 form#projectAddBidForm input:not([type=submit]):focus, form#projectAddBidForm textarea:focus,
-form#createNewProjectForm input:not([type=submit]):focus, form#createNewProjectForm textarea:focus {
+form#createNewProjectForm input:not([type=submit]):focus, form#createNewProjectForm textarea:focus,
+form#projectDetailsForm input:not([type=radio]):focus, form#projectDetailsForm textarea:focus, form#projectDetailsForm select:focus,
+form#createNewProjectForm select:focus {
     background: #FFFF00;
 }
 
-form#projectAddBidForm input[type=checkbox], form#createNewProjectForm input[type=checkbox] {
+form#projectAddBidForm input[type=checkbox], form#createNewProjectForm input[type=checkbox], form#projectDetailsForm input[type=checkbox] {
     float: left;
     margin: 10px 5px 0 0;
     width: 15px;
 }
-form#projectAddBidForm input[type=checkbox]:hover, form#createNewProjectForm input[type=checkbox]:hover {
+form#projectAddBidForm input[type=checkbox]:hover, form#createNewProjectForm input[type=checkbox]:hover, form#projectDetailsForm input[type=checkbox]:hover {
     cursor: pointer;
 }
 
@@ -390,6 +459,7 @@ form#projectAddBidForm button:hover, form#createNewProjectForm button:hover {
 
 
 #project_view_bidManage {
+	position: relative;
 	top: 0;
 	left: 0;
 	padding-top: 10px;
@@ -505,8 +575,10 @@ form#projectAddBidForm button:hover, form#createNewProjectForm button:hover {
 	border: 1px dashed #000000;
 	border-top: 0;
 }
+.project_view_bidManage_bid_slidedownbox {
+	padding-top: 20px;
+}
 .project_view_bidManage_bidContent_TableContent {
-	padding-top: 28px;
 	background: #BAE9FF;
 	border: 1px dashed #000000;
 	border-top: 0;
@@ -517,7 +589,7 @@ form#projectAddBidForm button:hover, form#createNewProjectForm button:hover {
 }
 .project_view_bidManage_bidContent_TableContent_Table tr td {
 	padding: 4px 7px 6px 6px;
-	margin-right: 5px;
+	margin: 2px 5px 0 0;
 }
 .projectViewBidManageBidContentTableContentEntry {
 }
@@ -534,4 +606,128 @@ form#projectAddBidForm button:hover, form#createNewProjectForm button:hover {
 	border-bottom: 1px dotted #0097FE;
 }
 
+
+#project_verify_sortbar {
+	text-align: center;
+	width: 425px;
+}
+.project_verify_bigspeechbubble, .project_addBid_smallspeechbubble {
+	position: relative;
+	padding: 25px;
+	margin: 5px 0 20px 25px;
+	color: #FFFFFF;
+	background: #075698; /* default background for browsers without gradient support */
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#2e88c4), to(#075698));
+	background:-moz-linear-gradient(#2e88c4, #075698);
+	background:-o-linear-gradient(#2e88c4, #075698);
+	background:linear-gradient(#2e88c4, #075698);
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	width: 325px;
+	text-align: center;
+	font: 42px "CaviarDreamsRegular", Helvetica, sans-serif;
+}
+.project_addBid_smallspeechbubble {
+	padding: 10px 20px;
+	margin: 2px 0 20px 65px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	width: 290px;
+	font: 12px Helvetica, sans-serif;
+	z-index: 5;
+	text-align: left;
+}
+#current_user_image {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.project_verify_bigspeechbubble:after, .project_addBid_smallspeechbubble:after {
+	content: "";
+	position: absolute;
+	bottom: -20px; 
+	left: 50px; 
+	border-width: 20px 0 0 20px; 
+	border-style: solid;
+	border-color: #075698 transparent; 
+    display: block; 
+    width: 0;
+}
+.project_addBid_smallspeechbubble:after {
+	border-width: 10px 0 0 10px; 
+	bottom: -10px; 
+	left: 10px; 
+}
+.project_verify_bigspeechbubble.top, .project_addBid_smallspeechbubble.top {
+	background:-webkit-gradient(linear, 0 0, 0 100%, from(#075698), to(#2e88c4));
+	background:-moz-linear-gradient(#075698, #2e88c4);
+	background:-o-linear-gradient(#075698, #2e88c4);
+	background:linear-gradient(#075698, #2e88c4);
+}
+.project_verify_bigspeechbubble.top:after, .project_addBid_smallspeechbubble.top:after {
+	top: -20px;
+	right: 50px; 
+	bottom: auto;
+	left: auto;
+	border-width: 20px 20px 0 0; 
+	border-color: transparent #075698; 
+}
+.smallertext {
+	font-size: 24px;
+	padding: 34px;
+}
+.project_verify_notificationtext {
+	position: relative;
+	margin: 4px 0 65px 0;
+	font-size: 12px;
+}
+.project_verify_notificationtext_line {
+	padding-bottom: 8px;
+	border-bottom: 2px dotted #EC008C;
+}
+.project_verify_headertext {
+	font-size: 18px;
+	font-weight: bold;
+}
+.project_verify_notificationparatext {
+	margin: 20px 0 80px 5px;
+}
+
+.project_verify_notification_verifiedacct_header {
+	font-size: 12px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.project_verify_notification_verifiedacct_header a, .project_verify_notification_verifiedacct_header a:active, .project_verify_notification_verifiedacct_header:visited {
+	color: #797979;
+	text-decoration: none;
+}
+.project_verify_notification_verifiedacct_header a:hover {
+	color: #0097FE;
+}
+.base_sunburst {
+	margin-top: 140px;
+}
+
+#projectAddBid_buttons {
+	text-transform: uppercase;
+	font-size: 10px;
+	font-weight: bold;
+}
+#projectAddBid_buttons a, #projectAddBid_buttons a:active, #projectAddBid_buttons a:visited {
+	text-decoration: none;
+	color: #0097FE;
+	padding: 2px 0;
+}
+#projectAddBid_buttons a:hover {
+	color: #000000;
+}
+#projectAddBid_buttons_more:hover {
+	border-top: 6px solid #000000;
+}
+#projectAddBid_buttons_less:hover {
+	border-bottom: 6px solid #000000;
+}
 

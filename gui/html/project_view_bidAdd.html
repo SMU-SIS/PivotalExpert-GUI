@@ -7,16 +7,17 @@
 		<ol ng:init="projectAddBid_iterations = 1">
 			<li><label for="projectAddBid_price">Weekly Price (USD$)<span class="required_tag">*</span></label><input id="projectAddBid_price" name="projectAddBid_price" type="text" placeholder="Eg. 25.00" ng:validate="integer:25" required autofocus></li>
 			<li><label for="projectAddBid_iterations">Weeks(s)<span class="required_tag">*</span></label><input id="projectAddBid_iterations" name="projectAddBid_iterations" type="number" min="1" required></li>
-			<li><label for="projectAddBid_buttons">&nbsp;</label>[<a ng:click="projectAddBid_iterations = projectAddBid_iterations + 1">More weeks!</a>] [<a ng:click="projectAddBid_iterations = projectAddBid_iterations - 1">Less weeks!</a>]</li>
+			<li>
+				<img id="current_user_image" src="http://www.gravatar.com/avatar/{{currentUser.gravatar}}?s=50&d=mm" alt="{{currentUser.nickname}}" border="3"/>
+				<section class="project_addBid_smallspeechbubble">I expect to earn USD${{projectAddBid_iterations * projectAddBid_price}} in {{projectAddBid_iterations}} weeks</section>
+			</li>
+			<li id="projectAddBid_buttons"><label for="projectAddBid_buttons">&nbsp;</label><a id="projectAddBid_buttons_more" ng:click="projectAddBid_iterations = projectAddBid_iterations + 1">[ + ] More weeks</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a id="projectAddBid_buttons_less" ng:click="projectAddBid_iterations = projectAddBid_iterations - 1">[ - ] Less weeks</a></li>
 		</ol>
 		<ol>
 			<!-- have to change following to a loop with Angular based on above Number of ITERATIONS-->
 			<li ng:repeat="i in iterationhack" ng:show="$index < projectAddBid_iterations"><label for="projectAddBid_iterationPlan">Week {{$index+1}} Plan<span class="required_tag">*</span></label><textarea name="projectAddBid_task{{$index+1}}" class="projectAddBid_iterationPlan" rows="" placeholder="Please fill in your plan for this iteration. Eg. Design paper prototype"></textarea></li>
 			<!--<li><label for="projectAddBid_iterationPlan">Week 2 Plan</label><textarea name="projectAddBid_task2" class="projectAddBid_iterationPlan" rows="" placeholder="Please fill in your plan for this iteration. Eg. Code login page with sign-in form" ></textarea></li>-->
 			<!-- end loop -->
-		</ol>
-		<ol>
-			<li><label style="width:400px">I expect to earn US${{projectAddBid_iterations * projectAddBid_price}} in {{projectAddBid_iterations}} weeks</label> </li>
 		</ol>
 	</fieldset>
 	<fieldset>
@@ -31,10 +32,28 @@
 	</fieldset>
 </form>
 </div>
-<p ng:hide="project.paypal">
-	You need to set up your PayPal account before you can bid for a project. Visit your <a href="#/settings/paypal">PayPal Settings page</a> to add your PayPal email address you wish to be paid at.
-</p>
-<p ng:hide="project.developer">
-	You need to be a verified student before you can bid for a project. Verify that you are a student <a href="#/settings/school">from this page</a>.
-</p>
+
+<section id="project_verify_sortbar" ng:hide="project.paypal">
+	<section class="project_verify_bigspeechbubble">Whoops !!! :(</section>
+	<section class="project_verify_notificationtext">
+		<span class="project_verify_notificationtext_line project_verify_headertext">PayPal Account Error.</span><br />
+		<section class="project_verify_notificationparatext">You need to set up your PayPal account before you can bid for a project.</section>
+		<section id="project_verify_notification_verifiedacct">
+			<span class="project_verify_notification_verifiedacct_header shiftright">Visit your <a href="#/settings/paypal">PayPal Settings page</a> to add your PayPal email address you wish to be paid at.</span>
+		</section>
+	</section>
+	<section class="base_sunburst"><img src="gui/images/bottomburst-v02.jpg" width="380px" /></section>
+</section>
+<section id="project_verify_sortbar" ng:hide="project.developer">
+	<section class="project_verify_bigspeechbubble">Whoops !!! :(</section>
+	<section class="project_verify_notificationtext">
+		<span class="project_verify_notificationtext_line project_verify_headertext">Verification Error.</span><br />
+		<section class="project_verify_notificationparatext">You need to be a verified student before you can bid for a project. </section>
+		<section id="project_verify_notification_verifiedacct">
+			<span class="project_verify_notification_verifiedacct_header shiftright">Verify that you are a student <a href="#/settings/school">from this page</a>.</span>
+		</section>
+	</section>
+	<section class="base_sunburst"><img src="gui/images/bottomburst-v02.jpg" width="380px" /></section>
+</section>
+
 

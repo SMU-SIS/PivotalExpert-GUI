@@ -1,0 +1,13 @@
+
+
+#help_terms_content {
+	width: 600px;
+	height: 400px;
+	padding: 30px
+	overflow-y: scroll;
+	display: block;
+	border: 1px solid #E2E2E2;
+}
+.terms_writeup {
+
+}

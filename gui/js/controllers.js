@@ -61,9 +61,9 @@ function PageRouter_Master($route, $location, $resource) { //router for the webs
 	
 	/* FOOTER Re-Directs */
 	$route.when('/sitemap',{template:'gui/html/sitemap.html'});// sitemap page
-	$route.when('/faq',{template:'gui/html/faq.html'});// faq page
-	$route.when('/terms_of_service',{template:'gui/html/terms.html'});// terms of service page
-	$route.when('/contact_us',{template:'gui/html/contact_us.html'});// contact us page
+	$route.when('/faq',{template:'gui/html/help_faq.html'});// faq page
+	$route.when('/terms_of_service',{template:'gui/html/help_terms.html'});// terms of service page
+	$route.when('/contact_us',{template:'gui/html/help_contact_us.html'});// contact us page
 	
 	
 	/* SUB-PAGES Re-Directs */

@@ -267,6 +267,32 @@
     background: #F0F0F0;
 }
 
+#settings_school_suggestschoolbar {
+	position: absolute;
+	top: 0;
+	right: 0;
+	-moz-right: 0;
+	-webkit-right: 0;
+	float: right;
+	height: 18px;
+	display: block;
+	margin: 34px 12px 0 0;
+	width: 320px;
+	padding: 4px 0 0 0;
+	border-bottom: 2px solid #00AEFF;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: right;
+}
+#settings_school_suggestschoolbar a, #settings_school_suggestschoolbar a:active, #settings_school_suggestschoolbar a:visited {
+	text-decoration: none;
+	color: #00AEFF;
+	font-variant: small-caps;
+}
+#settings_school_suggestschoolbar a:hover {
+	color: #0054A6;
+}
+
 .settings_bigspeechbubble {
 	position: relative;
 	padding: 25px;
@@ -381,5 +407,103 @@
 	height: 205px;
 }
 
+
+form#suggestNewSchoolForm {
+}
+form#suggestNewSchoolForm fieldset  {
+	border: none;
+	margin-bottom: 10px;
+}
+
+form#suggestNewSchoolForm legend {
+    color: #000000;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 0 10px 0px;
+    text-shadow: 0 1px 1px #E2E2E2;
+}
+form#suggestNewSchoolForm ol {	
+	padding: 0;
+    margin: 0;
+}
+form#suggestNewSchoolForm ol li {
+    position: relative;
+    margin: 2px 0 2px 0px;
+    line-height: 30px;
+    list-style: none;
+    float: left;
+    clear: both;
+}
+form#suggestNewSchoolForm label {
+    float: left;
+    font-size: 12px;
+    width: 235px;
+    cursor: default;
+}
+.required_tag {
+	color: #FF0000;
+	padding-left: 5px;
+}
+.school_web_prefix {
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 11px;
+	margin: 2px 0 0 245px;
+}
+#suggestNewSchool_school_web {
+	text-indent: 45px;
+}
+
+form#suggestNewSchoolForm select {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0 0 0 235px;
+	padding: 4px 5px;
+	width: 460px;
+	height: 32px;
+	background: #F0F0F0;
+	font: italic 13px Georgia, "Times New Roman", Times, serif;
+	color: #000000;
+	border: 2px solid #E7E7E7;
+}
+
+form#suggestNewSchoolForm input:not([type=radio]) {
+    background: #FFFFFF;
+    border: 2px solid #E7E7E7;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+    font: italic 13px Georgia, "Times New Roman", Times, serif;
+    outline: none;
+    padding: 5px;
+    width: 450px;
+}
+form#suggestNewSchoolForm input:not([type=submit]):focus, form#suggestNewSchoolForm select:focus {
+    background: #FFFF00;
+}
+form#suggestNewSchoolForm button {
+    background: #00AEFF;
+    border: none;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -khtml-border-radius: 8px;
+    border-radius: 8px;
+    color: #FFFFFF;
+    display: inline;
+    font: 12px Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+    padding: 8px 35px;
+    text-transform: uppercase;
+    margin-left: 238px;
+}
+form#suggestNewSchoolForm button:hover {
+    background: #FFFF00;
+    text-shadow: 0 1px 1px #FFD200;
+    color: #000000;
+    cursor: pointer;
+}
 
 
