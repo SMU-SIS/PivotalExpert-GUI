@@ -457,7 +457,8 @@
 
 .projectsmgt_workroom_action a, .projectsmgt_workroom_action a:active, .projectsmgt_workroom_action a:visited,
 .projectsmgt_projects_action a, .projectsmgt_projects_action a:active, .projectsmgt_projects_action a:visited,
-.user_wrk_workroom_action a, .user_wrk_workroom_action a:active, .user_wrk_workroom_action a:visited {
+.user_wrk_workroom_action a, .user_wrk_workroom_action a:active, .user_wrk_workroom_action a:visited, 
+.user_wrk_projects_action a, .user_wrk_projects_action a:active, .user_wrk_projects_action a:visited {
 	font-size: 10px;
 	font-weight: bold;
 	text-transform: uppercase;
