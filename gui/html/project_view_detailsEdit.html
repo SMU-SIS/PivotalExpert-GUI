@@ -30,7 +30,6 @@
 			<li ng:show="edit2"><label for="projectDetails_languages">Languages<span class="required_tag">*</span></label> 
 				<ul class="projectListOptions">
 					<li ng:repeat="item in languages"><input type="checkbox" name="projectDetails_languages" value="{{item.name}}">{{item.name}}</input></li>
-					<li><input type="checkbox" name="projectDetails_languages" value="Others">Others</input></li>
 				</ul>
 			</li>
 			<li ng:init="edit3 = 'false'" ng:hide="edit3"><label>Database used<span class="required_tag">*</span></label> <span class='noninput_text'>{{project.database}} [<a ng:click="edit3 = 'true'">change</a>]</span></li>
