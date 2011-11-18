@@ -36,10 +36,10 @@
               onclick="GoToURL('#/user/{{developer.id}}');">
 			<td class="table_row developerList_developer_name">
 				<span class="developer_pic"><img src="http://www.gravatar.com/avatar/{{developer.gravatar}}?s=30&d=mm"></span>
-				<span class="developer_name"><a href="user_profile.html">{{developer.nickname}}</a></span>
+				<span class="developer_name">{{developer.nickname}}</span>
 			</td>
 			<td class="table_row developerList_developer_country">{{developer.country}}</td>
-			<td class="table_row developerList_developer_school"><a href="instituitions.html">{{developer.school}}</a></td>
+			<td class="table_row developerList_developer_school"><a href="">{{developer.school}}</a></td>
 			<td class="table_row developerList_developer_badges">
 				<!--<span ng:repeat="item in developer.badges"><span ng:hide="$position == 'first'"></span><img src="{{item}}"/></span>-->
 				<span class="developer_badges_earned">earned{{total_earned_badges}} <span class="developer_badges_total">/ total{{total_possible_earned_badges}}</span></span> <a href="">more</a>
