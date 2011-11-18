@@ -1,7 +1,7 @@
 <script>
 function accept_bid(path,paypal){
 	if(paypal){
-		var answer = confirm('Are you sure you want to accept this bid? You will be directed to PayPal to pay for the first <iteration term>.');
+		var answer = confirm('Are you sure you want to accept this bid? You will be directed to PayPal to pay for the first week of work.');
 		
 		if (answer) {
 			window.location = path;
@@ -31,7 +31,7 @@ function accept_bid(path,paypal){
 				<div class="project_view_bidManage_bid_body">
 					<div class="project_view_bidManage_bid_displaybar">
 						<ul>
-							<li class="project_view_bidManage_bid_displaybar_bidder">{{singlebid.dev}}</li>
+							<li class="project_view_bidManage_bid_displaybar_bidder"><a href="#/user/{{singlebid.dev_id}}" style="margin:4px 0 0 4px;">{{singlebid.dev}}</a></li>
 							<li class="project_view_bidManage_bid_displaybar_iterations">{{singlebid.no_of_iterations}}</li>
 							<li class="project_view_bidManage_bid_displaybar_amount">USD${{singlebid.price_per_iter}}</li>
 							<li class="project_view_bidManage_bid_displaybar_accept"><a onclick='accept_bid("form/project/acceptBid/{{project.id}}/{{singlebid.dev_id}}",{{singlebid.paypal}})'>Accept</a></li>
