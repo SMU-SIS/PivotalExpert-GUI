@@ -7,7 +7,7 @@
 		<ol ng:init="projectAddBid_iterations = 1">
 			<li><label for="projectAddBid_price">Weekly Price (USD$)<span class="required_tag">*</span></label><input id="projectAddBid_price" name="projectAddBid_price" type="text" placeholder="Eg. 25.00" ng:validate="integer:25" required autofocus></li>
 			<li><label for="projectAddBid_iterations">Weeks(s)<span class="required_tag">*</span></label><input id="projectAddBid_iterations" name="projectAddBid_iterations" type="number" min="1" required></li>
-			<li><label for="projectAddBid_buttons">&nbsp;</label><a ng:click="projectAddBid_iterations = projectAddBid_iterations + 1">[+]</a> <a ng:click="projectAddBid_iterations = projectAddBid_iterations - 1">[-]</a></li>
+			<li><label for="projectAddBid_buttons">&nbsp;</label>[<a ng:click="projectAddBid_iterations = projectAddBid_iterations + 1">More weeks!</a>] [<a ng:click="projectAddBid_iterations = projectAddBid_iterations - 1">Less weeks!</a>]</li>
 		</ol>
 		<ol>
 			<!-- have to change following to a loop with Angular based on above Number of ITERATIONS-->
@@ -16,7 +16,7 @@
 			<!-- end loop -->
 		</ol>
 		<ol>
-			<li><label for="expectedEarnings">I expect to earn ($USD)</label><input name="expectedEarnings" type="text" value="{{projectAddBid_iterations * projectAddBid_price}}" disabled></li>
+			<li><label style="width:400px">I expect to earn US${{projectAddBid_iterations * projectAddBid_price}} in {{projectAddBid_iterations}} weeks</label> </li>
 		</ol>
 	</fieldset>
 	<fieldset>
