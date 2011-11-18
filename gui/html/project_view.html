@@ -1,17 +1,31 @@
 <!-- route users to the respective project views-->
 
+<script type="text/javascript">
+$("#test").click(function(){
+	$.getScript('http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4eb3968f3e31f112',function(){
+
+	var add_this_html =
+	'<div class="addthis_toolbox addthis_default_style">'+
+	'<a class="addthis_button_preferred_1"></a>'+
+	'<a class="addthis_button_preferred_2"></a>'+
+	'<a class="addthis_button_preferred_3"></a>'+
+	'<a class="addthis_button_compact"></a>'+
+	'<a class="addthis_counter addthis_bubble_style"></a>'+
+	'</div>';
+	
+	$("#project_addthis").html(add_this_html);
+	addthis.init();
+		});
+});
+</script>
+
 <link rel="stylesheet" href="gui/css/style-project.css" type="text/css" media="screen" />
 <section id="project_bid_page">
+	<div id="test">Test</div>
 	<section id="project_bid_Header">
 		<section class="section_header">{{title}}{{project.title}}</section>
 		<!-- AddThis Button BEGIN -->
-		<div class="addthis_toolbox addthis_default_style ">
-		<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-		<a class="addthis_button_tweet"></a>
-		<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
-		<a class="addthis_counter addthis_pill_style"></a>
-		</div>
-		<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4eb3968f3e31f112"></script>
+		<div id="project_addthis">Share This Project</div>
 		<!-- AddThis Button END -->
 	</section>
 	<section id="project_bid_Body">
