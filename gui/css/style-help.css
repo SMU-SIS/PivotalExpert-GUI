@@ -1,5 +1,15 @@
 
 
+#project_create_terms_content {
+	width: 452px;
+	height: 60px;
+	padding: 30px;
+	overflow-y: scroll;
+	display: block;
+	border: 1px solid #E2E2E2;
+	clear: both;
+	line-height: 14px;
+}
 #help_terms_content {
 	width: 820px;
 	height: 300px;

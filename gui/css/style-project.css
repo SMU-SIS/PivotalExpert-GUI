@@ -313,6 +313,15 @@ form#createNewProjectForm select, form#projectDetailsForm select {
 form#projectDetailsForm select {
 	width: 215px;
 }
+#createNewProject_terms {
+	position: absolute;
+	top: 0;
+	left: 0;	
+	margin-top: 5px;
+}
+#project_create_terms_content {
+	margin: 5px 0 0 180px;
+}
 
 #projectDetails_languages_lbl {
 	position: absolute;
