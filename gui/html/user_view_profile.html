@@ -1,4 +1,6 @@
-
+<script>
+$('#user_profile_tab').addClass('active');
+</script>
 <section id="user_view_profile">
 	<section id="user_view_profile_content" class="tabcontent">
 			<table id="user_view_profile_Table" border="0" cellpadding="0" cellspacing="0">
@@ -39,7 +41,7 @@
 				</tr>
 				<tr class="userviewprofileTableEntry" ng:hide="user.about">
 					<td class="table_row message_text_msg">
-						<section id="user_view_profile_user_performance_panel">
+						<!--<section id="user_view_profile_user_performance_panel">
 							<div class="user_view_profile_performance_panel_Header">My Performance</div>
 							<ul>
 								<li>
@@ -63,20 +65,20 @@
 									<div class="user_view_profile_performance_value">1</div>
 								</li>
 							</ul>
-						</section>
+						</section>-->
 						<section id="user_view_profile_user_profile_badges_panel">
 							<div class="user_view_profile_badges_panel_Header">My Badges</div>
 							<ul>
 								<li>
 									<div class="user_view_profile_badges_header">PivotalExpert:</div>
-									<div class="user_view_profile_badges_value">20 <span class="user_view_profile_badges_score_total">/80</span></div>
+									<div class="user_view_profile_badges_value">{{badges.current}}<span class="user_view_profile_badges_score_total">/{{badges.total}}</span></div>
 								</li>
-								<li>
+								<!--<li>
 									<div class="user_view_profile_badges_header">Singpath:</div>
 									<div class="user_view_profile_badges_value">5 <span class="user_view_profile_badges_score_total">/20</span></div>
-								</li>
+								</li>-->
 								<li>
-									<div class="user_view_profile_badges_more_link"><a href="">more</a></div>
+									<div class="user_view_profile_badges_more_link"><a href="/#/user/{{user.id}}/badges">more</a></div>
 								</li>
 							</ul>
 						</section>
