@@ -43,6 +43,7 @@ function PageRouter_Master($route, $location, $resource) { //router for the webs
 	
 	//user profiles
 	$route.when('/user/:id',{template:'gui/html/user_view.html', controller: UserViewCtrl});
+	$route.when('/user/:id/:view',{template:'gui/html/user_view.html', controller: UserViewCtrl});
 	
 	//settings module
 	$route.when('/settings/paypal',{template:'gui/html/settings_paypal.html', controller: SettingsPayPalCtrl});
@@ -67,7 +68,7 @@ function PageRouter_Master($route, $location, $resource) { //router for the webs
 	
 	
 	/* SUB-PAGES Re-Directs */
-	$route.when('/badges',{template:'gui/html/badges_index.html'});
+	$route.when('/badges',{template:'gui/html/badges_index.html', controller: BadgesIndexCtrl});
 	$route.when('/badges/suggest',{template:'gui/html/suggest_badge.html'});
 	
 	
@@ -157,6 +158,7 @@ function ProjectCreateCtrl($resource) {
 
 function DashboardCtrl($resource) {
 	this.dashboard = $resource('rest/dashboard/dashboard').query();
+	this.badges = $resource('rest/user/badges').get();
 }
 
 function SettingsUserCtrl($resource) {
@@ -217,11 +219,23 @@ function MessagesCtrl($resource){
 }
 
 function UserViewCtrl($resource){
+	if(this.params.view){
+		view = this.params.view;
+	}
+	else{
+		view = 'profile'
+	}
+	this.user_view = 'gui/html/user_view_'+view+'.html';
 	this.user = $resource('rest/user/view/'+this.params.id).get();
+	this.badges = $resource('rest/user/badges/'+this.params.id).get();
 }
 
 function AdminSchoolsCtrl($resource){
 	this.schools = $resource('rest/admin/schools').query();
+}
+
+function BadgesIndexCtrl(($resource){
+	this.badges = $resource('rest/badges').get();
 }
 
 //Method that checks for current user

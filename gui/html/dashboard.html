@@ -59,8 +59,9 @@
 		<section id="user_info_panel"> 
 			<section class="tabs">
 				<ul class="tabs">
-					<li><a ng:click="dashboard_view = 'gui/html/dashboard_newsfeed.html'" id="newsfeed_tab" class="active" onclick="$(this).addClass('active');$('#projectsmgt_tab').removeClass('active');">News Feed</a></li>
-					<li><a ng:click="dashboard_view = 'gui/html/dashboard_pm.html'" id="projectsmgt_tab" onclick="$(this).addClass('active');$('#newsfeed_tab').removeClass('active');">Project Management</a></li>
+					<li><a ng:click="dashboard_view = 'gui/html/dashboard_newsfeed.html'" id="newsfeed_tab" class="active" onclick="$(this).addClass('active');$('#projectsmgt_tab').removeClass('active');$('#badges_tab').removeClass('active');">News Feed</a></li>
+					<li><a ng:click="dashboard_view = 'gui/html/dashboard_pm.html'" id="projectsmgt_tab" onclick="$(this).addClass('active');$('#newsfeed_tab').removeClass('active');$('#badges_tab').removeClass('active');">Project Management</a></li>
+					<li><a ng:click="dashboard_view = 'gui/html/dashboard_badges.html'" id="badges_tab" onclick="$(this).addClass('active');$('#newsfeed_tab').removeClass('active');$('#projectsmgt_tab').removeClass('active');">Badges</a></li>
 					<!--<li><a href="javascript:tabSwitch_dashboard('returnontime_tab', 'returnontime_content');" id="returnontime_tab">Return-on-Time</a></li>-->
 				</ul>
 			</section>
