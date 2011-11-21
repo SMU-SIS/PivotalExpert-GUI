@@ -234,7 +234,7 @@ function AdminSchoolsCtrl($resource){
 	this.schools = $resource('rest/admin/schools').query();
 }
 
-function BadgesIndexCtrl(($resource){
+function BadgesIndexCtrl($resource){
 	this.badges = $resource('rest/badges').get();
 }
 
