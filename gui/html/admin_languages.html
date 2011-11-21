@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="gui/css/style-thebadge.css" type="text/css" media="screen" />
+<h1>Languages</h1>
+<div>
+	<div ng:repeat="badge in languages.languages" class="badge" style="float:left;border: 2px solid #{{badge.color}};background-color:#{{badge.color}}">
+		<div class="badge-level" style="color:#{{badge.color}}">Level 1</div>
+		{{badge.shortName}}
+	</div>
+	<div style="clear:both">&nbsp;</div>
+</div>
+
+<h1>Add a Language</h1>
+<form action="form/admin/language" method="post">
+	<ul>
+		<li><label for="admin_badge_name">Property Name</label><input type="text" name="admin_badge_name" id="admin_badge_name"></li>
+		<li><label for="admin_badge_shortName">Property ShortName (less than 4 characters)</label><input type="text" name="admin_badge_shortName" id="admin_badge_shortName"></li>
+		<li><label for="admin_badge_type">Property Type</label><select name="admin_badge_type">
+			<option value="0">Application Type</option>
+			<option value="1">Language</option>
+			<option value="2">Database</option>
+			</select>
+		</li>
+		<li ng:show="admin_badge_name && admin_badge_shortName"><input type="submit" value="Add {{admin_badge_name}}"></li>
+	</ul>
+</form>
+
+<h1>Levels</h1>
+<table>
+	<tr>
+		<th>Level Achievement Amount Action</th>
+	</tr>
+	<tr ng:repeat="level in languages.levels">
+		<td ng:init="edit = 'False'" ng:hide="edit">
+			{{level.level}} {{level.amount}} <input type="button" value="Edit" ng:click="edit = 'True'">
+		</td>
+		<td ng:show="edit">
+			<form action="form/admin/level/edit/{{level.id}}" method="post">
+				{{level.level}} 
+				<input type="text" name="amount" value="{{level.amount}}">
+				<input type="submit" value="Save">
+			</form>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<form action="form/admin/level/add/{{languages.levels.$count()+1}}" method="post">
+				{{languages.levels.$count()+1}} 
+				<input type="text" name="new_amount" placeholder="E.g. 1000">
+				<input type="submit" value="Add a new level">
+			</form>
+		</td>
+	</tr>
+</table>
