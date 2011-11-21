@@ -554,7 +554,7 @@ form#projectAddBidForm button:hover, form#createNewProjectForm button:hover {
 	font-size: 10px;
 	text-decoration: none;
 	padding: 1px 3px;
-	margin: 4px 0 0 326px;
+	margin: 4px 0 0 347px;
 	color: #000000;
 	background: #FFD101;
 }
@@ -563,10 +563,10 @@ form#projectAddBidForm button:hover, form#createNewProjectForm button:hover {
 	background: #000000;
 }
 .project_view_bidManage_bid_displaybar_bidder {
-	width: 80px;
+	width: 121px;
 }
 .project_view_bidManage_bid_displaybar_iterations {
-	width: 67px;
+	width: 46px;
 }
 .project_view_bidManage_bid_displaybar_amount {
 	width: 122px;
