@@ -1,0 +1,51 @@
+<!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script src="/gui/lib/jquery/jquery-1.6.2.min.js"></script>
+    <script type="text/javascript">
+    
+    // Load the Visualization API and the piechart package.
+    google.load('visualization', '1', {'packages':['corechart']});
+      
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.setOnLoadCallback(drawChart);
+      
+    function drawChart() {
+      var projJsonData = $.ajax({
+          url: "/rest/analytics/chart/1",
+          dataType:"json",
+          async: false
+          }).responseText;
+          
+      var langJsonData = $.ajax({
+          url: "/rest/analytics/chart/2",
+          dataType:"json",
+          async: false
+          }).responseText;
+          
+     var userJsonData = $.ajax({
+          url: "/rest/analytics/chart/3",
+          dataType:"json",
+          async: false
+          }).responseText;
+          
+      // Create our data table out of JSON data loaded from server.
+      var dataProj = new google.visualization.DataTable(projJsonData);
+      var dataLang = new google.visualization.DataTable(langJsonData);
+      var dataUser = new google.visualization.DataTable(userJsonData);
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart1 = new google.visualization.PieChart(document.getElementById('chart1_div'));
+      chart1.draw(dataProj, {width: 400, height: 300, title: 'Active Projects'});
+      
+      var chart2 = new google.visualization.PieChart(document.getElementById('chart2_div'));
+      chart2.draw(dataLang, {width: 400, height: 300, title: 'Languages'});
+      
+      var chart3 = new google.visualization.PieChart(document.getElementById('chart3_div'));
+      chart3.draw(dataUser, {width: 400, height: 300, title: 'Developers'});
+    }
+
+    </script>
+    <!--Div that will hold the pie chart-->
+    <div id="chart1_div" style="float:left"></div>
+    <div id="chart2_div" style="float:left"></div>
+    <div id="chart3_div" style="float:left"></div>
