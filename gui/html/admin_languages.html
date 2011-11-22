@@ -1,54 +1,239 @@
+
+<style>
+
+.header_label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #0097FE;
+	color: #FFFFFF;
+	width: 312px;
+	height: 20px;
+	padding: 2px 0 2px 10px;
+	line-height: 20px;
+	text-transform: uppercase;
+	font-size: 12px;
+	font-weight: bold;
+	z-index: 5;
+}
+#admin_languages_languagesbar, #admin_languages_addalanguagebar, #admin_languages_levelsbar {
+	position: relative;
+}
+#admin_languages_availablelanguages, #admin_languages_addalanguage, #admin_languages_levels {
+	width: 520px;
+	margin-left: 320px;
+	padding: 0 0 20px 50px;
+	border-left: 2px dotted #797979;
+	margin-bottom: 35px;
+}
+
+form#addALanguageForm {
+	position: relative;
+}
+form#addALanguageForm ul {	
+	padding: 0;
+    margin: 0;
+}
+form#addALanguageForm ul li {
+    position: relative;
+    margin: 4px 0px;
+    line-height: 30px;
+    list-style: none;
+}
+form#addALanguageForm label {
+    float: left;
+    font-size: 12px;
+    width: 280px;
+    cursor: default;
+}
+#admin_badge_type {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+form#addALanguageForm input:not([type=radio]) {
+    background: #FFFFFF;
+    border: 2px solid #E7E7E7;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+    font: italic 13px Georgia, "Times New Roman", Times, serif;
+    outline: none;
+    padding: 5px;
+    width: 205px;
+}
+
+form#addALanguageForm select {
+	position: relative;
+	margin: 0 0 0 280px;
+	padding: 4px 5px;
+	width: 220px;
+	height: 32px;
+	background: #F0F0F0;
+	font: italic 13px Georgia, "Times New Roman", Times, serif;
+	color: #000000;
+	border: 2px solid #E7E7E7;
+}
+form#addALanguageForm input:not([type=radio]):focus, form#addALanguageForm select:focus {
+    background: #FFFF00;
+}
+
+
+
+
+</style>
+
+
 <link rel="stylesheet" href="gui/css/style-thebadge.css" type="text/css" media="screen" />
-<h1>Languages</h1>
-<div>
-	<div ng:repeat="badge in languages.languages" class="badge" style="float:left;border: 2px solid #{{badge.color}};background-color:#{{badge.color}}">
-		<div class="badge-level" style="color:#{{badge.color}}">Level 1</div>
-		{{badge.shortName}}
-	</div>
-	<div style="clear:both">&nbsp;</div>
-</div>
-
-<h1>Add a Language</h1>
-<form action="form/admin/language" method="post">
-	<ul>
-		<li><label for="admin_badge_name">Property Name</label><input type="text" name="admin_badge_name" id="admin_badge_name"></li>
-		<li><label for="admin_badge_shortName">Property ShortName (less than 4 characters)</label><input type="text" name="admin_badge_shortName" id="admin_badge_shortName"></li>
-		<li><label for="admin_badge_type">Property Type</label><select name="admin_badge_type">
-			<option value="0">Application Type</option>
-			<option value="1">Language</option>
-			<option value="2">Database</option>
-			</select>
-		</li>
-		<li ng:show="admin_badge_name && admin_badge_shortName"><input type="submit" value="Add {{admin_badge_name}}"></li>
-	</ul>
-</form>
-
-<h1>Levels</h1>
-<table>
-	<tr>
-		<th>Level Achievement Amount Action</th>
-	</tr>
-	<tr ng:repeat="level in languages.levels">
-		<td>
-			<div ng:init="edit = 'False'" ng:hide="edit">
-			{{level.level}} {{level.amount}} <input type="button" value="Edit" ng:click="edit = 'True'">
-			</div>
-			<div ng:show="edit">
-				<form action="form/admin/level/edit/{{level.id}}" method="post">
-					{{level.level}} 
-					<input type="text" name="amount" value="{{level.amount}}">
-					<input type="submit" value="Save">
+<section id="admin_languages_page">
+	<section id="admin_languages_Header">
+		<section class="section_header">Admin | Edit Languages</section>
+		<section id="admin_languages_languagesbar">
+			<section class="header_label">Available Languages</section>
+			<section id="admin_languages_availablelanguages">
+				<div ng:repeat="badge in languages.languages" class="badge" style="float:left;border: 2px solid #{{badge.color}};background-color:#{{badge.color}}">
+					<div class="badge-level" style="color:#{{badge.color}}">Level 1</div>
+					{{badge.shortName}}
+				</div>
+				<div style="clear:both">&nbsp;</div>
+			</section>
+		</section>
+		<section id="admin_languages_addalanguagebar">
+			<section class="header_label">Add a Language</section>
+			<section id="admin_languages_addalanguage">
+				<form id="addALanguageForm" action="form/admin/language" method="post">
+					<ul>
+						<li><label for="admin_badge_name">Property Name</label><input type="text" name="admin_badge_name" id="admin_badge_name"></li>
+						<li><label for="admin_badge_shortName">Property ShortName (less than 4 characters)</label><input type="text" name="admin_badge_shortName" id="admin_badge_shortName"></li>
+						<li><label id="admin_badge_type" for="admin_badge_type">Property Type</label>
+							<select name="admin_badge_type">
+								<option value="0">Application Type</option>
+								<option value="1">Language</option>
+								<option value="2">Database</option>
+							</select>
+						</li>
+						<li ng:show="admin_badge_name && admin_badge_shortName"><input type="submit" value="Add {{admin_badge_name}}"></li>
+					</ul>
 				</form>
-			</div>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<form action="form/admin/level/add/{{languages.levels.$count()+1}}" method="post">
-				{{languages.levels.$count()+1}} 
-				<input type="text" name="new_amount" placeholder="E.g. 1000">
-				<input type="submit" value="Add a new level">
-			</form>
-		</td>
-	</tr>
-</table>
+			</section>
+		</section>
+		<section id="admin_languages_levelsbar">
+			<section class="header_label">Levels</section>
+			<section id="admin_languages_levels">
+			
+<style>
+
+
+#admin_languages_levels_Table input:not([type=radio]) {
+    background: #FFFFFF;
+    border: 2px solid #E7E7E7;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+    font: italic 13px Georgia, "Times New Roman", Times, serif;
+    outline: none;
+    padding: 5px;
+    width: 100px;
+}
+form#addALanguageForm button, #admin_languages_levels_Table button {
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -khtml-border-radius: 2px;
+    border-radius: 2px;
+     font-size: 10px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 1px 3px;
+	color: #000000;
+	background: #FFD101;
+	border: 0;
+}
+form#addALanguageForm button:hover, #admin_languages_levels_Table button:hover {
+    background: #FFFF00;
+    text-shadow: 0 1px 1px #FFD200;
+    color: #000000;
+    cursor: pointer;
+}
+
+
+#admin_languages_levels_Table {
+	position: relative;
+	width: 420px;
+	min-height: 380px;
+	height: auto;
+}
+#admin_languages_levels_Table tr {
+}
+#admin_languages_levels_Table tr td {
+	padding: 4px 7px 6px 6px;
+	margin: 2px 5px 0 0;
+}
+.admin_languages_levelsTableEntry {
+	margin: 1px;
+	padding: 1px;
+	border-bottom: 1px solid #E2E2E2;
+}
+.table_header {
+	font-weight: bold;
+}
+.table_row {
+	min-height: 12px;
+	line-height: 10px;
+}
+.admin_languages_levels_level {
+	width: 185px;
+	font-weight: bold;
+}
+.admin_languages_levels_achievement {
+	width: 105px;
+}
+.admin_languages_levels_amount {
+	width: 80px;
+}
+.admin_languages_levels_action {
+	width: 95px;
+}
+
+</style>
+			
+			
+				<table id="admin_languages_levels_Table" border="0" cellpadding="0" cellspacing="0">
+					<tr class="admin_languages_levelsTableHeader">
+						<td class="table_header admin_languages_levels_level"><span class="admin_languages_levels_levelheader">Level</span></td>
+						<td class="table_header admin_languages_levels_achievement">Achievement</td>
+						<td class="table_header admin_languages_levels_amount">Amount</td>
+						<td class="table_header admin_languages_levels_action">Action</td>
+					</tr>
+					<tr class="admin_languages_levelsTableEntry" ng:repeat="level in languages.levels">
+						<td class="table_row admin_languages_levels_level" ng:init="edit = 'False'" ng:hide="edit"><span class="admin_languages_levels_levelheader">{{level.level}}</span></td>
+						<td class="table_row admin_languages_levels_achievement" ng:init="edit = 'False'" ng:hide="edit">{{level.achievement}}</td>
+						<td class="table_row admin_languages_levels_amount" ng:init="edit = 'False'" ng:hide="edit">{{level.amount}}</td>
+						<td class="table_row admin_languages_levels_action" ng:init="edit = 'False'" ng:hide="edit"><button type="button" ng:click="edit = 'True'">Edit</button></td>
+						
+						<form id="levelsForm" action="form/admin/level/edit/{{level.id}}" method="post">
+							<td class="table_row admin_languages_levels_level" ng:show="edit"><span class="admin_languages_levels_levelheader">{{level.level}}</span></td>
+							<td class="table_row admin_languages_levels_achievement" ng:show="edit"><input type="text" name="achievement" value="{{level.achievement}}"></td>
+							<td class="table_row admin_languages_levels_amount" ng:show="edit"><input type="text" name="amount" value="{{level.amount}}"></td>
+							<td class="table_row admin_languages_levels_action" ng:show="edit"><button type="submit">Save</button></td>
+						</form>
+					</tr>
+					
+					<tr class="admin_languages_levelsTableEntry">
+						<form id="levelsForm_add" action="form/admin/level/add/{{languages.levels.$count()+1}}" method="post">
+							<td class="table_row admin_languages_levels_level"><span class="admin_languages_levels_levelheader">{{languages.levels.$count()+1}} </span></td>
+							<td class="table_row admin_languages_levels_achievement"><input type="text" name="new_achievement" placeholder="E.g. HTML"></td>
+							<td class="table_row admin_languages_levels_amount"><input type="text" name="new_amount" placeholder="E.g. 1000"></td>
+							<td class="table_row admin_languages_levels_action"><button type="submit">Add Level</button></td>
+						</form>
+					</tr>
+					
+				</table>
+			</section>
+		</section>
+		
+	</section>
+</section>
+
