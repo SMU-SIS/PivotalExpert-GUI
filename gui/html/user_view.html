@@ -24,7 +24,7 @@ $("#user_addthis").click(function(){
 		<section id="user_details_panel"> 
 			<section id="user_profile_details">
 				<div class="user_view_details_nick">{{user.nickname}}</div>
-				<div class="user_view_details_pic"><img src="http://www.gravatar.com/avatar/{{user.gravatar}}?s=150&d=mm" alt="{{currentUser.nickname}}" border="3"/></div>
+				<div class="user_view_details_pic"><img src="http://www.gravatar.com/avatar/{{user.gravatar}}?s=150&d=mm" alt="{{user.nickname}}" border="3"/></div>
 				<div class="user_view_details_school" ng:show="user.school">
 					<span class="user_view_details_school_initials">{{user.school_short}}</span>
 				</div>
