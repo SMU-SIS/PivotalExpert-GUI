@@ -1,4 +1,57 @@
-<link rel="stylesheet" href="gui/css/style-badge.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="gui/css/style-thebadge.css" type="text/css" media="screen" />
+<section id="user_view_profile">
+	<section id="user_view_profile_content" class="tabcontent">
+			<table id="user_view_profile_Table" border="0" cellpadding="0" cellspacing="0">
+				<tr class="userviewprofileTableHeader">
+					<td class="table_header message_text_header" >Language Badges</td>
+				</tr>
+				<tr class="userviewprofileTableEntry" ng:repeat="badge in badges.languages" >
+					<td>
+						<div class="badge" style="float:left;border: 2px solid #{{badge.color}};background-color:#{{badge.color}}">
+							<div class="badge-level" style="color:#{{badge.color}}">Level {{badge.level}}</div>
+							{{badge.shortName}}
+						</div>
+					</td>
+					<td>
+						<h3>{{badge.property}} Level {{badge.level}} Badge</h3>
+						<p>Unlocked on {{badge.created}} for earning more than <strong>US${{badge.achievement}}</strong> worth of {{badge.property}} projects</p>
+					</td>
+				</tr>
+				<tr class="userviewprofileTableHeader">
+					<td class="table_header message_text_header" >Project Type Badges</td>
+				</tr>
+				<tr class="userviewprofileTableEntry" ng:repeat="badge in badges.types" >
+					<td>
+						<div class="badge" style="float:left;border: 2px solid #{{badge.color}};background-color:#{{badge.color}}">
+							<div class="badge-level" style="color:#{{badge.color}}">Level {{badge.level}}</div>
+							{{badge.shortName}}
+						</div>
+					</td>
+					<td>
+						<h3>{{badge.property}} Level {{badge.level}} Badge</h3>
+						<p>Unlocked on {{badge.created}} for earning more than <strong>US${{badge.achievement}}</strong> worth of {{badge.property}} projects</p>
+					</td>
+				</tr>
+				<tr class="userviewprofileTableHeader">
+					<td class="table_header message_text_header" >Database Type Badges</td>
+				</tr>
+				<tr class="userviewprofileTableEntry" ng:repeat="badge in badges.databases" >
+					<td>
+						<div class="badge" style="float:left;border: 2px solid #{{badge.color}};background-color:#{{badge.color}}">
+							<div class="badge-level" style="color:#{{badge.color}}">Level {{badge.level}}</div>
+							{{badge.shortName}}
+						</div>
+					</td>
+					<td>
+						<h3>{{badge.property}} Level {{badge.level}} Badge</h3>
+						<p>Unlocked on {{badge.created}} for earning more than <strong>US${{badge.achievement}}</strong> worth of {{badge.property}} projects</p>
+					</td>
+				</tr>
+			</table>
+	</section>
+</section>
+
+<!--<link rel="stylesheet" href="gui/css/style-badge.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="gui/css/style-thebadge.css" type="text/css" media="screen" />
 <section id="badge_index_page">
 	<section id="badge_index_Header">
@@ -50,4 +103,4 @@
 	
 }
 
-</style>
+</style>-->

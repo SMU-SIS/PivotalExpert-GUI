@@ -20,7 +20,17 @@ $('#user_badges_tab').addClass('active');
 						<p>Unlocked on {{badge.created}} for earning more than <strong>US${{badge.achievement}}</strong> worth of {{badge.property}} projects</p>
 					</td>
 				</tr>
-				
+				<tr class="userviewprofileTableHeader" ng:show="badges.remaining">
+					<td class="table_header message_text_header">Badges Left To Unlock</td>
+				</tr>
+				<tr class="userviewprofileTableEntry" ng:show="badges.remaining">
+					<td>
+						<div ng:repeat="badge in badges.remaining" class="badge" style="float:left;border: 2px solid #cccccc;background-color:#cccccc">
+							<div class="badge-level" style="color:#cccccc">Level 1</div>
+							{{badge.shortName}}
+						</div>
+					</td>
+				</tr>
 				<tr ng:hide="badges.badges">
 					<td class="table_row">
 						<section class="message_from_profile_empty"><img src="http://www.gravatar.com/avatar/{{user.gravatar}}?s=50&d=mm" alt="{{currentUser.nickname}}" border="3"/></section>
