@@ -132,9 +132,9 @@ form#addALanguageForm input:not([type=radio]):focus, form#addALanguageForm selec
     -webkit-border-radius: 3px;
     -khtml-border-radius: 3px;
     border-radius: 3px;
-    font: italic 13px Georgia, "Times New Roman", Times, serif;
+    font: italic 11px Georgia, "Times New Roman", Times, serif;
     outline: none;
-    padding: 5px;
+    padding: 1px;
     width: 100px;
 }
 form#addALanguageForm button, #admin_languages_levels_Table button {
@@ -146,7 +146,7 @@ form#addALanguageForm button, #admin_languages_levels_Table button {
 	font-weight: bold;
 	text-transform: uppercase;
 	text-decoration: none;
-	padding: 1px 3px;
+	padding: 3px 5px;
 	color: #000000;
 	background: #FFD101;
 	border: 0;
@@ -161,9 +161,11 @@ form#addALanguageForm button:hover, #admin_languages_levels_Table button:hover {
 
 #admin_languages_levels_Table {
 	position: relative;
-	width: 420px;
+	width: 500px;
 	min-height: 380px;
 	height: auto;
+	font-family: Helvetica, Arial;
+	font-size: 12px;
 }
 #admin_languages_levels_Table tr {
 }
@@ -175,26 +177,35 @@ form#addALanguageForm button:hover, #admin_languages_levels_Table button:hover {
 	margin: 1px;
 	padding: 1px;
 	border-bottom: 1px solid #E2E2E2;
+	border-left: 1px dotted #797979;
+	border-right: 1px dotted #797979;
 }
 .table_header {
 	font-weight: bold;
 }
 .table_row {
-	min-height: 12px;
-	line-height: 10px;
+	height: 20px;
+	line-height: 20px;
+}
+.admin_languages_levelsTableHeader {
+	padding-top: 2px;
+	background: #FFFF00;
 }
 .admin_languages_levels_level {
-	width: 185px;
+	width: 50px;
 	font-weight: bold;
 }
+.admin_languages_levels_levelheader {
+	padding-left: 8px;
+}
 .admin_languages_levels_achievement {
-	width: 105px;
+	width: 150px;
 }
 .admin_languages_levels_amount {
-	width: 80px;
+	width: 150px;
 }
 .admin_languages_levels_action {
-	width: 95px;
+	width: 150px;
 }
 
 </style>
