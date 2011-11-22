@@ -29,15 +29,17 @@
 		<th>Level Achievement Amount Action</th>
 	</tr>
 	<tr ng:repeat="level in languages.levels">
-		<td ng:init="edit = 'False'" ng:hide="edit">
+		<td>
+			<div ng:init="edit = 'False'" ng:hide="edit">
 			{{level.level}} {{level.amount}} <input type="button" value="Edit" ng:click="edit = 'True'">
-		</td>
-		<td ng:show="edit">
-			<form action="form/admin/level/edit/{{level.id}}" method="post">
-				{{level.level}} 
-				<input type="text" name="amount" value="{{level.amount}}">
-				<input type="submit" value="Save">
-			</form>
+			</div>
+			<div ng:show="edit">
+				<form action="form/admin/level/edit/{{level.id}}" method="post">
+					{{level.level}} 
+					<input type="text" name="amount" value="{{level.amount}}">
+					<input type="submit" value="Save">
+				</form>
+			</div>
 		</td>
 	</tr>
 	<tr>
