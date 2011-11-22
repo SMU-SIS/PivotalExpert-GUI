@@ -28,10 +28,17 @@
           async: false
           }).responseText;
           
+      var langMoneyJsonData = $.ajax({
+          url: "/rest/analytics/chart/4",
+          dataType:"json",
+          async: false
+          }).responseText;
+          
       // Create our data table out of JSON data loaded from server.
       var dataProj = new google.visualization.DataTable(projJsonData);
       var dataLang = new google.visualization.DataTable(langJsonData);
       var dataUser = new google.visualization.DataTable(userJsonData);
+      var dataLangMoney = new google.visualization.DataTable(langMoneyJsonData);
 
       // Instantiate and draw our chart, passing in some options.
       var chart1 = new google.visualization.PieChart(document.getElementById('chart1_div'));
@@ -42,10 +49,14 @@
       
       var chart3 = new google.visualization.PieChart(document.getElementById('chart3_div'));
       chart3.draw(dataUser, {width: 400, height: 300, title: 'Developers'});
+      
+      var chart4 = new google.visualization.PieChart(document.getElementById('chart4_div'));
+      chart4.draw(dataLangMoney, {width: 400, height: 300, title: 'Most Profitable Languages'});
     }
 
     </script>
     <!--Div that will hold the pie chart-->
-    <div id="chart1_div" style="float:left"></div>
-    <div id="chart2_div" style="float:left"></div>
-    <div id="chart3_div" style="float:left"></div>
+		<div id="chart1_div" style="float:left"></div>
+		<div id="chart2_div" style="float:left"></div>
+		<div id="chart3_div" style="float:left"></div>
+		<div id="chart4_div" style="float:left"></div>

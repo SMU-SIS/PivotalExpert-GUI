@@ -60,7 +60,7 @@ function PageRouter_Master($route, $location, $resource) { //router for the webs
 	//admin module
 	$route.when('/admin/schools',{template:'gui/html/admin_schools.html', controller:AdminSchoolsCtrl});
 	$route.when('/admin/languages',{template:'gui/html/admin_languages.html',controller:AdminLanguagesCtrl});
-	$route.when('/analytics',{template:'gui/html/analytics.html'});
+	$route.when('/analytics',{template:'gui/html/analytics.html',controller:AnalyticsCtrl});
 	
 	/* FOOTER Re-Directs */
 	$route.when('/sitemap',{template:'gui/html/sitemap.html'});// sitemap page
@@ -240,8 +240,8 @@ function AdminLanguagesCtrl($resource){
 	this.languages = $resource('rest/admin/languages').get();
 }
 
-function AnalyticsProjectsCtrl($resource){
-	this.analytics = $resource('rest/analytics/projects').get();
+function AnalyticsCtrl($resource){
+	this.analytics = $resource('rest/analytics').get();
 }
 
 function BadgesIndexCtrl($resource){
