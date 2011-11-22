@@ -39,7 +39,6 @@
 			<li ng:show="edit3"><label for="projectDetails_database">Database used<span class="required_tag">*</span></label>
 				<select name="projectDetails_database">
 					<option ng:repeat="item in databases" value="{{item.name}}">{{item.name}}</option>
-					<option value="Others">Others</option>
 				</select>
 			</li>
 			<li><label for="projectDetails_budget">Total Budget (USD$)</label><input id="projectDetails_budget" name="projectDetails_budget" type="text" placeholder="" value="{{project.budget}}" ng:validate="integer:25"></li>
