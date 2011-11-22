@@ -1,3 +1,25 @@
-<iframe src="gui/html/analytics/projects.html" width="100%" height="600" frameborder="0">
+<table>
+	<tr>
+		<td>Total Projects: </td>
+		<td>{{analytics.total_projects}}</td>
+	</tr>
+	<tr>
+		<td>Total Bids: </td>
+		<td>{{analytics.total_bids}}</td>
+	</tr>
+	<tr>
+		<td>Bids per Project: </td>
+		<td>{{analytics.bids_per_project}}</td>
+	</tr>
+	<tr>
+		<td>Total Transactions: </td>
+		<td>US${{analytics.total_transactions}}</td>
+	</tr>
+	<tr>
+		<td>Average Cost Per Week of Work: </td>
+		<td>US${{analytics.average_cost_per_iteration}}</td>
+	</tr>
+</table>
+<iframe src="gui/html/analytics/projects.html" width="100%" height="610" frameborder="0">
   <p>Your browser does not support iframes.</p>
 </iframe>
