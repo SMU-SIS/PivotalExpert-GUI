@@ -5,6 +5,22 @@
 <link rel="stylesheet" href="gui/css/style-user.css" type="text/css" media="screen" />
 <section id="user_details_edit_panel">
 	<section class="section_header">Settings | Profile</section>
+	<section style="border-bottom: 2px solid #00AEFF;
+    border-top: 2px solid #00AEFF;
+    display: block;
+    float: right;
+    height: 24px;
+    margin: -44px 40px 0 0;
+    padding: 4px 0;
+    position: relative;
+    right: 0;
+    top: 0;
+    width: 134px;">
+		<label style="font-size: 12px;
+    font-style: italic;
+    line-height: 22px;
+    min-height: 20px;"><a href="#/user/me">View my public profile</a></label>
+	</section>
 	<form id="editPersonalForm" action="form/dashboard/user_edit?goto={{$location.hashSearch.goto}}" method="POST">
 		<section id="user_details_edit_panel_body">
 			<section id="user_profile_edit_personal_inputPhoto">
