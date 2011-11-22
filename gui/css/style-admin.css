@@ -1,0 +1,114 @@
+
+
+
+#admin_dashboard_Table {
+	position: relative;
+	font-family: Helvetica, Arial;
+	font-size: 12px;
+	display: block-inline;
+	width: 885px;
+}
+#admin_dashboard_Table tr {
+	margin: 0;
+	padding: 0;
+}
+#admin_dashboard_Table tr td {
+	display: inline-block;
+	list-style: none;
+	padding: 5px 10px;
+}
+
+.admindashboardTableHeader {
+	background: #FFFF00;
+}
+.table_header {
+	font-weight: bold;
+}
+.table_row {
+	position: relative;
+	margin-top: 8px;
+	min-height: 65px;
+}
+.admindashboardTableEntry {
+	margin: 1px;
+	padding: 1px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #E2E2E2;
+}
+
+
+.message_text_empty {
+	position: relative;
+	margin: 0 0 0 75px;
+}
+.message_text_empty_header {
+	font-weight: bold;
+}
+
+
+#admin_dashboard_performance_panel {
+	margin-bottom: 15px;
+}
+.admin_dashboard_performance_panel_Header {
+	font-size: 11px;
+	font-weight: bold;
+	padding-bottom: 3px;
+	border-bottom: 1px solid #E2E2E2;
+}
+#admin_dashboard_performance_panel ul {
+	padding: 0;
+	margin: 0;
+	border-bottom: 1px solid #E2E2E2;
+}
+#admin_dashboard_performance_panel ul li {
+	position: relative;
+	list-style: none;
+	display: block;
+	margin: 2px 0 2px 0;
+}
+.admin_dashboard_performance_header {
+	position: relative;
+	font-size: 12px;
+	min-height: 28px;
+	line-height: 12px;
+	width: 95px;
+	color: #FFFFFF;
+	padding: 2px 0 1px 5px;
+	font-variant: small-caps;
+	background: #000000;
+}
+.admin_dashboard_performance_header {
+	font-size: 13px;
+	width: 345px;
+}
+.admin_dashboard_performance_value {
+	position: absolute;
+	left: 0;
+	top: 0;
+	margin-left: 100px;
+	padding-right: 2px;
+	font: 20px Arial, Helvetica;
+	font-weight: bold;
+	width: 46px;
+	height: 29px;
+	text-align: right;
+	color: #0097FE;
+	border: 1px solid #E2E2E2;
+	border-top: 1px solid #FFFFFF;
+	border-left: 1px solid #000000;
+}
+.admin_dashboard_performance_value {
+	margin-left: 350px;
+	padding-right: 5px;
+	width: 500px;
+	font-size: 22px;
+}
+
+.analyticsframe, #analyticsframe_iframe {
+	width: 880px;
+	height: 610px;
+}
+#analyticsframe_iframe {
+	padding-left: 30px;
+}
+
