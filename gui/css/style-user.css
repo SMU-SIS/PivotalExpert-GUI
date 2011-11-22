@@ -183,6 +183,13 @@
 	color: #0097FE;
 	text-decoration: underline;
 }
+#project_addthis, #user_addthis {
+	font-size: 10px;
+	font-weight: bold;
+	text-transform: uppercase;
+	cursor: pointer;
+	text-align: center;
+}
 
 
 #right_panel {
