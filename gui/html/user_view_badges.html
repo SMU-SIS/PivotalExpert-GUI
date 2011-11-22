@@ -6,7 +6,7 @@ $('#user_badges_tab').addClass('active');
 	<section id="user_view_profile_content" class="tabcontent">
 			<table id="user_view_profile_Table" border="0" cellpadding="0" cellspacing="0">
 				<tr class="userviewprofileTableHeader">
-					<td class="table_header message_text_header">My Badges</td>
+					<td class="table_header message_text_header" ng:show="badges.badges">My Badges</td>
 				</tr>
 				<tr ng:show="badges.badges" class="userviewprofileTableEntry" ng:repeat="badge in badges.badges" >
 					<td>
@@ -18,6 +18,18 @@ $('#user_badges_tab').addClass('active');
 					<td>
 						<h3>{{badge.property}} Level {{badge.level}} Badge</h3>
 						<p>Unlocked on {{badge.created}} for earning more than <strong>US${{badge.achievement}}</strong> worth of {{badge.property}} projects</p>
+					</td>
+				</tr>
+				
+				<tr ng:hide="badges.badges">
+					<td class="table_row">
+						<section class="message_from_profile_empty"><img src="http://www.gravatar.com/avatar/{{user.gravatar}}?s=50&d=mm" alt="{{currentUser.nickname}}" border="3"/></section>
+						<section class="message_text_empty">
+							<span class="message_text_empty_header">Experience Gaining In Progress! ;)</span><br />
+							<span class="message_text_empty_msg">I'm still working on some projects to gain my experience. Check me back later or drop me a message! ;)
+							<section class="settings_bigspeechbubble">It's going to be WOW !</section>
+							<section class="base_sunburst"><img src="gui/images/bottomburst-v02.jpg" /></section>
+						</section>
 					</td>
 				</tr>
 			</table>
