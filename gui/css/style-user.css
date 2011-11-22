@@ -190,6 +190,9 @@
 	cursor: pointer;
 	text-align: center;
 }
+#user_addthis:hover {
+	color: #0097FE;
+}
 
 
 #right_panel {
