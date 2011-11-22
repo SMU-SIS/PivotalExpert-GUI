@@ -136,6 +136,7 @@ form#addALanguageForm input:not([type=radio]):focus, form#addALanguageForm selec
     outline: none;
     padding: 1px;
     width: 100px;
+    margin-top: -6px;
 }
 form#addALanguageForm button, #admin_languages_levels_Table button {
     -moz-border-radius: 2px;
@@ -182,10 +183,14 @@ form#addALanguageForm button:hover, #admin_languages_levels_Table button:hover {
 }
 .table_header {
 	font-weight: bold;
+	float: left;
+	margin-top: 3px;
 }
 .table_row {
-	height: 20px;
-	line-height: 20px;
+	height: 10px;
+	line-height: 10px;
+	float: left;
+	min-height: 10px;
 }
 .admin_languages_levelsTableHeader {
 	padding-top: 2px;
@@ -198,14 +203,12 @@ form#addALanguageForm button:hover, #admin_languages_levels_Table button:hover {
 .admin_languages_levels_levelheader {
 	padding-left: 8px;
 }
-.admin_languages_levels_achievement {
-	width: 150px;
-}
 .admin_languages_levels_amount {
 	width: 150px;
 }
 .admin_languages_levels_action {
 	width: 150px;
+	margin-top: 3px;
 }
 
 </style>
@@ -213,32 +216,34 @@ form#addALanguageForm button:hover, #admin_languages_levels_Table button:hover {
 			
 				<table id="admin_languages_levels_Table" border="0" cellpadding="0" cellspacing="0">
 					<tr class="admin_languages_levelsTableHeader">
-						<td class="table_header admin_languages_levels_level"><span class="admin_languages_levels_levelheader">Level</span></td>
-						<td class="table_header admin_languages_levels_achievement">Achievement</td>
-						<td class="table_header admin_languages_levels_amount">Amount</td>
-						<td class="table_header admin_languages_levels_action">Action</td>
+						<td>
+							<div class="table_header admin_languages_levels_level"><span class="admin_languages_levels_levelheader">Level</span></div>
+							<div class="table_header admin_languages_levels_amount">Amount (US$) to unlock</div>
+							<div class="table_header admin_languages_levels_action">Action</div>
+						</td>
 					</tr>
 					<tr class="admin_languages_levelsTableEntry" ng:repeat="level in languages.levels">
-						<td class="table_row admin_languages_levels_level" ng:init="edit = 'False'" ng:hide="edit"><span class="admin_languages_levels_levelheader">{{level.level}}</span></td>
-						<td class="table_row admin_languages_levels_achievement" ng:init="edit = 'False'" ng:hide="edit">{{level.achievement}}</td>
-						<td class="table_row admin_languages_levels_amount" ng:init="edit = 'False'" ng:hide="edit">{{level.amount}}</td>
-						<td class="table_row admin_languages_levels_action" ng:init="edit = 'False'" ng:hide="edit"><button type="button" ng:click="edit = 'True'">Edit</button></td>
-						
-						<form id="levelsForm" action="form/admin/level/edit/{{level.id}}" method="post">
-							<td class="table_row admin_languages_levels_level" ng:show="edit"><span class="admin_languages_levels_levelheader">{{level.level}}</span></td>
-							<td class="table_row admin_languages_levels_achievement" ng:show="edit"><input type="text" name="achievement" value="{{level.achievement}}"></td>
-							<td class="table_row admin_languages_levels_amount" ng:show="edit"><input type="text" name="amount" value="{{level.amount}}"></td>
-							<td class="table_row admin_languages_levels_action" ng:show="edit"><button type="submit">Save</button></td>
-						</form>
+						<td>
+							<div class="table_row admin_languages_levels_level" ng:init="edit = 'False'" ng:hide="edit"><span class="admin_languages_levels_levelheader">{{level.level}}</span></div>
+							<div class="table_row admin_languages_levels_amount" ng:init="edit = 'False'" ng:hide="edit">{{level.amount}}</div>
+							<div class="table_row admin_languages_levels_action" ng:init="edit = 'False'" ng:hide="edit"><button type="button" ng:click="edit = 'True'">Edit</button></div>
+							
+							<form id="levelsForm" action="form/admin/level/edit/{{level.id}}" method="post">
+								<div class="table_row admin_languages_levels_level" ng:show="edit"><span class="admin_languages_levels_levelheader">{{level.level}}</span></div>
+								<div class="table_row admin_languages_levels_amount" ng:show="edit"><input type="text" name="amount" value="{{level.amount}}"></div>
+								<div class="table_row admin_languages_levels_action" ng:show="edit"><button type="submit">Save</button></div>
+							</form>
+						</td>
 					</tr>
 					
 					<tr class="admin_languages_levelsTableEntry">
-						<form id="levelsForm_add" action="form/admin/level/add/{{languages.levels.$count()+1}}" method="post">
-							<td class="table_row admin_languages_levels_level"><span class="admin_languages_levels_levelheader">{{languages.levels.$count()+1}} </span></td>
-							<td class="table_row admin_languages_levels_achievement"><input type="text" name="new_achievement" placeholder="E.g. HTML"></td>
-							<td class="table_row admin_languages_levels_amount"><input type="text" name="new_amount" placeholder="E.g. 1000"></td>
-							<td class="table_row admin_languages_levels_action"><button type="submit">Add Level</button></td>
-						</form>
+						<td>
+							<form id="levelsForm_add" action="form/admin/level/add/{{languages.levels.$count()+1}}" method="post">
+								<div class="table_row admin_languages_levels_level"><span class="admin_languages_levels_levelheader">{{languages.levels.$count()+1}} </span></div>
+								<div class="table_row admin_languages_levels_amount"><input type="text" name="new_amount" placeholder="E.g. 1000"></div>
+								<div class="table_row admin_languages_levels_action"><button type="submit">Add Level</button></div>
+							</form>
+						</td>
 					</tr>
 					
 				</table>
