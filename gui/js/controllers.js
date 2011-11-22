@@ -42,6 +42,8 @@ function PageRouter_Master($route, $location, $resource) { //router for the webs
 //	$route.when('/developers/<country_id>',{template:''}); //TESTING
 	
 	//user profiles
+	$route.when('/user/me',{template:'gui/html/user_view.html', controller: UserViewCtrl});
+	$route.when('/user/me/:view',{template:'gui/html/user_view.html', controller: UserViewCtrl});
 	$route.when('/user/:id',{template:'gui/html/user_view.html', controller: UserViewCtrl});
 	$route.when('/user/:id/:view',{template:'gui/html/user_view.html', controller: UserViewCtrl});
 	
@@ -60,7 +62,7 @@ function PageRouter_Master($route, $location, $resource) { //router for the webs
 	//admin module
 	$route.when('/admin/schools',{template:'gui/html/admin_schools.html', controller:AdminSchoolsCtrl});
 	$route.when('/admin/languages',{template:'gui/html/admin_languages.html',controller:AdminLanguagesCtrl});
-	$route.when('/analytics',{template:'gui/html/analytics.html',controller:AnalyticsCtrl});
+	$route.when('/admin/analytics',{template:'gui/html/analytics.html',controller:AnalyticsCtrl});
 	
 	/* FOOTER Re-Directs */
 	$route.when('/sitemap',{template:'gui/html/sitemap.html'});// sitemap page
@@ -161,6 +163,7 @@ function ProjectCreateCtrl($resource) {
 function DashboardCtrl($resource) {
 	this.dashboard = $resource('rest/dashboard/dashboard').query();
 	this.badges = $resource('rest/user/badges').get();
+	this.analytics = $resource('rest/analytics/user').get();
 }
 
 function SettingsUserCtrl($resource) {
@@ -227,9 +230,17 @@ function UserViewCtrl($resource){
 	else{
 		view = 'profile'
 	}
+	if(this.params.id){
+		id = '/'+this.params.id;
+	}
+	else{
+		id = '';
+	}
+	
 	this.user_view = 'gui/html/user_view_'+view+'.html';
-	this.user = $resource('rest/user/view/'+this.params.id).get();
-	this.badges = $resource('rest/user/badges/'+this.params.id).get();
+	this.user = $resource('rest/user/view'+id).get();
+	this.badges = $resource('rest/user/badges'+id).get();
+	this.performance = $resource('rest/analytics/user'+id).get();
 }
 
 function AdminSchoolsCtrl($resource){

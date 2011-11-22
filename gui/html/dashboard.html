@@ -24,15 +24,15 @@
 				<ul>
 					<li>
 						<div class="performance_header">Total<br />Earnings:</div>
-						<div class="performance_value">25k</div>
+						<div class="performance_value">${{analytics.total_earnings}}</div>
 					</li>
 					<li>
-						<div class="performance_header">Projects Completed:</div>
-						<div class="performance_value">20</div>
+						<div class="performance_header">Project Weeks Completed:</div>
+						<div class="performance_value">{{analytics.weeks_completed}}</div>
 					</li>
 					<li>
 						<div class="performance_header">Projects in Progress:</div>
-						<div class="performance_value">5</div>
+						<div class="performance_value">{{analytics.weeks_in_progress}}</div>
 					</li>
 				</ul>
 			</section>
@@ -41,14 +41,14 @@
 				<ul>
 					<li>
 						<div class="profile_badges_header">PivotalExpert:</div>
-						<div class="profile_badges_value">20 <span class="profile_badges_score_total">/80</span></div>
+						<div class="profile_badges_value">{{analytics.badges_earned}} <span class="profile_badges_score_total">/ {{analytics.badges_total}}</span></div>
 					</li>
-					<li>
+					<!--<li>
 						<div class="profile_badges_header">Singpath:</div>
 						<div class="profile_badges_value">5 <span class="profile_badges_score_total">/20</span></div>
-					</li>
+					</li>-->
 					<li>
-						<div class="profile_badges_more_link"><a href="">more</a></div>
+						<div class="profile_badges_more_link"><a href="#/user/me/badges">more</a></div>
 					</li>
 				</ul>
 			</section>

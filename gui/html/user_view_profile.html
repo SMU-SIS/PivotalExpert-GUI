@@ -41,31 +41,23 @@ $('#user_profile_tab').addClass('active');
 				</tr>
 				<tr class="userviewprofileTableEntry" ng:hide="user.about">
 					<td class="table_row message_text_msg">
-						<!--<section id="user_view_profile_user_performance_panel">
+						<section id="user_view_profile_user_performance_panel">
 							<div class="user_view_profile_performance_panel_Header">My Performance</div>
 							<ul>
 								<li>
 									<div class="user_view_profile_performance_header">Total Earnings:</div>
-									<div class="user_view_profile_performance_value">USD$25,039</div>
+									<div class="user_view_profile_performance_value">USD${{performance.total_earnings}}</div>
 								</li>
 								<li>
-									<div class="user_view_profile_performance_header">Projects Completed:</div>
-									<div class="user_view_profile_performance_value">20</div>
-								</li>
-								<li>
-									<div class="user_view_profile_performance_header">Weekly Plans Completed:</div>
-									<div class="user_view_profile_performance_value">12</div>
+									<div class="user_view_profile_performance_header">Project Weeks Completed:</div>
+									<div class="user_view_profile_performance_value">{{performance.weeks_completed}}</div>
 								</li>
 								<li>
 									<div class="user_view_profile_performance_header">Projects in Progress:</div>
-									<div class="user_view_profile_performance_value">5</div>
-								</li>
-								<li>
-									<div class="user_view_profile_performance_header">Projects Dropped:</div>
-									<div class="user_view_profile_performance_value">1</div>
+									<div class="user_view_profile_performance_value">{{performance.weeks_in_progress}}</div>
 								</li>
 							</ul>
-						</section>-->
+						</section>
 						<section id="user_view_profile_user_profile_badges_panel">
 							<div class="user_view_profile_badges_panel_Header">My Badges</div>
 							<ul>
