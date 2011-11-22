@@ -1,5 +1,11 @@
-<table>
-	<tr>
+<style>
+	th, td {
+	padding: 5px 10px;
+	}
+</style>
+<section class="section_header">Admin | School Suggestions</section>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" style="font-family: Helvetica,Arial;font-size: 12px;">
+	<tr class="userviewprofileTableHeader" style="background: none repeat scroll 0 0 #FFFF00;">
 		<th>
 			School
 		</th>
@@ -18,13 +24,17 @@
 		<th>
 			Suggested On
 		</th>
+		<th>
+			Action
+		</th>
 	</tr>
-	<tr ng:repeat="school in schools">
+	<tr class="table_row" ng:repeat="school in schools">
 		<td>{{school.name}}</td>
 		<td>{{school.shortName}}</td>
-		<td>{{school.schoolWeb}}</td>
+		<td><a href="http://{{school.schoolWeb}}" target="_blank">{{school.schoolWeb}}</a></td>
 		<td>{{school.emailDomain}}</td>
 		<td>{{school.suggestedBy}}</td>
 		<td>{{school.created}}</td>
+		<td><a href="/form/admin/school/accept/{{school.id}}">Accept</a> / <a href="/form/admin/school/reject/{{school.id}}">Reject</a></td>
 	</tr>
 </table>
