@@ -1,31 +1,24 @@
 <!--page 2c: send_message-->
 <!--this is a send new private message form-->
-
-<form id="messages_sendForm" action="form/message/send" method="POST">
-	<section id="messages_mailcontrols">
-		<ul id="messages_mailcontrols_left">
-			<li><input id="messages_sendbtn" type="submit" name="submit" value="Send"></li>
-		</ul>
-		<ul id="messages_mailcontrols_right">
-			<li></li>
-		</ul>
+<link rel="stylesheet" href="gui/css/style-project.css" type="text/css" media="screen" />
+<section id="create_new_project_page">
+	<section id="create_new_project_Header">
+		<section class="section_header">Send a Message to {{compose.sendto_nick}}</section>
 	</section>
-	<hr />
-	<section id="messages_mainview">
-		<section id="messages_mainview_sendMsg">
-			<ul>
-				<li><label for="messages_msgTo">To:</label><input class="messages_msgTo" type="text" name="msgTo" value="{{$location.hashSearch.msgTo}}"></li>
-				<li><label for="messages_msgSubject">Subject:</label><input class="messages_msgSubject" type="text" name="msgSubject" value="{{$location.hashSearch.msgSubject}}"></li>
-				<li><textarea class="messages_msgMsg" name="msgMsg" rows="" placeholder="" value="{{$location.hashSearch.msgMsg}" ></textarea></li>
-			</ul>
-		</section>
+	<section id="create_new_project_section" >
+		<form id="createNewProjectForm" action="form/messages/send/{{compose.sendto_id}}" method="POST">
+			<fieldset>
+				<ol>
+					<li><label for="messages_msgTo">To:</label><input class="messages_msgTo" type="text" name="msgToNick" value="{{compose.sendto_nick}}" disabled></li>
+					<li><label for="messages_msgSubject">Subject:</label><input class="messages_msgSubject" type="text" name="msgSubject" value="{{$location.hashSearch.msgSubject}}"></li>
+					<li><label for="msgMsg">Message:</label><textarea class="messages_msgMsg" name="msgMsg" rows="" placeholder=""></textarea></li>
+				</ol>
+			</fieldset>
+			<fieldset>
+				<fieldset>
+					<button id="projectAddBid_bidBtn" type="submit">Send To {{compose.sendto_nick}}</button>
+				</fieldset>
+			</fieldset>
+		</form>
 	</section>
-	<section id="messages_mailcontrols">
-		<ul id="messages_mailcontrols_left">
-			<li><input id="messages_sendbtn" type="submit" name="submit" value="Send"></li>
-		</ul>
-		<ul id="messages_mailcontrols_right">
-			<li></li>
-		</ul>
-	</section>
-</form>
+</section>
