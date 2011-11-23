@@ -57,7 +57,7 @@ function PageRouter_Master($route, $location, $resource) { //router for the webs
 	
 	//messaging module
 	$route.when('/messages',{template:'gui/html/messages_index.html', controller:MessagesCtrl});
-	$route.when('/messages/compose',{template:'gui/html/messages_send.html'});
+	$route.when('/messages/compose/:id',{template:'gui/html/messages_send.html', controller:MessagesComposeCtrl});
 	
 	//admin module
 	$route.when('/admin/schools',{template:'gui/html/admin_schools.html', controller:AdminSchoolsCtrl});
@@ -221,6 +221,10 @@ function SettingsSchoolVerifyCtrl($resource){
 
 function MessagesCtrl($resource){
 	this.msg_view = 'gui/html/messages_mailbox.html'
+}
+
+function MessagesComposeCtrl($resource){
+	this.compose = $resource('rest/messages/compose/'+this.params.id).get();
 }
 
 function UserViewCtrl($resource){

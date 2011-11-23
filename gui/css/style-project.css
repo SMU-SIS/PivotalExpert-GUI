@@ -389,7 +389,8 @@ form#projectDetailsForm select {
 	top: 0;
 	left: 0;
 	margin: 2px 0 0 305px;
-	width: 120px;
+	width: 101px;
+	text-align:center;
 	background: #797979;
     border: none;
     color: #ffffff;
