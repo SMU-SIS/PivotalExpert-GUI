@@ -1,14 +1,28 @@
 
 <link rel="stylesheet" href="gui/css/style-welcome.css" type="text/css" media="screen" />
-<section id="welcome_panel">
-	<section id="body_head_img"><img src="gui/images/siteupdate-alphausernotice-v01-420px.jpg"></section>
-	<header id="body_head_text">try us out now.. :)</header>
-	<section id="body_desc">
-		<p class="body_p">We're now open to willing parties to be our Alpha users of the website! Do drop us an email to enquire more about what's to come or click on the above <span class="logintext">Login</span> button to try out our service!</p>
-		<section id="body_desc_footer">
-			<form id="emailer" action="http://pivotalexpert.us2.list-manage.com/subscribe/post?u=6d735496be341b66d8e98fe5d&amp;id=f430c46f86" method="POST">
-				<input id="emailer_email" name="EMAIL" type="email" placeholder="drop us your email =)" required><button type="submit">Update me!</button>
-			</form>
+<section id="welcome_headerleft"><img src="gui/images/aperture-pivotalexpert2-welcome-advert-v03-400px.png" /></section>
+<section id="welcome_country"><img src="gui/images/countries/{{currentUser.countryCode}}.png" alt="{{currentUser.country}}" /> {{currentUser.country}}</section>
+<section id="welcome_mainpanel">
+	<section id="welcome_headerright">
+		<p class="body_p"><strong>Pivotal Expert</strong> is a fun social networking platform which helps <i>Entrepreneurs</i> turn their ideas into reality, by easily providing them relevant <i>Student developers</i> who are looking for opportunities to gain real world developing exposure and vice versa.</p>
+	</section>
+	<section id="welcome_getstarted"><a href="https://pivotalexpert.rpxnow.com/openid/v2/signin?token_url={{$location.protocol}}://{{$location.host}}:{{$location.port}}/rpx.php">Let's Get Started >></a></section>
+	<section id="welcome_projectby"><img src="gui/images/aperture-pivotalexpert2-welcome-projectinitiativeby-v01-200px.png" /></section>
+	
+	<section id="welcome_contentpanel">
+		<section id="welcome_left">
+			<iframe id="welcome_left_videocontent" src="http://player.vimeo.com/video/16387786?title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+		</section>
+	
+		<section id="welcome_right" ng:init="welcome_view = 'gui/html/welcome_stats.html'"> 
+			<section>
+				<ul class="welcometabs">
+					<li><a ng:click="welcome_view = 'gui/html/welcome_stats.html'" id="stats_tab" class="active" onclick="$(this).addClass('active');$('#news_tab').removeClass('active');$('#release_tab').removeClass('active');">Stats</a></li>
+					<li><a ng:click="welcome_view = 'gui/html/welcome_news.html'" id="news_tab" onclick="$(this).addClass('active');$('#stats_tab').removeClass('active');$('#release_tab').removeClass('active');">News</a></li>
+					<li><a ng:click="welcome_view = 'gui/html/welcome_release.html'" id="release_tab" onclick="$(this).addClass('active');$('#stats_tab').removeClass('active');$('#news_tab').removeClass('active');">Release</a></li>
+				</ul>
+			</section>
+			<ng:include src="welcome_view"/>
 		</section>
 	</section>
 </section>
