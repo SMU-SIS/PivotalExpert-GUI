@@ -1,8 +1,13 @@
+<script>
+function WelcomePageCtrl($resource){
+	this.welcome = $resource('rest/welcome/index').get();
+}
 
+</script>
 <link rel="stylesheet" href="gui/css/style-welcome.css" type="text/css" media="screen" />
 <section id="welcome_headerleft"><img src="gui/images/aperture-pivotalexpert2-welcome-advert-v03-400px.png" /></section>
-<section id="welcome_country"><img src="gui/images/countries/{{currentUser.countryCode}}.png" alt="{{currentUser.country}}" /> {{currentUser.country}}</section>
-<section id="welcome_mainpanel">
+<section id="welcome_country"><!--<img src="gui/images/countries/{{currentUser.countryCode}}.png" alt="{{currentUser.country}}" /> {{currentUser.country}}--></section>
+<section id="welcome_mainpanel" ng:controller="WelcomePageCtrl">
 	<section id="welcome_headerright">
 		<p class="body_p"><strong>Pivotal Expert</strong> is a fun social networking platform which helps <i>Entrepreneurs</i> turn their ideas into reality, by easily providing them relevant <i>Student developers</i> who are looking for opportunities to gain real world developing exposure and vice versa.</p>
 	</section>
@@ -11,7 +16,7 @@
 	
 	<section id="welcome_contentpanel">
 		<section id="welcome_left">
-			<iframe id="welcome_left_videocontent" src="http://player.vimeo.com/video/16387786?title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+			<iframe id="welcome_left_videocontent" src="http://www.youtube.com/embed/F2VXz1tqmBY" width="500" height="312" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 		</section>
 	
 		<section id="welcome_right" ng:init="welcome_view = 'gui/html/welcome_stats.html'"> 

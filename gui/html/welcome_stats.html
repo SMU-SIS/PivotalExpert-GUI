@@ -3,15 +3,19 @@
 	<section id="welcome_statscontent" class="welcome_tabcontent">
 		<ul>
 			<li>
-				<div class="welcome_statscontent_value">231</div>
+				<div class="welcome_statscontent_value">{{welcome.stats.logged_in_count}}</div>
 				<div class="welcome_statscontent_header">users online</div>
 			</li>
 			<li>
-				<div class="welcome_statscontent_value">432</div>
-				<div class="welcome_statscontent_header">projects completed</div>
+				<div class="welcome_statscontent_value">{{welcome.stats.no_of_projects}}</div>
+				<div class="welcome_statscontent_header">projects available</div>
 			</li>
 			<li>
-				<div class="welcome_statscontent_value">$23,234</div>
+				<div class="welcome_statscontent_value">{{welcome.stats.completed_weeks}}</div>
+				<div class="welcome_statscontent_header">weeks of work completed</div>
+			</li>
+			<li>
+				<div class="welcome_statscontent_value">${{welcome.stats.total_money}}</div>
 				<div class="welcome_statscontent_header">USD transacted</div>
 			</li>
 		</ul>
