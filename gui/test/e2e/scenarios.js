@@ -1,7 +1,7 @@
 /* jasmine-like end2end tests go here */
 describe('Pivotal Expert App', function() {
 
-	it('should bootstrap', function(){
+	it('should bootstrap before all tests', function(){
 		browser().navigateTo('/bootstrap');
 	});
 	
@@ -44,12 +44,12 @@ describe('Pivotal Expert App', function() {
 		});
 		
 		//tests the display for the workroom details
-		it('1.3.1 should have project title = "First Project Ever" with project description', function(){
+		it('1.3.1 should have project title = Eight Project Ever', function(){
 			expect(binding('workroom.title')).toBe("Eight Project Ever (Developer: Kennethkok)");
-			//expect(binding('workroom.description')).toBe("Some description you have there");
+			expect(binding('workroom.owner')).toBe('Raymondchua');
 		});
 		
-		it('1.3.2 owner should be DanielTsou, developer mark chen', function(){
+		it('1.3.2 owner should be Raymondchua, developer Kennethkok', function(){
 			expect(binding('workroom.owner')).toBe("Raymondchua");
 			expect(binding('workroom.dev')).toBe("Kennethkok");
 		});
@@ -59,21 +59,9 @@ describe('Pivotal Expert App', function() {
 			expect( repeater('.projectWall_message_entry').count()).toBe(0);
 		});
 		
-		/*can only receive first entry, not sure how to test entry [2], etc yet.
-		it('first entry should be from mark chen, "Tell me everything!", at 2011-09-21 (03:26 PM)"', function(){
-			expect(binding('message.user')).toBe("Markchen");
-			expect(binding('message.message')).toBe("Tell me everything!");
-			expect(binding('message.timestamp')).toBe("2011-09-21 (03:26 PM)");
-		});*/
-		
 		//tests the iteration, workflow
 		it('1.3.4 should have 4 iterations', function(){
 			expect(repeater('.projectWorkplan_iteration_entry').count()).toBe(0);
-		});
-		
-		it('1.3.5 first entry should be "do something 1", "in review"',function(){
-			//expect(binding('iteration.task')).toBe("Planning to do something 1");
-			//expect(binding('iteration.status')).toBe("Completed");
 		});
 		
 	});	
@@ -87,11 +75,8 @@ describe('Pivotal Expert App', function() {
 			expect( repeater('.projectsmgtProjectsTableEntry').count()).toBe(2);
 		});
 	
-			//test this on GAE to make sure that the dynamically generated data corresponds
 		it('2.1.2 should go navigate to project create page', function(){
 			browser().navigateTo('/#/projects/create');
-			//expect(browser().location().hash()).toBe('/');
-			//element('#projectList_create_new').click();
 			expect(browser().location().hash()).toBe('/projects/create');
 		});
 		
@@ -115,6 +100,7 @@ describe('Pivotal Expert App', function() {
 			
 		});
 		
+		/* cannot proceed with 2.1.5 because we're unable to test PayPal in create project
 		it('2.1.5 should display the correct new project', function(){
 			browser().navigateTo('/#');
 			element('#projectsmgt_tab').click();
@@ -125,7 +111,7 @@ describe('Pivotal Expert App', function() {
 			expect(binding('project.title')).toBe('e2eTestProject');
 			expect(repeater('.project_view_bidManage_bid_entry').count()).toBe(0);
 
-		});
+		}); */
 	});
 	
 	
@@ -173,11 +159,11 @@ describe('Pivotal Expert App', function() {
 	
 	/*
 	describe('2.3.1 Accept bids', function(){
-	
+		//undone due to paypal
 	});
 	
 	describe('2.3.2 Workroom chat', function(){
-	
+		
 	});
 
 	describe('2.3.3 Accept iteration deliverable', function(){
@@ -186,25 +172,42 @@ describe('Pivotal Expert App', function() {
 	
 	describe('2.3.4 Reject iteration deliverable', function(){
 	
-	});
+	});*/
 
 	describe('2.4.1 Deliver iteration deliverable', function(){
-	
+		it('should deliver the current iteration', function(){
+			browser().navigateTo('/#');
+			element('#projectsmgt_tab').click();
+			element('#projectsmgt_workroom_Table tr:nth-child(1) td:nth-child(1)').click();
+			expect(binding('workroom.title')).toBe("Eight Project Ever (Developer: Kennethkok)");
+			//can't proceed until deliverable can be acccepted
+		});
+		//expect(binding('a')).toBe('b');
 	});
 	
+	/*
 	describe('2.5 Edit iteration status', function(){
 	
 	});	
-	
 	*/
 	
-	/*scenarios to write tests for non-core functions
-	TO BE DONE BY MONDAY
-
+	//scenarios to write tests for non-core functions
 	describe('Edit my user profile', function(){
-	
+		it('should check my current email to be kenneth.kok.2009@smu.edu.sg', function(){
+			browser().navigateTo('/#/settings/user');
+			expect(browser().location().hash()).toBe('/settings/user');
+			//binding not recognized
+			//expect(binding('.aboutMe')).toBe('kenneth.kok.2009@smu.edu.sg');
+		});
+		
+		it('should change my email', function(){
+			//binding not recognized
+			//input('user.schoolEmail').enter('kenneth.kok.2008@smu.edu.sg');
+			//browser().reload();
+		});
 	});
 
+	/*
 	describe('Invite developer to project', function(){
 	
 	});	
@@ -212,80 +215,31 @@ describe('Pivotal Expert App', function() {
 	describe('View developer complete profile', function(){
 	
 	});
-
+	
 	describe('Respond to project invitation', function(){
-	
+
 	});
 
-	describe('Add user to contact list', function(){
-	
-	});	
-	
-	describe('Suggest a badge', function(){
-	
-	});
-
-	describe('Suggest an institution', function(){
-	
-	});
-	
-	
 	*/
+	describe('Suggest an institution', function(){
+		it('should add a new school', function(){
+
+			browser().navigateTo('/#/settings/school');
+			expect(browser().location().hash()).toBe('/settings/school');
+			expect(repeater('.sort_select_school_option').count()).toBe(2);
+
+			browser().navigateTo('/#/settings/school/suggest');
+			input('suggestNewSchool_school').enter('testSchool');
+			input('suggestNewSchool_school_short').enter('tS');
+			select('suggestNewSchool_school_country').option('Singapore');
+			input('suggestNewSchool_school_web').enter('www.test.edu.sg');
+			input('suggestNewSchool_school_email').enter('test@pe.com');
+			pause();
+			element('#projectAddBid_bidBtn').click();
+			sleep(2);
+			expect(browser().location().hash()).toBe('/settings/user?alertMsg=Your suggestion has been received!');
+			
+		});
+	});
 	
-	
-	
-
-    /*it('should be possible to control phone order via the drop down select box', function() {
-      input('query').enter('tablet'); //let's narrow the dataset to make the test assertions shorter
-
-      expect(repeater('.phones li', 'Phone List').column('a')).
-          toEqual(["Motorola XOOM\u2122 with Wi-Fi",
-                   "MOTOROLA XOOM\u2122"]);
-
-      select('orderProp').option('alphabetical');
-
-      expect(repeater('.phones li', 'Phone List').column('a')).
-          toEqual(["MOTOROLA XOOM\u2122",
-                   "Motorola XOOM\u2122 with Wi-Fi"]);
-    });
-
-
-    it('should render phone specific links', function() {
-      input('query').enter('nexus');
-      element('.phones li a').click();
-      expect(browser().location().hash()).toBe('/phones/nexus-s');
-    });
-    
-  });
-
-
-  describe('Phone detail view', function() {
-
-    beforeEach(function() {
-      browser().navigateTo('../../../app../../../index.html#/phones/nexus-s');
-    });
-
-
-    it('should display nexus-s page', function() {
-      expect(binding('phone.name')).toBe('Nexus S');
-    });
-
-
-    it('should display the first phone image as the main phone image', function() {
-      expect(element('img.phone').attr('src')).toBe('img/phones/nexus-s.0.jpg');
-    });
-
-
-    it('should swap main image if a thumbnail image is clicked on', function() {
-      element('.phone-thumbs li:nth-child(3) img').click();
-      expect(element('img.phone').attr('src')).toBe('img/phones/nexus-s.2.jpg');
-
-      element('.phone-thumbs li:nth-child(1) img').click();
-      expect(element('img.phone').attr('src')).toBe('img/phones/nexus-s.0.jpg');
-    });
-    
-    it('should perform final bootstrap', function(){
-    	browser().navigateTo('/bootstrap');
-    });
-  });*/
 });
