@@ -56,7 +56,7 @@
 							<nav>
 								<ul ng:controller="CurrentUserController">
 									<li ng:show="!currentUser.nickname">
-										<span><a href="https://pivotalexpert.rpxnow.com/openid/v2/signin?token_url={{$location.protocol}}://{{$location.host}}:{{$location.port}}/rpx.php">login</a></span>
+										<span><a href="https://pivotalexpert.rpxnow.com/openid/v2/signin?token_url={{$location.protocol}}://{{$location.host}}:{{$location.port}}/rpx.php">register <sup>.</sup> login</a></span>
 	 								</li>
 	 								<li ng:show="currentUser.nickname">
 		 								<span><a href="logout?target=/#{{$location.hashPath}}">logout</a></span>
