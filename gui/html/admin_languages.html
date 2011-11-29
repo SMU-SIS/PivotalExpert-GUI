@@ -215,7 +215,7 @@ form#addALanguageForm button:hover, #admin_languages_levels_Table button:hover {
 			
 			
 				<table id="admin_languages_levels_Table" border="0" cellpadding="0" cellspacing="0">
-					<tr class="admin_languages_levelsTableHeader">
+					<tr class="admin_languages_levelsTableHeader" ng:init="languages.levels.$orderBy(level)">
 						<td>
 							<div class="table_header admin_languages_levels_level"><span class="admin_languages_levels_levelheader">Level</span></div>
 							<div class="table_header admin_languages_levels_amount">Amount (US$) to unlock</div>

@@ -27,7 +27,7 @@
 			<td class="table_header developerList_developer_country">Country</td>
 			<td class="table_header developerList_developer_school">School</td>
 			<td class="table_header developerList_developer_badges">Badges</td>
-			<td class="table_header developerList_developer_earnings">Earnings</td>
+			<td class="table_header developerList_developer_earnings">Projects</td>
 			<td class="table_header developerList_developer_contact">Contact</td>
 		</tr>
 		<tr class="developerListTableEntry" ng:repeat="developer in developers.developerList.$filter(query).$orderBy(orderProp)" 
@@ -42,10 +42,10 @@
 			<td class="table_row developerList_developer_school"><a href="">{{developer.school}}</a></td>
 			<td class="table_row developerList_developer_badges">
 				<!--<span ng:repeat="item in developer.badges"><span ng:hide="$position == 'first'"></span><img src="{{item}}"/></span>-->
-				<span class="developer_badges_earned">earned{{total_earned_badges}} <span class="developer_badges_total">/ total{{total_possible_earned_badges}}</span></span> <a href="">more</a>
+				<span class="developer_badges_earned">{{developer.badges}} <span class="developer_badges_total"> / {{developer.badges_total}}</span></span> <a href="#/user/{{developer.id}}/badges">more</a>
 			</td>
 			<td class="table_row developerList_developer_earnings">{{developer.earnings}}</td>
-			<td class="table_row developerList_developer_contact"><a href="send_message.html">Mail</a> | <a href="developer_invite.html">Invite</a></td>
+			<td class="table_row developerList_developer_contact"><a href="#/messages/compose/{{developer.id}}">Contact</a></td>
 		</tr>
 	</table>
 	

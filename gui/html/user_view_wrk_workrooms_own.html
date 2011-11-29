@@ -12,7 +12,7 @@
 			<tr class="projectsmgtWorkroomTableEntry" ng:repeat="workroom in user.workrooms_owner"
 				  onmouseover="HighlightWorkroomRow(this, true);" 
 				  onmouseout="HighlightWorkroomRow(this, false);" 
-				  onclick="GoToURL('#/workroom/{{workroom.id}}');">
+				  onclick="GoToURL('#/projects/{{workroom.project_id}}');">
 				<td class="table_row projectsmgt_workroom_title"><div class="workroom_title">{{workroom.title}}</div></td>
 				<td class="table_row user_wrk_workroom_description workroom_height">{{workroom.description}}</td>
 				<td class="table_row user_wrk_workroom_developer workroom_height">

@@ -80,7 +80,7 @@ $(document).ready(function(){
 							<div ng:show="edit"><form method="post" action="/form/workroom/edit/iteration/{{iteration.id}}"><textarea name="iteration_task" value="{{iteration.task}}"></textarea><button type="submit">Save</button></form><button ng:click="edit = 'False'">Cancel</button></div></div>
 							<div class="projectWorkplan_iteration_actions">
 								<!--<a class="projectWorkplan_iteration_actions_comment" href="#/workroom/{{workroom.id}}/comment">Comment</a>-->
-								<a class="projectWorkplan_iteration_actions_shift" href="">Shift</a>
+								<!--<a class="projectWorkplan_iteration_actions_shift" href="">Shift</a>-->
 								<a class="projectWorkplan_iteration_actions_edit" ng:show="iteration.editable" ng:click="edit = 'True'">Edit</a>
 							</div>
 						</div>

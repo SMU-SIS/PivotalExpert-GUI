@@ -53,7 +53,7 @@
 				<span ng:show="payment.received">Yes</span>
 				<span ng:hide="payment.received">No</span>
 			</td>
-			<td class="table_row settings_paypal_workroom"><a href="#/workroom/{{payment.workroom_id}}">Visit Workroom</a></td>
+			<td class="table_row settings_paypal_workroom"><a href="#/workroom/{{payment.workroom_id}}">{{payment.workroom}}</a></td>
 			<td class="table_row settings_paypal_week">{{payment.iteration}}</td>
 			<td class="table_row settings_paypal_remarks">
 				<span ng:show="payment.failed">Errors</span>

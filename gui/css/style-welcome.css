@@ -86,3 +86,193 @@ form#emailer button:hover {
     color: #000000;
     cursor: pointer;
 }
+
+#welcome_mainpanel {
+	position: relative;
+	margin: 0 auto;
+	padding: 0 0 40px 0;
+	width: 890px;
+	font: 22px "GeosansLightRegular", Helvetica, sans-serif;
+	font-weight: none;
+	text-align: left;
+	line-height: 30px;
+	color: #797979;
+}
+
+#welcome_headerleft {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	margin: 115px 0 0 40px;
+}
+
+#welcome_country {
+	position: absolute;
+	top: 0;
+	right: 0;
+	-moz-right: 0;
+	-webkit-right: 0;
+	margin: 115px 0 0 0;
+}
+#welcome_headerright {
+	font: 16px "GeosansLightRegular", Helvetica, sans-serif;
+	line-height: 24px;
+	margin: 30px 10px 110px 460px;
+}
+#welcome_projectby {
+	position: absolute;
+	top: 0;
+	right: 0;
+	-moz-right: 0;
+	-webkit-right: 0;
+	margin: 135px 0 0 0;
+}
+#welcome_getstarted a, #welcome_getstarted a:active, #welcome_getstarted a:visited {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 105px 0 0 460px;
+	padding: 1px 18px;
+	text-decoration: none;
+	text-transform: uppercase;
+	background: #797979;
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 11px;
+}
+#welcome_getstarted a:hover {
+	background: #000000;
+}
+
+#welcome_contentpanel {
+	position: relative;
+}
+#welcome_left {
+	position: relative;
+	min-height: 320px;
+	height: auto;
+	width: 600px;
+	padding-top: 2px;
+	padding-left: 45px;
+	border-left: 4px dotted #00AEFF;
+}
+#welcome_left_videocontent {
+	border: 6px solid #00AEFF;
+}
+#welcome_left_videocontent:hover {
+	border: 6px solid #000000;
+}
+.videocontent_p {
+	font: 18px "GeosansLightRegular", Helvetica, sans-serif;
+}
+.videocontent_p a, .videocontent_p a:active, .videocontent_p a:visited {
+	color: #000000;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 16px;
+}
+.videocontent_p a:hover {
+
+}
+
+
+#welcome_right {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0 0 0 600px;
+	min-height: 350px;
+	width: 288px;
+}
+#welcome_right ul.welcometabs {
+	margin: 0; 
+	padding: 0;
+}
+#welcome_right ul.welcometabs li {
+	list-style: none;
+	display: inline;
+}
+#welcome_right ul.welcometabs li a {
+	background-color: #C7C7C7;
+	color: #FFFFFF;
+	padding: 10px 14px 9px 14px;
+	text-decoration: none;
+	font-size: 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+#welcome_right ul.welcometabs li a:hover {
+	background-color: #0097FE;
+}
+#welcome_right ul.welcometabs li a.active {
+	background-color: #FFD200;
+	color: #282E32;
+}
+.welcome_tabcontent {
+	margin: 0;
+	padding: 0;
+	background-color: #FFD200;
+	color: #000000;
+	padding: 18px 15px 25px 15px;
+	-moz-border-radius-bottomright: 12px;
+	-webkit-border-radius: 0 0 12px 0;
+	border-radius: 0 0 12px 0; 
+	height: 265px;
+}
+
+
+#welcome_statscontent {
+}
+#welcome_statscontent ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	font-weight: bold;
+	font: 42px Helvetica, Arial;
+}
+#welcome_statscontent ul li {
+	margin-bottom: 10px;
+}
+.welcome_statscontent_value {
+}
+.welcome_statscontent_header {
+	margin-top: -7px;
+	font-size: 16px;
+}
+
+#welcome_newscontent, #welcome_release {
+}
+#welcome_newscontent ul, #welcome_release ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	font: 12px Helvetica, Arial;
+	margin-top: 10px;
+}
+#welcome_newscontent ul li, #welcome_release ul li {
+	position: relative;
+	display: block;
+	margin-bottom: 10px;
+}
+.welcome_newscontent_segment, .welcome_releasecontent_segment {
+}
+.news_date {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 3px 6px;
+	background: #797979;
+	color: #FFFFFF;
+	font-size: 10px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.welcome_newscontent_header, .welcome_releasecontent_header {
+	position: relative;
+	margin-left: 80px;
+	padding-top: 3px;
+	padding-bottom: 10px;
+	border-bottom: 2px dotted #797979;
+}
